@@ -680,6 +680,84 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             </div>
         </div>
+
+        <!-- 添加个人简历模块 -->
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content article-card-content">
+                    <div class="title center-align" data-aos="zoom-in-up"> <i
+                            class="fa fa-address-book"></i>&nbsp;&nbsp;myCV </div>
+                    <div id="articleContent" data-aos="fade-up"> <h3 id="教育背景"><a href="#教育背景" class="headerlink" title="教育背景"></a>教育背景</h3><table>
+<thead>
+<tr>
+<th align="center">学历</th>
+<th align="center">毕业院校</th>
+<th align="center">时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">硕士</td>
+<td align="center">中央民族大学-信息工程学院</td>
+<td align="center">2018/09 — 至今</td>
+</tr>
+<tr>
+<td align="center">本科</td>
+<td align="center">中央民族大学-信息工程学院</td>
+<td align="center">2014/09 — 2018/06</td>
+</tr>
+</tbody></table>
+<h3 id="实习经历"><a href="#实习经历" class="headerlink" title="实习经历"></a>实习经历</h3><table>
+<thead>
+<tr>
+<th>公司</th>
+<th>职位</th>
+<th>时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>金山办公软件</td>
+<td>技术支持实习生</td>
+<td>2018/05 —— 2018/08</td>
+</tr>
+</tbody></table>
+<h3 id="个人技能"><a href="#个人技能" class="headerlink" title="个人技能"></a>个人技能</h3><ul>
+<li>NLP</li>
+<li>语言：Python、Java、C/C++</li>
+<li>英语六级</li>
+<li>操作系统：Linux（CentOS/Ubuntu）</li>
+<li>版本管理：Git/Github</li>
+</ul>
+<h3 id="交流"><a href="#交流" class="headerlink" title="交流"></a>交流</h3><ul>
+<li>微信公众号：<strong>村雨1943</strong></li>
+<li><a href="https://github.com/cunyu1943" target="_blank" rel="noopener">GitHub</a></li>
+<li><a href="https://cunyu1943.github.io/">个人博客</a></li>
+<li><a href="https://blog.csdn.net/github_39655029" target="_blank" rel="noopener">CSDN</a></li>
+<li><a href="https://www.jianshu.com/u/9fd25635ae22" target="_blank" rel="noopener">简书</a></li>
+<li><a href="https://www.zhihu.com/people/cunyu1943/activities" target="_blank" rel="noopener">知乎</a></li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script> </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </main>
 <footer class="page-footer bg-color">
