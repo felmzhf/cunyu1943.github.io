@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-09-29T17:44:04.459Z</updated>
+  <updated>2019-09-29T17:46:27.780Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://cunyu1943.github.io/2019/09/30/markdown-xie-zuo-ru-men/"/>
     <id>http://cunyu1943.github.io/2019/09/30/markdown-xie-zuo-ru-men/</id>
     <published>2019-09-29T17:40:56.000Z</published>
-    <updated>2019-09-29T17:44:04.459Z</updated>
+    <updated>2019-09-29T17:46:27.780Z</updated>
     
     <summary type="html">
     
@@ -36,6 +36,10 @@
     </summary>
     
     
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+      <category term="Markdown" scheme="http://cunyu1943.github.io/tags/Markdown/"/>
     
   </entry>
   
