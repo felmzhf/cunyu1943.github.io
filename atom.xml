@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-09-29T16:49:35.078Z</updated>
+  <updated>2019-09-29T17:14:49.677Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过Xshell远程连接Ubuntu</title>
+    <link href="http://cunyu1943.github.io/2019/09/30/tong-guo-xshell-yuan-cheng-lian-jie-ubuntu/"/>
+    <id>http://cunyu1943.github.io/2019/09/30/tong-guo-xshell-yuan-cheng-lian-jie-ubuntu/</id>
+    <published>2019-09-29T17:13:41.000Z</published>
+    <updated>2019-09-29T17:14:49.677Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一般情况下，安装好的Ubuntu系统中默认是只安装了&lt;code&gt;openssh-client&lt;/code&gt;，此时只能通过此系统连接访问其他系统，但不具有让其他系统访问的权限。在终端查看ssh进程，输入&lt;code&gt;ps -e|grep
+        
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+      <category term="Xshell" scheme="http://cunyu1943.github.io/tags/Xshell/"/>
+    
+      <category term="Ubuntu" scheme="http://cunyu1943.github.io/tags/Ubuntu/"/>
+    
+      <category term="Linux" scheme="http://cunyu1943.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Git使用学习笔记</title>
