@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Github使用中遇到的问题集锦</title>
+      <link href="/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/"/>
+      <url>/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/</url>
+      
+        <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>对于我们国内用户，有时候浏览器在进入github网站时，会出现无法加载或加载很慢的问题，针对这一问题，很是头疼，为解决这一问题，在网上搜索到的解决方法如下；</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul><li>修改hosts文件，在hosts文件中加入以下内容：</li></ul><pre><code># GitHub Start# 针对无法加载或加载慢的问题192.30.253.112 github.com192.30.253.119 gist.github.com151.101.100.133 assets-cdn.github.com151.101.100.133 raw.githubusercontent.com151.101.100.133 gist.githubusercontent.com151.101.100.133 cloud.githubusercontent.com151.101.100.133 camo.githubusercontent.com151.101.100.133 avatars0.githubusercontent.com151.101.100.133 avatars1.githubusercontent.com151.101.100.133 avatars2.githubusercontent.com151.101.100.133 avatars3.githubusercontent.com151.101.100.133 avatars4.githubusercontent.com151.101.100.133 avatars5.githubusercontent.com151.101.100.133 avatars6.githubusercontent.com151.101.100.133 avatars7.githubusercontent.com151.101.100.133 avatars8.githubusercontent.com# 下载慢问题219.76.4.4 github-cloud.s3.amazonaws.com# GitHub End</code></pre><ul><li><p>hosts文件所在目录</p><ul><li>Windows：<code>C:\Windows\System32\drivers\etc\hosts</code></li><li>Linux：<code>\etc\hosts</code></li></ul></li><li><p>修改后生效方法</p><ul><li>关机重启</li><li>断网重连</li><li>Window：Win+R，输入cmd回车，然后在cmd窗口中输入：<code>ipconfig /flushdns</code></li><li>Linux：Ctrl+Alt+T打开终端，输入<code>sudo rcnscd restart</code></li></ul></li></ul><hr><h1 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h1><p>使用git同时同步github以及gitee；</p><h1 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h1><p>修改版本库<code>.git/config</code>文件，在文件中加入github和gitee中对应版本库的url，如下例，将我github和gitee中PTA版本库url同时加入，然后在使用git就可以同时同步两端；</p><pre><code>[core]    repositoryformatversion = 0    filemode = false    bare = false    logallrefupdates = true    symlinks = false    ignorecase = true[remote "origin"]    url = https://gitee.com/cunyu1943/PTA.git    url = https://github.com/cunyu1943/PTA.git    fetch = +refs/heads/*:refs/remotes/origin/*[branch "master"]    remote = origin    merge = refs/heads/master</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2019/09/29/hello-world/"/>
       <url>/2019/09/29/hello-world/</url>

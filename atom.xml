@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-09-29T09:20:15.721Z</updated>
+  <updated>2019-09-29T16:39:54.370Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Github使用中遇到的问题集锦</title>
+    <link href="http://cunyu1943.github.io/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/"/>
+    <id>http://cunyu1943.github.io/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/</id>
+    <published>2019-09-29T16:38:30.000Z</published>
+    <updated>2019-09-29T16:39:54.370Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="github" scheme="http://cunyu1943.github.io/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
