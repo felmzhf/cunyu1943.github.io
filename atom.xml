@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-09-29T16:39:54.370Z</updated>
+  <updated>2019-09-29T16:42:59.915Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://cunyu1943.github.io/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/"/>
     <id>http://cunyu1943.github.io/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/</id>
     <published>2019-09-29T16:38:30.000Z</published>
-    <updated>2019-09-29T16:39:54.370Z</updated>
+    <updated>2019-09-29T16:42:59.915Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,8 @@
     
     </summary>
     
+    
+      <category term="skills" scheme="http://cunyu1943.github.io/categories/skills/"/>
     
     
       <category term="github" scheme="http://cunyu1943.github.io/tags/github/"/>
