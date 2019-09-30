@@ -4,15 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Git使用学习笔记, 村雨的博客">
-    <meta name="description" content="简介
-定义  Git，最先进的分布式版本控制系统之一，最初是由Linux之父Linus为了更好管理开源Linux系统而开发的一个软件；
-
-下载：https://git-scm.com/downloads
-
-安装
-
-Linux：sudo ap">
+    <meta name="keywords" content="C语言中的内存管理函数, 村雨的博客">
+    <meta name="description" content="malloc函数
+原型：extern void* malloc(unsigned int size)；
+功能：动态分配内存；
+注意：size仅仅为申请内存字节大小，与申请内存块中存储的数据类型无关，故编程时需要通过以下方式给出：”长度 * ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +19,7 @@ Linux：sudo ap">
 
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
 
-    <title>Git使用学习笔记 | 村雨的博客</title>
+    <title>C语言中的内存管理函数 | 村雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -296,13 +292,13 @@ Linux：sudo ap">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Git使用学习笔记
+                        C语言中的内存管理函数
                     </div>
                 </div>
             </div>
@@ -413,8 +409,8 @@ Linux：sudo ap">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/" target="_blank">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/C-C/" target="_blank">
+                                <span class="chip bg-color">C/C++</span>
                             </a>
                         
                     </div>
@@ -425,8 +421,8 @@ Linux：sudo ap">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                tools
+                            <a href="/categories/编程语言/" class="post-category" target="_blank">
+                                编程语言
                             </a>
                         
                     </div>
@@ -444,14 +440,14 @@ Linux：sudo ap">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.4k
+                        628
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        2 分
                     </div>
                     
                 
@@ -467,188 +463,112 @@ Linux：sudo ap">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
-<li><p>定义<br>  Git，最先进的分布式版本控制系统之一，最初是由Linux之父Linus为了更好管理开源Linux系统而开发的一个软件；</p>
-</li>
-<li><p>下载：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></p>
-</li>
-<li><p>安装</p>
+                <h3 id="malloc函数"><a href="#malloc函数" class="headerlink" title="malloc函数"></a>malloc函数</h3><ul>
+<li>原型：extern void* malloc(unsigned int size)；</li>
+<li>功能：动态分配内存；</li>
+<li>注意：size仅仅为申请内存字节大小，与申请内存块中存储的数据类型无关，故编程时需要通过以下方式给出：”长度 * sizeof(数据类型)”；</li>
+</ul>
 <ul>
-<li>Linux：<code>sudo apt-get install git</code></li>
-<li>Windows、macOS通过官网下载安装包后进行安装即可；</li>
+<li>示例：</li>
 </ul>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//动态分配内存，输入5个数据，并把低于60的值打印出来</span>
+
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>ptr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//分配内存</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">scanf_s</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>ptr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输入数据</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> min <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>min <span class="token operator">></span> <span class="token operator">*</span><span class="token punctuation">(</span>ptr <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%5d"</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">(</span>ptr <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//打印出低于60的值</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="free函数"><a href="#free函数" class="headerlink" title="free函数"></a>free函数</h3><ul>
+<li>原型：void free(void * ptr)；</li>
+<li>功能：搭配malloc()函数，释放malloc函数申请的动态内存；</li>
+<li>注意：对于free(ptr)，若ptr为NULL，则可进行多次释放，若ptr是非空指针，则free对ptr只能进行一次操作，否则程序将崩溃；</li>
+<li>示例：见malloc函数；</li>
+<li>结果：见malloc函数；</li>
+</ul>
+<h3 id="realloc函数"><a href="#realloc函数" class="headerlink" title="realloc函数"></a>realloc函数</h3><ul>
+<li><p>原型： void* realloc(void * ptr,unsigned int size)；</p>
 </li>
-<li><p>设置</p>
-<p>  安装完成后，需要进行以下设置：</p>
-<pre><code>$ git config --global user.name "user name"
-$ git config --global user.email "example@email.com"
-# 可选，让Git命令行显示颜色
-$ git config --global color.ui true</code></pre></li>
+<li><p>功能：先判断当前指针是否有足够的连续空间，若足够，扩大ptr指向的地址并返回，若不够，怎按size指定的大小分配空间，将原数据copy到新分配的内存中，然后释放原ptr所指向区域；</p>
+</li>
+<li><p>注意：内存使用完毕后，应使用free()函数释放，但原来的指针是自动释放，不需要使用free；</p>
+</li>
+<li><p>示例：</p>
+</li>
 </ul>
-<hr>
-<h1 id="版本库创建及管理"><a href="#版本库创建及管理" class="headerlink" title="版本库创建及管理"></a>版本库创建及管理</h1><ul>
-<li>如何创建版本库</li>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">char</span> <span class="token operator">*</span>str<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/* 一开始的内存分配 */</span>
+    str <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strcpy</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"String = %s\n"</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/* 重新分配内存 */</span>
+    str <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">realloc</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strcat</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token string">", C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"String = %s\n"</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">free</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="calloc函数"><a href="#calloc函数" class="headerlink" title="calloc函数"></a>calloc函数</h3><ul>
+<li>原型：void* calloc（unsigned int num，unsigned int size）；</li>
+<li>功能：为已经分配的内存重新分配空间并复制内容；</li>
+<li>注意：num：对象个数，size：对象占据的内存字节数，相较于malloc函数，calloc函数会自动将内存初始化为0；</li>
 </ul>
-<ol>
-<li>先创建一个空文件夹，Windows下不再介绍，Linux以及macOS下可通过<code>$ mkdir gitlearn</code>命令创建；</li>
-<li>通过<code>$ git init</code>将刚才创建的目录变为可管理的仓库;</li>
-</ol>
-<p><img src="https://i.loli.net/2019/09/20/PjMfbN1OR3mK7r5.png" alt=""></p>
 <ul>
-<li>如何将文件添加到版本库</li>
+<li>示例：</li>
 </ul>
-<ol>
-<li>在刚才创建的空文件夹中，添加你自己的文件，以readme.md为例；</li>
-<li>用<code>git add</code>命令将文件添加到仓库；</li>
-</ol>
-<pre><code>$ git add readme.md</code></pre><ol start="3">
-<li>用<code>git commit</code>将文件提交到仓库；</li>
-</ol>
-<pre><code>$ git commit -m "this is a readme.md file."</code></pre><ul>
-<li>如何查看仓库修改的内容</li>
-</ul>
-<ol>
-<li><p>用<code>git status</code>查看仓库当前状态；</p>
-</li>
-<li><p>用<code>git diff filename</code>查看文件具体修改的内容；</p>
-</li>
-</ol>
-<pre><code>$ git diff readme.txt</code></pre><ol start="3">
-<li><code>git log</code>查看最近到最远的提交日志</li>
-</ol>
-<pre><code>$ git log --pretty=oneline</code></pre><ol start="4">
-<li>回退之前的版本，先用<code>git log</code>查看提交历史，以确定commit_id，回退后，当想要重返未来版本时，用<code>git reflog</code>查看命令历史，从而确定重返版本commit_id，<code>HEAD</code>指向当前版本，为了在版本的历史之间穿梭，使用命令<code>git resrt --hard commit_id</code></li>
-</ol>
-<pre><code>$ git reset --hard HEAD^</code></pre><ol start="5">
-<li>直接丢弃工作区的某文件修改内容时，使用命令<code>git checkout -- filename</code></li>
-</ol>
-<pre><code>$ git checkout -- readme.md</code></pre><ol start="6">
-<li>删除文件，先在工作区将文件删除后，然后使用命令<code>git rm</code>将版本库中文件删除，然后通过<code>git commit</code>提交</li>
-</ol>
-<pre><code>$ git rm readme.md
-$ git commit -m "delete readme.md"</code></pre><hr>
-<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><ul>
-<li><p>为了将本地Git和远程Github相连接，可以进行如下操作：</p>
-<ul>
-<li><p>确定<code>.ssh</code>目录下是否存在文件<code>id_rsa</code>和<code>id_rsa.pub</code>，有则复制<code>id_rsa.pub</code>中内容明将其添加到Github中的SSH Key，建立两者联系，可以在本地管理，</p>
-</li>
-<li><p>不存在则通过如下命令生成；</p>
-<pre><code>$ ssh-keygen -t rsa -C "example@email.com"</code></pre></li>
-</ul>
-</li>
-<li><p>如何添加远程仓库</p>
-<ul>
-<li><p>在本地通过如下命令建立本地仓库与远程仓库进行管理，然后就可以将本地仓库内容推送到Github仓库；</p>
-<pre><code>$ git remote add origin git@github.com:cunyu1943/gitlearn.git</code></pre></li>
-<li><p>从远程仓库克隆岛本地：</p>
-<pre><code>$ git clone https://github.com/cunyu1943/the_journey_to_nlp.git</code></pre></li>
-</ul>
-</li>
-<li><p>将本地仓库内容推送到远程仓库；</p>
-</li>
-</ul>
-<pre><code># 第一次推送
-$ git push -u origin master
-# 之后的推送
-$ git push origin master</code></pre><hr>
-<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><ul>
-<li>创建并切换分支</li>
-</ul>
-<pre><code>$ git switch -c dev
-# 等价命令
-$ git checkout -b dev
-# 等价命令
-$ git branch dev
-$ git checkout dev</code></pre><ul>
-<li>查看当前分支，前边标有$*$代表当前分支，切换回$master$分支；</li>
-</ul>
-<pre><code>$ git branch
-$ git checkout/switch master</code></pre><ul>
-<li>将$dev$分支合并到$master$分支；</li>
-</ul>
-<pre><code>$ git merge dev</code></pre><ul>
-<li>删除分支；</li>
-</ul>
-<pre><code>$ git branch -d dev</code></pre><ul>
-<li>强制删除未合并分支；</li>
-</ul>
-<pre><code>$ git branch -D dev</code></pre><ul>
-<li>查看分支合并图</li>
-</ul>
-<pre><code>$ git log --graph</code></pre><hr>
-<h1 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h1><ul>
-<li><p>查看远程库信息：<code>git remote -v</code>；</p>
-</li>
-<li><p>本地新建分支若不推送到远程，则对其他人不可见；</p>
-</li>
-<li><p>本地推送到远程库，<code>git push origin branch-name</code>，若推送失败，则用<code>git pull</code>抓取远程新提交；</p>
-</li>
-</ul>
-<pre><code>$ git push origin master
-# 若推送失败，则先执行如下命令
-$ git pull</code></pre><ul>
-<li>本地创建和远程分支对应分支，<code>git checkout -b branch-name origin/branch-name</code></li>
-</ul>
-<pre><code>$ git checkout -b dev origin/dev</code></pre><ul>
-<li>建立本地分支和远程分支的关联，<code>git branch --set-upstream branch-name origin/branch-name</code></li>
-</ul>
-<pre><code>$ git branch --set-upstream dev origin/dev</code></pre><ul>
-<li>从远程抓取分支则使用<code>git pull</code>，若有冲突，则先解决处理后再处理；</li>
-</ul>
-<hr>
-<h1 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h1><ul>
-<li><p>先切换到需要打标签的分支<code>git switch branch-name</code>；</p>
-</li>
-<li><p>打标签并查看；</p>
-</li>
-</ul>
-<pre><code># 打一个名为"v1.0"的标签
-$ git tag v1.0
-# 查看所有标签
-$ git tag</code></pre><ul>
-<li>查看标签信息，<code>git show &lt;tagname&gt;</code>；</li>
-</ul>
-<pre><code>$ git show v1.0</code></pre><ul>
-<li>创建带有说明的标签，用<code>-a</code>打标签名，<code>-m</code>指定说明文字；</li>
-</ul>
-<pre><code>$ git tag -a v1.0 -m "version 1.0 released" 132gsfh</code></pre><ul>
-<li>删除标签，本地使用<code>git tag -d &lt;tagname&gt;</code>，远程则使用<code>git push origin :refs/tags/&lt;tagname&gt;</code></li>
-</ul>
-<pre><code># 删除本地标签
-$ git tag -d v30.0
-# 删除远程标签
-$ git push origin :refs/tags/v30.0</code></pre><ul>
-<li>将标签推送到远程<code>git push origin &lt;tagname&gt;</code></li>
-</ul>
-<pre><code># 推送某一标签
-$ git push origin v1.0
-# 推送所有标签
-$ git push origin --tags</code></pre><hr>
-<h1 id="建立Github和Gitee共同远程连接"><a href="#建立Github和Gitee共同远程连接" class="headerlink" title="建立Github和Gitee共同远程连接"></a>建立Github和Gitee共同远程连接</h1><ul>
-<li>删除某一关联的远程库，<code>git remote rm &lt;basename&gt;</code></li>
-</ul>
-<pre><code>$ git remote rm origin</code></pre><ul>
-<li>关联Gitee远程库，<code>git remote add &lt;basename&gt; git@gitee.com:&lt;username&gt;/&lt;basename&gt;.git</code></li>
-</ul>
-<pre><code>$ git remote add gitee git@gitee.com:cunyu1943/notes.git</code></pre><ul>
-<li>关联Github远程库，<code>git remote add &lt;basename&gt; git@github.com:&lt;username&gt;/&lt;basename&gt;.git</code></li>
-</ul>
-<pre><code>$ git remote add github git@github.com:cunyu1943/notes.git</code></pre><p>-推送到Gitee和Github</p>
-<pre><code># 推送到Gitee
-$ git push gitee master
-# 推送到Github
-$ git push github master</code></pre><hr>
-<h1 id="其他小技巧"><a href="#其他小技巧" class="headerlink" title="其他小技巧"></a>其他小技巧</h1><ul>
-<li><p>忽略特殊文件</p>
-<p>  此时需要编写<code>.gitignore</code>文件，文件要放到版本库中，且可以对<code>.gitignore</code>进行版本管理；</p>
-</li>
-<li><p>配置命令别名</p>
-</li>
-</ul>
-<pre><code># 举例
-$ git config --global alias st status
-$ git config --global alias checkout co
-$ git config --global alias commit cm</code></pre><script>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> num<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>ptr<span class="token punctuation">;</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"元素个数为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    ptr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">calloc</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"输入 %d 个数字：\n"</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> num<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>ptr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"输入的数字为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> num<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> ptr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -824,9 +744,9 @@ $ git config --global alias commit cm</code></pre><script>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Git使用学习笔记》
+                    《C语言中的内存管理函数》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/30/git-shi-yong-xue-xi-bi-ji/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/30/c-yu-yan-zhong-de-nei-cun-guan-li-han-shu/" property="cc:attributionName"
                rel="cc:attributionURL">
                 村雨
             </a> 采用
@@ -867,7 +787,7 @@ $ git config --global alias commit cm</code></pre><script>
         repo: 'cunyu1943.github.io',
         owner: 'cunyu1943',
         admin: "cunyu1943",
-        id: '2019-09-30T00-47-47',
+        id: '2019-09-30T09-12-18',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -888,54 +808,48 @@ $ git config --global alias commit cm</code></pre><script>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/09/30/tong-guo-xshell-lian-jie-ubuntu/">
+                <a href="/2019/09/30/c-yu-yan-zhong-de-nei-cun-guan-li-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="通过Xshell远程连接Ubuntu">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="C语言中的内存管理函数">
                         
-                        <span class="card-title">通过Xshell远程连接Ubuntu</span>
+                        <span class="card-title">C语言中的内存管理函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            教你如何使用Xshell连接远程Ubuntu服务器。
+                            对C语言中的四大内存管理函数进行介绍，并对其中使用时需要注意的点进行探讨，同时对每个函数用法进行实例运用。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                    tools
+                            <a href="/categories/编程语言/" class="post-category" target="_blank">
+                                    编程语言
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Xshell/" target="_blank">
-                        <span class="chip bg-color">Xshell</span>
-                    </a>
-                    
-                    <a href="/tags/Ubuntu/" target="_blank">
-                        <span class="chip bg-color">Ubuntu</span>
-                    </a>
-                    
-                    <a href="/tags/Linux/" target="_blank">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/C-C/" target="_blank">
+                        <span class="chip bg-color">C/C++</span>
                     </a>
                     
                 </div>
@@ -949,19 +863,19 @@ $ git config --global alias commit cm</code></pre><script>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/">
+                <a href="/2019/09/30/cheng-xu-yuan-chang-yong-bian-ji-qi-tui-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Github使用中遇到的问题集锦">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="程序员常用编辑器推荐">
                         
-                        <span class="card-title">Github使用中遇到的问题集锦</span>
+                        <span class="card-title">程序员常用编辑器推荐</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对GitHub使用过程中所遇到的加载慢，加载不出来以及下载速度慢等问题提出解决方法。
+                            推荐几款作为程序员，大家最常用的几款代码编辑器。
                         
                     </div>
                     <div class="publish-info">
@@ -983,8 +897,32 @@ $ git config --global alias commit cm</code></pre><script>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/github/" target="_blank">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/Visual-Studio-Code/" target="_blank">
+                        <span class="chip bg-color">Visual Studio Code</span>
+                    </a>
+                    
+                    <a href="/tags/Sublime-Text/" target="_blank">
+                        <span class="chip bg-color">Sublime Text</span>
+                    </a>
+                    
+                    <a href="/tags/Notepad/" target="_blank">
+                        <span class="chip bg-color">Notepad++</span>
+                    </a>
+                    
+                    <a href="/tags/Atom/" target="_blank">
+                        <span class="chip bg-color">Atom</span>
+                    </a>
+                    
+                    <a href="/tags/EditPlus/" target="_blank">
+                        <span class="chip bg-color">EditPlus</span>
+                    </a>
+                    
+                    <a href="/tags/Vim/" target="_blank">
+                        <span class="chip bg-color">Vim</span>
+                    </a>
+                    
+                    <a href="/tags/UltraEdit/" target="_blank">
+                        <span class="chip bg-color">UltraEdit</span>
                     </a>
                     
                 </div>
