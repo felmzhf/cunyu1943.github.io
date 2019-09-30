@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-09-29T17:46:27.780Z</updated>
+  <updated>2019-09-30T01:07:58.220Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>程序员常用编辑器推荐</title>
+    <link href="http://cunyu1943.github.io/2019/09/30/cheng-xu-yuan-chang-yong-bian-ji-qi-tui-jian/"/>
+    <id>http://cunyu1943.github.io/2019/09/30/cheng-xu-yuan-chang-yong-bian-ji-qi-tui-jian/</id>
+    <published>2019-09-30T00:58:38.000Z</published>
+    <updated>2019-09-30T01:07:58.220Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;对于一个程序员而言，一款称手的代码编辑器是十分重要的。一款好的代码编辑器能够大大提高开发效率，节省开发时间。而且现在许多的代码编辑器功能十分强大，不仅仅只是编写代码、查看源文件，还可以查看txt文档，也支持Markdown格式的写作等等。下面就简要的介绍几款的代码编辑器，&lt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+      <category term="Visual Studio Code" scheme="http://cunyu1943.github.io/tags/Visual-Studio-Code/"/>
+    
+      <category term="Sublime Text" scheme="http://cunyu1943.github.io/tags/Sublime-Text/"/>
+    
+      <category term="Notepad++" scheme="http://cunyu1943.github.io/tags/Notepad/"/>
+    
+      <category term="Atom" scheme="http://cunyu1943.github.io/tags/Atom/"/>
+    
+      <category term="EditPlus" scheme="http://cunyu1943.github.io/tags/EditPlus/"/>
+    
+      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
+    
+      <category term="UltraEdit" scheme="http://cunyu1943.github.io/tags/UltraEdit/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown写作入门</title>
