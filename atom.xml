@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-10-02T08:15:35.031Z</updated>
+  <updated>2019-10-02T08:38:11.428Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -15,6 +15,142 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>提高工作效率的神器推荐之Windows</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/ti-gao-gong-zuo-xiao-lu-de-shen-qi-tui-jian-zhi-windows/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/ti-gao-gong-zuo-xiao-lu-de-shen-qi-tui-jian-zhi-windows/</id>
+    <published>2019-10-02T08:38:11.000Z</published>
+    <updated>2019-10-02T08:38:11.428Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>实用网站推荐</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/shi-yong-wang-zhan-tui-jian/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/shi-yong-wang-zhan-tui-jian/</id>
+    <published>2019-10-02T08:32:55.000Z</published>
+    <updated>2019-10-02T08:37:04.759Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;视频网站篇&quot;&gt;&lt;a href=&quot;#视频网站篇&quot; class=&quot;headerlink&quot; title=&quot;视频网站篇&quot;&gt;&lt;/a&gt;视频网站篇&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;种子下载网站：&lt;a href=&quot;http://www.hao6v.com/&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用U盘安装Windows系统</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/shi-yong-u-pan-an-zhuang-windows-xi-tong/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/shi-yong-u-pan-an-zhuang-windows-xi-tong/</id>
+    <published>2019-10-02T08:27:45.000Z</published>
+    <updated>2019-10-02T08:32:58.273Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;一个8G及以上的U盘；&lt;/li&gt;
+&lt;li&gt;软碟通UltraISO，&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+      <category term="Windows" scheme="http://cunyu1943.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anaconda简单使用手册</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/anaconda-jian-dan-shi-yong-shou-ce/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/anaconda-jian-dan-shi-yong-shou-ce/</id>
+    <published>2019-10-02T08:23:09.000Z</published>
+    <updated>2019-10-02T08:26:53.333Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;安装部分&quot;&gt;&lt;a href=&quot;#安装部分&quot; class=&quot;headerlink&quot; title=&quot;安装部分&quot;&gt;&lt;/a&gt;安装部分&lt;/h2&gt;&lt;h3 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+      <category term="Anaconda" scheme="http://cunyu1943.github.io/tags/Anaconda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>强大的编辑器 - Vim</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/qiang-da-de-bian-ji-qi-vim/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/qiang-da-de-bian-ji-qi-vim/</id>
+    <published>2019-10-02T08:19:05.000Z</published>
+    <updated>2019-10-02T08:19:54.216Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;特点&quot;&gt;&lt;a href=&quot;#特点&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux文件系统分层标准（FHS）</title>
@@ -438,156 +574,6 @@
     
     
       <category term="mysql" scheme="http://cunyu1943.github.io/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Socket在Server和Client间通信的工作原理</title>
-    <link href="http://cunyu1943.github.io/2019/09/30/socket-zai-server-he-client-jian-tong-xin-de-gong-zuo-yuan-li/"/>
-    <id>http://cunyu1943.github.io/2019/09/30/socket-zai-server-he-client-jian-tong-xin-de-gong-zuo-yuan-li/</id>
-    <published>2019-09-30T01:19:22.000Z</published>
-    <updated>2019-10-02T05:21:34.691Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;Socket之间的连接过程主要可以概括为以下三步：&quot;&gt;&lt;a href=&quot;#Socket之间的连接过程主要可以概括为以下三步：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="计算机知识" scheme="http://cunyu1943.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="Socket" scheme="http://cunyu1943.github.io/tags/Socket/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言中的内存管理函数</title>
-    <link href="http://cunyu1943.github.io/2019/09/30/c-yu-yan-zhong-de-nei-cun-guan-li-han-shu/"/>
-    <id>http://cunyu1943.github.io/2019/09/30/c-yu-yan-zhong-de-nei-cun-guan-li-han-shu/</id>
-    <published>2019-09-30T01:12:18.000Z</published>
-    <updated>2019-09-30T01:15:07.156Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;malloc函数&quot;&gt;&lt;a href=&quot;#malloc函数&quot; class=&quot;headerlink&quot; title=&quot;malloc函数&quot;&gt;&lt;/a&gt;malloc函数&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;原型：extern void* malloc(unsigned int
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="C/C++" scheme="http://cunyu1943.github.io/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>程序员常用编辑器推荐</title>
-    <link href="http://cunyu1943.github.io/2019/09/30/cheng-xu-yuan-chang-yong-bian-ji-qi-tui-jian/"/>
-    <id>http://cunyu1943.github.io/2019/09/30/cheng-xu-yuan-chang-yong-bian-ji-qi-tui-jian/</id>
-    <published>2019-09-30T00:58:38.000Z</published>
-    <updated>2019-09-30T01:16:57.038Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;对于一个程序员而言，一款称手的代码编辑器是十分重要的。一款好的代码编辑器能够大大提高开发效率，节省开发时间。而且现在许多的代码编辑器功能十分强大，不仅仅只是编写代码、查看源文件，还可以查看txt文档，也支持Markdown格式的写作等等。下面就简要的介绍几款的代码编辑器，&lt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
-    
-    
-      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
-    
-      <category term="Visual Studio Code" scheme="http://cunyu1943.github.io/tags/Visual-Studio-Code/"/>
-    
-      <category term="Sublime Text" scheme="http://cunyu1943.github.io/tags/Sublime-Text/"/>
-    
-      <category term="Notepad++" scheme="http://cunyu1943.github.io/tags/Notepad/"/>
-    
-      <category term="Atom" scheme="http://cunyu1943.github.io/tags/Atom/"/>
-    
-      <category term="UltraEdit" scheme="http://cunyu1943.github.io/tags/UltraEdit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown写作入门</title>
-    <link href="http://cunyu1943.github.io/2019/09/30/markdown-xie-zuo-ru-men/"/>
-    <id>http://cunyu1943.github.io/2019/09/30/markdown-xie-zuo-ru-men/</id>
-    <published>2019-09-29T17:40:56.000Z</published>
-    <updated>2019-10-02T05:17:40.306Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;什么是Markdown格式&quot;&gt;&lt;a href=&quot;#什么是Markdown格式&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
-    
-    
-      <category term="Markdown" scheme="http://cunyu1943.github.io/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通过Xshell远程连接Ubuntu</title>
-    <link href="http://cunyu1943.github.io/2019/09/30/tong-guo-xshell-lian-jie-ubuntu/"/>
-    <id>http://cunyu1943.github.io/2019/09/30/tong-guo-xshell-lian-jie-ubuntu/</id>
-    <published>2019-09-29T17:13:41.000Z</published>
-    <updated>2019-09-29T17:30:13.987Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;一般情况下，安装好的Ubuntu系统中默认是只安装了&lt;code&gt;openssh-client&lt;/code&gt;，此时只能通过此系统连接访问其他系统，但不具有让其他系统访问的权限。在终端查看ssh进程，输入&lt;code&gt;ps -e|grep
-        
-      
-    
-    </summary>
-    
-    
-      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
-    
-    
-      <category term="Linux" scheme="http://cunyu1943.github.io/tags/Linux/"/>
-    
-      <category term="Ubuntu" scheme="http://cunyu1943.github.io/tags/Ubuntu/"/>
-    
-      <category term="Xshell" scheme="http://cunyu1943.github.io/tags/Xshell/"/>
     
   </entry>
   
