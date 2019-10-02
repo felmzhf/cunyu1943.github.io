@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="通过Xshell远程连接Ubuntu, 村雨的博客">
-    <meta name="description" content="一般情况下，安装好的Ubuntu系统中默认是只安装了openssh-client，此时只能通过此系统连接访问其他系统，但不具有让其他系统访问的权限。在终端查看ssh进程，输入ps -e|grep ssh，如果有安装openssh-clien">
+    <meta name="keywords" content="修改Ubuntu默认root用户密码及更改用户密码, 村雨的博客">
+    <meta name="description" content="新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？ 如题，相信许多刚接触Ubuntu系统的新手大多会遇到这个问题，那么我们该如何解决这个问题呢？Ubuntu在安装过程中并没有让我们设置root用户密码，但当我们需要获取ro">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
 
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
 
-    <title>通过Xshell远程连接Ubuntu | 村雨的博客</title>
+    <title>修改Ubuntu默认root用户密码及更改用户密码 | 村雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -289,13 +289,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        通过Xshell远程连接Ubuntu
+                        修改Ubuntu默认root用户密码及更改用户密码
                     </div>
                 </div>
             </div>
@@ -414,10 +414,6 @@
                                 <span class="chip bg-color">Ubuntu</span>
                             </a>
                         
-                            <a href="/tags/Xshell/" target="_blank">
-                                <span class="chip bg-color">Xshell</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -426,8 +422,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                tools
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                系统
                             </a>
                         
                     </div>
@@ -438,14 +434,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-30
+                    2019-10-02
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        349
+                        479
                     </div>
                     
 
@@ -468,37 +464,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一般情况下，安装好的Ubuntu系统中默认是只安装了<code>openssh-client</code>，此时只能通过此系统连接访问其他系统，但不具有让其他系统访问的权限。在终端查看ssh进程，输入<code>ps -e|grep ssh</code>，如果有安装<code>openssh-client</code>只会出现<code>ssh -agent</code>，不会出现<code>sshd</code>(因为博主已经安装<code>openssh-server</code>，所以会出现<code>sshd</code>)。</p>
-<p><img src="https://img-blog.csdn.net/20180801141631186?watermark/2/text/5p2R6ZuoMTk0Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""><br>此时要想开放本机SSH服务以便其他系统登陆访问，就必须安装<code>openssh-server</code>，安装过程如下：</p>
+                <h2 id="新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？"><a href="#新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？" class="headerlink" title="新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？"></a>新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？</h2><p> 如题，相信许多刚接触Ubuntu系统的新手大多会遇到这个问题，那么我们该如何解决这个问题呢？Ubuntu在安装过程中并没有让我们设置root用户密码，但当我们需要获取root用户的权限时，就会让我们输入root用户的密码，如下图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9747350-dcd9a2c58cbfeabf?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>这就搞得我们一头雾水了。当初我们安装系统的时候只是设置好了一个用户名和用户的密码，并没有设置root用户密码啊，该怎么输入呢？你可能会抱着试一试的心态，输入自己创建的用户的密码，结果当然是密码错误了！！！</p>
 <ul>
-<li>在终端中输入<code>sudo apt-get install openssh-server</code>，然后输入自己的<code>root</code>密码就可以了(因为博主已经安装过，所以提示的是升级)；</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20180801142429103?watermark/2/text/5p2R6ZuoMTk0Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<ul>
-<li>然后启动<code>ssh-server</code>服务即可，开启方式，当然这两种开启方式都是需要切换到<code>root</code>用户或者提供密码权限的；</li>
-</ul>
-<ol>
-<li><p><code>service ssh start</code></p>
+<li><p>原因：未设置之前，Ubuntu中默认的root密码是随机的，即每次开机都会有一个新的root密码，所以此时的root用户密码并不确定；</p>
 </li>
-<li><p><code>/etc/init.d/ssh start</code></p>
+<li><p>解决方法：Ubuntu中打开终端(ctrl + alt + t)，输入<code>sudo passwd</code>，如下图，然后重复两次你要设置的root密码，然后就会提示密码已更新了；</p>
+<p> <img src="http://upload-images.jianshu.io/upload_images/9747350-970dc994741994dd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 </li>
-</ol>
-<p><img src="https://img-blog.csdn.net/20180801143049189?watermark/2/text/5p2R6ZuoMTk0Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<ul>
-<li>验证是否开启成功；</li>
+<li><p>测试是否设置成功：控制台中输入<code>su root</code>，然后输入刚才设置好的root密码，测试是否修改成功，成功后如下图所示；</p>
+<p> <img src="http://upload-images.jianshu.io/upload_images/9747350-003ce7f59a6c7689?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+</li>
 </ul>
-<p><img src="https://img-blog.csdn.net/20180801143318643?watermark/2/text/5p2R6ZuoMTk0Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<ul>
-<li>若再次查看<code>ssh</code>进程时，同时出现<code>sshd</code>、<code>ssh -agent</code>进程，则说明<code>openssh -service</code>已经安装成功；</li>
+<h2 id="修改指定用户的密码"><a href="#修改指定用户的密码" class="headerlink" title="修改指定用户的密码"></a>修改指定用户的密码</h2><ul>
+<li><p>首先需要切换到<code>root</code>用户下，输入<code>sudo su</code>，然后输入上面改好的root用户密码即可切换到<code>root</code>用户；</p>
+<p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-6a43f514913fa140?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+</li>
+<li><p>然后输入<code>passwd 用户名</code>，输入需要修改的新密码，重复两次即可，此时变回提示用户身份验证令牌已成功更新；</p>
+<p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-6240ab05865065c6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+</li>
 </ul>
-<p><img src="https://img-blog.csdn.net/20180801143739776?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<ul>
-<li>此时便可通过XShell访问Ubuntu了，依次填入主机IP、用户名已经用户密码便可成功连接到Ubuntu；</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20180801144354326?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<p><img src="https://img-blog.csdn.net/2018080114453685?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
-<p><img src="https://img-blog.csdn.net/20180801143846201?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<p><img src="https://img-blog.csdn.net/20180801144107643?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -675,9 +661,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《通过Xshell远程连接Ubuntu》
+                    《修改Ubuntu默认root用户密码及更改用户密码》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/30/tong-guo-xshell-lian-jie-ubuntu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/xiu-gai-ubuntu-mo-ren-root-yong-hu-mi-ma-ji-geng-gai-yong-hu-mi-ma/" property="cc:attributionName"
                rel="cc:attributionURL">
                 村雨
             </a> 采用
@@ -718,7 +704,7 @@
         repo: 'cunyu1943.github.io',
         owner: 'cunyu1943',
         admin: "cunyu1943",
-        id: '2019-09-30T01-13-41',
+        id: '2019-10-02T16-10-28',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -743,31 +729,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/30/markdown-xie-zuo-ru-men/">
+                <a href="/2019/10/02/linux-wen-jian-xi-tong-fen-ceng-biao-zhun-fhs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Markdown写作入门">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Linux文件系统分层标准（FHS）">
                         
-                        <span class="card-title">Markdown写作入门</span>
+                        <span class="card-title">Linux文件系统分层标准（FHS）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简要介绍Markdown格式，并对其日常用法进行列举，最后推荐几款Markdown的编辑器。
+                            对Linux的系统结构进行解析，画出思维导图
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                    tools
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                    系统
                                 </a>
                             
                             
@@ -777,8 +763,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/" target="_blank">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -792,31 +778,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/30/git-shi-yong-xue-xi-bi-ji/">
+                <a href="/2019/10/02/vmware-an-zhuang-ubuntu18-04/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Git使用学习笔记">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="VMware安装Ubuntu18.04">
                         
-                        <span class="card-title">Git使用学习笔记</span>
+                        <span class="card-title">VMware安装Ubuntu18.04</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            总结自己在学习git使用时，所需要注意的一些常用命令及小细节。
+                            教你如何使用虚拟机VMware安装Ubuntu18.04
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                    tools
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                    系统
                                 </a>
                             
                             
@@ -826,8 +812,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/" target="_blank">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Ubuntu/" target="_blank">
+                        <span class="chip bg-color">Ubuntu</span>
                     </a>
                     
                 </div>

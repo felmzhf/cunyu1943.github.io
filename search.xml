@@ -4,6 +4,85 @@
   
     
     <entry>
+      <title>Linux文件系统分层标准（FHS）</title>
+      <link href="/2019/10/02/linux-wen-jian-xi-tong-fen-ceng-biao-zhun-fhs/"/>
+      <url>/2019/10/02/linux-wen-jian-xi-tong-fen-ceng-biao-zhun-fhs/</url>
+      
+        <content type="html"><![CDATA[<p>对于刚接触Linux系统的我们来说，时常被Linux的系统结构搞得晕头转向，下面这张图介绍了Linux的文件系统分层标准，希望对你有所帮助。</p><p><img src="http://upload-images.jianshu.io/upload_images/9747350-1cd2eb2a77ddadb0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>修改Ubuntu默认root用户密码及更改用户密码</title>
+      <link href="/2019/10/02/xiu-gai-ubuntu-mo-ren-root-yong-hu-mi-ma-ji-geng-gai-yong-hu-mi-ma/"/>
+      <url>/2019/10/02/xiu-gai-ubuntu-mo-ren-root-yong-hu-mi-ma-ji-geng-gai-yong-hu-mi-ma/</url>
+      
+        <content type="html"><![CDATA[<h2 id="新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？"><a href="#新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？" class="headerlink" title="新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？"></a>新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？</h2><p> 如题，相信许多刚接触Ubuntu系统的新手大多会遇到这个问题，那么我们该如何解决这个问题呢？Ubuntu在安装过程中并没有让我们设置root用户密码，但当我们需要获取root用户的权限时，就会让我们输入root用户的密码，如下图：</p><p><img src="http://upload-images.jianshu.io/upload_images/9747350-dcd9a2c58cbfeabf?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>这就搞得我们一头雾水了。当初我们安装系统的时候只是设置好了一个用户名和用户的密码，并没有设置root用户密码啊，该怎么输入呢？你可能会抱着试一试的心态，输入自己创建的用户的密码，结果当然是密码错误了！！！</p><ul><li><p>原因：未设置之前，Ubuntu中默认的root密码是随机的，即每次开机都会有一个新的root密码，所以此时的root用户密码并不确定；</p></li><li><p>解决方法：Ubuntu中打开终端(ctrl + alt + t)，输入<code>sudo passwd</code>，如下图，然后重复两次你要设置的root密码，然后就会提示密码已更新了；</p><p> <img src="http://upload-images.jianshu.io/upload_images/9747350-970dc994741994dd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p></li><li><p>测试是否设置成功：控制台中输入<code>su root</code>，然后输入刚才设置好的root密码，测试是否修改成功，成功后如下图所示；</p><p> <img src="http://upload-images.jianshu.io/upload_images/9747350-003ce7f59a6c7689?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p></li></ul><h2 id="修改指定用户的密码"><a href="#修改指定用户的密码" class="headerlink" title="修改指定用户的密码"></a>修改指定用户的密码</h2><ul><li><p>首先需要切换到<code>root</code>用户下，输入<code>sudo su</code>，然后输入上面改好的root用户密码即可切换到<code>root</code>用户；</p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-6a43f514913fa140?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p></li><li><p>然后输入<code>passwd 用户名</code>，输入需要修改的新密码，重复两次即可，此时变回提示用户身份验证令牌已成功更新；</p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-6240ab05865065c6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VMware安装Ubuntu18.04</title>
+      <link href="/2019/10/02/vmware-an-zhuang-ubuntu18-04/"/>
+      <url>/2019/10/02/vmware-an-zhuang-ubuntu18-04/</url>
+      
+        <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h4 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h4><ul><li><p>获取地址：</p><ul><li><p><a href="https://www.ubuntu.com/download/desktop?utm_expid=.t_P3dGHLTjiXbkBPgMHsUw.0&amp;utm_referrer=https%3A%2F%2Fwww.ubuntu.com%2Fdesktop" target="_blank" rel="noopener">官网</a></p><p><img src="http://upload-images.jianshu.io/upload_images/9747350-963b73f433292ce0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p></li><li><p><a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/18.04/" target="_blank" rel="noopener">清华镜像站</a></p><p><img src="http://upload-images.jianshu.io/upload_images/9747350-51761975c46761c2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p></li></ul></li></ul><h4 id="VMware"><a href="#VMware" class="headerlink" title="VMware"></a>VMware</h4><ul><li><p>获取地址<a href="https://pan.baidu.com/s/1dzmawpqmK5PuCBipIwLXoA#list/path=%2F%E8%99%9A%E6%8B%9F%E6%9C%BA%2FVMware%20Workstation%20%26%20%20KeyGen&amp;parentPath=%2F%E8%99%9A%E6%8B%9F%E6%9C%BA" target="_blank" rel="noopener">链接</a></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-5b85994cec8c1496?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p></li></ul><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><ul><li><p>Vmware的安装过程此处不在赘述，不清楚如何安装的请自行百度，参见<a href="https://jingyan.baidu.com/article/9f7e7ec09da5906f281554d6.html" target="_blank" rel="noopener">VMware14安装教程</a></p></li><li><p>然后就是Vmware中安装Ubuntu18.04的过程如下：</p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-fe983d70ceeaec3b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-3a2758738f4edbc9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-5119d64afff7d110?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-7598cdb1498ccb47?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-b3c9212e5d85e732?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-6a92ad5a578b8dd9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-ddac8cf24d36ab2c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-4db68f693b3c5f24?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-27485661c90e94d5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-6a160fc6a60808df?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-7d8df4e929f090cc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-2c3349f41e6b43ef?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-ba8b95f0b6259bbf?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-bff2988b72753d28?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-d1888586d97f54ae?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-05b4d09807eadd4f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-bf2ef18ac29200a5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>  <img src="http://upload-images.jianshu.io/upload_images/9747350-bfb91707c711408b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>至此，Ubuntu18.04的安装结束，接下来你就可以尽情的捣鼓安装好的系统了QAQ。</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux知识点总结</title>
       <link href="/2019/10/02/linux-zhi-shi-dian-zong-jie/"/>
       <url>/2019/10/02/linux-zhi-shi-dian-zong-jie/</url>
@@ -440,9 +519,9 @@
             
             <tag> Linux </tag>
             
-            <tag> Xshell </tag>
-            
             <tag> Ubuntu </tag>
+            
+            <tag> Xshell </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-10-02T07:57:54.755Z</updated>
+  <updated>2019-10-02T08:15:35.031Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux文件系统分层标准（FHS）</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/linux-wen-jian-xi-tong-fen-ceng-biao-zhun-fhs/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/linux-wen-jian-xi-tong-fen-ceng-biao-zhun-fhs/</id>
+    <published>2019-10-02T08:13:56.000Z</published>
+    <updated>2019-10-02T08:15:35.031Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;对于刚接触Linux系统的我们来说，时常被Linux的系统结构搞得晕头转向，下面这张图介绍了Linux的文件系统分层标准，希望对你有所帮助。&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="系统" scheme="http://cunyu1943.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="Linux" scheme="http://cunyu1943.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修改Ubuntu默认root用户密码及更改用户密码</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/xiu-gai-ubuntu-mo-ren-root-yong-hu-mi-ma-ji-geng-gai-yong-hu-mi-ma/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/xiu-gai-ubuntu-mo-ren-root-yong-hu-mi-ma-ji-geng-gai-yong-hu-mi-ma/</id>
+    <published>2019-10-02T08:10:28.000Z</published>
+    <updated>2019-10-02T08:13:05.914Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？&quot;&gt;&lt;a href=&quot;#新安装的Ubuntu系统中默认的root用户密码是多少？该怎么修改？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="系统" scheme="http://cunyu1943.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="Linux" scheme="http://cunyu1943.github.io/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://cunyu1943.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VMware安装Ubuntu18.04</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/vmware-an-zhuang-ubuntu18-04/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/vmware-an-zhuang-ubuntu18-04/</id>
+    <published>2019-10-02T08:04:57.000Z</published>
+    <updated>2019-10-02T08:08:54.727Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;h4 id=&quot;Ubuntu&quot;&gt;&lt;a href=&quot;#Ubuntu&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="系统" scheme="http://cunyu1943.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="Linux" scheme="http://cunyu1943.github.io/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://cunyu1943.github.io/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux知识点总结</title>
@@ -499,64 +585,9 @@
     
       <category term="Linux" scheme="http://cunyu1943.github.io/tags/Linux/"/>
     
-      <category term="Xshell" scheme="http://cunyu1943.github.io/tags/Xshell/"/>
-    
       <category term="Ubuntu" scheme="http://cunyu1943.github.io/tags/Ubuntu/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Git使用学习笔记</title>
-    <link href="http://cunyu1943.github.io/2019/09/30/git-shi-yong-xue-xi-bi-ji/"/>
-    <id>http://cunyu1943.github.io/2019/09/30/git-shi-yong-xue-xi-bi-ji/</id>
-    <published>2019-09-29T16:47:47.000Z</published>
-    <updated>2019-09-29T16:49:35.078Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;定义&lt;br&gt; 
-        
-      
-    
-    </summary>
-    
-    
-      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
-    
-    
-      <category term="git" scheme="http://cunyu1943.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Github使用中遇到的问题集锦</title>
-    <link href="http://cunyu1943.github.io/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/"/>
-    <id>http://cunyu1943.github.io/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/</id>
-    <published>2019-09-29T16:38:30.000Z</published>
-    <updated>2019-09-29T16:48:26.227Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
-    
-    
-      <category term="github" scheme="http://cunyu1943.github.io/tags/github/"/>
+      <category term="Xshell" scheme="http://cunyu1943.github.io/tags/Xshell/"/>
     
   </entry>
   

@@ -4,8 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="通过Xshell远程连接Ubuntu, 村雨的博客">
-    <meta name="description" content="一般情况下，安装好的Ubuntu系统中默认是只安装了openssh-client，此时只能通过此系统连接访问其他系统，但不具有让其他系统访问的权限。在终端查看ssh进程，输入ps -e|grep ssh，如果有安装openssh-clien">
+    <meta name="keywords" content="Linux文件系统分层标准（FHS）, 村雨的博客">
+    <meta name="description" content="对于刚接触Linux系统的我们来说，时常被Linux的系统结构搞得晕头转向，下面这张图介绍了Linux的文件系统分层标准，希望对你有所帮助。
+
+
+        document.querySelectorAll(&#39;.github-emoj">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +19,7 @@
 
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
 
-    <title>通过Xshell远程连接Ubuntu | 村雨的博客</title>
+    <title>Linux文件系统分层标准（FHS） | 村雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -289,13 +292,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        通过Xshell远程连接Ubuntu
+                        Linux文件系统分层标准（FHS）
                     </div>
                 </div>
             </div>
@@ -410,14 +413,6 @@
                                 <span class="chip bg-color">Linux</span>
                             </a>
                         
-                            <a href="/tags/Ubuntu/" target="_blank">
-                                <span class="chip bg-color">Ubuntu</span>
-                            </a>
-                        
-                            <a href="/tags/Xshell/" target="_blank">
-                                <span class="chip bg-color">Xshell</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -426,8 +421,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                tools
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                系统
                             </a>
                         
                     </div>
@@ -438,14 +433,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-30
+                    2019-10-02
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        349
+                        106
                     </div>
                     
 
@@ -468,37 +463,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一般情况下，安装好的Ubuntu系统中默认是只安装了<code>openssh-client</code>，此时只能通过此系统连接访问其他系统，但不具有让其他系统访问的权限。在终端查看ssh进程，输入<code>ps -e|grep ssh</code>，如果有安装<code>openssh-client</code>只会出现<code>ssh -agent</code>，不会出现<code>sshd</code>(因为博主已经安装<code>openssh-server</code>，所以会出现<code>sshd</code>)。</p>
-<p><img src="https://img-blog.csdn.net/20180801141631186?watermark/2/text/5p2R6ZuoMTk0Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""><br>此时要想开放本机SSH服务以便其他系统登陆访问，就必须安装<code>openssh-server</code>，安装过程如下：</p>
-<ul>
-<li>在终端中输入<code>sudo apt-get install openssh-server</code>，然后输入自己的<code>root</code>密码就可以了(因为博主已经安装过，所以提示的是升级)；</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20180801142429103?watermark/2/text/5p2R6ZuoMTk0Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<ul>
-<li>然后启动<code>ssh-server</code>服务即可，开启方式，当然这两种开启方式都是需要切换到<code>root</code>用户或者提供密码权限的；</li>
-</ul>
-<ol>
-<li><p><code>service ssh start</code></p>
-</li>
-<li><p><code>/etc/init.d/ssh start</code></p>
-</li>
-</ol>
-<p><img src="https://img-blog.csdn.net/20180801143049189?watermark/2/text/5p2R6ZuoMTk0Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<ul>
-<li>验证是否开启成功；</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20180801143318643?watermark/2/text/5p2R6ZuoMTk0Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<ul>
-<li>若再次查看<code>ssh</code>进程时，同时出现<code>sshd</code>、<code>ssh -agent</code>进程，则说明<code>openssh -service</code>已经安装成功；</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20180801143739776?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<ul>
-<li>此时便可通过XShell访问Ubuntu了，依次填入主机IP、用户名已经用户密码便可成功连接到Ubuntu；</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20180801144354326?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<p><img src="https://img-blog.csdn.net/2018080114453685?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
-<p><img src="https://img-blog.csdn.net/20180801143846201?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
-<p><img src="https://img-blog.csdn.net/20180801144107643?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8zOTY1NTAyOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/35" alt=""></p>
+                <p>对于刚接触Linux系统的我们来说，时常被Linux的系统结构搞得晕头转向，下面这张图介绍了Linux的文件系统分层标准，希望对你有所帮助。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9747350-1cd2eb2a77ddadb0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -675,9 +641,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《通过Xshell远程连接Ubuntu》
+                    《Linux文件系统分层标准（FHS）》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/30/tong-guo-xshell-lian-jie-ubuntu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/linux-wen-jian-xi-tong-fen-ceng-biao-zhun-fhs/" property="cc:attributionName"
                rel="cc:attributionURL">
                 村雨
             </a> 采用
@@ -718,7 +684,7 @@
         repo: 'cunyu1943.github.io',
         owner: 'cunyu1943',
         admin: "cunyu1943",
-        id: '2019-09-30T01-13-41',
+        id: '2019-10-02T16-13-56',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -739,46 +705,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/09/30/markdown-xie-zuo-ru-men/">
+                <a href="/2019/10/02/linux-wen-jian-xi-tong-fen-ceng-biao-zhun-fhs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Markdown写作入门">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Linux文件系统分层标准（FHS）">
                         
-                        <span class="card-title">Markdown写作入门</span>
+                        <span class="card-title">Linux文件系统分层标准（FHS）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简要介绍Markdown格式，并对其日常用法进行列举，最后推荐几款Markdown的编辑器。
+                            对Linux的系统结构进行解析，画出思维导图
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                    tools
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                    系统
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/" target="_blank">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -792,31 +760,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/30/git-shi-yong-xue-xi-bi-ji/">
+                <a href="/2019/10/02/xiu-gai-ubuntu-mo-ren-root-yong-hu-mi-ma-ji-geng-gai-yong-hu-mi-ma/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Git使用学习笔记">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="修改Ubuntu默认root用户密码及更改用户密码">
                         
-                        <span class="card-title">Git使用学习笔记</span>
+                        <span class="card-title">修改Ubuntu默认root用户密码及更改用户密码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            总结自己在学习git使用时，所需要注意的一些常用命令及小细节。
+                            教你如何如何修改刚刚安装好的Ubuntu中的root用户密码，以及想要修改普通用户密码时，应该怎么做
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                    tools
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                    系统
                                 </a>
                             
                             
@@ -826,8 +794,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/" target="_blank">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Ubuntu/" target="_blank">
+                        <span class="chip bg-color">Ubuntu</span>
                     </a>
                     
                 </div>
