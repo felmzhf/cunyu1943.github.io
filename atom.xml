@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-10-02T14:06:42.243Z</updated>
+  <updated>2019-10-02T14:21:26.709Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -15,6 +15,172 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深度学习笔记</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/shen-du-xue-xi-bi-ji/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/shen-du-xue-xi-bi-ji/</id>
+    <published>2019-10-02T14:20:26.000Z</published>
+    <updated>2019-10-02T14:21:26.709Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;TensorFlow&quot;&gt;&lt;a href=&quot;#TensorFlow&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="http://cunyu1943.github.io/categories/AI/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://cunyu1943.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习中的学习方法</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/ji-qi-xue-xi-zhong-de-xue-xi-fang-fa/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/ji-qi-xue-xi-zhong-de-xue-xi-fang-fa/</id>
+    <published>2019-10-02T14:18:48.000Z</published>
+    <updated>2019-10-02T14:20:05.744Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;监督学习&quot;&gt;&lt;a href=&quot;#监督学习&quot; class=&quot;headerlink&quot; title=&quot;监督学习&quot;&gt;&lt;/a&gt;监督学习&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;定义：监督学习(Supervised
+        
+      
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="http://cunyu1943.github.io/categories/AI/"/>
+    
+    
+      <category term="Machine Learning" scheme="http://cunyu1943.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习之线性回归</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/shen-du-xue-xi-zhi-xian-xing-hui-gui/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/shen-du-xue-xi-zhi-xian-xing-hui-gui/</id>
+    <published>2019-10-02T14:17:18.000Z</published>
+    <updated>2019-10-02T14:18:23.725Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;线性回归&quot;&gt;&lt;a href=&quot;#线性回归&quot; class=&quot;headerlink&quot; title=&quot;线性回归&quot;&gt;&lt;/a&gt;线性回归&lt;/h2&gt;&lt;h3 id=&quot;基本要素&quot;&gt;&lt;a href=&quot;#基本要素&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="http://cunyu1943.github.io/categories/AI/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://cunyu1943.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动手学深度学习-数据操作</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/dong-shou-xue-shen-du-xue-xi-shu-ju-cao-zuo/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/dong-shou-xue-shen-du-xue-xi-shu-ju-cao-zuo/</id>
+    <published>2019-10-02T14:15:33.000Z</published>
+    <updated>2019-10-02T14:16:50.059Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;作为深度学习的基础，我们常会频繁对数据进行操作，以下则是介绍如何对内存中的数据进行常用操作的相关代码；&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="http://cunyu1943.github.io/categories/AI/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://cunyu1943.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习之Softmax回归</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/shen-du-xue-xi-zhi-softmax-hui-gui/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/shen-du-xue-xi-zhi-softmax-hui-gui/</id>
+    <published>2019-10-02T14:13:13.000Z</published>
+    <updated>2019-10-02T14:15:06.165Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Softmax回归&quot;&gt;&lt;a href=&quot;#Softmax回归&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="http://cunyu1943.github.io/categories/AI/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://cunyu1943.github.io/tags/Deep-Learning/"/>
+    
+      <category term="Softmax" scheme="http://cunyu1943.github.io/tags/Softmax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动手学深度学习-多层感知机</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/dong-shou-xue-shen-du-xue-xi-duo-ceng-gan-zhi-ji/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/dong-shou-xue-shen-du-xue-xi-duo-ceng-gan-zhi-ji/</id>
+    <published>2019-10-02T14:10:10.000Z</published>
+    <updated>2019-10-02T14:12:45.701Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;多层感知机&quot;&gt;&lt;a href=&quot;#多层感知机&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="http://cunyu1943.github.io/categories/AI/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://cunyu1943.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>Word Embedding</title>
@@ -387,170 +553,6 @@
         
         
           &lt;h1 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python简介及开发环境搭建</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/python-jian-jie-ji-kai-fa-huan-jing-da-jian/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/python-jian-jie-ji-kai-fa-huan-jing-da-jian/</id>
-    <published>2019-10-02T12:59:36.000Z</published>
-    <updated>2019-10-02T13:01:26.307Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Python简介&quot;&gt;&lt;a href=&quot;#Python简介&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python绘制七段数码管显示当前时间</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/python-hui-zhi-qi-duan-shu-ma-guan-xian-shi-dang-qian-shi-jian/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/python-hui-zhi-qi-duan-shu-ma-guan-xian-shi-dang-qian-shi-jian/</id>
-    <published>2019-10-02T12:56:12.000Z</published>
-    <updated>2019-10-02T12:58:24.572Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;利用Python中的turtle图形库绘制七段数码管，显示当前时间&quot;&gt;&lt;a href=&quot;#利用Python中的turtle图形库绘制七段数码管，显示当前时间&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python中turtle库的使用</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/python-zhong-turtle-ku-de-shi-yong/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/python-zhong-turtle-ku-de-shi-yong/</id>
-    <published>2019-10-02T12:52:45.000Z</published>
-    <updated>2019-10-02T12:56:36.342Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Turtle图形库&quot;&gt;&lt;a href=&quot;#Turtle图形库&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
-    
-      <category term="turtle" scheme="http://cunyu1943.github.io/tags/turtle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python之设计模式、异常处理、模块与包、文件操作及编码</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/python-zhi-she-ji-mo-shi-yi-chang-chu-li-mo-kuai-yu-bao-wen-jian-cao-zuo-ji-bian-ma/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/python-zhi-she-ji-mo-shi-yi-chang-chu-li-mo-kuai-yu-bao-wen-jian-cao-zuo-ji-bian-ma/</id>
-    <published>2019-10-02T12:50:22.000Z</published>
-    <updated>2019-10-02T12:52:22.989Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;单例设计模式&quot;&gt;&lt;a href=&quot;#单例设计模式&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python中的面向对象</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/python-zhong-de-mian-xiang-dui-xiang/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/python-zhong-de-mian-xiang-dui-xiang/</id>
-    <published>2019-10-02T12:48:22.000Z</published>
-    <updated>2019-10-02T12:49:20.334Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;面向对象特点&quot;&gt;&lt;a href=&quot;#面向对象特点&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python爬虫前奏</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/python-pa-chong-qian-zou/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/python-pa-chong-qian-zou/</id>
-    <published>2019-10-02T12:41:51.000Z</published>
-    <updated>2019-10-02T12:44:01.332Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;网络爬虫&quot;&gt;&lt;a href=&quot;#网络爬虫&quot; class=&quot;headerlink&quot;
         
       
     
