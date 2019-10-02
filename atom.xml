@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-10-02T09:19:07.744Z</updated>
+  <updated>2019-10-02T09:35:20.036Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -15,6 +15,120 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自然语言处理NLP(四)</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-si/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-si/</id>
+    <published>2019-10-02T09:31:29.000Z</published>
+    <updated>2019-10-02T09:35:20.036Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;实体识别&quot;&gt;&lt;a href=&quot;#实体识别&quot; class=&quot;headerlink&quot; title=&quot;实体识别&quot;&gt;&lt;/a&gt;实体识别&lt;/h1&gt;&lt;h5 id=&quot;实体识别–分块类型：&quot;&gt;&lt;a href=&quot;#实体识别–分块类型：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自然语言处理NLP(三)</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-san/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-san/</id>
+    <published>2019-10-02T09:28:12.000Z</published>
+    <updated>2019-10-02T09:31:01.095Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;样本点中的关键度量指标：距离&quot;&gt;&lt;a href=&quot;#样本点中的关键度量指标：距离&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自然语言处理NLP(二)</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-er/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-er/</id>
+    <published>2019-10-02T09:24:12.000Z</published>
+    <updated>2019-10-02T09:27:41.954Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;词性标注&quot;&gt;&lt;a href=&quot;#词性标注&quot; class=&quot;headerlink&quot; title=&quot;词性标注&quot;&gt;&lt;/a&gt;词性标注&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;标注语料库；&lt;ul&gt;
+&lt;li&gt;各词性标注及其含义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自然语言处理NLP(一)</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-yi/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-yi/</id>
+    <published>2019-10-02T09:20:18.000Z</published>
+    <updated>2019-10-02T09:22:57.977Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;NLP&quot;&gt;&lt;a href=&quot;#NLP&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>NLP基础之分词、向量化、词性标注</title>
@@ -471,117 +585,6 @@
     
     
       <category term="C/C++" scheme="http://cunyu1943.github.io/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言知识点总结</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/c-yu-yan-zhi-shi-dian-zong-jie/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/c-yu-yan-zhi-shi-dian-zong-jie/</id>
-    <published>2019-10-02T07:48:39.000Z</published>
-    <updated>2019-10-02T08:03:28.812Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Debug和Release版本比较&quot;&gt;&lt;a href=&quot;#Debug和Release版本比较&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="C/C++" scheme="http://cunyu1943.github.io/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java知识点总结-3</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/java-zhi-shi-dian-zong-jie-3/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/java-zhi-shi-dian-zong-jie-3/</id>
-    <published>2019-10-02T07:35:29.000Z</published>
-    <updated>2019-10-02T07:42:49.148Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;抽象类&quot;&gt;&lt;a href=&quot;#抽象类&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Java" scheme="http://cunyu1943.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java知识点总结-2</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/java-zhi-shi-dian-zong-jie-2/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/java-zhi-shi-dian-zong-jie-2/</id>
-    <published>2019-10-02T07:19:07.000Z</published>
-    <updated>2019-10-02T07:42:25.973Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;h4 id=&quot;一维数组&quot;&gt;&lt;a href=&quot;#一维数组&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Java" scheme="http://cunyu1943.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java知识点总结-1</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/java-zhi-shi-dian-zong-jie-1/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/java-zhi-shi-dian-zong-jie-1/</id>
-    <published>2019-10-02T07:11:58.000Z</published>
-    <updated>2019-10-02T07:37:04.362Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;JVM(Java Virtual Machine)：源文件-&amp;gt;编译器-&amp;gt;字节码文件-&amp;gt;解释器-&amp;gt;程序；&lt;/li&gt;
-&lt;li&gt;JDK:Java Development Kit，Java开发工具包；&lt;/li&gt;
-&lt;li&gt;JRE:Java
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Java" scheme="http://cunyu1943.github.io/tags/Java/"/>
     
   </entry>
   
