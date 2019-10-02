@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-10-02T08:52:03.505Z</updated>
+  <updated>2019-10-02T09:19:07.744Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -15,6 +15,89 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NLP基础之分词、向量化、词性标注</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/nlp-ji-chu-zhi-fen-ci-xiang-liang-hua-ci-xing-biao-zhu/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/nlp-ji-chu-zhi-fen-ci-xiang-liang-hua-ci-xing-biao-zhu/</id>
+    <published>2019-10-02T09:13:19.000Z</published>
+    <updated>2019-10-02T09:19:07.744Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;分词&quot;&gt;&lt;a href=&quot;#分词&quot; class=&quot;headerlink&quot; title=&quot;分词&quot;&gt;&lt;/a&gt;分词&lt;/h1&gt;&lt;h3 id=&quot;基于HMM（隐马尔可夫模型）的分词方法&quot;&gt;&lt;a href=&quot;#基于HMM（隐马尔可夫模型）的分词方法&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NLP之NLTK相关知识</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/nlp-zhi-nltk-xiang-guan-zhi-shi/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/nlp-zhi-nltk-xiang-guan-zhi-shi/</id>
+    <published>2019-10-02T09:08:05.000Z</published>
+    <updated>2019-10-02T09:12:28.936Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;什么是NLTK&quot;&gt;&lt;a href=&quot;#什么是NLTK&quot; class=&quot;headerlink&quot; title=&quot;什么是NLTK&quot;&gt;&lt;/a&gt;什么是NLTK&lt;/h2&gt;&lt;p&gt;&lt;code&gt;NLTK&lt;/code&gt;，全称&lt;code&gt;Natural Language
+        
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
+    
+    
+      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
+    
+      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript笔记</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/javascript-bi-ji/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/javascript-bi-ji/</id>
+    <published>2019-10-02T09:04:11.000Z</published>
+    <updated>2019-10-02T09:06:14.204Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript&quot;&gt;&lt;a href=&quot;#JavaScript&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="javaScript" scheme="http://cunyu1943.github.io/tags/javaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>牛客网-Linux刷题知识点总结</title>
@@ -73,9 +156,9 @@
       <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="nowcoder" scheme="http://cunyu1943.github.io/tags/nowcoder/"/>
-    
       <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+      <category term="nowcoder" scheme="http://cunyu1943.github.io/tags/nowcoder/"/>
     
   </entry>
   
@@ -342,7 +425,7 @@
     <link href="http://cunyu1943.github.io/2019/10/02/linux-zhi-shi-dian-zong-jie/"/>
     <id>http://cunyu1943.github.io/2019/10/02/linux-zhi-shi-dian-zong-jie/</id>
     <published>2019-10-02T07:55:37.000Z</published>
-    <updated>2019-10-02T08:52:07.415Z</updated>
+    <updated>2019-10-02T09:06:26.428Z</updated>
     
     <summary type="html">
     
@@ -499,95 +582,6 @@
     
     
       <category term="Java" scheme="http://cunyu1943.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java设计模式</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/java-she-ji-mo-shi/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/java-she-ji-mo-shi/</id>
-    <published>2019-10-02T07:07:20.000Z</published>
-    <updated>2019-10-02T07:36:55.474Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;设计模式基础&quot;&gt;&lt;a href=&quot;#设计模式基础&quot; class=&quot;headerlink&quot; title=&quot;设计模式基础&quot;&gt;&lt;/a&gt;设计模式基础&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;设计模式主要基于的面向对象设计的原则：&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Java" scheme="http://cunyu1943.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java中的四大变量解析</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/java-zhong-de-si-da-bian-liang-jie-xi/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/java-zhong-de-si-da-bian-liang-jie-xi/</id>
-    <published>2019-10-02T05:44:23.000Z</published>
-    <updated>2019-10-02T07:37:34.480Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;导读&quot;&gt;&lt;a href=&quot;#导读&quot; class=&quot;headerlink&quot; title=&quot;导读&quot;&gt;&lt;/a&gt;导读&lt;/h2&gt;&lt;p&gt;学习Java的过程中，一开始很容易被这些各种变量绕晕，这篇博客主要介绍了这几种变量之间的关系和区别。&lt;/p&gt;
-&lt;h2 id=&quot;例程&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Java" scheme="http://cunyu1943.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用IDE代码开头模板</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/chang-yong-ide-dai-ma-kai-tou-mo-ban/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/chang-yong-ide-dai-ma-kai-tou-mo-ban/</id>
-    <published>2019-10-02T05:41:09.000Z</published>
-    <updated>2019-10-02T05:43:30.009Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Pycharm&quot;&gt;&lt;a href=&quot;#Pycharm&quot; class=&quot;headerlink&quot; title=&quot;Pycharm&quot;&gt;&lt;/a&gt;Pycharm&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-    
-      <category term="计算机知识" scheme="http://cunyu1943.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="Pycharm" scheme="http://cunyu1943.github.io/tags/Pycharm/"/>
-    
-      <category term="IntelliJ IDEA" scheme="http://cunyu1943.github.io/tags/IntelliJ-IDEA/"/>
-    
-      <category term="Visual Studio" scheme="http://cunyu1943.github.io/tags/Visual-Studio/"/>
-    
-      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
     
   </entry>
   
