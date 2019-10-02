@@ -4,13 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Github使用中遇到的问题集锦, 村雨的博客">
-    <meta name="description" content="问题对于我们国内用户，有时候浏览器在进入github网站时，会出现无法加载或加载很慢的问题，针对这一问题，很是头疼，为解决这一问题，在网上搜索到的解决方法如下；
-解决方案
-修改hosts文件，在hosts文件中加入以下内容：
+    <meta name="keywords" content="Linux知识点总结, 村雨的博客">
+    <meta name="description" content="操作系统
+定义：操作系统是一个特殊软件，它作为接口供程序员开发使用；
 
+作用：
+  1、直接操作硬件；
+  2、把操作硬件的代码封装成系统调用，供其他程序员通过系统调用间接操作硬件；
 
-# Git">
+分类：
+  1、桌面：Windows、macOs、Li">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +24,7 @@
 
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
 
-    <title>Github使用中遇到的问题集锦 | 村雨的博客</title>
+    <title>Linux知识点总结 | 村雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -294,13 +297,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Github使用中遇到的问题集锦
+                        Linux知识点总结
                     </div>
                 </div>
             </div>
@@ -411,8 +414,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/github/" target="_blank">
-                                <span class="chip bg-color">github</span>
+                            <a href="/tags/Linux/" target="_blank">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -423,8 +426,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                tools
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                系统
                             </a>
                         
                     </div>
@@ -435,21 +438,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-30
+                    2019-10-02
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        459
+                        1.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        4 分
                     </div>
                     
                 
@@ -465,65 +468,194 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>对于我们国内用户，有时候浏览器在进入github网站时，会出现无法加载或加载很慢的问题，针对这一问题，很是头疼，为解决这一问题，在网上搜索到的解决方法如下；</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
-<li>修改hosts文件，在hosts文件中加入以下内容：</li>
-</ul>
-<pre><code>
-# GitHub Start
-# 针对无法加载或加载慢的问题
-192.30.253.112 github.com
-192.30.253.119 gist.github.com
-151.101.100.133 assets-cdn.github.com
-151.101.100.133 raw.githubusercontent.com
-151.101.100.133 gist.githubusercontent.com
-151.101.100.133 cloud.githubusercontent.com
-151.101.100.133 camo.githubusercontent.com
-151.101.100.133 avatars0.githubusercontent.com
-151.101.100.133 avatars1.githubusercontent.com
-151.101.100.133 avatars2.githubusercontent.com
-151.101.100.133 avatars3.githubusercontent.com
-151.101.100.133 avatars4.githubusercontent.com
-151.101.100.133 avatars5.githubusercontent.com
-151.101.100.133 avatars6.githubusercontent.com
-151.101.100.133 avatars7.githubusercontent.com
-151.101.100.133 avatars8.githubusercontent.com
-# 下载慢问题
-219.76.4.4 github-cloud.s3.amazonaws.com
-# GitHub End</code></pre><ul>
-<li><p>hosts文件所在目录</p>
-<ul>
-<li>Windows：<code>C:\Windows\System32\drivers\etc\hosts</code></li>
-<li>Linux：<code>\etc\hosts</code></li>
-</ul>
+                <h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><ul>
+<li><p>定义：操作系统是一个特殊软件，它作为接口供程序员开发使用；</p>
 </li>
-<li><p>修改后生效方法</p>
-<ul>
-<li>关机重启</li>
-<li>断网重连</li>
-<li>Window：Win+R，输入cmd回车，然后在cmd窗口中输入：<code>ipconfig /flushdns</code></li>
-<li>Linux：Ctrl+Alt+T打开终端，输入<code>sudo rcnscd restart</code></li>
-</ul>
+<li><p>作用：</p>
+<p>  1、直接操作硬件；</p>
+<p>  2、把操作硬件的代码封装成系统调用，供其他程序员通过系统调用间接操作硬件；</p>
+</li>
+<li><p>分类：</p>
+<p>  1、桌面：Windows、macOs、Linux；</p>
+<p>  2、服务器：Linux、Windows Server；</p>
+<p>  3、嵌入式：Linux；</p>
+<p>  4、移动设备：iOS、Andro；</p>
 </li>
 </ul>
-<hr>
-<h1 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h1><p>使用git同时同步github以及gitee；</p>
-<h1 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h1><p>修改版本库<code>.git/config</code>文件，在文件中加入github和gitee中对应版本库的url，如下例，将我github和gitee中PTA版本库url同时加入，然后在使用git就可以同时同步两端；</p>
-<pre><code>[core]
-    repositoryformatversion = 0
-    filemode = false
-    bare = false
-    logallrefupdates = true
-    symlinks = false
-    ignorecase = true
-[remote "origin"]
-    url = https://gitee.com/cunyu1943/PTA.git
-    url = https://github.com/cunyu1943/PTA.git
-    fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-    remote = origin
-    merge = refs/heads/master
-</code></pre><script>
+<h3 id="Linux内核及发行版"><a href="#Linux内核及发行版" class="headerlink" title="Linux内核及发行版"></a>Linux内核及发行版</h3><ul>
+<li><p>内核： 系统核心，运行程序和管理硬件设别的核心程序，提供一个设备和应用程序间的抽象层；</p>
+</li>
+<li><p>内核版本：</p>
+<p>  1、稳定版：工业级强度，可广泛应用与部署，新版本的发布只是修复旧版本的一些bug或者加入新的驱动程序；</p>
+<p>  2、开发版：用于实验各种解决方案，因此更新很快；</p>
+</li>
+<li><p>发行版本：包括桌面环境、办公套件、媒体播放器、数据库等；</p>
+</li>
+</ul>
+<h3 id="单用户与多用户操作系统"><a href="#单用户与多用户操作系统" class="headerlink" title="单用户与多用户操作系统"></a>单用户与多用户操作系统</h3><ul>
+<li>单用户：一台计算机在同一时间内只能由一个用户使用，一个用户独享系统硬件和软件资源；</li>
+<li>多用户：一台计算机能被多个用户同时使用，用户之间共享系统硬件和软件资源；</li>
+</ul>
+<h3 id="Linux中查阅命令帮助信息"><a href="#Linux中查阅命令帮助信息" class="headerlink" title="Linux中查阅命令帮助信息"></a>Linux中查阅命令帮助信息</h3><ul>
+<li><code>command --hlep</code>：显示命令帮助信息；</li>
+<li><code>man command</code>：查阅命令使用手册；</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">操作键</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">空格</td>
+<td align="center">显示下一屏</td>
+</tr>
+<tr>
+<td align="center">回车</td>
+<td align="center">一次滚动一行</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">回滚一屏</td>
+</tr>
+<tr>
+<td align="center">f</td>
+<td align="center">前滚一屏</td>
+</tr>
+<tr>
+<td align="center">/keyword</td>
+<td align="center">搜索关键词</td>
+</tr>
+<tr>
+<td align="center">q</td>
+<td align="center">退出</td>
+</tr>
+</tbody></table>
+<ul>
+<li>通配符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">通配符</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*</td>
+<td align="center">代表任意个字符</td>
+</tr>
+<tr>
+<td align="center">？</td>
+<td align="center">代表任一个字符</td>
+</tr>
+<tr>
+<td align="center">[]</td>
+<td align="center">表示可以匹配字符组中任意一个</td>
+</tr>
+<tr>
+<td align="center">[mn]</td>
+<td align="center">匹配m、n中任意一个</td>
+</tr>
+<tr>
+<td align="center">[a-z]</td>
+<td align="center">匹配从a-z范围内任意一个字符</td>
+</tr>
+</tbody></table>
+<ul>
+<li>重定向：<code>&gt;</code>、<code>&gt;&gt;</code><ul>
+<li><code>&gt;</code>：表示输出，会覆盖原有内容；</li>
+<li><code>&gt;&gt;</code>：表示追加，将内容追加到原有文件末尾；</li>
+</ul>
+</li>
+</ul>
+<h3 id="网卡与IP"><a href="#网卡与IP" class="headerlink" title="网卡与IP"></a>网卡与IP</h3><ul>
+<li>网卡：负责网络通信的硬件设备；</li>
+<li>IP：设置在网卡上的地址信息；</li>
+</ul>
+<h3 id="ssh与scp"><a href="#ssh与scp" class="headerlink" title="ssh与scp"></a>ssh与scp</h3><ul>
+<li>ssh</li>
+</ul>
+<p>传输时对数据进行加密，同时防止DNS欺骗和IP欺骗，安全可靠性高；另外，传输的数据是经过压缩的，这样可以加快传输速度；</p>
+<ul>
+<li>常见端口号</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">服务</th>
+<th align="center">端口号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">SSH</td>
+<td align="center">22</td>
+</tr>
+<tr>
+<td align="center">Web</td>
+<td align="center">80</td>
+</tr>
+<tr>
+<td align="center">HTTPS</td>
+<td align="center">443</td>
+</tr>
+<tr>
+<td align="center">FTP</td>
+<td align="center">21</td>
+</tr>
+</tbody></table>
+<ul>
+<li>scp</li>
+</ul>
+<p>在Linux下用来进行远程拷贝文件；</p>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
+<li><code>tree</code>：显示目录的树结构；</li>
+<li><code>groupadd</code>：添加组；</li>
+<li><code>groupdel</code>：删除组； </li>
+<li><code>useradd -m -g groupName newUser</code>：添加新用户，<code>-m</code> 自动创建用户家目录，<code>-g</code>指定用户所属组；</li>
+<li><code>paddwd userName</code>：设置用户密码；</li>
+<li><code>userdel -r userName</code>：删除用户，<code>-r</code>自动删除用户家目录；</li>
+<li><code>etc/passwd</code>文件存放用户信息，存放信息如下：<ul>
+<li>1、用户名；</li>
+<li>2、密码（x表示加密的密码）；</li>
+<li>3、UID，用户标识；</li>
+<li>4、GID，组标识；</li>
+<li>5、用户全名或本地账号；</li>
+<li>6、家目录；</li>
+<li>7、登录时所使用的<code>shell</code>；</li>
+</ul>
+</li>
+<li><code>usermod</code>：设置用户的主组/附加组和登陆shell；<ul>
+<li>主组：常在创建新用户时指定，<code>在etc/passwd</code>的第4列<code>GID</code>对应的组；</li>
+<li>附加组：在<code>etc/group</code>中最后一列表示该组的用户列表，用于指定用户的附加权限；</li>
+<li><strong>注意</strong>：<code>useradd</code>添加的用户默认是没有使用<code>sudo</code>权限的，需要使用<code>usermod -G sudo userName</code>命令将其添加到<code>sudo</code>附加组中；</li>
+</ul>
+</li>
+<li><code>bin</code>与<code>sbin</code><ul>
+<li><code>bin</code>：二进制执行文件目录，用于具体应用，存放后期安装的一些软件；</li>
+<li><code>sbin</code>：系统管理员专用二进制代码存放目录，用于系统管理，存放<code>root</code>用户的一些管理程序；</li>
+</ul>
+</li>
+<li><code>df</code>：<code>disk free</code>显示磁盘剩余空间；</li>
+<li><code>du</code>：<code>disk usage</code>显示目录下文件大小；</li>
+<li><code>ps aux</code>：查看所有用户的所有进程的详细信息；<ul>
+<li><code>a</code>：显示终端所有进程，包括其他用户进程；</li>
+<li><code>u</code>：显示进程当前详细状态；</li>
+<li><code>x</code>：显示无控制终端的进程；</li>
+</ul>
+</li>
+<li><code>top</code>：动态显示运行中的进程且排序；</li>
+<li><code>find [路径] -name “要搜索的文件”</code>：查找指定目录及其子目录下的文件；</li>
+<li>软链接：<code>ln -s 源文件 链接文件</code>，类似快捷方式，当删除源文件之后，链接文件也不能访问；</li>
+<li>硬连接：<code>ln 源文件 链接文件</code>，相当于<code>copy</code>一份，源文件删除之后，链接文件仍然能够访问；</li>
+<li><strong>注意</strong>：<strong>文件名</strong>和<strong>文件的数据</strong>分开存储；</li>
+<li>打包：<code>tar -cvf 打包名.tar 打包源文件</code>；</li>
+<li>解包：<code>tar -xvf 打包名.tar</code>；</li>
+<li>压缩：<code>tar -zcvf 压缩文件.tar.gz 压缩源文件</code>、<code>tar -jcvf 压缩文件.tar.bz2 压缩源文件</code>；</li>
+<li>解压缩：<code>tar -zxvf 压缩文件.tar.gz</code>、<code>tar -jxvf 压缩文件.tar.bz2</code>，<code>-C</code>用于指定解压缩目录，解压缩目录必须存在；</li>
+</ul>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -699,9 +831,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Github使用中遇到的问题集锦》
+                    《Linux知识点总结》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/linux-zhi-shi-dian-zong-jie/" property="cc:attributionName"
                rel="cc:attributionURL">
                 村雨
             </a> 采用
@@ -742,7 +874,7 @@
         repo: 'cunyu1943.github.io',
         owner: 'cunyu1943',
         admin: "cunyu1943",
-        id: '2019-09-30T00-38-30',
+        id: '2019-10-02T15-55-37',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -763,84 +895,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/09/30/git-shi-yong-xue-xi-bi-ji/">
+                <a href="/2019/10/02/linux-zhi-shi-dian-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Git使用学习笔记">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Linux知识点总结">
                         
-                        <span class="card-title">Git使用学习笔记</span>
+                        <span class="card-title">Linux知识点总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            总结自己在学习git使用时，所需要注意的一些常用命令及小细节。
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                    tools
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/git/" target="_blank">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/09/30/github-shi-yong-zhong-yu-dao-de-wen-ti-ji-jin/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Github使用中遇到的问题集锦">
-                        
-                        <span class="card-title">Github使用中遇到的问题集锦</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            对GitHub使用过程中所遇到的加载慢，加载不出来以及下载速度慢等问题提出解决方法。
+                            对Linux学习中的知识点进行总结归纳，仅供复习回顾参考
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/tools/" class="post-category" target="_blank">
-                                    tools
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                    系统
                                 </a>
                             
                             
@@ -851,8 +935,57 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/github/" target="_blank">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/10/02/c-zhi-shi-dian-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C++知识点总结">
+                        
+                        <span class="card-title">C++知识点总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            对C++中的知识点进行总结
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程语言/" class="post-category" target="_blank">
+                                    编程语言
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-C/" target="_blank">
+                        <span class="chip bg-color">C/C++</span>
                     </a>
                     
                 </div>
