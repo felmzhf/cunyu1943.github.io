@@ -4,11 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java知识点总结-1, 村雨的博客">
+    <meta name="keywords" content="牛客网-C/C++专项训练知识点总结, 村雨的博客">
     <meta name="description" content="
-JVM(Java Virtual Machine)：源文件-&amp;gt;编译器-&amp;gt;字节码文件-&amp;gt;解释器-&amp;gt;程序；
-JDK:Java Development Kit，Java开发工具包；
-JRE:Java Runtime En">
+C与C++结构体的区别：
+C中结构体无函数，但C++的结构体可以有函数；
+C++的结构体可以被类取代，因为类相对于结构体具有封装性等优势；
+
+
+C++中结构体与类的区别：结构体中的成员访问权限不声明时默认是公开的，但是类确实私有的；
+ve">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +23,7 @@ JRE:Java Runtime En">
 
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
 
-    <title>Java知识点总结-1 | 村雨的博客</title>
+    <title>牛客网-C/C++专项训练知识点总结 | 村雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -292,13 +296,13 @@ JRE:Java Runtime En">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java知识点总结-1
+                        牛客网-C/C++专项训练知识点总结
                     </div>
                 </div>
             </div>
@@ -409,8 +413,12 @@ JRE:Java Runtime En">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/" target="_blank">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/C-C/" target="_blank">
+                                <span class="chip bg-color">C/C++</span>
+                            </a>
+                        
+                            <a href="/tags/nowcoder/" target="_blank">
+                                <span class="chip bg-color">nowcoder</span>
                             </a>
                         
                     </div>
@@ -440,14 +448,14 @@ JRE:Java Runtime En">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        571
+                        974
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -464,84 +472,52 @@ JRE:Java Runtime En">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ul>
-<li>JVM(Java Virtual Machine)：源文件-&gt;编译器-&gt;字节码文件-&gt;解释器-&gt;程序；</li>
-<li>JDK:Java Development Kit，Java开发工具包；</li>
-<li>JRE:Java Runtime Environment，Java运行时环境；</li>
-<li>Java是一种强类型语言，即它所存储的数据都是有类型的，且必须在编译时就确定其类型；<h3 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h3><ul>
-<li>基本数据类型;</li>
-<li>数值型：<ul>
-<li>整数类型：byte，short，int，long；</li>
-<li>浮点型：float，double；</li>
+<li>C与C++结构体的区别：<ul>
+<li>C中结构体无函数，但C++的结构体可以有函数；</li>
+<li>C++的结构体可以被类取代，因为类相对于结构体具有封装性等优势；</li>
 </ul>
 </li>
-<li>字符型：char；</li>
-<li>布尔型：boolean；</li>
+<li>C++中结构体与类的区别：结构体中的成员访问权限不声明时默认是公开的，但是类确实私有的；</li>
+<li>vector与list的区别：<ul>
+<li>vector拥有一段连续的内存空间，因此支持随机存取，如果需要高效的随即存取；</li>
+<li>list拥有一段不连续的内存空间，如果需要大量的插入和删除，应该使用list；</li>
+<li>vector<int>::iterator支持“+”、“+=”、“&lt;”等操作符；</int></li>
+<li>list<int>::iterator不支持[]运算符；</int></li>
 </ul>
 </li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-6af0245f95206ead?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<ul>
-<li>引用数据类型：<ul>
-<li>类；</li>
-<li>接口；</li>
-<li>数组；</li>
+<li>构造函数的执行先执行父类，再执行子类，析构函数则相反；</li>
+<li>指针是个变量，地址是个常量，指针的值是地址，指针能进行加减操作，但地址必须通过赋值操作后才可以；</li>
+<li>程序在编译前由预处理器对预处理命令进行处理；</li>
+<li><code>X&amp;(X-1)</code>：统计X的二进制中1的个数；<code>X|(X+1)</code>：统计X的二进制中0的个数；</li>
+<li><code>unordered_map</code>：所谓的哈希map，其底层数据结构为<code>hashtablle</code>；<code>priority_queue</code>：优先级队列，即二叉树，其底层数据结构是heap；</li>
+<li>const修饰类的成员函数形式为：<code>int Function() const</code>，该函数不能修改任何的成员变量，不能调用非const成员函数（非const成员函数可以修改成员变量）；</li>
+<li>C++的虚函数必须是类的一个成员，而不允许是类的友元；</li>
+<li>纯虚函数是在基类中没有实现的函数，虚函数在基类中实现了，但在派生类中可能有不同版本的函数；纯虚函数是在基类中等于0的函数；抽象类是含有纯虚函数的类；抽象类指针可以指向不同的派生类；</li>
+<li>静态局部变量特点：<ul>
+<li>变量在全局数据区分配内存；</li>
+<li>静态局部变量在程序执行到该对象的声明处是被首次初始化，以后的函数调用不用再进行初始化；</li>
+<li>静态局部变量一般在声明处初始化，若没有显式初始化，则会被程序自动初始化为0；</li>
+<li>是总驻留在全局数据区，知道程序运行结束。但其作用与为局部作用于，当定义它的函数或语句块结束时，其作用域随之结束；</li>
 </ul>
 </li>
+<li>访问vector中的数据的两种方法：<ul>
+<li><code>vector::at()</code>：做边界检查，若是访问越界，将抛出异常；</li>
+<li><code>vector::operator()</code>：为了与C语言进行兼容，不用做边界检查；</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-f9f6f2216f98a90c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="变量使用规则："><a href="#变量使用规则：" class="headerlink" title="变量使用规则："></a>变量使用规则：</h3><ul>
-<li>先声明再使用；</li>
-<li>可以在声明的同时进行初始化；</li>
-<li>变量中每次只能赋一个值，但可以修改多次；</li>
-<li>变量名使用中文无语法错误，但不建议使用；</li>
+</li>
+<li>指针指向字符串时，字符串是常量，存储在常量区，而指针存储在栈区，不能对其操作修改；</li>
+<li>Nagle算法的规则;<ul>
+<li>若包长度达到MSS，则允许发送；</li>
+<li>若包含有FIN，则允许发送；</li>
+<li>设置了TCP_NODELAY，则允许发送；</li>
+<li>未设置TCP_CORK选项时，若所有发出去的小数据包（包长度小于MSS）均被确认，则允许发送；</li>
+<li>上述条件均不满足，但发生了超时（一般为200ms），则立即发送；</li>
 </ul>
-<h3 id="自动类型转换需满足的条件"><a href="#自动类型转换需满足的条件" class="headerlink" title="自动类型转换需满足的条件"></a>自动类型转换需满足的条件</h3><ul>
-<li>目标类型能与源类型兼容；</li>
-<li>目标类型大于源类型；</li>
+</li>
+<li>C++中，多文件结果的程序中，通常把类的定义单独存放在头文件中；</li>
+<li>当基类构造函数需要外部传递参数才能够进行初始化时，派生类必须显式定义构造函数，为基类传递参数；基类如果不需要传递或可以不传递参数时，派生类可以不用显式定义构造函数；</li>
 </ul>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><ul>
-<li>设定后在程序运行过程中不允许改变；</li>
-<li>语法：final 数据类型 变量名 = 值；</li>
-</ul>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
-<li>单行注释：//</li>
-<li>多行注释：/*     */</li>
-<li>文档注释：/**   */</li>
-</ul>
-<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
-<li>算数运算符；</li>
-<li>赋值运算符；</li>
-<li>比较运算符；</li>
-<li>逻辑运算符；</li>
-<li>条件运算符：语法形式：布尔表达式？表达式1：表达式2；</li>
-</ul>
-<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><p><img src="http://upload-images.jianshu.io/upload_images/9747350-9ae019ea388631e1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="if…else"><a href="#if…else" class="headerlink" title="if…else"></a>if…else</h3><ul>
-<li>单重if</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-63faddddd4116d84?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<ul>
-<li>多重if</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-a6857f15c433a075?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<ul>
-<li>嵌套if</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-a337d8b762278c0c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="条件之switch"><a href="#条件之switch" class="headerlink" title="条件之switch"></a>条件之switch</h3><ul>
-<li>switch后小括号中表达式的值必须是整形或字符型；</li>
-<li>case后的值可以是常量数值，也可以是常量表达式；</li>
-<li>case匹配后，执行匹配快中程序代码，若未遇到break会继续执行下一个的case块的内容，直到遇到break或switch语句块结束；</li>
-</ul>
-<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ul>
-<li>while：特点是先判断，后执行；</li>
-<li>do…while：特点是先执行，后判断，保证循环至少被执行一次；</li>
-<li>for：语法：for(循环变量初始化；循环条件；循环变量变化){<br> 循环条件；<br>}</li>
-<li>do…while循环结束的条件是while后的条件成立；</li>
-<li>break：作用是终止整个循环体的执行；</li>
-<li>continue：跳过循环体中剩余的语句并进行下一次循环；</li>
-</ul>
-<script>
+<h3 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -717,9 +693,9 @@ JRE:Java Runtime En">
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Java知识点总结-1》
+                    《牛客网-C/C++专项训练知识点总结》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/java-zhi-shi-dian-zong-jie-1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/niu-ke-wang-c-c-zhuan-xiang-xun-lian-zhi-shi-dian-zong-jie/" property="cc:attributionName"
                rel="cc:attributionURL">
                 村雨
             </a> 采用
@@ -760,7 +736,7 @@ JRE:Java Runtime En">
         repo: 'cunyu1943.github.io',
         owner: 'cunyu1943',
         admin: "cunyu1943",
-        id: '2019-10-02T15-11-58',
+        id: '2019-10-02T16-45-33',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -785,19 +761,19 @@ JRE:Java Runtime En">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/02/java-zhi-shi-dian-zong-jie-2/">
+                <a href="/2019/10/02/niu-ke-wang-python-zhuan-xiang-xun-lian-zhi-shi-dian-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Java知识点总结-2">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="牛客网-Python专项训练知识点总结">
                         
-                        <span class="card-title">Java知识点总结-2</span>
+                        <span class="card-title">牛客网-Python专项训练知识点总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java知识点总结，介绍数组、方法、类与对象及其相关特点知识。
+                            对在牛客网刷题时，Python专项训练中遇到的知识点进行总结
                         
                     </div>
                     <div class="publish-info">
@@ -819,8 +795,12 @@ JRE:Java Runtime En">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/nowcoder/" target="_blank">
+                        <span class="chip bg-color">nowcoder</span>
+                    </a>
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -834,19 +814,19 @@ JRE:Java Runtime En">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/02/java-she-ji-mo-shi/">
+                <a href="/2019/10/02/ti-gao-gong-zuo-xiao-lu-de-shen-qi-tui-jian-zhi-windows/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Java设计模式">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="提高工作效率的神器推荐之Windows">
                         
-                        <span class="card-title">Java设计模式</span>
+                        <span class="card-title">提高工作效率的神器推荐之Windows</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍Java中的设计模式
+                            对Windows上的几个神器进行推荐，提高你的工作效率
                         
                     </div>
                     <div class="publish-info">
@@ -857,8 +837,8 @@ JRE:Java Runtime En">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程语言/" class="post-category" target="_blank">
-                                    编程语言
+                            <a href="/categories/tools/" class="post-category" target="_blank">
+                                    tools
                                 </a>
                             
                             
@@ -868,8 +848,8 @@ JRE:Java Runtime En">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Windows/" target="_blank">
+                        <span class="chip bg-color">Windows</span>
                     </a>
                     
                 </div>

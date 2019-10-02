@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-10-02T08:38:11.428Z</updated>
+  <updated>2019-10-02T08:52:03.505Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>提高工作效率的神器推荐之Windows</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/ti-gao-gong-zuo-xiao-lu-de-shen-qi-tui-jian-zhi-windows/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/ti-gao-gong-zuo-xiao-lu-de-shen-qi-tui-jian-zhi-windows/</id>
-    <published>2019-10-02T08:38:11.000Z</published>
-    <updated>2019-10-02T08:38:11.428Z</updated>
+    <title>牛客网-Linux刷题知识点总结</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/niu-ke-wang-linux-shua-ti-zhi-shi-dian-zong-jie/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/niu-ke-wang-linux-shua-ti-zhi-shi-dian-zong-jie/</id>
+    <published>2019-10-02T08:50:07.000Z</published>
+    <updated>2019-10-02T08:52:03.505Z</updated>
     
     <summary type="html">
     
@@ -29,17 +29,116 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;ul&gt;
+&lt;li&gt;Linux crontab中&lt;code&gt;* * * * */usr/local/run.sh&lt;/code&gt;中的5个&lt;code&gt;*&lt;/code&gt;号代表&lt;code&gt;分钟 小时 日 月 星期&lt;/code&gt;；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img
         
       
     
     </summary>
     
     
+      <category term="系统" scheme="http://cunyu1943.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="Linux" scheme="http://cunyu1943.github.io/tags/Linux/"/>
+    
+      <category term="nowcoder" scheme="http://cunyu1943.github.io/tags/nowcoder/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>牛客网-Python专项训练知识点总结</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/niu-ke-wang-python-zhuan-xiang-xun-lian-zhi-shi-dian-zong-jie/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/niu-ke-wang-python-zhuan-xiang-xun-lian-zhi-shi-dian-zong-jie/</id>
+    <published>2019-10-02T08:48:11.000Z</published>
+    <updated>2019-10-02T08:49:47.983Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;映射是一种关联式的容器类型，存储了对象与对象之间的映射关系，字典是Python中为一个映射类型，它存储了键值对的关联，是由键到键值的映射关系；&lt;/li&gt;
+&lt;li&gt;Python2中除法默认向下取整，如1 / 2=0，Python3中除法为正常除法，如1 / 2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="nowcoder" scheme="http://cunyu1943.github.io/tags/nowcoder/"/>
+    
+      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>牛客网-C/C++专项训练知识点总结</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/niu-ke-wang-c-c-zhuan-xiang-xun-lian-zhi-shi-dian-zong-jie/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/niu-ke-wang-c-c-zhuan-xiang-xun-lian-zhi-shi-dian-zong-jie/</id>
+    <published>2019-10-02T08:45:33.000Z</published>
+    <updated>2019-10-02T08:49:05.652Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;C与C++结构体的区别：&lt;ul&gt;
+&lt;li&gt;C中结构体无函数，但C++的结构体可以有函数；&lt;/li&gt;
+&lt;li&gt;C++的结构体可以被类取代，因为类相对于结构体具有封装性等优势；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;C++中结构体与类的区别：结构体中的成员访问权
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="C/C++" scheme="http://cunyu1943.github.io/tags/C-C/"/>
+    
+      <category term="nowcoder" scheme="http://cunyu1943.github.io/tags/nowcoder/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>提高工作效率的神器推荐之Windows</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/ti-gao-gong-zuo-xiao-lu-de-shen-qi-tui-jian-zhi-windows/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/ti-gao-gong-zuo-xiao-lu-de-shen-qi-tui-jian-zhi-windows/</id>
+    <published>2019-10-02T08:38:11.000Z</published>
+    <updated>2019-10-02T08:47:43.824Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Everything&quot;&gt;&lt;a href=&quot;#Everything&quot; class=&quot;headerlink&quot; title=&quot;Everything&quot;&gt;&lt;/a&gt;Everything&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;下载地址：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+      <category term="Windows" scheme="http://cunyu1943.github.io/tags/Windows/"/>
     
   </entry>
   
@@ -243,7 +342,7 @@
     <link href="http://cunyu1943.github.io/2019/10/02/linux-zhi-shi-dian-zong-jie/"/>
     <id>http://cunyu1943.github.io/2019/10/02/linux-zhi-shi-dian-zong-jie/</id>
     <published>2019-10-02T07:55:37.000Z</published>
-    <updated>2019-10-02T07:57:54.755Z</updated>
+    <updated>2019-10-02T08:52:07.415Z</updated>
     
     <summary type="html">
     
@@ -489,91 +588,6 @@
       <category term="Visual Studio" scheme="http://cunyu1943.github.io/tags/Visual-Studio/"/>
     
       <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XMind使用入门教程</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/xmind-shi-yong-ru-men-jiao-cheng/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/xmind-shi-yong-ru-men-jiao-cheng/</id>
-    <published>2019-10-02T05:35:53.000Z</published>
-    <updated>2019-10-02T05:40:14.452Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;什么是思维导图&quot;&gt;&lt;a href=&quot;#什么是思维导图&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
-    
-    
-      <category term="XMind" scheme="http://cunyu1943.github.io/tags/XMind/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql-8.0.13压缩版安装之Windows10篇</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/mysql-8-0-13-ya-suo-ban-an-zhuang-zhi-windows10-pian/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/mysql-8-0-13-ya-suo-ban-an-zhuang-zhi-windows10-pian/</id>
-    <published>2019-10-02T05:30:30.000Z</published>
-    <updated>2019-10-02T05:34:43.107Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;系统环境：Windows 10 1803版本；&lt;/li&gt;
-&lt;li&gt;压缩包：MySQL-8.0.13
-        
-      
-    
-    </summary>
-    
-    
-      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
-    
-    
-      <category term="MySQL" scheme="http://cunyu1943.github.io/tags/MySQL/"/>
-    
-      <category term="Windows" scheme="http://cunyu1943.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>不同情况下修改MySql的root用户密码对应的方法</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/bu-tong-qing-kuang-xia-xiu-gai-mysql-de-root-yong-hu-mi-ma-dui-ying-de-fang-fa/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/bu-tong-qing-kuang-xia-xiu-gai-mysql-de-root-yong-hu-mi-ma-dui-ying-de-fang-fa/</id>
-    <published>2019-10-02T05:23:44.000Z</published>
-    <updated>2019-10-02T05:29:11.212Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="计算机知识" scheme="http://cunyu1943.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="mysql" scheme="http://cunyu1943.github.io/tags/mysql/"/>
     
   </entry>
   

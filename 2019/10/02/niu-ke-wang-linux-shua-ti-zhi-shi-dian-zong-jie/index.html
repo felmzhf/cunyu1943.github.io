@@ -4,11 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java知识点总结-1, 村雨的博客">
+    <meta name="keywords" content="牛客网-Linux刷题知识点总结, 村雨的博客">
     <meta name="description" content="
-JVM(Java Virtual Machine)：源文件-&amp;gt;编译器-&amp;gt;字节码文件-&amp;gt;解释器-&amp;gt;程序；
-JDK:Java Development Kit，Java开发工具包；
-JRE:Java Runtime En">
+Linux crontab中* * * * */usr/local/run.sh中的5个*号代表分钟 小时 日 月 星期；
+
+
+
+hosts文件是一个存储计算机网络中各节点信息的计算机文件，这个文件负责将主机名称映射到相应的IP地址，ho">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@ JRE:Java Runtime En">
 
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
 
-    <title>Java知识点总结-1 | 村雨的博客</title>
+    <title>牛客网-Linux刷题知识点总结 | 村雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -292,13 +294,13 @@ JRE:Java Runtime En">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java知识点总结-1
+                        牛客网-Linux刷题知识点总结
                     </div>
                 </div>
             </div>
@@ -409,8 +411,12 @@ JRE:Java Runtime En">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/" target="_blank">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/Linux/" target="_blank">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/nowcoder/" target="_blank">
+                                <span class="chip bg-color">nowcoder</span>
                             </a>
                         
                     </div>
@@ -421,8 +427,8 @@ JRE:Java Runtime En">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/编程语言/" class="post-category" target="_blank">
-                                编程语言
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                系统
                             </a>
                         
                     </div>
@@ -440,14 +446,14 @@ JRE:Java Runtime En">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        571
+                        3.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        12 分
                     </div>
                     
                 
@@ -464,82 +470,197 @@ JRE:Java Runtime En">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ul>
-<li>JVM(Java Virtual Machine)：源文件-&gt;编译器-&gt;字节码文件-&gt;解释器-&gt;程序；</li>
-<li>JDK:Java Development Kit，Java开发工具包；</li>
-<li>JRE:Java Runtime Environment，Java运行时环境；</li>
-<li>Java是一种强类型语言，即它所存储的数据都是有类型的，且必须在编译时就确定其类型；<h3 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h3><ul>
-<li>基本数据类型;</li>
-<li>数值型：<ul>
-<li>整数类型：byte，short，int，long；</li>
-<li>浮点型：float，double；</li>
+<li>Linux crontab中<code>* * * * */usr/local/run.sh</code>中的5个<code>*</code>号代表<code>分钟 小时 日 月 星期</code>；</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/9747350-e64da5d7e10632e4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="crond用于执行周期性人物进程"></p>
+<ul>
+<li><strong>hosts文件</strong>是一个存储计算机网络中各节点信息的计算机文件，这个文件负责将主机名称映射到相应的IP地址，hosts文件通常用于补充或替换网络中DNS的功能，和DNS不同的是计算机中用户可以直接对hosts文件进行控制；</li>
+<li><strong>MMU</strong>是<strong>Memory Manage Unit</strong>的缩写，即是存储管理单元，其功能是和物理内存之间进行地址转换 在CPU和物理内存之间进行地址转换，将地址从逻辑空间映映射到物理地址空间；</li>
+<li>UFS在Linux2.6.*下默认不支持，需要重新编译内核获得支持；</li>
+<li>Linux中，当所需访问虚拟内存未被装载时，会发生<code>page fault</code>；</li>
+<li>硬链接和软链接<ul>
+<li>硬链接<br>只能引用同一文件系统中的文件，引用的是文件在文件系统中的物理索引（也称inode）。当移动或删除原始文件时，硬链接被破坏，因为它引用的是文件的物理数据而不是文件在文件结构中的位置。硬链接的文件不需要用户有访问原始文件的权限，也不会显示原始文件所在目录，有助于文件安全性。若删除的文件有相应硬链接，则文件依然会保留，知道所有对它的引用都被删除；</li>
+<li>软链接<br>其实就是新建立一个文件，这个文件就是专门用来执行别的文件的（相当一Windows中的快捷方式）。所产生的是一个新的文件，但这个文件的作用就是专门指向某个文件的，删除这个软链接文件，就相当于不需要这个链接，和原来存在的实体原文件没有任何关系，但删除原来的文件，则相应的软链接不可用；</li>
+<li>两者区别<br>硬链接不会建立inode，只是在文件原来的inode link count域再增加1，因此硬链接是不可跨文件系统的；而软链接会重建一个inode，其结构与其他的不一样，只是一个指明源文件的字符串信息。源文件一旦删除，软链接将毫无意义；软链接可以跨文件系统，硬链接不可以；软链接可以对一个不存在的文件名进行链接，硬链接不可以；软链接可以对目录进行连接，硬链接不可以；<code>ln</code>默认创建的是硬链接，使用<code>-s</code>可以创建软链接；</li>
 </ul>
 </li>
-<li>字符型：char；</li>
-<li>布尔型：boolean；</li>
+<li>swapon：启动交换文件的指令；mkswap：设置交换区，将磁盘分区或文件设为Linux的交换区；swapoff：关闭系统交换分区；</li>
+<li>dchp.conf中用于向某个客户主机分配固定IP地址的参数时<code>fixed-address</code>；</li>
+<li>vsftpd服务流量控制的参数：<ul>
+<li><code>anon_max_rate=0</code>：设置匿名登入者使用的最大传输速度，单位为B/s，0表示不限制速度，默认值为0；</li>
+<li><code>local_max_rate=0</code>：本地用户使用的最大传输速度，单位为B/s，0表示不限制速度，预设值为0；</li>
+</ul>
+</li>
+<li>进程相关操作命令：<ul>
+<li><code>ps</code>：列出系统中当前运行的那些进程；</li>
+<li><code>pg</code>：提供一次性的查看进程结果，所提供的查看结果不是动态连续的；</li>
+<li><code>jobs</code>：查看后台进程作业；</li>
+</ul>
+</li>
+<li>文件I/O中，要从一个文件读取数据，应用程序先要调用操作系统函数并传送文件名，并选一个到该文件的路径来打开文件。该函数取回一个顺序号，即文件句柄（file handle），该文件句柄对打开的文件是唯一的识别依据；</li>
+<li>Unix系统中，以下都可用于进程通信：<ul>
+<li>Socket；</li>
+<li>共享内存；</li>
+<li>命名管道；</li>
+<li>消息队列；</li>
+<li>信号量；</li>
+</ul>
+</li>
+<li>用于合并代码的git命令：<ul>
+<li><code>git pull --rebase</code>；</li>
+<li><code>git cherry-pick</code>；</li>
+<li><code>git merge</code>；</li>
+</ul>
+</li>
+<li>DVM指dalivk的虚拟机，每个Android应用程序都在它自己的进程中运行，都拥有一个独立的Dalivk虚拟机实例，而每个DVM都是在Linux中的一种进程，所以可以认为是同一个概念；</li>
+<li>Linux中用户磁盘配额配置文件<code>aquota.user</code>的默认访问权限是：<code>600</code>；</li>
+<li>函数库调用时语言或应用程序的一部分，而系统调用是操作系统的一部分（C.pwrite属于系统调用）；</li>
+<li>Unix系统中，目录结构采用带链接树形目录结构，又称为非循环图目录结构，指访问一个文件（或目录）可以有多条路径；</li>
+<li>命令行操作符：<ul>
+<li><code>&gt;</code> ：输出重定向到一个文件或设备，覆盖原有文件；</li>
+<li><code>&gt;&gt;</code>：输出重定向到一个文件或设备，追加原有文件；</li>
+<li><code>&gt;!</code>：输出重定向到一个文件或设备，强制覆盖原有文件；</li>
+<li><code>&lt;</code>：输出重定向到一个程序；</li>
+</ul>
+</li>
+<li>文件描述符：<ul>
+<li>0：标准输入，stdin；</li>
+<li>1：标准输出，stdout；</li>
+<li>2：标准报错输出，stderr；</li>
+</ul>
+</li>
+<li>查看计算机CPU、SWAP分区信息、硬盘信息等内容；<ul>
+<li><code>cat /proc/cpuinfo</code>：查看一台Linux机器的CPU信息；</li>
+<li><code>du</code>：查看该目录占用文件系统数据块的情况；</li>
+<li><code>cat /proc/swaps</code>：查看SWAP分区信息；</li>
+<li><code>df -lh</code>：查看硬盘信息；</li>
+</ul>
+</li>
+<li>子进程继承父进程后所共有属性：<ul>
+<li>用户号UIDs和用户组号GIDs；</li>
+<li>环境Environment；</li>
+<li>堆栈；</li>
+<li>共享内存；</li>
+<li>打开文件的描述符；</li>
+<li>执行时关闭（close-on-exec）标志；</li>
+<li>信号（signal）控制设定；</li>
+<li>进程组号；</li>
+<li>当前工作目录；</li>
+<li>根目录；</li>
+<li>文件方式创建屏蔽字；</li>
+<li>资源限制；</li>
+<li>控制终端；</li>
+</ul>
+</li>
+<li>子进程独有：<ul>
+<li>进程号PID；</li>
+<li>不同的父进程号；</li>
+<li>自己的文件描述符和目录流的拷贝；</li>
+<li>子进程不继承父进程的进程正文（text），数据和其他锁定内存（memory locks）；</li>
+<li>不继承异步输入和输出；</li>
+</ul>
+</li>
+<li>bash环境中，挂起当前进程的方式：<code>ctrl+z</code>，中断当前进程：<code>ctrl+c</code>；</li>
+<li>用于进程间通讯（IPC）的四种不同技术：<ul>
+<li>消息传递（管道，FIFO，Posix和System V消息队列）；</li>
+<li>同步（互斥锁，条件变量，读写锁，文件和记录锁，Posix和System V信号灯）；</li>
+<li>共享内存区（匿名共享内存区，有名Posix共享内存区，有名System V共享内存区）；</li>
+<li>过程调用（Solaris门，Sun RPC）；</li>
+</ul>
+</li>
+<li>修改账号名称使用格式：<code>usermod -l new_name old_name</code>；</li>
+<li>关于Linux系统的负载，可以通过TOP命令查看，也可以通过uptime查看；</li>
+<li>动态链接库和静态链接库的优缺点：<ul>
+<li>静态链接库的优点：<ul>
+<li>代码转载速度快，执行速度略比动态链接库快；</li>
+<li>只需保证在开发者的计算机中有正确的LIB文件，在以二进制形式发布程序时不需要考虑在用户计算机上LIB文件是否存在及版本问题，可避免DLL地狱等问题；</li>
+</ul>
+</li>
+<li>动态链接库的优点：<ul>
+<li>更加节省内存并减少页面交换；</li>
+<li>DLL文件与exe文件独立，只需输出接口不变（即名称、参数、返回值类型和调用约定不变），更换DLL文件不会对exe文件造成任何影响，因而极大提高可维护性和可扩展性；</li>
+<li>不同编程语言编写的程序只要按照函数调用约定就可以调用同一个DLL函数；</li>
+<li>适用于大规模的软件开发，使开发过程独立、耦合度小，便于不同开发者和开发组织之间进行开发和测试；</li>
+</ul>
+</li>
+<li>不足之处：<ul>
+<li>使用静态链接生成的可执行文件体积较大，包含相同的公共代码，造成浪费；</li>
+<li>使用动态链接库的应用程序不是自完备的，依赖的DLL模块也要存在，若使用载入时动态链接，程序启动时发现DLL不存在，系统将终止程序并给出错误信息，而使用运行时动态链接，系统不会终止，但由于DLL中的导出函数不可用，程序会加载失败；速度比静态链接慢。当某个模块更新后，若新模块与旧模块不兼容，则需要该模块才能运行的程序将崩溃；</li>
 </ul>
 </li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-6af0245f95206ead?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<ul>
-<li>引用数据类型：<ul>
-<li>类；</li>
-<li>接口；</li>
-<li>数组；</li>
+</li>
+<li>Linux中要找出某一文件属于哪个RPM软件包的命令：<code>rpm -qf filename</code>；</li>
+<li>Linux系统进程类型：<ul>
+<li>交互进程：由一个shell启动的进程，交互进程既可以在前台，也可以在后台运行；</li>
+<li>批处理进程：与终端无联系，是一个进程序列；</li>
+<li>监控进程（守护进程）：Linux系统启动时启动的进程，在后台运行；</li>
 </ul>
 </li>
+<li>fatab是用于存放文件系统的静态信息的文件，位于/etc/目录下；</li>
+<li>Linux系统中的内存段：<ul>
+<li>BSS（Block Started by Symbol）：常指用于存放程序中未初始化的全局变量和静态变量的一块内存区域，特点是：可读写，在程序执行前BSS段会自动清0；</li>
+<li>Data Segment：数据段，用来存放程序中已经初始化的全局变量的一块内存区域，属于静态内存分配；</li>
+<li>Code/Text segment：指用于存放程序执行代码的一块内存区域，区域大小在程序运行前就已经确定，且内存区域常属于只读，某些架构也允许代码段为可写（即允许修改程序），代码段中也可能包含一些只读的常数变量如字符串常量等；</li>
+<li>Heap：堆，用于存放进程运行中被动态分配的内存段，大小不固定，可动态扩张或缩减。当进程调用malloc等函数分配内存是，新分配的内存就被动态添加到堆上（堆被扩张）；当利用free等函数释放内存是，被释放的内存从堆中被剔除，堆被缩减；</li>
+<li>Stack：栈，又称堆栈，是用户存放程序临时创建的局部变量。除此之外，函数被调用时的参数也会被压入发起调用的进程栈中，到调用结束后，函数返回值也会存放回栈中。由于栈是先进后出的，所以特别适合用于保存恢复调用现场。从而可以把堆栈看做一个寄存、交换临时数据的内存区； </li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-f9f6f2216f98a90c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="变量使用规则："><a href="#变量使用规则：" class="headerlink" title="变量使用规则："></a>变量使用规则：</h3><ul>
-<li>先声明再使用；</li>
-<li>可以在声明的同时进行初始化；</li>
-<li>变量中每次只能赋一个值，但可以修改多次；</li>
-<li>变量名使用中文无语法错误，但不建议使用；</li>
+</li>
+<li>Linux主机完全安装RHEL5后，系统将默认安装DHCP服务器软件包，DHCP服务器的配置文件为<code>/etc/dhcpd.conf</code>，其配置文件默认是不存在的，需要手工创建；</li>
+<li>死锁发生的必要条件：<ul>
+<li>互斥条件；</li>
+<li>请求和保持；</li>
+<li>不可剥夺；</li>
+<li>循环等待；</li>
 </ul>
-<h3 id="自动类型转换需满足的条件"><a href="#自动类型转换需满足的条件" class="headerlink" title="自动类型转换需满足的条件"></a>自动类型转换需满足的条件</h3><ul>
-<li>目标类型能与源类型兼容；</li>
-<li>目标类型大于源类型；</li>
+</li>
+<li>进程的三种基本状态：<ul>
+<li><strong>运行态（Running）</strong>：占有CPU，并在CPU上运行；</li>
+<li><strong>就绪态（Ready）</strong>：已具备运行条件，但由于没有空闲CPU，而暂时不能运行；</li>
+<li><strong>等待态（Waiting/Blocked）</strong>：因等待某一时间而暂时不能运行，如等待读盘结果；</li>
 </ul>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><ul>
-<li>设定后在程序运行过程中不允许改变；</li>
-<li>语法：final 数据类型 变量名 = 值；</li>
+</li>
+<li><code>fork()</code>创建的新进程被称为子进程（child process），<code>fork()</code>给子进程返回一个0值，而给父进程返回一个非0值。继承的子进程从父进程继承了整个进程的地址空间，包括：上下文、进程堆栈、内存信息、打开的文件描述符、信号控制设置、进程优先级、进程组号、当前工作目录、根目录、资源限制、控制终端等；</li>
+<li>对Linux下mysqldump备份命令及参数：<code>mysqldump -h ip -u -p DBNAME &gt;bak.sql</code>:<ul>
+<li><code>-h</code>：目标IP地址；</li>
+<li><code>-u</code>：跟上用户名；</li>
+<li><code>-p</code>：用户秘密；</li>
+<li><code>DBNAME</code>：数据库名；</li>
 </ul>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
-<li>单行注释：//</li>
-<li>多行注释：/*     */</li>
-<li>文档注释：/**   */</li>
+</li>
+<li>UNIX系统组成：<ul>
+<li>内核；</li>
+<li>shell；</li>
+<li>文件系统；</li>
+<li>应用程序；</li>
 </ul>
-<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
-<li>算数运算符；</li>
-<li>赋值运算符；</li>
-<li>比较运算符；</li>
-<li>逻辑运算符；</li>
-<li>条件运算符：语法形式：布尔表达式？表达式1：表达式2；</li>
+</li>
+<li><code>makefike</code>文件博爱存了编译器和连接器的参数选项，还表述了所有源文件间的关系（源文件需要的特定的包含文件，可执行文件要求包含的目标文件模块及库等），创建程序首先读取makefile文件，然后再激活编译器、汇编器、资源编译器和连接器以便产生最后的输出，最后输出并生成的文件为可执行文件。makefile中主要包含以下5个内容：<ul>
+<li>显示规则；</li>
+<li>隐晦规则；</li>
+<li>变量的定义；</li>
+<li>文件指示；</li>
+<li>注释；</li>
 </ul>
-<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><p><img src="http://upload-images.jianshu.io/upload_images/9747350-9ae019ea388631e1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="if…else"><a href="#if…else" class="headerlink" title="if…else"></a>if…else</h3><ul>
-<li>单重if</li>
+</li>
+<li>常见网络操作系统：<ul>
+<li>Unix；</li>
+<li>Linux；</li>
+<li>Windows NT；</li>
+<li>Netware 4.11；</li>
+<li>Lan Manger 4.0；</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-63faddddd4116d84?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<ul>
-<li>多重if</li>
+</li>
+<li>卸载设备的三种方式，通过设备名、挂载点或者设备名和挂载点，如<code>umount /dev/hdc、 umount /mnt/cdrom、umount /mnt/cdrom /dev/hdc</code>；</li>
+<li>内存屏障主要分为以下几种，其中前三种均隐含了优化屏障的功能：<ul>
+<li>读屏障：用于保证读操作有序；</li>
+<li>写屏障：用于限制写操作；</li>
+<li>通用屏障：对读写操作都有作用；</li>
+<li>优化屏障：用于限制编译器的指令重拍，不区分读写；</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-a6857f15c433a075?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<ul>
-<li>嵌套if</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-a337d8b762278c0c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="条件之switch"><a href="#条件之switch" class="headerlink" title="条件之switch"></a>条件之switch</h3><ul>
-<li>switch后小括号中表达式的值必须是整形或字符型；</li>
-<li>case后的值可以是常量数值，也可以是常量表达式；</li>
-<li>case匹配后，执行匹配快中程序代码，若未遇到break会继续执行下一个的case块的内容，直到遇到break或switch语句块结束；</li>
-</ul>
-<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ul>
-<li>while：特点是先判断，后执行；</li>
-<li>do…while：特点是先执行，后判断，保证循环至少被执行一次；</li>
-<li>for：语法：for(循环变量初始化；循环条件；循环变量变化){<br> 循环条件；<br>}</li>
-<li>do…while循环结束的条件是while后的条件成立；</li>
-<li>break：作用是终止整个循环体的执行；</li>
-<li>continue：跳过循环体中剩余的语句并进行下一次循环；</li>
+</li>
+<li><code>dhcpd.conf</code>中用于某个客户主机分配固定IP地址的参数：<code>fixed-address</code>；</li>
+<li><code>setuid</code>的用途是允许普通用户完成一些任务，而完成这些任务需要特权和通常被禁止的访问权限；</li>
 </ul>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -717,9 +838,9 @@ JRE:Java Runtime En">
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Java知识点总结-1》
+                    《牛客网-Linux刷题知识点总结》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/java-zhi-shi-dian-zong-jie-1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/niu-ke-wang-linux-shua-ti-zhi-shi-dian-zong-jie/" property="cc:attributionName"
                rel="cc:attributionURL">
                 村雨
             </a> 采用
@@ -760,7 +881,7 @@ JRE:Java Runtime En">
         repo: 'cunyu1943.github.io',
         owner: 'cunyu1943',
         admin: "cunyu1943",
-        id: '2019-10-02T15-11-58',
+        id: '2019-10-02T16-50-07',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -781,46 +902,52 @@ JRE:Java Runtime En">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/10/02/java-zhi-shi-dian-zong-jie-2/">
+                <a href="/2019/10/02/niu-ke-wang-linux-shua-ti-zhi-shi-dian-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Java知识点总结-2">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="牛客网-Linux刷题知识点总结">
                         
-                        <span class="card-title">Java知识点总结-2</span>
+                        <span class="card-title">牛客网-Linux刷题知识点总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java知识点总结，介绍数组、方法、类与对象及其相关特点知识。
+                            对在牛客网刷题时，Linux专项训练中遇到的知识点进行总结
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程语言/" class="post-category" target="_blank">
-                                    编程语言
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                    系统
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/nowcoder/" target="_blank">
+                        <span class="chip bg-color">nowcoder</span>
                     </a>
                     
                 </div>
@@ -834,19 +961,19 @@ JRE:Java Runtime En">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/02/java-she-ji-mo-shi/">
+                <a href="/2019/10/02/niu-ke-wang-python-zhuan-xiang-xun-lian-zhi-shi-dian-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Java设计模式">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="牛客网-Python专项训练知识点总结">
                         
-                        <span class="card-title">Java设计模式</span>
+                        <span class="card-title">牛客网-Python专项训练知识点总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍Java中的设计模式
+                            对在牛客网刷题时，Python专项训练中遇到的知识点进行总结
                         
                     </div>
                     <div class="publish-info">
@@ -868,8 +995,12 @@ JRE:Java Runtime En">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/nowcoder/" target="_blank">
+                        <span class="chip bg-color">nowcoder</span>
+                    </a>
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>

@@ -4,11 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java知识点总结-1, 村雨的博客">
+    <meta name="keywords" content="牛客网-Python专项训练知识点总结, 村雨的博客">
     <meta name="description" content="
-JVM(Java Virtual Machine)：源文件-&amp;gt;编译器-&amp;gt;字节码文件-&amp;gt;解释器-&amp;gt;程序；
-JDK:Java Development Kit，Java开发工具包；
-JRE:Java Runtime En">
+映射是一种关联式的容器类型，存储了对象与对象之间的映射关系，字典是Python中为一个映射类型，它存储了键值对的关联，是由键到键值的映射关系；
+Python2中除法默认向下取整，如1 / 2=0，Python3中除法为正常除法，如1 / ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@ JRE:Java Runtime En">
 
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
 
-    <title>Java知识点总结-1 | 村雨的博客</title>
+    <title>牛客网-Python专项训练知识点总结 | 村雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -292,13 +291,13 @@ JRE:Java Runtime En">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java知识点总结-1
+                        牛客网-Python专项训练知识点总结
                     </div>
                 </div>
             </div>
@@ -409,8 +408,12 @@ JRE:Java Runtime En">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/" target="_blank">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/nowcoder/" target="_blank">
+                                <span class="chip bg-color">nowcoder</span>
+                            </a>
+                        
+                            <a href="/tags/Python/" target="_blank">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -440,7 +443,7 @@ JRE:Java Runtime En">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        571
+                        645
                     </div>
                     
 
@@ -464,83 +467,48 @@ JRE:Java Runtime En">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ul>
-<li>JVM(Java Virtual Machine)：源文件-&gt;编译器-&gt;字节码文件-&gt;解释器-&gt;程序；</li>
-<li>JDK:Java Development Kit，Java开发工具包；</li>
-<li>JRE:Java Runtime Environment，Java运行时环境；</li>
-<li>Java是一种强类型语言，即它所存储的数据都是有类型的，且必须在编译时就确定其类型；<h3 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h3><ul>
-<li>基本数据类型;</li>
-<li>数值型：<ul>
-<li>整数类型：byte，short，int，long；</li>
-<li>浮点型：float，double；</li>
+<li>映射是一种关联式的容器类型，存储了对象与对象之间的映射关系，字典是Python中为一个映射类型，它存储了键值对的关联，是由键到键值的映射关系；</li>
+<li>Python2中除法默认向下取整，如1 / 2=0，Python3中除法为正常除法，如1 / 2 = 0.5，1 // 2 = 0；</li>
+<li><code>__new__</code>和<code>__init__</code>：<ul>
+<li><code>__new__</code>是一个静态方法，<code>__init__</code>是一个实例方法；</li>
+<li><code>__new__</code>返回一个创建的实例，<code>__init__</code>什么都不返回；</li>
+<li>只有在<code>__new__</code>返回一个cls的实例时，后面的<code>__init__</code>才能被调用；</li>
+<li>当创建一个新实例时调用<code>__new__</code>，初始化一个实例时用<code>__init__</code>；</li>
 </ul>
 </li>
-<li>字符型：char；</li>
-<li>布尔型：boolean；</li>
+<li>C语言中字符串使用<code>\0</code>作为结束符防止越界，但Python中字符串是一个固定长度的字符数组，不需要结束符；</li>
+<li>引用、深拷贝与浅拷贝：<ul>
+<li>引用时，父对象变则子对象也跟着变；</li>
+<li>浅拷贝，只会拷贝父对象，不会拷贝父对象中的子对象，所以如父对象中的子对象改变，则拷贝的对象也变，但父对象变，拷贝的对象也不会变；</li>
+<li>深拷贝，也叫完全拷贝，完全独立于原对象，原对象变，拷贝的对象也不变； </li>
 </ul>
 </li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-6af0245f95206ead?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<ul>
-<li>引用数据类型：<ul>
-<li>类；</li>
-<li>接口；</li>
-<li>数组；</li>
+<li>判断是否相等的几种条件：<ul>
+<li>is：指地址相同（字符串为不可变类型，所以指向地址相同）；</li>
+<li>==：指内容相同；</li>
+<li>===：指内容和格式相同；</li>
 </ul>
 </li>
+<li>语言动态与非动态、类型强弱分类：</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-f9f6f2216f98a90c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="变量使用规则："><a href="#变量使用规则：" class="headerlink" title="变量使用规则："></a>变量使用规则：</h3><ul>
-<li>先声明再使用；</li>
-<li>可以在声明的同时进行初始化；</li>
-<li>变量中每次只能赋一个值，但可以修改多次；</li>
-<li>变量名使用中文无语法错误，但不建议使用；</li>
-</ul>
-<h3 id="自动类型转换需满足的条件"><a href="#自动类型转换需满足的条件" class="headerlink" title="自动类型转换需满足的条件"></a>自动类型转换需满足的条件</h3><ul>
-<li>目标类型能与源类型兼容；</li>
-<li>目标类型大于源类型；</li>
-</ul>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><ul>
-<li>设定后在程序运行过程中不允许改变；</li>
-<li>语法：final 数据类型 变量名 = 值；</li>
-</ul>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
-<li>单行注释：//</li>
-<li>多行注释：/*     */</li>
-<li>文档注释：/**   */</li>
-</ul>
-<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
-<li>算数运算符；</li>
-<li>赋值运算符；</li>
-<li>比较运算符；</li>
-<li>逻辑运算符；</li>
-<li>条件运算符：语法形式：布尔表达式？表达式1：表达式2；</li>
-</ul>
-<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><p><img src="http://upload-images.jianshu.io/upload_images/9747350-9ae019ea388631e1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="if…else"><a href="#if…else" class="headerlink" title="if…else"></a>if…else</h3><ul>
-<li>单重if</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-63faddddd4116d84?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9747350-da9e87bfd019f376?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <ul>
-<li>多重if</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-a6857f15c433a075?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<li><p>线程由操作系统控制，协程由程序自身控制；</p>
+</li>
+<li><p>四种命名方式：</p>
 <ul>
-<li>嵌套if</li>
+<li><code>object</code>：# 公用方式；</li>
+<li><code>_object</code>：# 半保护，被看做“protect”，只有类对象和子类对象自己能够访问这些变量，在模块或类外不可以使用，不能用<code>from module import *</code>导入，实际名字为<code>_classname_methodname</code>；</li>
+<li><code>__object</code>：# 全私有，全保护，私有成员“private”，只有类对象自己能访问，连子类对象也不能访问，不能用<code>from module import *</code>导入，可用<code>_classname_methodname</code>来代替以区别和其他类相同的命名；</li>
+<li><code>__object__</code>：# 内建方法，用户一般无需这样定义；</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-a337d8b762278c0c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="条件之switch"><a href="#条件之switch" class="headerlink" title="条件之switch"></a>条件之switch</h3><ul>
-<li>switch后小括号中表达式的值必须是整形或字符型；</li>
-<li>case后的值可以是常量数值，也可以是常量表达式；</li>
-<li>case匹配后，执行匹配快中程序代码，若未遇到break会继续执行下一个的case块的内容，直到遇到break或switch语句块结束；</li>
+</li>
+<li><p>对于一个Python命令运行脚本，<code>sys.argv</code>是传递给Python脚本的命令行参数[字符串列表]，<code>argv[0]</code>为脚本自身路径，其他均为命令行参数；</p>
+</li>
+<li><p>Python逻辑运算符</p>
+</li>
 </ul>
-<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ul>
-<li>while：特点是先判断，后执行；</li>
-<li>do…while：特点是先执行，后判断，保证循环至少被执行一次；</li>
-<li>for：语法：for(循环变量初始化；循环条件；循环变量变化){<br> 循环条件；<br>}</li>
-<li>do…while循环结束的条件是while后的条件成立；</li>
-<li>break：作用是终止整个循环体的执行；</li>
-<li>continue：跳过循环体中剩余的语句并进行下一次循环；</li>
-</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/9747350-97f723832a87b24b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -717,9 +685,9 @@ JRE:Java Runtime En">
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Java知识点总结-1》
+                    《牛客网-Python专项训练知识点总结》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/java-zhi-shi-dian-zong-jie-1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/niu-ke-wang-python-zhuan-xiang-xun-lian-zhi-shi-dian-zong-jie/" property="cc:attributionName"
                rel="cc:attributionURL">
                 村雨
             </a> 采用
@@ -760,7 +728,7 @@ JRE:Java Runtime En">
         repo: 'cunyu1943.github.io',
         owner: 'cunyu1943',
         admin: "cunyu1943",
-        id: '2019-10-02T15-11-58',
+        id: '2019-10-02T16-48-11',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -785,19 +753,19 @@ JRE:Java Runtime En">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/02/java-zhi-shi-dian-zong-jie-2/">
+                <a href="/2019/10/02/niu-ke-wang-linux-shua-ti-zhi-shi-dian-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Java知识点总结-2">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="牛客网-Linux刷题知识点总结">
                         
-                        <span class="card-title">Java知识点总结-2</span>
+                        <span class="card-title">牛客网-Linux刷题知识点总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java知识点总结，介绍数组、方法、类与对象及其相关特点知识。
+                            对在牛客网刷题时，Linux专项训练中遇到的知识点进行总结
                         
                     </div>
                     <div class="publish-info">
@@ -808,8 +776,8 @@ JRE:Java Runtime En">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程语言/" class="post-category" target="_blank">
-                                    编程语言
+                            <a href="/categories/系统/" class="post-category" target="_blank">
+                                    系统
                                 </a>
                             
                             
@@ -819,8 +787,12 @@ JRE:Java Runtime En">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/nowcoder/" target="_blank">
+                        <span class="chip bg-color">nowcoder</span>
                     </a>
                     
                 </div>
@@ -834,19 +806,19 @@ JRE:Java Runtime En">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/02/java-she-ji-mo-shi/">
+                <a href="/2019/10/02/niu-ke-wang-c-c-zhuan-xiang-xun-lian-zhi-shi-dian-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Java设计模式">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="牛客网-C/C++专项训练知识点总结">
                         
-                        <span class="card-title">Java设计模式</span>
+                        <span class="card-title">牛客网-C/C++专项训练知识点总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍Java中的设计模式
+                            对在牛客网刷题时，C/C++专项训练中遇到的知识点进行总结
                         
                     </div>
                     <div class="publish-info">
@@ -868,8 +840,12 @@ JRE:Java Runtime En">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/C-C/" target="_blank">
+                        <span class="chip bg-color">C/C++</span>
+                    </a>
+                    
+                    <a href="/tags/nowcoder/" target="_blank">
+                        <span class="chip bg-color">nowcoder</span>
                     </a>
                     
                 </div>
