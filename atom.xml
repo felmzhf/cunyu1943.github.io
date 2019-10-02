@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-10-02T05:26:47.755Z</updated>
+  <updated>2019-10-02T05:46:56.360Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -17,11 +17,130 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java中的四大变量解析</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/java-zhong-de-si-da-bian-liang-jie-xi/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/java-zhong-de-si-da-bian-liang-jie-xi/</id>
+    <published>2019-10-02T05:44:23.000Z</published>
+    <updated>2019-10-02T05:46:56.360Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;导读&quot;&gt;&lt;a href=&quot;#导读&quot; class=&quot;headerlink&quot; title=&quot;导读&quot;&gt;&lt;/a&gt;导读&lt;/h2&gt;&lt;p&gt;学习Java的过程中，一开始很容易被这些各种变量绕晕，这篇博客主要介绍了这几种变量之间的关系和区别。&lt;/p&gt;
+&lt;h2 id=&quot;例程&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://cunyu1943.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://cunyu1943.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用IDE代码开头模板</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/chang-yong-ide-dai-ma-kai-tou-mo-ban/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/chang-yong-ide-dai-ma-kai-tou-mo-ban/</id>
+    <published>2019-10-02T05:41:09.000Z</published>
+    <updated>2019-10-02T05:43:30.009Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Pycharm&quot;&gt;&lt;a href=&quot;#Pycharm&quot; class=&quot;headerlink&quot; title=&quot;Pycharm&quot;&gt;&lt;/a&gt;Pycharm&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机知识" scheme="http://cunyu1943.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+    
+      <category term="Pycharm" scheme="http://cunyu1943.github.io/tags/Pycharm/"/>
+    
+      <category term="IntelliJ IDEA" scheme="http://cunyu1943.github.io/tags/IntelliJ-IDEA/"/>
+    
+      <category term="Visual Studio" scheme="http://cunyu1943.github.io/tags/Visual-Studio/"/>
+    
+      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>XMind使用入门教程</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/xmind-shi-yong-ru-men-jiao-cheng/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/xmind-shi-yong-ru-men-jiao-cheng/</id>
+    <published>2019-10-02T05:35:53.000Z</published>
+    <updated>2019-10-02T05:40:14.452Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;什么是思维导图&quot;&gt;&lt;a href=&quot;#什么是思维导图&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+      <category term="XMind" scheme="http://cunyu1943.github.io/tags/XMind/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql-8.0.13压缩版安装之Windows10篇</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/mysql-8-0-13-ya-suo-ban-an-zhuang-zhi-windows10-pian/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/mysql-8-0-13-ya-suo-ban-an-zhuang-zhi-windows10-pian/</id>
+    <published>2019-10-02T05:30:30.000Z</published>
+    <updated>2019-10-02T05:34:43.107Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;系统环境：Windows 10 1803版本；&lt;/li&gt;
+&lt;li&gt;压缩包：MySQL-8.0.13
+        
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
+    
+    
+      <category term="MySQL" scheme="http://cunyu1943.github.io/tags/MySQL/"/>
+    
+      <category term="Windows" scheme="http://cunyu1943.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
     <title>不同情况下修改MySql的root用户密码对应的方法</title>
     <link href="http://cunyu1943.github.io/2019/10/02/bu-tong-qing-kuang-xia-xiu-gai-mysql-de-root-yong-hu-mi-ma-dui-ying-de-fang-fa/"/>
     <id>http://cunyu1943.github.io/2019/10/02/bu-tong-qing-kuang-xia-xiu-gai-mysql-de-root-yong-hu-mi-ma-dui-ying-de-fang-fa/</id>
     <published>2019-10-02T05:23:44.000Z</published>
-    <updated>2019-10-02T05:26:47.755Z</updated>
+    <updated>2019-10-02T05:29:11.212Z</updated>
     
     <summary type="html">
     
@@ -121,6 +240,8 @@
       <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
     
     
+      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
+    
       <category term="Visual Studio Code" scheme="http://cunyu1943.github.io/tags/Visual-Studio-Code/"/>
     
       <category term="Sublime Text" scheme="http://cunyu1943.github.io/tags/Sublime-Text/"/>
@@ -128,8 +249,6 @@
       <category term="Notepad++" scheme="http://cunyu1943.github.io/tags/Notepad/"/>
     
       <category term="Atom" scheme="http://cunyu1943.github.io/tags/Atom/"/>
-    
-      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
     
       <category term="UltraEdit" scheme="http://cunyu1943.github.io/tags/UltraEdit/"/>
     
