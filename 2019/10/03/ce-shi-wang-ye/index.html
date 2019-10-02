@@ -4,10 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="深度学习笔记, 村雨的博客">
-    <meta name="description" content="TensorFlow
-TensorFlow不仅是一个实现机器学习算法的接口，也是一种框架，也可用于线性回归、逻辑回归、随机森林等算法；
-TensorFlow使用数据流图来规划计算流程，每个运算操作作为一个节点node，节点之间的连接称为边，">
+    <meta name="keywords" content="村雨的博客">
+    <meta name="description" content="测试网页
+
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { r">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
 
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
 
-    <title>深度学习笔记 | 村雨的博客</title>
+    <title>村雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -291,13 +293,13 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        深度学习笔记
+                        
                     </div>
                 </div>
             </div>
@@ -406,25 +408,12 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Deep-Learning/" target="_blank">
-                                <span class="chip bg-color">Deep Learning</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/AI/" class="post-category" target="_blank">
-                                AI
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -432,21 +421,21 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-02
+                    2019-10-03
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.1k
+                        56
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        1 分
                     </div>
                     
                 
@@ -462,122 +451,7 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h1><ol>
-<li>TensorFlow不仅是一个实现机器学习算法的接口，也是一种框架，也可用于线性回归、逻辑回归、随机森林等算法；</li>
-<li>TensorFlow使用数据流图来规划计算流程，每个运算操作作为一个节点node，节点之间的连接称为边，边中流动的数据称为张量，故而得名TensorFlow，预算操作可以有自己的属性，但必须被预先设置，或者能在创建计算图时被推断出来；</li>
-<li>TensorFlow有一套为节点分配设备的策略，这是一个简单的贪婪策略，不能确保找到全局最优解，但可以快速找到一个不错的节点运算分配方案；</li>
-<li>故障出现的两种情况：一是信息从发送节点传输到接受节点失败时，而是周期性的worker心跳检测失败时；</li>
-<li>TensorFlow提供的加速神经网络训练的并行计算模式：<ul>
-<li>数据并行：通过将一个mini-batch的数据放在不同设备上计算没实现梯度计算的并行化，计算性能损耗非常小，同步的方式优点是没有梯度干扰，缺点是容错性差，异步的方式优点是有一定容错性，但因为梯度干扰，导致利用效率下降；</li>
-<li>模型并行：将计算图的不同部分放在不同设备上运算；</li>
-<li>流水线并行：将计算做成流水线，在一个设备上连续并行执行，提高设备利用率；</li>
-</ul>
-</li>
-</ol>
-<h1 id="卷积神经网络CNN"><a href="#卷积神经网络CNN" class="headerlink" title="卷积神经网络CNN"></a>卷积神经网络CNN</h1><ol>
-<li>CNN具有极强泛化性，最大的特点在于卷积的权值共享结构，能大幅较少神经网络的参数量，防止过拟合的同时降低了神经网络模型的复杂度；</li>
-<li>CNN每个卷基层中对数据的操作：<ul>
-<li>图像通过多个不同卷积核的滤波，加以偏置，提取出局部特征，每个卷积核映射出一个新的2D图像；</li>
-<li>将卷积核的滤波结果进行非线性的激活函数处理，常为ReLU函数；</li>
-<li>对激活结果进行池化操作(即降采样)，一般采用最大池化，保留最显著特征，提升模型的畸变容忍能力；</li>
-</ul>
-</li>
-<li>卷积核的大小即为卷积核拥有的参数多少；</li>
-<li>采用局部连接的方式，参数量得到了缩减；</li>
-<li>卷积的好处是不管图片尺寸如何，我们需要训练的权值数量只和卷积核大小、卷积核数量有关，可以用极少的参数量处理任意大小的图片，虽然训练的参数下降了，但隐含节点数量未下降，隐含节点数量只与卷积的步长相关；</li>
-<li>CNN要点：<ul>
-<li>局部连接：降低参数量，减轻过拟合，降低训练复杂度；</li>
-<li>权值共享：降低参数量，减轻过拟合，赋予对平移的容忍性；</li>
-<li>池化层中的降采样：降低输出参数量，赋予轻度形变的容忍性，调高模型的泛化能力；</li>
-</ul>
-</li>
-<li>LeNet5的特性：<ul>
-<li>每个卷基层包含三个部分：卷积、池化、非线性激活函数；</li>
-<li>使用卷积提取空间特性；</li>
-<li>降采样的平均池化层；</li>
-<li>双曲正切或S型激活函数；</li>
-<li>MLP(多层神经网络)作为最后的分类器；</li>
-<li>层与层之间的稀疏连接减少计算复杂度；</li>
-</ul>
-</li>
-<li>LeNet5有三个卷积层、一个全连接层和一个高斯连接层；<ul>
-<li>第一个卷积层6个卷积核，尺寸5<em>5，共(5</em>5+1)*6 = 156个参数</li>
-<li>第二个卷积层16个卷积核；</li>
-<li>第三个卷积层120个卷积核；</li>
-<li>全连接层84个隐含节点，激活函数Sigmoid；</li>
-</ul>
-</li>
-<li>VGGNet-16网络结构主要分为6部分，前5段为卷积网络，最后一段为全连接网络；<ul>
-<li>第一段：两个卷积层和一个最大池化层，卷积核大小3<em>3，卷积核数量64，步长1</em>1，第一个卷积层输入尺寸224<em>224</em>3，输出尺寸224<em>224</em>64，第二个输入输出尺寸均为224<em>224</em>64，池化层2<em>2，输出尺寸112</em>112*64；</li>
-<li>第二段：和第一段相似，输出通道数变为128，卷积网络输出尺寸56<em>56</em>128，池化层保持不变；</li>
-<li>第三段：三个卷积层和一个最大池化层，输出通道变为256，输出尺寸28<em>28</em>256；</li>
-<li>第四段：和第三段相似，输出通道变为512，通过最大池化将图片缩为14*14；</li>
-<li>第五段：和第四段相似，池化层尺寸2<em>2，步长为2</em>2，输出尺寸7<em>7</em>512；</li>
-<li>第六段：将第五段输出结果进行扁平化，连接一个隐含节点数为4096的全连接层，激活函数为ReLU；</li>
-</ul>
-</li>
-</ol>
-<h1 id="R-CNN"><a href="#R-CNN" class="headerlink" title="R-CNN"></a>R-CNN</h1><ol>
-<li>检测系统三个模块：<ul>
-<li>生成类别无关区域提案；</li>
-<li>从每个区域提取固定长度特征向量的大型CNN；</li>
-<li>一组特定类别的线性SVM；</li>
-</ul>
-</li>
-<li>需要训练数据的三个阶段：<ul>
-<li>CNN微调；</li>
-<li>检测器SVM训练；</li>
-<li>检测框回归训练；</li>
-</ul>
-</li>
-<li>引入CNN来分类目标候选框，有很高的目标检测精度，但有明显缺点：<ul>
-<li>训练过程是多级流水线；</li>
-<li>训练在时间和空间的开销上极大；</li>
-<li>目标检测速度很慢，因为为每个目标候选框进行CNN正向传递，不共享计算；</li>
-</ul>
-</li>
-</ol>
-<h1 id="Fast-R-CNN"><a href="#Fast-R-CNN" class="headerlink" title="Fast R-CNN"></a>Fast R-CNN</h1><ol>
-<li>训练VGG16网络比SPP-Net快3倍，测试速度快10倍，比R-CNN训练快9倍，测试时间快213倍，有13个卷积层和3个fc层；</li>
-<li>目标检测难点：<ul>
-<li>大量候选目标位置(提案)需要处理；</li>
-<li>候选框只提供粗略定位，必须对其精细化以实现精确定位；</li>
-</ul>
-</li>
-<li>优点：<ul>
-<li>比R-CNN和SPPnet有更高的目标检测精度mAP；</li>
-<li>训练是使用多任务损失的但阶段训练；</li>
-<li>训练可以更新所有网络层参数；</li>
-<li>不需要磁盘空间缓存特征；</li>
-</ul>
-</li>
-<li>网络架构流程：输入图像和多个感兴趣区域ROI，传送到全卷积网络，经池化到固定大小的特征图中，然后通过全连接层FC映射到特征向量，网络对每个ROI具有两个输出向量：Softmax概率和每类检测框回归偏移量；</li>
-</ol>
-<h1 id="Faster-R-CNN"><a href="#Faster-R-CNN" class="headerlink" title="Faster R-CNN"></a>Faster R-CNN</h1><ol>
-<li>Faste R-CNN实现了接近实时检测的速率，但忽略了生成区域提案框的时间，Faster R-CNN算法通过将RPN网络集成到目标检测网络中共享卷积层，缩减了生成区域提案框的时间，计算提案框的边界成本小；</li>
-<li>RPN是一种全卷积网络FCN，可以针对生成检测提案框的任务端到端训练；</li>
-<li>RPN中引入新“锚点”作为多尺度和纵横比的参考，避免了枚举多个尺度或纵横比得图像或卷积；</li>
-<li>为统一RPN和Fast R-CNN网络，提出一种训练方案：保持提案框固定，微调区域提案和微调目标检测之间交替进行；</li>
-<li>组成模块：<ul>
-<li>提出区域提案的CNN网络；</li>
-<li>使用区域提案的Fast R-CNN检测器；</li>
-</ul>
-</li>
-<li>RPN将一个任意大小的图像作为输入，输出矩形目标提案框的集合，每个框由一个objectness得分；</li>
-<li>为生成区域提案框，在最后一个共享的卷积层输出的卷积特征映射上滑动小网络，网络连接到输入卷积特征映射的n*n的空间窗口，每个滑动窗口映射到一个低维向量上，向量在输出给两个同级的全连接的层：检测框回归层reg和检测框分类层cls；</li>
-<li>多尺度预测方式：<ul>
-<li>基于图像/特征金字塔：以多尺度调整大小，为每个尺度计算特征图，有效却耗时；</li>
-<li>在特征图上使用多尺度的滑动窗口；</li>
-</ul>
-</li>
-<li>具有共享特征的网络的解决方案：<ul>
-<li>交替训练；</li>
-<li>近似联合训练；</li>
-<li>非近似联合训练；</li>
-</ul>
-</li>
-<li>cls检测框分类层得分是排名最高的提案框准确的原因；</li>
-</ol>
+                <h1 id="测试网页"><a href="#测试网页" class="headerlink" title="测试网页"></a>测试网页</h1><p><img src="https://i.loli.net/2019/10/03/ZXdLx3i4sNAj2ay.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -754,9 +628,9 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《深度学习笔记》
+                    《》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/shen-du-xue-xi-bi-ji/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/03/ce-shi-wang-ye/" property="cc:attributionName"
                rel="cc:attributionURL">
                 村雨
             </a> 采用
@@ -797,7 +671,7 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
         repo: 'cunyu1943.github.io',
         owner: 'cunyu1943',
         admin: "cunyu1943",
-        id: '2019-10-02T22-20-26',
+        id: '2019-10-03T01-01-19',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -818,9 +692,10 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/10/03/ce-shi-wang-ye/">
                     <div class="card-image">
@@ -842,9 +717,9 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -853,6 +728,7 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -863,19 +739,19 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/02/ji-qi-xue-xi-zhong-de-xue-xi-fang-fa/">
+                <a href="/2019/10/02/shen-du-xue-xi-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="机器学习中的学习方法">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="深度学习笔记">
                         
-                        <span class="card-title">机器学习中的学习方法</span>
+                        <span class="card-title">深度学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对机器学习中的学习方法进行总结
+                            深度学习笔记
                         
                     </div>
                     <div class="publish-info">
@@ -897,8 +773,8 @@ TensorFlow使用数据流图来规划计算流程，每个运算操作作为一�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Machine-Learning/" target="_blank">
-                        <span class="chip bg-color">Machine Learning</span>
+                    <a href="/tags/Deep-Learning/" target="_blank">
+                        <span class="chip bg-color">Deep Learning</span>
                     </a>
                     
                 </div>
