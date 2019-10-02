@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cunyu1943.github.io/"/>
-  <updated>2019-10-02T12:44:01.332Z</updated>
+  <updated>2019-10-02T13:08:54.075Z</updated>
   <id>http://cunyu1943.github.io/</id>
   
   <author>
@@ -15,6 +15,197 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python中的条件判断、循环以及循环的终止</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/python-zhong-de-tiao-jian-pan-duan-xun-huan-yi-ji-xun-huan-de-zhong-zhi/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/python-zhong-de-tiao-jian-pan-duan-xun-huan-yi-ji-xun-huan-de-zhong-zhi/</id>
+    <published>2019-10-02T13:07:05.000Z</published>
+    <updated>2019-10-02T13:08:54.075Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;条件判断&quot;&gt;&lt;a href=&quot;#条件判断&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中的数据类型、变量、字符编码、输入输出、注释</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/python-zhong-de-shu-ju-lei-xing-bian-liang-zi-fu-bian-ma-shu-ru-shu-chu-zhu-shi/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/python-zhong-de-shu-ju-lei-xing-bian-liang-zi-fu-bian-ma-shu-ru-shu-chu-zhu-shi/</id>
+    <published>2019-10-02T13:02:06.000Z</published>
+    <updated>2019-10-02T13:04:59.765Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python简介及开发环境搭建</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/python-jian-jie-ji-kai-fa-huan-jing-da-jian/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/python-jian-jie-ji-kai-fa-huan-jing-da-jian/</id>
+    <published>2019-10-02T12:59:36.000Z</published>
+    <updated>2019-10-02T13:01:26.307Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Python简介&quot;&gt;&lt;a href=&quot;#Python简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python绘制七段数码管显示当前时间</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/python-hui-zhi-qi-duan-shu-ma-guan-xian-shi-dang-qian-shi-jian/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/python-hui-zhi-qi-duan-shu-ma-guan-xian-shi-dang-qian-shi-jian/</id>
+    <published>2019-10-02T12:56:12.000Z</published>
+    <updated>2019-10-02T12:58:24.572Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;利用Python中的turtle图形库绘制七段数码管，显示当前时间&quot;&gt;&lt;a href=&quot;#利用Python中的turtle图形库绘制七段数码管，显示当前时间&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中turtle库的使用</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/python-zhong-turtle-ku-de-shi-yong/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/python-zhong-turtle-ku-de-shi-yong/</id>
+    <published>2019-10-02T12:52:45.000Z</published>
+    <updated>2019-10-02T12:56:36.342Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Turtle图形库&quot;&gt;&lt;a href=&quot;#Turtle图形库&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+      <category term="turtle" scheme="http://cunyu1943.github.io/tags/turtle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python之设计模式、异常处理、模块与包、文件操作及编码</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/python-zhi-she-ji-mo-shi-yi-chang-chu-li-mo-kuai-yu-bao-wen-jian-cao-zuo-ji-bian-ma/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/python-zhi-she-ji-mo-shi-yi-chang-chu-li-mo-kuai-yu-bao-wen-jian-cao-zuo-ji-bian-ma/</id>
+    <published>2019-10-02T12:50:22.000Z</published>
+    <updated>2019-10-02T12:52:22.989Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;单例设计模式&quot;&gt;&lt;a href=&quot;#单例设计模式&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中的面向对象</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/python-zhong-de-mian-xiang-dui-xiang/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/python-zhong-de-mian-xiang-dui-xiang/</id>
+    <published>2019-10-02T12:48:22.000Z</published>
+    <updated>2019-10-02T12:49:20.334Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;面向对象特点&quot;&gt;&lt;a href=&quot;#面向对象特点&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Python爬虫前奏</title>
@@ -192,7 +383,7 @@
     <link href="http://cunyu1943.github.io/2019/10/02/numpy-zhong-shu-zu-de-shi-yong/"/>
     <id>http://cunyu1943.github.io/2019/10/02/numpy-zhong-shu-zu-de-shi-yong/</id>
     <published>2019-10-02T12:23:59.000Z</published>
-    <updated>2019-10-02T12:31:44.084Z</updated>
+    <updated>2019-10-02T12:58:30.100Z</updated>
     
     <summary type="html">
     
@@ -384,205 +575,6 @@
     
     
       <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python实现jieba对文本分词并写入新的文本文件，然后提取出文本中的关键词</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/python-shi-xian-jieba-dui-wen-ben-fen-ci-bing-xie-ru-xin-de-wen-ben-wen-jian-ran-hou-ti-qu-chu-wen-ben-zhong-de-guan-jian-ci/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/python-shi-xian-jieba-dui-wen-ben-fen-ci-bing-xie-ru-xin-de-wen-ben-wen-jian-ran-hou-ti-qu-chu-wen-ben-zhong-de-guan-jian-ci/</id>
-    <published>2019-10-02T12:10:57.000Z</published>
-    <updated>2019-10-02T12:12:15.200Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Python实现jieba对文本分词并写入新的文本文件，然后提取出文本中的关键词&quot;&gt;&lt;a href=&quot;#Python实现jieba对文本分词并写入新的文本文件，然后提取出文本中的关键词&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://cunyu1943.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
-    
-      <category term="jieba" scheme="http://cunyu1943.github.io/tags/jieba/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自然语言处理NLP(四)</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-si/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-si/</id>
-    <published>2019-10-02T09:31:29.000Z</published>
-    <updated>2019-10-02T09:35:20.036Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;实体识别&quot;&gt;&lt;a href=&quot;#实体识别&quot; class=&quot;headerlink&quot; title=&quot;实体识别&quot;&gt;&lt;/a&gt;实体识别&lt;/h1&gt;&lt;h5 id=&quot;实体识别–分块类型：&quot;&gt;&lt;a href=&quot;#实体识别–分块类型：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自然语言处理NLP(三)</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-san/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-san/</id>
-    <published>2019-10-02T09:28:12.000Z</published>
-    <updated>2019-10-02T09:31:01.095Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;样本点中的关键度量指标：距离&quot;&gt;&lt;a href=&quot;#样本点中的关键度量指标：距离&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自然语言处理NLP(二)</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-er/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-er/</id>
-    <published>2019-10-02T09:24:12.000Z</published>
-    <updated>2019-10-02T09:27:41.954Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;词性标注&quot;&gt;&lt;a href=&quot;#词性标注&quot; class=&quot;headerlink&quot; title=&quot;词性标注&quot;&gt;&lt;/a&gt;词性标注&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;标注语料库；&lt;ul&gt;
-&lt;li&gt;各词性标注及其含义&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自然语言处理NLP(一)</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-yi/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/zi-ran-yu-yan-chu-li-nlp-yi/</id>
-    <published>2019-10-02T09:20:18.000Z</published>
-    <updated>2019-10-02T09:22:57.977Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;NLP&quot;&gt;&lt;a href=&quot;#NLP&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NLP基础之分词、向量化、词性标注</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/nlp-ji-chu-zhi-fen-ci-xiang-liang-hua-ci-xing-biao-zhu/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/nlp-ji-chu-zhi-fen-ci-xiang-liang-hua-ci-xing-biao-zhu/</id>
-    <published>2019-10-02T09:13:19.000Z</published>
-    <updated>2019-10-02T09:19:07.744Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;分词&quot;&gt;&lt;a href=&quot;#分词&quot; class=&quot;headerlink&quot; title=&quot;分词&quot;&gt;&lt;/a&gt;分词&lt;/h1&gt;&lt;h3 id=&quot;基于HMM（隐马尔可夫模型）的分词方法&quot;&gt;&lt;a href=&quot;#基于HMM（隐马尔可夫模型）的分词方法&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NLP之NLTK相关知识</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/nlp-zhi-nltk-xiang-guan-zhi-shi/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/nlp-zhi-nltk-xiang-guan-zhi-shi/</id>
-    <published>2019-10-02T09:08:05.000Z</published>
-    <updated>2019-10-02T09:12:28.936Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;什么是NLTK&quot;&gt;&lt;a href=&quot;#什么是NLTK&quot; class=&quot;headerlink&quot; title=&quot;什么是NLTK&quot;&gt;&lt;/a&gt;什么是NLTK&lt;/h2&gt;&lt;p&gt;&lt;code&gt;NLTK&lt;/code&gt;，全称&lt;code&gt;Natural Language
-        
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/categories/NLP/"/>
-    
-    
-      <category term="Python" scheme="http://cunyu1943.github.io/tags/Python/"/>
-    
-      <category term="NLP" scheme="http://cunyu1943.github.io/tags/NLP/"/>
     
   </entry>
   
