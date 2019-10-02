@@ -4,11 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Socket在Server和Client间通信的工作原理, 村雨的博客">
-    <meta name="description" content="Socket之间的连接过程主要可以概括为以下三步：
-服务器建立监听：客户端初始化Socket动态库后创建套接字，然后指定客户端Socket的地址，循环绑定Socket直至成功，然后开始建立监听，此时客户端处于等待状态，实时监控网络状态；
-
-">
+    <meta name="keywords" content="不同情况下修改MySql的root用户密码对应的方法, 村雨的博客">
+    <meta name="description" content="在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。未设置root密码之前：
+SET PASSWORD命令的方式：mysql -u root
+mysql&amp;g">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
 
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
 
-    <title>Socket在Server和Client间通信的工作原理 | 村雨的博客</title>
+    <title>不同情况下修改MySql的root用户密码对应的方法 | 村雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -292,13 +291,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Socket在Server和Client间通信的工作原理
+                        不同情况下修改MySql的root用户密码对应的方法
                     </div>
                 </div>
             </div>
@@ -409,8 +408,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Socket/" target="_blank">
-                                <span class="chip bg-color">Socket</span>
+                            <a href="/tags/mysql/" target="_blank">
+                                <span class="chip bg-color">mysql</span>
                             </a>
                         
                     </div>
@@ -433,14 +432,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-30
+                    2019-10-02
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        331
+                        259
                     </div>
                     
 
@@ -463,16 +462,21 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="Socket之间的连接过程主要可以概括为以下三步："><a href="#Socket之间的连接过程主要可以概括为以下三步：" class="headerlink" title="Socket之间的连接过程主要可以概括为以下三步："></a>Socket之间的连接过程主要可以概括为以下三步：</h4><ol>
-<li><p><strong>服务器建立监听</strong>：客户端初始化Socket动态库后创建套接字，然后指定客户端Socket的地址，循环绑定Socket直至成功，然后开始建立监听，此时客户端处于等待状态，实时监控网络状态；</p>
-</li>
-<li><p><strong>客户端提出请求</strong>：客户端的Socket向服务器端提出连接请求，此时客户端描述出它所要连接的Socket，指出要连接的Socket的相关属性，然后向服务器端Socket提出请求；</p>
-</li>
-<li><p><strong>连接确认并建立</strong>：当服务器端套接字监听到来自客户端的连接请求之后，立即响应请求并建立一个新进程，然后将服务器端的套接字的描述反馈给客户端，由客户端确认之后连接就建立成功，然后客户端和服务器两端之间可以相互通信，传输数据，此时服务器端的套接字继续等待监听来自其他客户端的请求；</p>
-</li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/9747350-928b4a5b6d4526d4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="server和client之间的基本工作原理流程图"></p>
-<script>
+                <h2 id="在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。"><a href="#在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。" class="headerlink" title="在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。"></a>在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。</h2><h3 id="未设置root密码之前："><a href="#未设置root密码之前：" class="headerlink" title="未设置root密码之前："></a>未设置root密码之前：</h3><ul>
+<li>SET PASSWORD命令的方式：<pre><code>mysql -u root
+mysql&gt;SET PASSWORD FOR 'root'@'localhost' = PASSWORD('你要设置的密码');</code></pre></li>
+<li>mysqladmin命令的方式：<pre><code>mysqladmin -u root password "你要设置的密码"</code></pre></li>
+<li>UPDATE的方式直接编辑user表：<pre><code>mysql -u root
+mysql&gt; USE mysql;
+mysql&gt; UPDATE user SET Password = PASSWORD('你要设置的密码') WHERE user = 'root';
+mysql&gt; FLUSH PRIVILEGES;</code></pre></li>
+</ul>
+<h3 id="设置过root之后："><a href="#设置过root之后：" class="headerlink" title="设置过root之后："></a>设置过root之后：</h3><ul>
+<li>mysqladmin的方式：<pre><code>mysqladmin -u root password oldpass "你要设置的新密码"</code></pre></li>
+</ul>
+<h3 id="设置过root密码，但是忘记了："><a href="#设置过root密码，但是忘记了：" class="headerlink" title="设置过root密码，但是忘记了："></a>设置过root密码，但是忘记了：</h3><pre><code>mysqld_safe --skip-grant-tables&amp;mysql -u root mysql
+mysql&gt; UPDATE user SET password = PASSWORD("你要设置的新密码") WHERE user = 'root' ;
+mysql&gt; FLUSH PRIVILEGES;</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -648,9 +652,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Socket在Server和Client间通信的工作原理》
+                    《不同情况下修改MySql的root用户密码对应的方法》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/30/socket-zai-server-he-client-jian-tong-xin-de-gong-zuo-yuan-li/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/02/bu-tong-qing-kuang-xia-xiu-gai-mysql-de-root-yong-hu-mi-ma-dui-ying-de-fang-fa/" property="cc:attributionName"
                rel="cc:attributionURL">
                 村雨
             </a> 采用
@@ -691,7 +695,7 @@
         repo: 'cunyu1943.github.io',
         owner: 'cunyu1943',
         admin: "cunyu1943",
-        id: '2019-09-30T09-19-22',
+        id: '2019-10-02T13-23-44',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -712,9 +716,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/10/02/bu-tong-qing-kuang-xia-xiu-gai-mysql-de-root-yong-hu-mi-ma-dui-ying-de-fang-fa/">
                     <div class="card-image">
@@ -732,9 +737,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -747,6 +752,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -765,19 +771,19 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/30/c-yu-yan-zhong-de-nei-cun-guan-li-han-shu/">
+                <a href="/2019/09/30/socket-zai-server-he-client-jian-tong-xin-de-gong-zuo-yuan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="C语言中的内存管理函数">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Socket在Server和Client间通信的工作原理">
                         
-                        <span class="card-title">C语言中的内存管理函数</span>
+                        <span class="card-title">Socket在Server和Client间通信的工作原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对C语言中的四大内存管理函数进行介绍，并对其中使用时需要注意的点进行探讨，同时对每个函数用法进行实例运用。
+                            对Server和Client间进行通信时，Socket的工作原理进行解析，并画出Socket在此过程中的工作流程。
                         
                     </div>
                     <div class="publish-info">
@@ -788,8 +794,8 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程语言/" class="post-category" target="_blank">
-                                    编程语言
+                            <a href="/categories/计算机知识/" class="post-category" target="_blank">
+                                    计算机知识
                                 </a>
                             
                             
@@ -799,8 +805,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-C/" target="_blank">
-                        <span class="chip bg-color">C/C++</span>
+                    <a href="/tags/Socket/" target="_blank">
+                        <span class="chip bg-color">Socket</span>
                     </a>
                     
                 </div>
