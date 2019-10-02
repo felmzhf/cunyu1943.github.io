@@ -48,7 +48,7 @@
     <link href="http://cunyu1943.github.io/2019/10/02/c-zhi-shi-dian-zong-jie/"/>
     <id>http://cunyu1943.github.io/2019/10/02/c-zhi-shi-dian-zong-jie/</id>
     <published>2019-10-02T07:51:20.000Z</published>
-    <updated>2019-10-02T07:54:00.400Z</updated>
+    <updated>2019-10-02T08:03:26.773Z</updated>
     
     <summary type="html">
     
@@ -71,11 +71,11 @@
   </entry>
   
   <entry>
-    <title>C知识点总结</title>
-    <link href="http://cunyu1943.github.io/2019/10/02/c-zhi-shi-dian-zong-jie/"/>
-    <id>http://cunyu1943.github.io/2019/10/02/c-zhi-shi-dian-zong-jie/</id>
+    <title>C语言知识点总结</title>
+    <link href="http://cunyu1943.github.io/2019/10/02/c-yu-yan-zhi-shi-dian-zong-jie/"/>
+    <id>http://cunyu1943.github.io/2019/10/02/c-yu-yan-zhi-shi-dian-zong-jie/</id>
     <published>2019-10-02T07:48:39.000Z</published>
-    <updated>2019-10-02T07:50:55.794Z</updated>
+    <updated>2019-10-02T08:03:28.812Z</updated>
     
     <summary type="html">
     
@@ -260,13 +260,13 @@
       <category term="计算机知识" scheme="http://cunyu1943.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
     
     
-      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
-    
       <category term="Pycharm" scheme="http://cunyu1943.github.io/tags/Pycharm/"/>
     
       <category term="IntelliJ IDEA" scheme="http://cunyu1943.github.io/tags/IntelliJ-IDEA/"/>
     
       <category term="Visual Studio" scheme="http://cunyu1943.github.io/tags/Visual-Studio/"/>
+    
+      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
     
   </entry>
   
@@ -433,6 +433,8 @@
       <category term="tools" scheme="http://cunyu1943.github.io/categories/tools/"/>
     
     
+      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
+    
       <category term="Visual Studio Code" scheme="http://cunyu1943.github.io/tags/Visual-Studio-Code/"/>
     
       <category term="Sublime Text" scheme="http://cunyu1943.github.io/tags/Sublime-Text/"/>
@@ -440,8 +442,6 @@
       <category term="Notepad++" scheme="http://cunyu1943.github.io/tags/Notepad/"/>
     
       <category term="Atom" scheme="http://cunyu1943.github.io/tags/Atom/"/>
-    
-      <category term="Vim" scheme="http://cunyu1943.github.io/tags/Vim/"/>
     
       <category term="UltraEdit" scheme="http://cunyu1943.github.io/tags/UltraEdit/"/>
     
