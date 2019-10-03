@@ -15,7 +15,8 @@ Linux
 安装过程安装过程在此不给出具体过程，可参照官方给出教程，各平台对应教程如下：
 
 Windows中Anaconda安装教程
-mac">
+
+ma">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -476,103 +477,91 @@ mac">
 </ul>
 <h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><p>安装过程在此不给出具体过程，可参照官方给出教程，各平台对应教程如下：</p>
 <ul>
-<li><a href="http://docs.anaconda.com/anaconda/install/windows/" target="_blank" rel="noopener">Windows中Anaconda安装教程</a></li>
-<li><a href="http://docs.anaconda.com/anaconda/install/mac-os/" target="_blank" rel="noopener">macOS中Anaconda安装教程</a></li>
+<li><p><a href="http://docs.anaconda.com/anaconda/install/windows/" target="_blank" rel="noopener">Windows中Anaconda安装教程</a></p>
+</li>
+<li><p><a href="http://docs.anaconda.com/anaconda/install/mac-os/" target="_blank" rel="noopener">macOS中Anaconda安装教程</a></p>
+</li>
 <li><p><a href="http://docs.anaconda.com/anaconda/install/linux/" target="_blank" rel="noopener">Linux中Anconda安装教程</a></p>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2></li>
 <li><p>查看安装版本</p>
 </li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">conda --version
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">conda --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>查看帮助信息</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">conda --help
-conda -h
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">conda --help
+conda -h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>卸载conda</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># Linux/macOS
-conda -rc ~/anaconda3
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell"># Linux/macOS
+conda -rc ~/anaconda3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>查看已创建的环境</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># 下列命令三选一
+<pre class="line-numbers language-shell"><code class="language-shell"># 下列命令三选一
 conda info --envs
 conda info -e
-conda env list
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+conda env list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>创建新环境</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">conda --create -n '新环境名' '安装包名'
+<pre class="line-numbers language-shell"><code class="language-shell">conda --create -n '新环境名' '安装包名'
 eg:
 # 创建了一个名为'python3.5'，环境中默认安装版本为3.5的python
-conda --create -n python3.5 python=3.5
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+conda --create -n python3.5 python=3.5 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>切换环境</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># Linux/macOS
+<pre class="line-numbers language-shell"><code class="language-shell"># Linux/macOS
 source activate '环境名'
 # Windows
-activate '环境名'
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+activate '环境名'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>退出环境</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># Linux/macOS
+<pre class="line-numbers language-shell"><code class="language-shell"># Linux/macOS
 source deactivate
 # Windows
-deactivate
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>复制环境</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">conda create --name '新环境名' --clone '被复制的环境名'
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">conda create --name '新环境名' --clone '被复制的环境名'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>删除环境</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">conda remove --name '环境名' --all
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">conda remove --name '环境名' --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>设置Anaconda仓库的清华镜像</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+<pre class="line-numbers language-shell"><code class="language-shell">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-conda config --set show_channel_urls yes
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+conda config --set show_channel_urls yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>查找可供安装的包版本</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># 1、精确查找
+<pre class="line-numbers language-shell"><code class="language-shell"># 1、精确查找
 conda search --full-name '包全名'
 # 2、模糊查找
 # 查找包含字段的包有哪些版本可供安装
-conda search '字段'
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+conda search '字段'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>安装包</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">conda install '包名'
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">conda install '包名'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>卸载包</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">conda remove'包名'
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">conda remove'包名'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>更新包</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># 更新所有包
+<pre class="line-numbers language-shell"><code class="language-shell"># 更新所有包
 conda update --all
 # 更新指定包
-conda update '包名'
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+conda update '包名'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好了，Anaconda的安装以及简单的使用教程到此结束了。相信你通过上面的内容，一定能够对你的学习有所帮助。</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1067,7 +1056,7 @@ conda update '包名'
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

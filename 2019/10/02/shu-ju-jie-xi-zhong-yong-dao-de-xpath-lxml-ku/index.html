@@ -448,14 +448,14 @@ Chrome
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        619
+                        872
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        4 分
                     </div>
                     
                 
@@ -483,7 +483,6 @@ Chrome
 <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ul>
 <li><strong>节点选取</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -492,8 +491,7 @@ Chrome
 <th>示例</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>nodename</td>
 <td>选词当前节点下节点的所有子节点</td>
 <td>div</td>
@@ -523,13 +521,10 @@ Chrome
 <td>选取当前节点的父节点</td>
 <td>../div</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li><strong>谓语</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -537,8 +532,7 @@ Chrome
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>/markstore/mark[1]</td>
 <td>选取markstore下第一个元素</td>
 </tr>
@@ -558,13 +552,10 @@ Chrome
 <td>//mark[@id=‘k’]</td>
 <td>选取id属性为k的mark元素</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li><strong>通配符</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -572,8 +563,7 @@ Chrome
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>*</td>
 <td>匹配任意节点</td>
 </tr>
@@ -585,75 +575,71 @@ Chrome
 <td>node()</td>
 <td>匹配任何类型的节点</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
 <li><strong>使用方式</strong>：//获取当前页面所有元素，然后写标签名，最后写谓词进行提取；</li>
 <li><strong>/和//的区别</strong>：/代表只获取直接子节点，//代表获取子孙节点；</li>
 </ul>
 <h1 id="lxml库"><a href="#lxml库" class="headerlink" title="lxml库"></a>lxml库</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>使用如下命令安装即可，</p>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">pip install lxml
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python">from lxml import etree
+<pre class="line-numbers language-shell"><code class="language-shell">pip install lxml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
 
-text = '''
-<div>
-    <ul>
-        <li class="id-1"><a href="www.baidu.com">baidu</a></li>
-        <li class="id-2"><a href="www.google.com">Google</a></li>
-        <li class="id-3 id-4" name='item'><a href="www.taobao.com">Taobao</li>
-    </ul>
-</div>
-'''
-# 解析字符串为html文档
-html = etree.HTML(text)
-# 字符串序列化为html文档,会自动修正HTML文本
-result = etree.tostring(html, encoding='utf-8')
-print(result.decode('utf-8'))
+text <span class="token operator">=</span> <span class="token triple-quoted-string string">'''
+&lt;div>
+    &lt;ul>
+        &lt;li class="id-1">&lt;a href="www.baidu.com">baidu&lt;/a>&lt;/li>
+        &lt;li class="id-2">&lt;a href="www.google.com">Google&lt;/a>&lt;/li>
+        &lt;li class="id-3 id-4" name='item'>&lt;a href="www.taobao.com">Taobao&lt;/li>
+    &lt;/ul>
+&lt;/div>
+'''</span>
+<span class="token comment" spellcheck="true"># 解析字符串为html文档</span>
+html <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 字符串序列化为html文档,会自动修正HTML文本</span>
+result <span class="token operator">=</span> etree<span class="token punctuation">.</span>tostring<span class="token punctuation">(</span>html<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 从文件读取
-parser = etree.HTMLParser(encoding='utf-8')
-html = etree.parse('csdn.html', parser=parser)
+<span class="token comment" spellcheck="true"># 从文件读取</span>
+parser <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTMLParser<span class="token punctuation">(</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+html <span class="token operator">=</span> etree<span class="token punctuation">.</span>parse<span class="token punctuation">(</span><span class="token string">'csdn.html'</span><span class="token punctuation">,</span> parser<span class="token operator">=</span>parser<span class="token punctuation">)</span>
 
-# 获取所有a标签的href属性
-aList = html.xpath('//a/@href')
-for a in aList:
-    print(a)
+<span class="token comment" spellcheck="true"># 获取所有a标签的href属性</span>
+aList <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//a/@href'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> a <span class="token keyword">in</span> aList<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 
-# 属性多值匹配
-html = etree.HTML(text)
-result = html.xpath('//li[contains(@class, "id-4")/href/text()]')
-print(result)
+<span class="token comment" spellcheck="true"># 属性多值匹配</span>
+html <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+result <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//li[contains(@class, "id-4")/href/text()]'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
 
-# 多属性匹配
-html = etree.HTML(text)
-result = html.xpath('//li[contains(@class, "id-4") and @name="item"]/href/text()')
-print(result)
+<span class="token comment" spellcheck="true"># 多属性匹配</span>
+html <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+result <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//li[contains(@class, "id-4") and @name="item"]/href/text()'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
 
-# 按序选择
-text = """
-<div> 
-<ul> 
-<li class="item-0"><a href="link1.html">first item</a></li> 
-<li class="item-1"><a href="link2.html">second item</a></li> 
-<li class="item-inactive"><a href="link3.html">third item</a></li> 
-<li class="item-1"><a href="link4.html">fourth item</a></li> 
-<li class="item-0"><a href="links.html">fifth item</a></li> 
-</ul> 
-</div>
-"""
-html = etree.HTML(text)
-# 注意，xpath匹配中序号是以1开头的，而不是以0开头的
-result = html.xpath('//li[1]/a/text()')
-print(result)
-result = html.xpath('//li[last()]/a//text()')
-print(result)
-result = html.xpath('//li[last()-2]/a/text()')
-print(result)
-result = html.xpath('//li[position()<3]/a/text()')
-print(result)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 按序选择</span>
+text <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
+&lt;div> 
+&lt;ul> 
+&lt;li class="item-0">&lt;a href="link1.html">first item&lt;/a>&lt;/li> 
+&lt;li class="item-1">&lt;a href="link2.html">second item&lt;/a>&lt;/li> 
+&lt;li class="item-inactive">&lt;a href="link3.html">third item&lt;/a>&lt;/li> 
+&lt;li class="item-1">&lt;a href="link4.html">fourth item&lt;/a>&lt;/li> 
+&lt;li class="item-0">&lt;a href="links.html">fifth item&lt;/a>&lt;/li> 
+&lt;/ul> 
+&lt;/div>
+"""</span>
+html <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 注意，xpath匹配中序号是以1开头的，而不是以0开头的</span>
+result <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//li[1]/a/text()'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+result <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//li[last()]/a//text()'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+result <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//li[last()-2]/a/text()'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+result <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//li[position()&lt;3]/a/text()'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>本文主要介绍了爬虫中数据解析时所需要的用的XPath和lxml库，介绍了它们的安装方式和简单的使用方式，如果你有更好的建议和想法，欢迎留言指正。</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1148,7 +1134,7 @@ print(result)
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

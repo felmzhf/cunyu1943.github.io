@@ -482,12 +482,11 @@ def calc(n):
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">def calc(n):
-    print(n)
-    if n // 2 > 0:
-        return calc(n // 2)
-calc(10)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> n <span class="token operator">//</span> <span class="token number">2</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> calc<span class="token punctuation">(</span>n <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">)</span>
+calc<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-ee3d43b922345c14?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h1 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h1><ul>
 <li>计算机：在计算机层面，CPU执行的是加减乘除以及各种判断和跳转指令代码，因而汇编是最贴近计算机的语言，越接近计算机底层的语言执行效率越高；</li>
@@ -497,11 +496,10 @@ calc(10)
 <h1 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h1><ul>
 <li>定义：把其他函数作为参数的函数叫做高阶函数；</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">def add(x, y, func):
-    return func(x) * func(y)
-result = add(4, 8, abs)
-print(result)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> func<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> func<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+result <span class="token operator">=</span> add<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> abs<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-953e005cfb6c35df?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h1 id="修饰器"><a href="#修饰器" class="headerlink" title="修饰器"></a>修饰器</h1><ul>
 <li>原则：<ul>
@@ -510,36 +508,35 @@ print(result)
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python"># --*--coding:utf-8--*--
-#! /usr/bin/python3
-user, passwd = 'k', '12345'
-def auth(func):
-    def wrapper(*args, **kwargs):
-        username = input('username:').strip()
-        password = input('passwd:').strip()
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># --*--coding:utf-8--*--</span>
+<span class="token comment" spellcheck="true">#! /usr/bin/python3</span>
+user<span class="token punctuation">,</span> passwd <span class="token operator">=</span> <span class="token string">'k'</span><span class="token punctuation">,</span> <span class="token string">'12345'</span>
+<span class="token keyword">def</span> <span class="token function">auth</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        username <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'username:'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        password <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'passwd:'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-        if user == username and passwd == password:
-            print('passed')
-            func(*args, **kwargs)
-        else:
-            exit('Invalid username or password.')
-    return wrapper
+        <span class="token keyword">if</span> user <span class="token operator">==</span> username <span class="token operator">and</span> passwd <span class="token operator">==</span> password<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'passed'</span><span class="token punctuation">)</span>
+            func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            exit<span class="token punctuation">(</span><span class="token string">'Invalid username or password.'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> wrapper
 
-def index():
-    print('welcomt to index page')
-
-@auth
-def home():
-    print('welcome to home page')
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'welcomt to index page'</span><span class="token punctuation">)</span>
 
 @auth
-def bbs():
-    print('welcomt to bbs page')
+<span class="token keyword">def</span> <span class="token function">home</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'welcome to home page'</span><span class="token punctuation">)</span>
 
-index()
-home()
-bbs()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+@auth
+<span class="token keyword">def</span> <span class="token function">bbs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'welcomt to bbs page'</span><span class="token punctuation">)</span>
+
+index<span class="token punctuation">(</span><span class="token punctuation">)</span>
+home<span class="token punctuation">(</span><span class="token punctuation">)</span>
+bbs<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-733e1b5035d48f76?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h1 id="迭代器与生成器"><a href="#迭代器与生成器" class="headerlink" title="迭代器与生成器"></a>迭代器与生成器</h1><ul>
 <li>生成器：<code>generator</code>，列表元素按某种算法推算而出，一边循环一边计算的机制，称为生成器，只有在调用时才产生相应数据；</li>
@@ -551,39 +548,37 @@ bbs()
 <li>迭代器： 可以别<code>next()</code>函数调用并不断返回下一个值的对象称为迭代器，他们表示一个惰性计算的序列，<code>Iterator</code>；</li>
 <li>生成对象都是迭代器对象，<code>list</code>、<code>dict</code>、<code>str</code>虽然是可迭代对象，但却不是迭代器，使用<code>iter()</code>函数可将他们从迭代对象转换为迭代器；</li>
 </ul>
-<h1 id="json和pickle数据序列化"><a href="#json和pickle数据序列化" class="headerlink" title="json和pickle数据序列化"></a>json和pickle数据序列化</h1><pre class="line-numbers language-lang-python"><code class="language-lang-python"># json序列化与反序列化
-import json
-info = {
-    'name':'k',
-    'age':22
-    'sex':'男'
-}
-# 序列化
-f = open('test.txt', 'w')
-f.write(json.dumps(info))
-# 反序列化
-f = open('test.txt', 'r')
-data = json.loads(f.read())
-print(data['sex'])
-f.close()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python"># pickle序列化与反序列化
-import pickle
-info = {
-    'name':'k',
-    'age':22
-    'sex':'男'
-}
-# 序列化
-f = open('test.txt', 'wb')
-f.write(pickle.dumps(info)) #与下一句作用相同   
-pickle.dump(info, f)
-# 反序列化
-f = open('test.txt', 'rb')
-data = pickle.loads(f.read())
-print(data['sex'])
-f.close()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="json和pickle数据序列化"><a href="#json和pickle数据序列化" class="headerlink" title="json和pickle数据序列化"></a>json和pickle数据序列化</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># json序列化与反序列化</span>
+<span class="token keyword">import</span> json
+info <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'name'</span><span class="token punctuation">:</span><span class="token string">'k'</span><span class="token punctuation">,</span>
+    <span class="token string">'age'</span><span class="token punctuation">:</span><span class="token number">22</span>
+    <span class="token string">'sex'</span><span class="token punctuation">:</span><span class="token string">'男'</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true"># 序列化</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>info<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 反序列化</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'sex'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># pickle序列化与反序列化</span>
+<span class="token keyword">import</span> pickle
+info <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'name'</span><span class="token punctuation">:</span><span class="token string">'k'</span><span class="token punctuation">,</span>
+    <span class="token string">'age'</span><span class="token punctuation">:</span><span class="token number">22</span>
+    <span class="token string">'sex'</span><span class="token punctuation">:</span><span class="token string">'男'</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true"># 序列化</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>pickle<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>info<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#与下一句作用相同   </span>
+pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>info<span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 反序列化</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> pickle<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'sex'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1077,7 +1072,7 @@ f.close()
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

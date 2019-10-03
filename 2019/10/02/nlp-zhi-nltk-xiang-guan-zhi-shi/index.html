@@ -467,7 +467,7 @@
 <h2 id="怎样安装"><a href="#怎样安装" class="headerlink" title="怎样安装"></a>怎样安装</h2><p>详情可以参见我的另一篇博客<a href="https://blog.csdn.net/github_39655029/article/details/80994706" target="_blank" rel="noopener">NLP的开发环境搭建</a>，通过这篇博客，你将学会<code>Python</code>环境的安装以及<code>NLTK</code>模块的下载；</p>
 <h2 id="常见模块及用途"><a href="#常见模块及用途" class="headerlink" title="常见模块及用途"></a>常见模块及用途</h2><p><img src="http://upload-images.jianshu.io/upload_images/9747350-6685cb12076327ff?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h2 id="NLTK能干啥？"><a href="#NLTK能干啥？" class="headerlink" title="NLTK能干啥？"></a>NLTK能干啥？</h2><ul>
-<li>[ ] 搜索文本<ul>
+<li><input disabled="" type="checkbox"> 搜索文本<ul>
 <li>单词搜索：</li>
 <li>相似词搜索；</li>
 <li>相似关键词识别；</li>
@@ -475,75 +475,74 @@
 <li>生成文本；</li>
 </ul>
 </li>
-<li>[ ] 计数词汇</li>
+<li><input disabled="" type="checkbox"> 计数词汇</li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-efef82de90c24c15?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-156c6404c5240a08?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2018-9-28 22:21
-# @Author  : Manu
-# @Site    : 
-# @File    : python_base.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2018-9-28 22:21</span>
+<span class="token comment" spellcheck="true"># @Author  : Manu</span>
+<span class="token comment" spellcheck="true"># @Site    : </span>
+<span class="token comment" spellcheck="true"># @File    : python_base.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-from __future__ import division
-import nltk
-import matplotlib
-from nltk.book import *
-from nltk.util import bigrams
+<span class="token keyword">from</span> __future__ <span class="token keyword">import</span> division
+<span class="token keyword">import</span> nltk
+<span class="token keyword">import</span> matplotlib
+<span class="token keyword">from</span> nltk<span class="token punctuation">.</span>book <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> nltk<span class="token punctuation">.</span>util <span class="token keyword">import</span> bigrams
 
-# 单词搜索
-print('单词搜索')
-text1.concordance('boy')
-text2.concordance('friends')
+<span class="token comment" spellcheck="true"># 单词搜索</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'单词搜索'</span><span class="token punctuation">)</span>
+text1<span class="token punctuation">.</span>concordance<span class="token punctuation">(</span><span class="token string">'boy'</span><span class="token punctuation">)</span>
+text2<span class="token punctuation">.</span>concordance<span class="token punctuation">(</span><span class="token string">'friends'</span><span class="token punctuation">)</span>
 
-# 相似词搜索
-print('相似词搜索')
-text3.similar('time')
+<span class="token comment" spellcheck="true"># 相似词搜索</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'相似词搜索'</span><span class="token punctuation">)</span>
+text3<span class="token punctuation">.</span>similar<span class="token punctuation">(</span><span class="token string">'time'</span><span class="token punctuation">)</span>
 
-#共同上下文搜索
-print('共同上下文搜索')
-text2.common_contexts(['monstrous','very'])
+<span class="token comment" spellcheck="true">#共同上下文搜索</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'共同上下文搜索'</span><span class="token punctuation">)</span>
+text2<span class="token punctuation">.</span>common_contexts<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'monstrous'</span><span class="token punctuation">,</span><span class="token string">'very'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-# 词汇分布表
-print('词汇分布表')
-text4.dispersion_plot(['citizens', 'American', 'freedom', 'duties'])
+<span class="token comment" spellcheck="true"># 词汇分布表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'词汇分布表'</span><span class="token punctuation">)</span>
+text4<span class="token punctuation">.</span>dispersion_plot<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'citizens'</span><span class="token punctuation">,</span> <span class="token string">'American'</span><span class="token punctuation">,</span> <span class="token string">'freedom'</span><span class="token punctuation">,</span> <span class="token string">'duties'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-# 词汇计数
-print('词汇计数')
-print(len(text5))
-sorted(set(text5))
-print(len(set(text5)))
+<span class="token comment" spellcheck="true"># 词汇计数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'词汇计数'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>text5<span class="token punctuation">)</span><span class="token punctuation">)</span>
+sorted<span class="token punctuation">(</span>set<span class="token punctuation">(</span>text5<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>set<span class="token punctuation">(</span>text5<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 重复词密度
-print('重复词密度')
-print(len(text8) / len(set(text8)))
+<span class="token comment" spellcheck="true"># 重复词密度</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'重复词密度'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>text8<span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>set<span class="token punctuation">(</span>text8<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 关键词密度
-print('关键词密度')
-print(text9.count('girl'))
-print(text9.count('girl') * 100 / len(text9))
+<span class="token comment" spellcheck="true"># 关键词密度</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'关键词密度'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>text9<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">'girl'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>text9<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">'girl'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>text9<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 频率分布
-fdist = FreqDist(text1)
+<span class="token comment" spellcheck="true"># 频率分布</span>
+fdist <span class="token operator">=</span> FreqDist<span class="token punctuation">(</span>text1<span class="token punctuation">)</span>
 
-vocabulary = fdist.keys()
-for i in vocabulary:
-    print(i)
+vocabulary <span class="token operator">=</span> fdist<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> vocabulary<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
 
-# 高频前20
-fdist.plot(20, cumulative = True)
+<span class="token comment" spellcheck="true"># 高频前20</span>
+fdist<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> cumulative <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
 
-# 低频词
-print('低频词：')
-print(fdist.hapaxes())
+<span class="token comment" spellcheck="true"># 低频词</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'低频词：'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>fdist<span class="token punctuation">.</span>hapaxes<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 词语搭配
-print('词语搭配')
-words = list(bigrams(['louder', 'words', 'speak']))
-print(words)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 词语搭配</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'词语搭配'</span><span class="token punctuation">)</span>
+words <span class="token operator">=</span> list<span class="token punctuation">(</span>bigrams<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'louder'</span><span class="token punctuation">,</span> <span class="token string">'words'</span><span class="token punctuation">,</span> <span class="token string">'speak'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>words<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="NLTK设计目标"><a href="#NLTK设计目标" class="headerlink" title="NLTK设计目标"></a>NLTK设计目标</h2><ul>
 <li>简易性；</li>
 <li>一致性；</li>
@@ -1060,7 +1059,7 @@ print(words)
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

@@ -18,8 +18,8 @@ with:自动关闭文件；
 with open(&#39;log&#39;, &#39;r&#39;) as f:
     ...
 
-
 文件操作之open()
+
 
 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -483,9 +483,8 @@ with open(&#39;log&#39;, &#39;r&#39;) as f:
 </li>
 <li><code>with</code>:自动关闭文件；</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">with open('log', 'r') as f:
-    ...
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'log'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>文件操作之<code>open()</code></li>
 </ul>
@@ -502,48 +501,44 @@ with open(&#39;log&#39;, &#39;r&#39;) as f:
 <li>管道：<code>|</code>，用于匹配多个表达式中的一个，匹配多个分组；</li>
 <li>问号：<code>?</code>，实现可选匹配；</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">>>> import re
->>> batRegex = re.compile(r'Bat(wo)?man')
->>> mo1 = batRegex.search('The Adventures of Batman.')
->>> print(mo1.group())
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> re
+<span class="token operator">>></span><span class="token operator">></span> batRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Bat(wo)?man'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batman.'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 Batman
->>> mo2 = batRegex.search('The Adventures of Batwoman.')
->>> print(mo2.group())
-Batwoman
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batwoman.'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>mo2<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+Batwoman<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>星号：<code>*</code>，匹配零次或多次，即星号之前的分组，可以在文本中出现任意次；</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">>>> import re
->>> batRegex = re.compile(r'Bat(wo)*man')
->>> mo1 = batRegex.search('The Adventures of Batwowoman')
->>> print(mo1.group())
-Batwowoman
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> re
+<span class="token operator">>></span><span class="token operator">></span> batRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Bat(wo)*man'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batwowoman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+Batwowoman<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>加号：<code>+</code>，匹配一次或多次，加号前面的分组必须”至少出现一次”；</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">>>> import re
->>> batRegex = re.compile(r'Bat(wo)+man')
->>> mo1 = batRegex.search('The Adventures of Batwowoman')
->>> print(mo1.group())
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> re
+<span class="token operator">>></span><span class="token operator">></span> batRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Bat(wo)+man'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batwowoman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 Batwowoman
->>> mo2 = batRegex.search('The Adventures of Batman')
->>> print(mo2 == None)
-True
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>mo2 <span class="token operator">==</span> None<span class="token punctuation">)</span>
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>花括号：<code>{ }</code>，匹配特定次数；</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">>>> import re
->>> batRegex = re.compile(r'ha{3}')
->>> mo1 = batRegex.search('hahaha')
->>> print(mo1.group())
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> re
+<span class="token operator">>></span><span class="token operator">></span> batRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'ha{3}'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'hahaha'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 hahaha
->>> mo2 = batRegex.search('haha')
->>> print(mo2 == None)
-True
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'haha'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>mo2 <span class="token operator">==</span> None<span class="token punctuation">)</span>
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><code>findall()</code>方法返回结果：<ul>
 <li>若调用在一个没有分组的正则表达式上，则返回一个匹配字符串的列表，如<code>['123-324-5832', '324-589-0983']</code>；</li>
@@ -1063,7 +1058,7 @@ True
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

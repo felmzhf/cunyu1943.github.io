@@ -464,24 +464,23 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>读取存在空行的文件，删除其中的空行，并将其保存到新的文件中；</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2019/3/18 21:41
-# @Author  : cunyu
-# @Site    : cunyu1943.github.io
-# @File    : deleteBlankLines.py
-# @Software: PyCharm
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2019/3/18 21:41</span>
+<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
+<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
+<span class="token comment" spellcheck="true"># @File    : deleteBlankLines.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 读取存在空行的文件，删除其中的空行，并将其保存到新的文件中
-"""
+"""</span>
 
-with open('old.txt','r',encoding = 'utf-8') as fr,open('new.txt','w',encoding = 'utf-8') as fd:
-        for text in fr.readlines():
-                if text.split():
-                        fd.write(text)
-        print('输出成功....')
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'old.txt'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fr<span class="token punctuation">,</span>open<span class="token punctuation">(</span><span class="token string">'new.txt'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fd<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> text <span class="token keyword">in</span> fr<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> text<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        fd<span class="token punctuation">.</span>write<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'输出成功....'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -975,7 +974,7 @@ with open('old.txt','r',encoding = 'utf-8') as fr,open('new.txt','w',encoding = 
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

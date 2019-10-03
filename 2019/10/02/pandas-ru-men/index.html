@@ -8,9 +8,8 @@
     <meta name="keywords" content="Pandas入门, 村雨的博客">
     <meta name="description" content="定义Pandas是基于Numpy的一种工具，目的是解决数据分析任务。通过纳入大量库和一些标准数据模型，提供了高效操作大型数据集所需工具；
 安装pip install pandas
-
 数据类型Series
-定义一维的数组类型，其中每个元素有各">
+定义一维的数组类型，其中每个元素有各自">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -468,8 +467,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>Pandas是基于Numpy的一种工具，目的是解决数据分析任务。通过纳入大量库和一些标准数据模型，提供了高效操作大型数据集所需工具；</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre class="line-numbers language-lang-shell"><code class="language-lang-shell">pip install pandas
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre class="line-numbers language-shell"><code class="language-shell">pip install pandas<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h3 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h3><ul>
 <li>定义<br>一维的数组类型，其中每个元素有各自标签；可当作一个由带标签元素组成的numpy数组，标签可以是数字或字符；</li>
 <li>关键点<ul>
@@ -510,449 +508,447 @@
 <li>outer<br>使用键的联合；</li>
 <li>inner<br>使用键的交集</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python"># --*--coding:utf-8--*--
-import pandas as pd
-left = pd.DataFrame({
-         'id':[1,2,3,4,5],
-         'Name': ['Alex', 'Amy', 'Allen', 'Alice', 'Ayoung'],
-         'subject_id':['sub1','sub2','sub4','sub6','sub5']})
-right = pd.DataFrame(
-         {'id':[1,2,3,4,5],
-         'Name': ['Billy', 'Brian', 'Bran', 'Bryce', 'Betty'],
-         'subject_id':['sub2','sub4','sub3','sub6','sub5']})
-left_merge = pd.merge(left, right, on='subject_id', how='left')
-right_merge = pd.merge(left, right, on='subject_id', how='right')
-outer_merge = pd.merge(left, right, on='subject_id', how='outer')
-inner_merge = pd.merge(left, right, on='subject_id', how='inner')
-print('left:\t', left_merge)
-print('right:\t', right_merge)
-print('outer:\t', outer_merge)
-print('inner:\t', inner_merge)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="如何使用Pandas"><a href="#如何使用Pandas" class="headerlink" title="如何使用Pandas"></a>如何使用Pandas</h1><pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/python3
-# -*- coding:utf-8 -*-
-# @Time    : 2018-12-15 14:29
-# @Author  : Cunyu
-# @Site    : 
-# @File    : panda.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># --*--coding:utf-8--*--</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+left <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
+         <span class="token string">'id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'Name'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Alex'</span><span class="token punctuation">,</span> <span class="token string">'Amy'</span><span class="token punctuation">,</span> <span class="token string">'Allen'</span><span class="token punctuation">,</span> <span class="token string">'Alice'</span><span class="token punctuation">,</span> <span class="token string">'Ayoung'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'subject_id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'sub1'</span><span class="token punctuation">,</span><span class="token string">'sub2'</span><span class="token punctuation">,</span><span class="token string">'sub4'</span><span class="token punctuation">,</span><span class="token string">'sub6'</span><span class="token punctuation">,</span><span class="token string">'sub5'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+right <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>
+         <span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'Name'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Billy'</span><span class="token punctuation">,</span> <span class="token string">'Brian'</span><span class="token punctuation">,</span> <span class="token string">'Bran'</span><span class="token punctuation">,</span> <span class="token string">'Bryce'</span><span class="token punctuation">,</span> <span class="token string">'Betty'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'subject_id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'sub2'</span><span class="token punctuation">,</span><span class="token string">'sub4'</span><span class="token punctuation">,</span><span class="token string">'sub3'</span><span class="token punctuation">,</span><span class="token string">'sub6'</span><span class="token punctuation">,</span><span class="token string">'sub5'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+left_merge <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'subject_id'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'left'</span><span class="token punctuation">)</span>
+right_merge <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'subject_id'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'right'</span><span class="token punctuation">)</span>
+outer_merge <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'subject_id'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'outer'</span><span class="token punctuation">)</span>
+inner_merge <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'subject_id'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'inner'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'left:\t'</span><span class="token punctuation">,</span> left_merge<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'right:\t'</span><span class="token punctuation">,</span> right_merge<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'outer:\t'</span><span class="token punctuation">,</span> outer_merge<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'inner:\t'</span><span class="token punctuation">,</span> inner_merge<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="如何使用Pandas"><a href="#如何使用Pandas" class="headerlink" title="如何使用Pandas"></a>如何使用Pandas</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/python3</span>
+<span class="token comment" spellcheck="true"># -*- coding:utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2018-12-15 14:29</span>
+<span class="token comment" spellcheck="true"># @Author  : Cunyu</span>
+<span class="token comment" spellcheck="true"># @Site    : </span>
+<span class="token comment" spellcheck="true"># @File    : panda.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 
-# 对象创建
-seri = pd.Series([1,3,5,np.nan,9,10])
-print(seri)
+<span class="token comment" spellcheck="true"># 对象创建</span>
+seri <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>seri<span class="token punctuation">)</span>
 
-dates = pd.date_range('20181215', periods=10)
-print(dates)
+dates <span class="token operator">=</span> pd<span class="token punctuation">.</span>date_range<span class="token punctuation">(</span><span class="token string">'20181215'</span><span class="token punctuation">,</span> periods<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dates<span class="token punctuation">)</span>
 
-df = pd.DataFrame(np.random.randn(10,4), index=dates, columns=list('ABCD'))
-print(df)
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">=</span>dates<span class="token punctuation">,</span> columns<span class="token operator">=</span>list<span class="token punctuation">(</span><span class="token string">'ABCD'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
 
-# 查看数据
-print('All:\n', df.head())
-print('前三行：\n', df.head(3))
-print('后三行\n', df.tail(3))
-print('index:\n',df.index)
-print('col:\n', df.columns)
-print('values:\n', df.values)
-print('desc:\n', df.describe())
-print('转置：\n', df.T)
-print('sort by an axis:\n', df.sort_index(axis=1, ascending=False))
-print('sort by values:\n', df.sort_values(by='B'))
+<span class="token comment" spellcheck="true"># 查看数据</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'All:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'前三行：\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'后三行\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'index:\n'</span><span class="token punctuation">,</span>df<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'col:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>columns<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'values:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'desc:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'转置：\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>T<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sort by an axis:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>sort_index<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sort by values:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'B'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 获取，常用数据访问方法：.at, .iat, .loc, .iloc, .ix
-print("df['A']:\n", df['A']) # 选择一列产生一个系列
-print('df[0:3]:\n', df[0:3])
-# 按标签选择
-print(df.loc[dates[0]])
-print(df.loc[:,['A','B']])
-print('获取某一个特定值：\n', df.at[dates[0], 'A'])
-# 通过位置选择
-print('获取每个特定位置的值：\n', df.iloc[3])
-print('切片操作：\n', df.iloc[3:5, 0:2])
-print(df.iat[1,1])
-# 布尔索引
-print(df[df.A>0])
-print('filter:\n', df.copy())
-print('demo:\n', df[df['D'].isin(['two', 'four'])])
+<span class="token comment" spellcheck="true"># 获取，常用数据访问方法：.at, .iat, .loc, .iloc, .ix</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"df['A']:\n"</span><span class="token punctuation">,</span> df<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 选择一列产生一个系列</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df[0:3]:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 按标签选择</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>dates<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'获取某一个特定值：\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>at<span class="token punctuation">[</span>dates<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 通过位置选择</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'获取每个特定位置的值：\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'切片操作：\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>iat<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 布尔索引</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span>df<span class="token punctuation">.</span>A<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'filter:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'demo:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'D'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token string">'four'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 Series
-"""
-# pandas.Series(data, index, dtype, copy)，构造函数创建
-# 创建一个空系列
-print('Null Series:\n', pd.Series())
-# 从ndarray创建一个系列
-data = np.array(['a', 'b', 'c', 'd'])
-print('ndarray Series:\n', pd.Series(data))
-# 从字典创建一个系列
-data = {'a':0, 'b':3, 'c':4}
-print('dict Series:\n', pd.Series(dict))
-# 从标量创建一个系列
-print('scalar Series:\n', pd.Series(5, index=[1, 2, 4, 8, 0]))
+"""</span>
+<span class="token comment" spellcheck="true"># pandas.Series(data, index, dtype, copy)，构造函数创建</span>
+<span class="token comment" spellcheck="true"># 创建一个空系列</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Null Series:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 从ndarray创建一个系列</span>
+data <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'ndarray Series:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 从字典创建一个系列</span>
+data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'dict Series:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>dict<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 从标量创建一个系列</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'scalar Series:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 从具有位置系列中访问数据
-s = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
-print('Search :\n', s[:3])
-# 使用标签检索数据
-s = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
-print('s["d"]: ', s['d'])
+<span class="token comment" spellcheck="true"># 从具有位置系列中访问数据</span>
+s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>index <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Search :\n'</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 使用标签检索数据</span>
+s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>index <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'s["d"]: '</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
 
-# 属性或方法
-# 1、axes，返回行轴标签列表
-seri = pd.Series(np.random.randn(5))
-print('axes:\n', seri.axes)
-# 2、dtype，返回对象数据类型
-print('dtype:\n', seri.dtype)
-# 3、empty，若系列为空，返回True
-print('empty:\n', seri.empty)
-# 4、ndim，返回底层数据的维数
-print('ndim:\n', seri.ndim)
-# 5、size，返回基础数据中的元素数
-print('size:\n', seri.size)
-# 6、values，将系列作为ndarray返回
-print('values:\n', seri.values)
-# 7、head(n),返回前n行
-print('head:\n', seri.head(3))
-# 8、tail(n),返回后n行
-print('tail:\n', seri.tail(3))
+<span class="token comment" spellcheck="true"># 属性或方法</span>
+<span class="token comment" spellcheck="true"># 1、axes，返回行轴标签列表</span>
+seri <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'axes:\n'</span><span class="token punctuation">,</span> seri<span class="token punctuation">.</span>axes<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 2、dtype，返回对象数据类型</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'dtype:\n'</span><span class="token punctuation">,</span> seri<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 3、empty，若系列为空，返回True</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'empty:\n'</span><span class="token punctuation">,</span> seri<span class="token punctuation">.</span>empty<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 4、ndim，返回底层数据的维数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'ndim:\n'</span><span class="token punctuation">,</span> seri<span class="token punctuation">.</span>ndim<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 5、size，返回基础数据中的元素数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'size:\n'</span><span class="token punctuation">,</span> seri<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 6、values，将系列作为ndarray返回</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'values:\n'</span><span class="token punctuation">,</span> seri<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 7、head(n),返回前n行</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'head:\n'</span><span class="token punctuation">,</span> seri<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 8、tail(n),返回后n行</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'tail:\n'</span><span class="token punctuation">,</span> seri<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 DataFrame
-"""
-# pandas.DataFrame(data,index,columns,dtype,copy)
+"""</span>
+<span class="token comment" spellcheck="true"># pandas.DataFrame(data,index,columns,dtype,copy)</span>
 
-# 创建空DataFrame
-print(pd.DataFrame())
-# 从列表创建DataFrame
-print('List DataFrame:\n', pd.DataFrame([1,3,5,7,9]))
-# 从字典创建DataFrame
-dict = {'name':['Manu', 'Tim', 'Paker'], 'age':[41, 42, 36]}
-print('Dict DataFrame:\n', pd.DataFrame(dict))
-# 从系列的字典创建DataFrame
-dict_series = {'First' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
-      'Second' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
-print('Series DataFrame:\n', pd.DataFrame(dict_series))
-# 列选择，列添加，列删除
-df = pd.DataFrame(dict_series)
-dict_series = {'First' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
-      'Second' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
-print('列选择：\n', pd.DataFrame(dict_series)['First'])
-df['Third'] = pd.Series([11, 22, 44], index=['a', 'b', 'c'])
-print('列添加：\n', df)
-del df['First']
-df.pop('Third')
-print('列删除：\n', df)
-
-
-# 属性或方法
-dict = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Minsu','Jack']),
-   'Age':pd.Series([25,26,25,23,30,29,23]),
-   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
-dataFrame = pd.DataFrame(dict)
-# 1、axes，返回行轴标签列表
-dataFrame = pd.DataFrame(np.random.randn(5))
-print('axes:\n', dataFrame.axes)
-# 2、dtypes，返回对象数据类型
-print('dtype:\n', dataFrame.dtypes)
-# 3、empty，若系列为空，返回True
-print('empty:\n', dataFrame.empty)
-# 4、ndim，返回底层数据的维数
-print('ndim:\n', dataFrame.ndim)
-# 5、size，返回基础数据中的元素数
-print('size:\n', dataFrame.size)
-# 6、values，将系列作为ndarray返回
-print('values:\n', dataFrame.values)
-# 7、head(n),返回前n行
-print('head:\n', dataFrame.head(3))
-# 8、tail(n),返回后n行
-print('tail:\n', dataFrame.tail(3))
-# 9、T，转置
-print('T:\n', dataFrame.T)
-# 10、shape，返回表示DataFrame的维度的元祖
-print('shape:\n', dataFrame.shape)
+<span class="token comment" spellcheck="true"># 创建空DataFrame</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 从列表创建DataFrame</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'List DataFrame:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 从字典创建DataFrame</span>
+dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'Manu'</span><span class="token punctuation">,</span> <span class="token string">'Tim'</span><span class="token punctuation">,</span> <span class="token string">'Paker'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Dict DataFrame:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>dict<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 从系列的字典创建DataFrame</span>
+dict_series <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'First'</span> <span class="token punctuation">:</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token string">'Second'</span> <span class="token punctuation">:</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Series DataFrame:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>dict_series<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 列选择，列添加，列删除</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>dict_series<span class="token punctuation">)</span>
+dict_series <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'First'</span> <span class="token punctuation">:</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token string">'Second'</span> <span class="token punctuation">:</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'列选择：\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>dict_series<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'First'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'Third'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'列添加：\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">)</span>
+<span class="token keyword">del</span> df<span class="token punctuation">[</span><span class="token string">'First'</span><span class="token punctuation">]</span>
+df<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">'Third'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'列删除：\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">)</span>
 
 
-"""
+<span class="token comment" spellcheck="true"># 属性或方法</span>
+dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Name'</span><span class="token punctuation">:</span>pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'Tom'</span><span class="token punctuation">,</span><span class="token string">'James'</span><span class="token punctuation">,</span><span class="token string">'Ricky'</span><span class="token punctuation">,</span><span class="token string">'Vin'</span><span class="token punctuation">,</span><span class="token string">'Steve'</span><span class="token punctuation">,</span><span class="token string">'Minsu'</span><span class="token punctuation">,</span><span class="token string">'Jack'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+   <span class="token string">'Age'</span><span class="token punctuation">:</span>pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+   <span class="token string">'Rating'</span><span class="token punctuation">:</span>pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4.23</span><span class="token punctuation">,</span><span class="token number">3.24</span><span class="token punctuation">,</span><span class="token number">3.98</span><span class="token punctuation">,</span><span class="token number">2.56</span><span class="token punctuation">,</span><span class="token number">3.20</span><span class="token punctuation">,</span><span class="token number">4.6</span><span class="token punctuation">,</span><span class="token number">3.8</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+dataFrame <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>dict<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 1、axes，返回行轴标签列表</span>
+dataFrame <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'axes:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>axes<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 2、dtypes，返回对象数据类型</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'dtype:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>dtypes<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 3、empty，若系列为空，返回True</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'empty:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>empty<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 4、ndim，返回底层数据的维数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'ndim:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>ndim<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 5、size，返回基础数据中的元素数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'size:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 6、values，将系列作为ndarray返回</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'values:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 7、head(n),返回前n行</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'head:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 8、tail(n),返回后n行</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'tail:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 9、T，转置</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'T:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>T<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 10、shape，返回表示DataFrame的维度的元祖</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'shape:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+
+
+<span class="token triple-quoted-string string">"""
 Panel
-"""
-# pandas.Panel(data,items,major_axis,minor_axis,dtype,copy)
+"""</span>
+<span class="token comment" spellcheck="true"># pandas.Panel(data,items,major_axis,minor_axis,dtype,copy)</span>
 
-# 创建面板
+<span class="token comment" spellcheck="true"># 创建面板</span>
 
-# 创建一个空面板
-print('Null Panel:\n', pd.Panel())
-# 从3D ndarray创建
-data = np.random.rand(3, 4, 5)
-print('3D narray:\n', pd.Panel(data))
-# 从DataFrame对象的dict创建面板
-data = {'Item1' : pd.DataFrame(np.random.randn(4, 4)),
-        'Item2' : pd.DataFrame(np.random.randn(4, 5))}
-print('DataFrame的Dict:\n', pd.Panel(data))
+<span class="token comment" spellcheck="true"># 创建一个空面板</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Null Panel:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>Panel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 从3D ndarray创建</span>
+data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'3D narray:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>Panel<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 从DataFrame对象的dict创建面板</span>
+data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Item1'</span> <span class="token punctuation">:</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'Item2'</span> <span class="token punctuation">:</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'DataFrame的Dict:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>Panel<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 描述性统计
-"""
-dict = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Minsu','Jack',
-   'Lee','David','Gasper','Betina','Andres']),
-   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
-   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+"""</span>
+dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Name'</span><span class="token punctuation">:</span>pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'Tom'</span><span class="token punctuation">,</span><span class="token string">'James'</span><span class="token punctuation">,</span><span class="token string">'Ricky'</span><span class="token punctuation">,</span><span class="token string">'Vin'</span><span class="token punctuation">,</span><span class="token string">'Steve'</span><span class="token punctuation">,</span><span class="token string">'Minsu'</span><span class="token punctuation">,</span><span class="token string">'Jack'</span><span class="token punctuation">,</span>
+   <span class="token string">'Lee'</span><span class="token punctuation">,</span><span class="token string">'David'</span><span class="token punctuation">,</span><span class="token string">'Gasper'</span><span class="token punctuation">,</span><span class="token string">'Betina'</span><span class="token punctuation">,</span><span class="token string">'Andres'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+   <span class="token string">'Age'</span><span class="token punctuation">:</span>pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">34</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">51</span><span class="token punctuation">,</span><span class="token number">46</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+   <span class="token string">'Rating'</span><span class="token punctuation">:</span>pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4.23</span><span class="token punctuation">,</span><span class="token number">3.24</span><span class="token punctuation">,</span><span class="token number">3.98</span><span class="token punctuation">,</span><span class="token number">2.56</span><span class="token punctuation">,</span><span class="token number">3.20</span><span class="token punctuation">,</span><span class="token number">4.6</span><span class="token punctuation">,</span><span class="token number">3.8</span><span class="token punctuation">,</span><span class="token number">3.78</span><span class="token punctuation">,</span><span class="token number">2.98</span><span class="token punctuation">,</span><span class="token number">4.80</span><span class="token punctuation">,</span><span class="token number">4.10</span><span class="token punctuation">,</span><span class="token number">3.65</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
 
-dataFrame = pd.DataFrame(dict)
-# 求和
-print('sum:\n', dataFrame.sum())
-# 均值
-print('avg:\n', dataFrame.mean())
-# 标准差
-print('std:\n', dataFrame.std())
-# 非空观测数量
-print('count:\n', dataFrame.count())
-# 中位数
-print('median:\n', dataFrame.median())
-# 模值
-print('mode:\n', dataFrame.mode())
-# 累计总和
-print('cumsum:\n', dataFrame.cumsum())
-# 累计乘积
-print('cumprod:\n', dataFrame['Age'].cumprod())
-# 统计信息摘要
-print('describe:\n', dataFrame.describe(include='all'))
+dataFrame <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>dict<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 求和</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sum:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 均值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'avg:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 标准差</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'std:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>std<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 非空观测数量</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'count:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 中位数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'median:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>median<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 模值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'mode:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>mode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 累计总和</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'cumsum:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>cumsum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 累计乘积</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'cumprod:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">[</span><span class="token string">'Age'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cumprod<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 统计信息摘要</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'describe:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>describe<span class="token punctuation">(</span>include<span class="token operator">=</span><span class="token string">'all'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 函数应用
-"""
-# 表格函数应用：pipe()
-def adder(elem1, elem2):
-    return elem1+elem2
-dataFrame = pd.DataFrame(np.random.randn(10,3),columns=['col1','col2','col3'])
-dataFrame.pipe(adder,10)
-print('pipe:\n', dataFrame.pipe(adder,10))
-# 行或列函数应用：apply()
-print('apply:\n', dataFrame.apply(np.median))
-# 元素函数应用：applymap()
-print('map:\n', dataFrame['col1'].map(lambda x:x*100))
-print('applymap:\n', dataFrame.apply(lambda x:x*100))
+"""</span>
+<span class="token comment" spellcheck="true"># 表格函数应用：pipe()</span>
+<span class="token keyword">def</span> <span class="token function">adder</span><span class="token punctuation">(</span>elem1<span class="token punctuation">,</span> elem2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> elem1<span class="token operator">+</span>elem2
+dataFrame <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'col1'</span><span class="token punctuation">,</span><span class="token string">'col2'</span><span class="token punctuation">,</span><span class="token string">'col3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+dataFrame<span class="token punctuation">.</span>pipe<span class="token punctuation">(</span>adder<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'pipe:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>pipe<span class="token punctuation">(</span>adder<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 行或列函数应用：apply()</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'apply:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>np<span class="token punctuation">.</span>median<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 元素函数应用：applymap()</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'map:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">[</span><span class="token string">'col1'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span>x<span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'applymap:\n'</span><span class="token punctuation">,</span> dataFrame<span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span>x<span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 重建索引
-"""
-df1 = pd.DataFrame(np.random.randn(10,3),columns=['col1','col2','col3'])
-df2 = pd.DataFrame(np.random.randn(7,3),columns=['col1','col2','col3'])
-# 重建索引与其他对象对齐，reindx_like,填充方法：pad/ffill-前向填充、bfill/backfill-向后填充值、nearest-从最近索引值填充
-df1 = df1.reindex_like(df2)
-print('reindex_like:\n', df1)
-print('ffill:\n', df2.reindex_like(df1, method='ffill'))
-# 重建索引时的填充限制
-print('limit:\n', df2.reindex_like(df1, method='nearest', limit=2))
-# 重命名
-print('rename:\n', df1.rename(columns={'col1':'c1', 'col2':'c2'}))
+"""</span>
+df1 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'col1'</span><span class="token punctuation">,</span><span class="token string">'col2'</span><span class="token punctuation">,</span><span class="token string">'col3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+df2 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'col1'</span><span class="token punctuation">,</span><span class="token string">'col2'</span><span class="token punctuation">,</span><span class="token string">'col3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 重建索引与其他对象对齐，reindx_like,填充方法：pad/ffill-前向填充、bfill/backfill-向后填充值、nearest-从最近索引值填充</span>
+df1 <span class="token operator">=</span> df1<span class="token punctuation">.</span>reindex_like<span class="token punctuation">(</span>df2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'reindex_like:\n'</span><span class="token punctuation">,</span> df1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'ffill:\n'</span><span class="token punctuation">,</span> df2<span class="token punctuation">.</span>reindex_like<span class="token punctuation">(</span>df1<span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token string">'ffill'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 重建索引时的填充限制</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'limit:\n'</span><span class="token punctuation">,</span> df2<span class="token punctuation">.</span>reindex_like<span class="token punctuation">(</span>df1<span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token string">'nearest'</span><span class="token punctuation">,</span> limit<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 重命名</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'rename:\n'</span><span class="token punctuation">,</span> df1<span class="token punctuation">.</span>rename<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'col1'</span><span class="token punctuation">:</span><span class="token string">'c1'</span><span class="token punctuation">,</span> <span class="token string">'col2'</span><span class="token punctuation">:</span><span class="token string">'c2'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 迭代
-"""
-SIZE=20
+"""</span>
+SIZE<span class="token operator">=</span><span class="token number">20</span>
 
-dataFrame = pd.DataFrame({
-    'A': pd.date_range(start='2016-01-01',periods=SIZE,freq='D'),
-    'x': np.linspace(0,stop=SIZE-1,num=SIZE),
-    'y': np.random.rand(SIZE),
-    'C': np.random.choice(['Low','Medium','High'],SIZE).tolist(),
-    'D': np.random.normal(100, 10, size=(SIZE)).tolist()
-    })
+dataFrame <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">'A'</span><span class="token punctuation">:</span> pd<span class="token punctuation">.</span>date_range<span class="token punctuation">(</span>start<span class="token operator">=</span><span class="token string">'2016-01-01'</span><span class="token punctuation">,</span>periods<span class="token operator">=</span>SIZE<span class="token punctuation">,</span>freq<span class="token operator">=</span><span class="token string">'D'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'x'</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>stop<span class="token operator">=</span>SIZE<span class="token number">-1</span><span class="token punctuation">,</span>num<span class="token operator">=</span>SIZE<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'y'</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>SIZE<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'C'</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'Low'</span><span class="token punctuation">,</span><span class="token string">'Medium'</span><span class="token punctuation">,</span><span class="token string">'High'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>SIZE<span class="token punctuation">)</span><span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'D'</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span>SIZE<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-# iteritems()，每个列作为键，将值与值作为键和列值迭代为Series对象
-print('iteritems:')
-for key, value in dataFrame.iteritems():
-    print(key,value)
+<span class="token comment" spellcheck="true"># iteritems()，每个列作为键，将值与值作为键和列值迭代为Series对象</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'iteritems:'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> dataFrame<span class="token punctuation">.</span>iteritems<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span>
 
-# iterrow()，返回迭代器，产生每个索引值及每行数据的序列
-print('iterrow:')
-dataFramea = pd.DataFrame(np.random.randn(5,3),columns = ['col1','col2','col3'])
-for row_index, row in dataFrame.iterrows():
-    print(row_index, row)
+<span class="token comment" spellcheck="true"># iterrow()，返回迭代器，产生每个索引值及每行数据的序列</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'iterrow:'</span><span class="token punctuation">)</span>
+dataFramea <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>columns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'col1'</span><span class="token punctuation">,</span><span class="token string">'col2'</span><span class="token punctuation">,</span><span class="token string">'col3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> row_index<span class="token punctuation">,</span> row <span class="token keyword">in</span> dataFrame<span class="token punctuation">.</span>iterrows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>row_index<span class="token punctuation">,</span> row<span class="token punctuation">)</span>
 
-# intertuples(),为DataFrame中的每一行返回一个产生一个命名元祖的迭代器，元祖的第一个元素将是行的相应索引值，剩余的值是行值
-print('itertuples:')
-for row in dataFrame.itertuples():
-    print(row)
+<span class="token comment" spellcheck="true"># intertuples(),为DataFrame中的每一行返回一个产生一个命名元祖的迭代器，元祖的第一个元素将是行的相应索引值，剩余的值是行值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'itertuples:'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> dataFrame<span class="token punctuation">.</span>itertuples<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 排序
-"""
-unsorted_df=pd.DataFrame(np.random.randn(10,2),index=[1,4,6,2,3,5,9,8,0,7],
-                         columns=['col2','col1'])
-print(unsorted_df)
-# sort_index(),按标签排序
-print('sort_index:\n', unsorted_df.sort_index(ascending=False))
-# sort_values,按值排序
-print('sort_values:\n', unsorted_df.sort_values(by='col2'))
-# 排序算法:mergesort(唯一稳定)、heapsort、quicksort
-print('sort algorithm:\n', unsorted_df.sort_index(kind='heapsort'))
+"""</span>
+unsorted_df<span class="token operator">=</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                         columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'col2'</span><span class="token punctuation">,</span><span class="token string">'col1'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>unsorted_df<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># sort_index(),按标签排序</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sort_index:\n'</span><span class="token punctuation">,</span> unsorted_df<span class="token punctuation">.</span>sort_index<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># sort_values,按值排序</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sort_values:\n'</span><span class="token punctuation">,</span> unsorted_df<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'col2'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 排序算法:mergesort(唯一稳定)、heapsort、quicksort</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sort algorithm:\n'</span><span class="token punctuation">,</span> unsorted_df<span class="token punctuation">.</span>sort_index<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'heapsort'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 字符串和文本数据
-"""
-# 1、lower()    将Series/Index中的字符串转换为小写。
-# 2、upper()    将Series/Index中的字符串转换为大写。
-# 3、len()    计算字符串长度。
-# 4、strip()    帮助从两侧的系列/索引中的每个字符串中删除空格(包括换行符)。
-# 5、split(' ')    用给定的模式拆分每个字符串。
-# 6、cat(sep=' ')    使用给定的分隔符连接系列/索引元素。
-# 7、get_dummies()    返回具有单热编码值的数据帧(DataFrame)。
-strings = pd.Series(['Tim ', ' Rick', 'Joson', 'Albert'])
-print ('get_dummies:\n', strings.str.get_dummies())
-# 8、contains(pattern)    如果元素中包含子字符串，则返回每个元素的布尔值True，否则为False。
-# 9、replace(a,b)    将值a替换为值b。
-# 10、repeat(value)    重复每个元素指定的次数。
-# 11、count(pattern)    返回模式中每个元素的出现总数。
-# 12、startswith(pattern)    如果系列/索引中的元素以模式开始，则返回true。
-# 13、endswith(pattern)    如果系列/索引中的元素以模式结束，则返回true。
-# 14、find(pattern)    返回模式第一次出现的位置。
-# 15、findall(pattern)    返回模式的所有出现的列表。
-print('findall:\n', strings.str.findall('e'))
-# 16、swapcase    变换字母大小写。
-# 17、islower()    检查系列/索引中每个字符串中的所有字符是否小写，返回布尔值
-# 18、isupper()    检查系列/索引中每个字符串中的所有字符是否大写，返回布尔值
-# 19、isnumeric() 检查系列/索引中每个字符串中的所有字符是否为数字，返回布尔值。
-print('isnumeric:\n', strings.str.isnumeric())
+"""</span>
+<span class="token comment" spellcheck="true"># 1、lower()    将Series/Index中的字符串转换为小写。</span>
+<span class="token comment" spellcheck="true"># 2、upper()    将Series/Index中的字符串转换为大写。</span>
+<span class="token comment" spellcheck="true"># 3、len()    计算字符串长度。</span>
+<span class="token comment" spellcheck="true"># 4、strip()    帮助从两侧的系列/索引中的每个字符串中删除空格(包括换行符)。</span>
+<span class="token comment" spellcheck="true"># 5、split(' ')    用给定的模式拆分每个字符串。</span>
+<span class="token comment" spellcheck="true"># 6、cat(sep=' ')    使用给定的分隔符连接系列/索引元素。</span>
+<span class="token comment" spellcheck="true"># 7、get_dummies()    返回具有单热编码值的数据帧(DataFrame)。</span>
+strings <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'Tim '</span><span class="token punctuation">,</span> <span class="token string">' Rick'</span><span class="token punctuation">,</span> <span class="token string">'Joson'</span><span class="token punctuation">,</span> <span class="token string">'Albert'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'get_dummies:\n'</span><span class="token punctuation">,</span> strings<span class="token punctuation">.</span>str<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 8、contains(pattern)    如果元素中包含子字符串，则返回每个元素的布尔值True，否则为False。</span>
+<span class="token comment" spellcheck="true"># 9、replace(a,b)    将值a替换为值b。</span>
+<span class="token comment" spellcheck="true"># 10、repeat(value)    重复每个元素指定的次数。</span>
+<span class="token comment" spellcheck="true"># 11、count(pattern)    返回模式中每个元素的出现总数。</span>
+<span class="token comment" spellcheck="true"># 12、startswith(pattern)    如果系列/索引中的元素以模式开始，则返回true。</span>
+<span class="token comment" spellcheck="true"># 13、endswith(pattern)    如果系列/索引中的元素以模式结束，则返回true。</span>
+<span class="token comment" spellcheck="true"># 14、find(pattern)    返回模式第一次出现的位置。</span>
+<span class="token comment" spellcheck="true"># 15、findall(pattern)    返回模式的所有出现的列表。</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'findall:\n'</span><span class="token punctuation">,</span> strings<span class="token punctuation">.</span>str<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'e'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 16、swapcase    变换字母大小写。</span>
+<span class="token comment" spellcheck="true"># 17、islower()    检查系列/索引中每个字符串中的所有字符是否小写，返回布尔值</span>
+<span class="token comment" spellcheck="true"># 18、isupper()    检查系列/索引中每个字符串中的所有字符是否大写，返回布尔值</span>
+<span class="token comment" spellcheck="true"># 19、isnumeric() 检查系列/索引中每个字符串中的所有字符是否为数字，返回布尔值。</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'isnumeric:\n'</span><span class="token punctuation">,</span> strings<span class="token punctuation">.</span>str<span class="token punctuation">.</span>isnumeric<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 选项和自定义
-"""
-# get_option(param)，一个参数，获取属性值
-print('display max rows:', pd.get_option('display.max_rows'))
-print('display max columns:', pd.get_option('display.max_columns'))
+"""</span>
+<span class="token comment" spellcheck="true"># get_option(param)，一个参数，获取属性值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'display max rows:'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>get_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'display max columns:'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>get_option<span class="token punctuation">(</span><span class="token string">'display.max_columns'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# set_option(param, value)，两个参数，将该值设置为指定的参数值
-pd.set_option('display.max_rows', 90)
-print('display max rows: ', pd.get_option('display.max_rows'))
+<span class="token comment" spellcheck="true"># set_option(param, value)，两个参数，将该值设置为指定的参数值</span>
+pd<span class="token punctuation">.</span>set_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'display max rows: '</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>get_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# reset_option(param)，接受一个参数，并将该值设置为默认值
-pd.reset_option('display.max_rows')
-print('display max rows: ', pd.get_option('display.max_rows'))
+<span class="token comment" spellcheck="true"># reset_option(param)，接受一个参数，并将该值设置为默认值</span>
+pd<span class="token punctuation">.</span>reset_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'display max rows: '</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>get_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# describe_option(param)，打印参数的描述
-print('description:')
-pd.describe_option('display.max_rows')
+<span class="token comment" spellcheck="true"># describe_option(param)，打印参数的描述</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'description:'</span><span class="token punctuation">)</span>
+pd<span class="token punctuation">.</span>describe_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">)</span>
 
-# option_context()，上下文管理器用于临时设置语句中的选项
-print('option_context:')
-with pd.option_context('display.max_rows', 10):
-    print(pd.get_option('display.max_rows')) # 最大行数
-    print(pd.get_option('display.max_columns')) # 最大列数
-    print(pd.get_option('display.max_colwidth')) # 最大列宽
-    print(pd.get_option('display.precision')) # 十进制的精度
-    print(pd.get_option('display.expand_frame_repr')) # 数据帧以拉伸页面
+<span class="token comment" spellcheck="true"># option_context()，上下文管理器用于临时设置语句中的选项</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'option_context:'</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> pd<span class="token punctuation">.</span>option_context<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>pd<span class="token punctuation">.</span>get_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 最大行数</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>pd<span class="token punctuation">.</span>get_option<span class="token punctuation">(</span><span class="token string">'display.max_columns'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 最大列数</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>pd<span class="token punctuation">.</span>get_option<span class="token punctuation">(</span><span class="token string">'display.max_colwidth'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 最大列宽</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>pd<span class="token punctuation">.</span>get_option<span class="token punctuation">(</span><span class="token string">'display.precision'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 十进制的精度</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>pd<span class="token punctuation">.</span>get_option<span class="token punctuation">(</span><span class="token string">'display.expand_frame_repr'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 数据帧以拉伸页面</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 索引与数据选择
-"""
-# 1、.loc(),基于标签
-# 2、.iloc(),基于整数
-# 3、.ix(),基于标签和数据
-dataFrame = pd.DataFrame(np.random.randn(10, 4), columns = ['A', 'B', 'C', 'D'])
-print(dataFrame.ix[:5])
+"""</span>
+<span class="token comment" spellcheck="true"># 1、.loc(),基于标签</span>
+<span class="token comment" spellcheck="true"># 2、.iloc(),基于整数</span>
+<span class="token comment" spellcheck="true"># 3、.ix(),基于标签和数据</span>
+dataFrame <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> columns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dataFrame<span class="token punctuation">.</span>ix<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 统计函数
-"""
-# pct_change(),将每个元素与前一个元素进行比较，并计算变化百分比
-df = pd.DataFrame(np.random.randn(5, 2))
-print ('pct_change:\n', df.pct_change())
+"""</span>
+<span class="token comment" spellcheck="true"># pct_change(),将每个元素与前一个元素进行比较，并计算变化百分比</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'pct_change:\n'</span><span class="token punctuation">,</span> df<span class="token punctuation">.</span>pct_change<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 协方差
-seri1 = pd.Series(np.random.randn(10))
-seri2 = pd.Series(np.random.randn(30))
-print('cov:\n', seri1.cov(seri2))
+<span class="token comment" spellcheck="true"># 协方差</span>
+seri1 <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+seri2 <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'cov:\n'</span><span class="token punctuation">,</span> seri1<span class="token punctuation">.</span>cov<span class="token punctuation">(</span>seri2<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 相关性
-frame = pd.DataFrame(np.random.randn(20, 5), columns=['a', 'b', 'c', 'd', 'e'])
-print('相关性：\n', frame['a'].corr(frame['c']))
+<span class="token comment" spellcheck="true"># 相关性</span>
+frame <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'相关性：\n'</span><span class="token punctuation">,</span> frame<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>corr<span class="token punctuation">(</span>frame<span class="token punctuation">[</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 数据排名
-s = pd.Series(np.random.np.random.randn(5), index=list('abcde'))
-s['d'] = s['e']
-print ('rank:\n', s.rank())
+<span class="token comment" spellcheck="true"># 数据排名</span>
+s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">=</span>list<span class="token punctuation">(</span><span class="token string">'abcde'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+s<span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span><span class="token string">'e'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'rank:\n'</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span>rank<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 
-"""
+<span class="token triple-quoted-string string">"""
 合并/连接
-"""
-left = pd.DataFrame({
-         'id':[1,2,3,4,5],
-         'Name': ['Alex', 'Amy', 'Allen', 'Alice', 'Ayoung'],
-         'subject_id':['sub1','sub2','sub4','sub6','sub5']})
-right = pd.DataFrame(
-         {'id':[1,2,3,4,5],
-         'Name': ['Billy', 'Brian', 'Bran', 'Bryce', 'Betty'],
-         'subject_id':['sub2','sub4','sub3','sub6','sub5']})
-left_merge = pd.merge(left, right, on='subject_id', how='left')
-right_merge = pd.merge(left, right, on='subject_id', how='right')
-outer_merge = pd.merge(left, right, on='subject_id', how='outer')
-inner_merge = pd.merge(left, right, on='subject_id', how='inner')
-print('left:\t', left_merge)
-print('right:\t', right_merge)
-print('outer:\t', outer_merge)
-print('inner:\t', inner_merge)
+"""</span>
+left <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
+         <span class="token string">'id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'Name'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Alex'</span><span class="token punctuation">,</span> <span class="token string">'Amy'</span><span class="token punctuation">,</span> <span class="token string">'Allen'</span><span class="token punctuation">,</span> <span class="token string">'Alice'</span><span class="token punctuation">,</span> <span class="token string">'Ayoung'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'subject_id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'sub1'</span><span class="token punctuation">,</span><span class="token string">'sub2'</span><span class="token punctuation">,</span><span class="token string">'sub4'</span><span class="token punctuation">,</span><span class="token string">'sub6'</span><span class="token punctuation">,</span><span class="token string">'sub5'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+right <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>
+         <span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'Name'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Billy'</span><span class="token punctuation">,</span> <span class="token string">'Brian'</span><span class="token punctuation">,</span> <span class="token string">'Bran'</span><span class="token punctuation">,</span> <span class="token string">'Bryce'</span><span class="token punctuation">,</span> <span class="token string">'Betty'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'subject_id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'sub2'</span><span class="token punctuation">,</span><span class="token string">'sub4'</span><span class="token punctuation">,</span><span class="token string">'sub3'</span><span class="token punctuation">,</span><span class="token string">'sub6'</span><span class="token punctuation">,</span><span class="token string">'sub5'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+left_merge <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'subject_id'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'left'</span><span class="token punctuation">)</span>
+right_merge <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'subject_id'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'right'</span><span class="token punctuation">)</span>
+outer_merge <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'subject_id'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'outer'</span><span class="token punctuation">)</span>
+inner_merge <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'subject_id'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'inner'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'left:\t'</span><span class="token punctuation">,</span> left_merge<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'right:\t'</span><span class="token punctuation">,</span> right_merge<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'outer:\t'</span><span class="token punctuation">,</span> outer_merge<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'inner:\t'</span><span class="token punctuation">,</span> inner_merge<span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 级联
-"""
-# concat(objs, axis, join, join_axes, ignore_index)
-one = pd.DataFrame({
-         'Name': ['Alex', 'Amy', 'Allen', 'Alice', 'Ayoung'],
-         'subject_id':['sub1','sub2','sub4','sub6','sub5'],
-         'Marks_scored':[98,90,87,69,78]},
-         index=[1,2,3,4,5])
-two = pd.DataFrame({
-         'Name': ['Billy', 'Brian', 'Bran', 'Bryce', 'Betty'],
-         'subject_id':['sub2','sub4','sub3','sub6','sub5'],
-         'Marks_scored':[89,80,79,97,88]},
-         index=[1,2,3,4,5])
-str_concat = pd.concat([one,two], ignore_index=True)
-print('级联:\n', str_concat)
+"""</span>
+<span class="token comment" spellcheck="true"># concat(objs, axis, join, join_axes, ignore_index)</span>
+one <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
+         <span class="token string">'Name'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Alex'</span><span class="token punctuation">,</span> <span class="token string">'Amy'</span><span class="token punctuation">,</span> <span class="token string">'Allen'</span><span class="token punctuation">,</span> <span class="token string">'Alice'</span><span class="token punctuation">,</span> <span class="token string">'Ayoung'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'subject_id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'sub1'</span><span class="token punctuation">,</span><span class="token string">'sub2'</span><span class="token punctuation">,</span><span class="token string">'sub4'</span><span class="token punctuation">,</span><span class="token string">'sub6'</span><span class="token punctuation">,</span><span class="token string">'sub5'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'Marks_scored'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">98</span><span class="token punctuation">,</span><span class="token number">90</span><span class="token punctuation">,</span><span class="token number">87</span><span class="token punctuation">,</span><span class="token number">69</span><span class="token punctuation">,</span><span class="token number">78</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+         index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+two <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
+         <span class="token string">'Name'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Billy'</span><span class="token punctuation">,</span> <span class="token string">'Brian'</span><span class="token punctuation">,</span> <span class="token string">'Bran'</span><span class="token punctuation">,</span> <span class="token string">'Bryce'</span><span class="token punctuation">,</span> <span class="token string">'Betty'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'subject_id'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'sub2'</span><span class="token punctuation">,</span><span class="token string">'sub4'</span><span class="token punctuation">,</span><span class="token string">'sub3'</span><span class="token punctuation">,</span><span class="token string">'sub6'</span><span class="token punctuation">,</span><span class="token string">'sub5'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token string">'Marks_scored'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">89</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">,</span><span class="token number">79</span><span class="token punctuation">,</span><span class="token number">97</span><span class="token punctuation">,</span><span class="token number">88</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+         index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+str_concat <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>one<span class="token punctuation">,</span>two<span class="token punctuation">]</span><span class="token punctuation">,</span> ignore_index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'级联:\n'</span><span class="token punctuation">,</span> str_concat<span class="token punctuation">)</span>
 
-""""
+<span class="token triple-quoted-string string">""""
 时间序列
-"""
-# 获取当前时间
-print('time now:\n', pd.datetime.now())
-# 创建时间戳
-print('创建时间戳：\n', pd.Timestamp('2018-11-11'))
-# 转换为时间戳
-print('转换时间戳：\n', pd.to_datetime(['2018/11/23', '2010.12.31', None]))
-# 改变时间频率
-print('改变频率：\n', pd.date_range("12:00", "19:59", freq="H").time)
-# 时间差
-print('时间差:\n', pd.Timedelta('60 days 11 hours 33 minutes 30 seconds'))
+"""</span>
+<span class="token comment" spellcheck="true"># 获取当前时间</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'time now:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 创建时间戳</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'创建时间戳：\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>Timestamp<span class="token punctuation">(</span><span class="token string">'2018-11-11'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 转换为时间戳</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'转换时间戳：\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'2018/11/23'</span><span class="token punctuation">,</span> <span class="token string">'2010.12.31'</span><span class="token punctuation">,</span> None<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 改变时间频率</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'改变频率：\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>date_range<span class="token punctuation">(</span><span class="token string">"12:00"</span><span class="token punctuation">,</span> <span class="token string">"19:59"</span><span class="token punctuation">,</span> freq<span class="token operator">=</span><span class="token string">"H"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>time<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 时间差</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'时间差:\n'</span><span class="token punctuation">,</span> pd<span class="token punctuation">.</span>Timedelta<span class="token punctuation">(</span><span class="token string">'60 days 11 hours 33 minutes 30 seconds'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 绘图
-"""
-df = pd.DataFrame(np.random.randn(10,5),index=pd.date_range('2018/12/16',
-   periods=10), columns=list('ABCDE'))
-df.plot()
-# 条形图
-df.plot.bar()
-# 直方图
-df.plot.hist()
-# 盒型图
-df.boxplot()
-plt.show()
+"""</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>index<span class="token operator">=</span>pd<span class="token punctuation">.</span>date_range<span class="token punctuation">(</span><span class="token string">'2018/12/16'</span><span class="token punctuation">,</span>
+   periods<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> columns<span class="token operator">=</span>list<span class="token punctuation">(</span><span class="token string">'ABCDE'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 条形图</span>
+df<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>bar<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 直方图</span>
+df<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>hist<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 盒型图</span>
+df<span class="token punctuation">.</span>boxplot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 
-""""
+<span class="token triple-quoted-string string">""""
 IO工具
-"""
-# pandas.read_csv(filepath_or_buffer, sep=',', delimiter=None, header='infer',names=None, index_col=None, usecols=None)
-# 读取文件
-file = pd.read_csv('read.csv')
-print(file)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+"""</span>
+<span class="token comment" spellcheck="true"># pandas.read_csv(filepath_or_buffer, sep=',', delimiter=None, header='infer',names=None, index_col=None, usecols=None)</span>
+<span class="token comment" spellcheck="true"># 读取文件</span>
+file <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'read.csv'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1454,7 +1450,7 @@ print(file)
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

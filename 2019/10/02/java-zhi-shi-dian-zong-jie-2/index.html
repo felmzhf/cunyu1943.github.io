@@ -547,16 +547,15 @@
 <li>静态成员属于整个类，当系统第一次使用该类时，就会为其分配内存空间直到该类别卸载才会进行资源回收；</li>
 <li>static修饰的方法称为静态方法或类方法，静态方法中可以直接调用同类中的静态成员，但不能直接调用非静态成员，如果想要在静态方法中调用非静态变量，可以通过创建类的对象，然后通过对象来访问非静态变量；</li>
 </ul>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class HelloWorld{
-    String name = "村雨";
-    static String hobby = "basketball";
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span><span class="token punctuation">{</span>
+    String name <span class="token operator">=</span> <span class="token string">"村雨"</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> String hobby <span class="token operator">=</span> <span class="token string">"basketball"</span><span class="token punctuation">;</span>
 
-    public static void print(){
-        System.out.println("姓名" + name);
-        System.out.println("爱好" + hobby);
-    }
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"姓名"</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"爱好"</span> <span class="token operator">+</span> hobby<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-dbc8da50a41f62dd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <ul>
 <li>普通成员方法中，可以直接访问同类的非静态变量和静态变量；</li>
@@ -580,19 +579,24 @@
 </li>
 </ul>
 <h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><ul>
-<li>Java中是单继承；</li>
-<li>优点：<ul>
+<li><p>Java中是单继承；</p>
+</li>
+<li><p>优点：</p>
+<ul>
 <li>子类拥有父类的所有属性和方法；</li>
 <li>实现代码复用；</li>
 </ul>
 </li>
-<li>重写：返回值类型，方法名，参数类型及个数都要与父类继承的方法相同，才叫方法的重写；</li>
-<li>继承的初始化顺序<ul>
+<li><p>重写：返回值类型，方法名，参数类型及个数都要与父类继承的方法相同，才叫方法的重写；</p>
+</li>
+<li><p>继承的初始化顺序</p>
+<ul>
 <li>初始化父类再初始化子类；</li>
 <li>先执行初始化对象中属性，再执行构造方法中的初始化；</li>
 </ul>
 </li>
-<li>final<ul>
+<li><p>final</p>
+<ul>
 <li>修饰类，则该类不允许被继承；</li>
 <li>修饰方法，则该方法不允许被覆盖(重写)；</li>
 <li>修饰属性：则该类属性不会进行隐式初始化(类的初始化属性必须有值)活在构造方法中赋值(但只能选其一)；</li>
@@ -661,21 +665,20 @@
 </li>
 <li>调用方式</li>
 </ul>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class Test{
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
 
-    public class Demo{
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span><span class="token punctuation">{</span>
 
-    }
+    <span class="token punctuation">}</span>
 
-    public static void main(String[] args) {
-        Test test = new Test();
-        Demo demo = test.new Demo();
-    }
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>内部类 对象名 = 外部类对象.new 内部类();
-</code></pre><ul>
-<li>内部类中方法可以直接访问外部类中的数据，而不受访问控制符的影响，但外部类是不能使用内部类的成员和方法；</li>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Test test <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Demo demo <span class="token operator">=</span> test<span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token class-name">Demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>内部类 对象名 = 外部类对象.new 内部类();</code></pre><ul>
+<li><p>内部类中方法可以直接访问外部类中的数据，而不受访问控制符的影响，但外部类是不能使用内部类的成员和方法；</p>
+</li>
 <li><p>若外部类和内部类具有相同的成员变量或方法，内部类默认访问自己的成员变量或方法，若要访问外部类的成员变量，可以使用this关键字；<br><img src="http://upload-images.jianshu.io/upload_images/9747350-42ecc9a1e6e191db?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 </li>
 <li><p>静态内部类</p>
@@ -1187,7 +1190,7 @@
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

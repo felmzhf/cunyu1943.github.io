@@ -15,8 +15,7 @@ if &amp;lt;判断条件&amp;gt;：
     &amp;lt;执行&amp;gt;
 else：
     &amp;lt;执行&amp;gt;
-
-例">
+例子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -446,7 +445,7 @@ else：
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        333
+                        372
                     </div>
                     
 
@@ -477,84 +476,76 @@ else：
 <pre><code>if &lt;判断条件&gt;：
     &lt;执行&gt;
 else：
-    &lt;执行&gt;
-</code></pre><ul>
+    &lt;执行&gt;</code></pre><ul>
 <li>例子</li>
 </ul>
 <pre><code>age = int(input("输入你的年龄："))
 if age &lt; 18:
     print("未成年")
 else:
-    print("已成年")
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/9747350-7e2b9cca7ec3568a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+    print("已成年")</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/9747350-7e2b9cca7ec3568a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h3 id="多次判断"><a href="#多次判断" class="headerlink" title="多次判断"></a>多次判断</h3><ul>
 <li>形式</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">if <判断条件1>:
-    <执行1>
-elif <判断条件2>:
-    <执行2>
-elif <判断条件3>:
-    <执行3>
-else:
-    <执行4>
-...
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token operator">&lt;</span>判断条件<span class="token number">1</span><span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>执行<span class="token number">1</span><span class="token operator">></span>
+<span class="token keyword">elif</span> <span class="token operator">&lt;</span>判断条件<span class="token number">2</span><span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>执行<span class="token number">2</span><span class="token operator">></span>
+<span class="token keyword">elif</span> <span class="token operator">&lt;</span>判断条件<span class="token number">3</span><span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>执行<span class="token number">3</span><span class="token operator">></span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>执行<span class="token number">4</span><span class="token operator">></span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>例子</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">age = int(input("输入你的年龄："))
-if age >= 18:
-    print('adult')
-elif age >= 6:
-    print('teenager')
-else:
-    print('kid')
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">age <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"输入你的年龄："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> age <span class="token operator">>=</span> <span class="token number">18</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'adult'</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> age <span class="token operator">>=</span> <span class="token number">6</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'teenager'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'kid'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-34e70f0ed37f4fad?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <p>注意，<code>if</code>语句是从上往下判断的；</p>
 <h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p>当条件满足时，就不断循环，直到条件不再满足时即退出循环；</p>
 <ul>
 <li>例子</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">count = 50
-while count > 0:
-    print(str(count))
-    count -= 2
-print("循环结束")
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">count <span class="token operator">=</span> <span class="token number">50</span>
+<span class="token keyword">while</span> count <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>str<span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    count <span class="token operator">-=</span> <span class="token number">2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"循环结束"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-91bd70609dececa9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h3 id="for…in循环"><a href="#for…in循环" class="headerlink" title="for…in循环"></a>for…in循环</h3><ul>
 <li>例子</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">sum = 0
-for num in range(1, 10):
-    sum += num
-print(str(sum))
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">sum <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> num <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    sum <span class="token operator">+=</span> num
+<span class="token keyword">print</span><span class="token punctuation">(</span>str<span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中<code>range()</code>函数用于生成一个整数序列；</p>
 <h1 id="终止循环"><a href="#终止循环" class="headerlink" title="终止循环"></a>终止循环</h1><ul>
 <li>break<br>用于提前终止循环；</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">num = 1
-while num <= 100:
-    if num >= 10:
-        break
-    print(num)
-    num += 2
-print("结束")
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">num <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> num <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> num <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    num <span class="token operator">+=</span> <span class="token number">2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"结束"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-0a093b730a918bbc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <ul>
 <li>continue<br>用于跳出当前循环，进入下一次循环；</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">num = 0
-while num < 20:
-    num += 1
-    if num % 2 == 0: 
-        continue 
-    print(num)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">num <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> num <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">:</span>
+    num <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">if</span> num <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> 
+        <span class="token keyword">continue</span> 
+    <span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-e7ce7ce441b0f751?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1049,7 +1040,7 @@ while num < 20:
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

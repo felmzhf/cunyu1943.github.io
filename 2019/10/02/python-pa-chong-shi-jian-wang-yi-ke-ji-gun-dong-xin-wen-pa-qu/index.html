@@ -467,129 +467,128 @@
                 <h2 id="背景需求"><a href="#背景需求" class="headerlink" title="背景需求"></a>背景需求</h2><p>完成作业的同时练习爬虫，利用Xpath匹配出需要爬取的内容；</p>
 <h2 id="需要爬取的新闻界面"><a href="#需要爬取的新闻界面" class="headerlink" title="需要爬取的新闻界面"></a>需要爬取的新闻界面</h2><p><img src="http://upload-images.jianshu.io/upload_images/9747350-e68ea59e00f46460?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h2 id="需要爬取的信息"><a href="#需要爬取的信息" class="headerlink" title="需要爬取的信息"></a>需要爬取的信息</h2><p><img src="http://upload-images.jianshu.io/upload_images/9747350-a5861c888315a7cb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2019/3/13 13:08
-# @Author  : cunyu
-# @Site    : cunyu1943.github.io
-# @File    : NetaseNewsSpider.py
-# @Software: PyCharm
+<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2019/3/13 13:08</span>
+<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
+<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
+<span class="token comment" spellcheck="true"># @File    : NetaseNewsSpider.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-import requests
-from lxml import etree
-import xlwt
+<span class="token keyword">import</span> requests
+<span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
+<span class="token keyword">import</span> xlwt
 
 
-headers = {
-    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
-}
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"User-Agent"</span><span class="token punctuation">:</span><span class="token string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"</span>
+<span class="token punctuation">}</span>
 
-# 根据url获取刚网页中的新闻详情页的网址列表
-def getNewsDetailUrlList(url):
-    """
+<span class="token comment" spellcheck="true"># 根据url获取刚网页中的新闻详情页的网址列表</span>
+<span class="token keyword">def</span> <span class="token function">getNewsDetailUrlList</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
     :param url: 每页的URL
     :return newDetailList:每页包含的新闻详情URL
-    """
-    response = requests.get(url, headers=headers)
-    html = response.content.decode('gbk')
-    selector = etree.HTML(html)
-    newsDetailList = selector.xpath('//ul[@id="news-flow-content"]//li//div[@class="titleBar clearfix"]//h3//a/@href')
-    return newsDetailList
+    """</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+    html <span class="token operator">=</span> response<span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'gbk'</span><span class="token punctuation">)</span>
+    selector <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+    newsDetailList <span class="token operator">=</span> selector<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//ul[@id="news-flow-content"]//li//div[@class="titleBar clearfix"]//h3//a/@href'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> newsDetailList
 
 
-# 获取新闻标题
-def getNewsTitle(detailUrl):
-    """
+<span class="token comment" spellcheck="true"># 获取新闻标题</span>
+<span class="token keyword">def</span> <span class="token function">getNewsTitle</span><span class="token punctuation">(</span>detailUrl<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
     :param detailUrl:新闻详情url
     :return newsTitle:新闻标题
-    """
-    response = requests.get(detailUrl, headers=headers)
-    html = response.content.decode('gbk')
-    selector = etree.HTML(html)
-    newsTitle = selector.xpath('//div[@class="post_content_main"]//h1/text()')
-    return newsTitle
+    """</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>detailUrl<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+    html <span class="token operator">=</span> response<span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'gbk'</span><span class="token punctuation">)</span>
+    selector <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+    newsTitle <span class="token operator">=</span> selector<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//div[@class="post_content_main"]//h1/text()'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> newsTitle
 
 
-# 获取新闻详情内容
-def getNewsContent(detailUrl):
-    """
+<span class="token comment" spellcheck="true"># 获取新闻详情内容</span>
+<span class="token keyword">def</span> <span class="token function">getNewsContent</span><span class="token punctuation">(</span>detailUrl<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
     :param detailUrl: 新闻详情url
     :return newsContent: 新闻内容详情
-    """
-    response = requests.get(detailUrl, headers=headers)
-    html = response.content.decode('gbk')
-    selector = etree.HTML(html)
-    newsContent = selector.xpath('//div[@class="post_text"]//p/text()')
-    return newsContent
+    """</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>detailUrl<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+    html <span class="token operator">=</span> response<span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'gbk'</span><span class="token punctuation">)</span>
+    selector <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+    newsContent <span class="token operator">=</span> selector<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//div[@class="post_text"]//p/text()'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> newsContent
 
-# 将新闻标题和内容写入文件
+<span class="token comment" spellcheck="true"># 将新闻标题和内容写入文件</span>
     TODO
 
-# 获取翻页网址列表
-def getUrlList(baseUrl, num):
-    """
+<span class="token comment" spellcheck="true"># 获取翻页网址列表</span>
+<span class="token keyword">def</span> <span class="token function">getUrlList</span><span class="token punctuation">(</span>baseUrl<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
     :param baseUrl:基础网址
     :param num: 翻到第几页
     :return urlList: 翻页网址列表
-    """
-    urlList = []
-    urlList.append(baseUrl)
-    for i in range(2, num+1):
-        urlList.append(baseUrl + "_" + str(i).zfill(2))
-    return urlList
+    """</span>
+    urlList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    urlList<span class="token punctuation">.</span>append<span class="token punctuation">(</span>baseUrl<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        urlList<span class="token punctuation">.</span>append<span class="token punctuation">(</span>baseUrl <span class="token operator">+</span> <span class="token string">"_"</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>zfill<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> urlList
 
-if __name__ == '__main__':
-    baseUrl = "http://tech.163.com/special/gd2016"
-    num = int(input('输入你要爬取的页数: '))
-    urlList = getUrlList(baseUrl, num)
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    baseUrl <span class="token operator">=</span> <span class="token string">"http://tech.163.com/special/gd2016"</span>
+    num <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'输入你要爬取的页数: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    urlList <span class="token operator">=</span> getUrlList<span class="token punctuation">(</span>baseUrl<span class="token punctuation">,</span> num<span class="token punctuation">)</span>
 
-    print(urlList)
-    detailUrl = []
-    for url in urlList:
-        for i in getNewsDetailUrlList(url):
-            detailUrl.append(i)
-    print(detailUrl)
+    <span class="token keyword">print</span><span class="token punctuation">(</span>urlList<span class="token punctuation">)</span>
+    detailUrl <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> url <span class="token keyword">in</span> urlList<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> getNewsDetailUrlList<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            detailUrl<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>detailUrl<span class="token punctuation">)</span>
 
 
-    print(getNewsTitle(detailUrl[0]))
-    print(getNewsContent(detailUrl[0]))
+    <span class="token keyword">print</span><span class="token punctuation">(</span>getNewsTitle<span class="token punctuation">(</span>detailUrl<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>getNewsContent<span class="token punctuation">(</span>detailUrl<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    # # 将爬取的文本存入文本文件
-    # with open('news.txt', 'w', encoding='utf-8') as f, open('newsTitle.txt', 'w', encoding='utf-8') as titleFile,\
-    #         open('newsContent.txt', 'w', encoding='utf-8') as contentFile:
-    #     print('正在爬取中。。。')
-    #     for i in detailUrl:
-    #         f.write(''.join(getNewsTitle(i)))
-    #         f.write('\n')
-    #         f.write(''.join(getNewsContent(i)))
-    #         f.write('\n')
-    # 
-    #         titleFile.write(''.join(getNewsTitle(i)))
-    #         titleFile.write('\n')
-    # 
-    #         contentFile.write(''.join(getNewsContent(i)))
-    #         contentFile.write('\n')
-    # 
-    # print('文件写入成功')
+    <span class="token comment" spellcheck="true"># # 将爬取的文本存入文本文件</span>
+    <span class="token comment" spellcheck="true"># with open('news.txt', 'w', encoding='utf-8') as f, open('newsTitle.txt', 'w', encoding='utf-8') as titleFile,\</span>
+    <span class="token comment" spellcheck="true">#         open('newsContent.txt', 'w', encoding='utf-8') as contentFile:</span>
+    <span class="token comment" spellcheck="true">#     print('正在爬取中。。。')</span>
+    <span class="token comment" spellcheck="true">#     for i in detailUrl:</span>
+    <span class="token comment" spellcheck="true">#         f.write(''.join(getNewsTitle(i)))</span>
+    <span class="token comment" spellcheck="true">#         f.write('\n')</span>
+    <span class="token comment" spellcheck="true">#         f.write(''.join(getNewsContent(i)))</span>
+    <span class="token comment" spellcheck="true">#         f.write('\n')</span>
+    <span class="token comment" spellcheck="true"># </span>
+    <span class="token comment" spellcheck="true">#         titleFile.write(''.join(getNewsTitle(i)))</span>
+    <span class="token comment" spellcheck="true">#         titleFile.write('\n')</span>
+    <span class="token comment" spellcheck="true"># </span>
+    <span class="token comment" spellcheck="true">#         contentFile.write(''.join(getNewsContent(i)))</span>
+    <span class="token comment" spellcheck="true">#         contentFile.write('\n')</span>
+    <span class="token comment" spellcheck="true"># </span>
+    <span class="token comment" spellcheck="true"># print('文件写入成功')</span>
 
-    # 将爬取得文本存入excel文件
-    # 创建一个Excel文件
-    workbook = xlwt.Workbook(encoding='utf-8')
+    <span class="token comment" spellcheck="true"># 将爬取得文本存入excel文件</span>
+    <span class="token comment" spellcheck="true"># 创建一个Excel文件</span>
+    workbook <span class="token operator">=</span> xlwt<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 
-    news_sheet = workbook.add_sheet('news')
+    news_sheet <span class="token operator">=</span> workbook<span class="token punctuation">.</span>add_sheet<span class="token punctuation">(</span><span class="token string">'news'</span><span class="token punctuation">)</span>
 
-    news_sheet.write(0, 0, 'Title')
-    news_sheet.write(0, 1, 'Content')
-    print('正在爬取中。。。')
-    for i in range(len(detailUrl)):
-        # print(detailUrl[i])
-        news_sheet.write(i + 1, 0, getNewsTitle(detailUrl[i]))
-        news_sheet.write(i + 1, 1, getNewsContent(detailUrl[i]))
+    news_sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'Title'</span><span class="token punctuation">)</span>
+    news_sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'Content'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'正在爬取中。。。'</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>detailUrl<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># print(detailUrl[i])</span>
+        news_sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> getNewsTitle<span class="token punctuation">(</span>detailUrl<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        news_sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> getNewsContent<span class="token punctuation">(</span>detailUrl<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    # 将写入操作保存到指定Excel文件中
-    workbook.save('网易新闻.xls')
-    print('文件写入成功')
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token comment" spellcheck="true"># 将写入操作保存到指定Excel文件中</span>
+    workbook<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'网易新闻.xls'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'文件写入成功'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><ul>
 <li>代码运行结果</li>
 </ul>
@@ -1092,7 +1091,7 @@ if __name__ == '__main__':
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

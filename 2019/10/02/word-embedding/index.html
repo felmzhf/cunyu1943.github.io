@@ -441,14 +441,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        563
+                        2.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        10 分
                     </div>
                     
                 
@@ -470,7 +470,9 @@
 </li>
 </ul>
 <h2 id="用离散符号表示词"><a href="#用离散符号表示词" class="headerlink" title="用离散符号表示词"></a>用离散符号表示词</h2><p>传统NLP中，我们将词表示为一个个的离散符号，如：sun、hotel、fruit……，我们可以用$one-hot$方式将词代表为向量形式，如： </p>
-<script type="math/tex; mode=display">sun=[0,1,0,0,0,0,0,0,0,0]</script><script type="math/tex; mode=display">hotel=[0,0,0,0,1,0,0,0,0,0]</script><p>此时存在问题：   </p>
+<p>$$sun=[0,1,0,0,0,0,0,0,0,0]$$   </p>
+<p>$$hotel=[0,0,0,0,1,0,0,0,0,0]$$</p>
+<p>此时存在问题：   </p>
 <ol>
 <li>向量之间无相似性，各个词用$one-hot$方式表示时，不同词之间都是正交的，不含有近似单词的信息；   </li>
 <li>向量维度过高，利用$one-hot$方式表示词向量时，向量维度等于词表中的词数，当词数量过多时，这个方法所带来的维度过高问题就会凸显出来；    </li>
@@ -484,7 +486,8 @@
 <li><p>Word Embedding（词嵌入）     </p>
 <p>通过给每个单词学习一个密集向量，类似于出现在相似上下文中的单词向量，这样的词向量就叫做word embedding或者word representations；       </p>
 </li>
-<li>模型结构图</li>
+<li><p>模型结构图</p>
+</li>
 </ul>
 <p><img src="https://upload-images.jianshu.io/upload_images/9747350-6f07af4254f245ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="word embedding">   </p>
 <ul>
@@ -501,26 +504,30 @@
 <p>对于每个位置$t=1,2,……,T$，当预测固定窗口大小为$m$的上文问关联词时，给出中心词为$w_t$，则<strong>相似度</strong>为：      </p>
 </li>
 </ul>
-<script type="math/tex; mode=display">L(\theta)=\prod ^T_{t=1} \prod _{-m<=j<=m,j\not=0} P(w_{t+j}|w_t;\theta)，其中\theta是所有需要优化的变量</script><ul>
+<p>$$L(\theta)=\prod ^T_{t=1} \prod <em>{-m&lt;=j&lt;=m,j\not=0} P(w</em>{t+j}|w_t;\theta)，其中\theta是所有需要优化的变量$$</p>
+<ul>
 <li>目标函数（损失/代价函数）</li>
 </ul>
-<script type="math/tex; mode=display">J(\theta)=-\frac{1}{T}logL(\theta)=-\frac{1}{T}\sum^T_{t=1}\sum_{-m<=j<=m,j\not=0}logP(w_{t+j}|w_t;\theta)</script><p>即目标函数为负的相似度函数对数的平均值，通过最小化目标函数，从而将预测的准确率最大化；</p>
+<p>$$J(\theta)=-\frac{1}{T}logL(\theta)=-\frac{1}{T}\sum^T_{t=1}\sum_{-m&lt;=j&lt;=m,j\not=0}logP(w_{t+j}|w_t;\theta)$$</p>
+<p>即目标函数为负的相似度函数对数的平均值，通过最小化目标函数，从而将预测的准确率最大化；</p>
 <ul>
 <li><p>预测函数</p>
 <p>  如何最小化目标函数呢？我们可以通过对预测函数的的处理来解决这一问题。对于预测函数$P(w_{t+j}|w_j,\theta)$，可以通过用词$w$的两个向量来解决。我们假设$V_w$是中心词，$U_w$是语境词。则对于中心词$c$和语境词$o$而言，存在如下关系：</p>
 </li>
 </ul>
-<script type="math/tex; mode=display">P(o|c)=\frac{exp(u^T_ov_c)}{\sum_{w\in V}exp(u^T_wv_c)}</script><p>  其中，分子中$o$和$v$的点积$u^T_o v_C$越大，则最后得到的概率$P(o|v)$越大。而分母则通过指数函数计算之后，从而实现了对整个词表的标准化；</p>
+<p>$$P(o|c)=\frac{exp(u^T_ov_c)}{\sum_{w\in V}exp(u^T_wv_c)}$$</p>
+<p>  其中，分子中$o$和$v$的点积$u^T_o v_C$越大，则最后得到的概率$P(o|v)$越大。而分母则通过指数函数计算之后，从而实现了对整个词表的标准化；</p>
 <ul>
 <li>实例</li>
 </ul>
 <p><img src="https://upload-images.jianshu.io/upload_images/9747350-b20c320799417b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>其中$P(u<em>{problems}|v</em>{into})$为$P(problems|into;u<em>{problems},v</em>{into},\theta)$的简写形式；</p>
+<p>其中$P(u_{problems}|v_{into})$为$P(problems|into;u_{problems},v_{into},\theta)$的简写形式；</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9747350-f3da1fed7320a9c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <ul>
 <li>$Softmax$回归</li>
 </ul>
-<script type="math/tex; mode=display">softmax(x)_i = \frac{exp(x_i)}{\sum^n_{j=1}exp(x_j)}=p_i</script><p>$softmax$又称为多项逻辑回归（$multinomial logistic regression$），多用于<strong>分类</strong>过程，它通过将多个神经元的输出，映射到$(0,1)$区间。它通过将任意值$x_i$映射到一个概率分布$p_i$上，”$max$”是因为它会将输入中最大的值的概率进一步放大，而”$soft$”则是因为对于输入中极小的值，它也人然后分配一些概率，而不是直接丢弃。因此，$softmax$函数常常用在深度学习中；</p>
+<p>$$softmax(x)<em>i = \frac{exp(x_i)}{\sum^n</em>{j=1}exp(x_j)}=p_i$$</p>
+<p>$softmax$又称为多项逻辑回归（$multinomial logistic regression$），多用于<strong>分类</strong>过程，它通过将多个神经元的输出，映射到$(0,1)$区间。它通过将任意值$x_i$映射到一个概率分布$p_i$上，”$max$”是因为它会将输入中最大的值的概率进一步放大，而”$soft$”则是因为对于输入中极小的值，它也人然后分配一些概率，而不是直接丢弃。因此，$softmax$函数常常用在深度学习中；</p>
 <h2 id="word2vec中将文本进行向量表示的方法"><a href="#word2vec中将文本进行向量表示的方法" class="headerlink" title="word2vec中将文本进行向量表示的方法"></a>word2vec中将文本进行向量表示的方法</h2><ul>
 <li>$CBOW（Continuous Bag of Words）$</li>
 </ul>
@@ -541,13 +548,16 @@
 </ul>
 <p><img src="https://upload-images.jianshu.io/upload_images/9747350-2290cc6e612aca53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用于分层softmax的二叉树示例"></p>
 <p>  用于计算$softmax$的方法，用二叉树（根据类标频数构造的霍夫曼树）来表示词汇表中的所有单词。如上图，其中，白色节点表示词汇表中的所有单词，而黑色节点则表示隐节点。其中$V$个单词存储于二叉树的叶子节点单元，而对于每个叶子节点，都有一条唯一的路径可以从根节点达到该叶子节点，这条路径用于计算该叶子节点所代表的单词的概率。在这个模型中，不存在单词的输出向量，而是$V-1$个隐节点中都有一个输出向量$v ^`_{n(w,j)}$，单词作为输出词的概率被定义为：</p>
-<script type="math/tex; mode=display">p(w=w_O)=\prod ^{L(w)-1}_{j=1}\sigma([[n(w,j+1)=ch(n(w,j))]].{v^`_{n(w,j)}}^Th)</script><p>其中，$ch(n)$是节点$n$的左侧子节点，$v^`<em>{n(w,j)}$是隐节点$n(w,j)$的向量表示（即“输出向量”）。而$h$则是隐藏层的输出值（SG模型中，$h=v</em>{wi}$；CBOW模型中，$h=\frac{1}{C}\sum<em>{c=1}^C v</em>{w_c}$），$[[x]]$则为一个特殊函数，其定义如下：</p>
-<script type="math/tex; mode=display">[[x]]=\begin{cases}1\   \ ,if\ x\ is\ true\\-1\ ,\ others\end{cases}</script><ul>
+<p>$$p(w=w_O)=\prod ^{L(w)-1}<em>{j=1}\sigma([[n(w,j+1)=ch(n(w,j))]].{v^`</em>{n(w,j)}}^Th)$$</p>
+<p>其中，$ch(n)$是节点$n$的左侧子节点，$v^`<em>{n(w,j)}$是隐节点$n(w,j)$的向量表示（即“输出向量”）。而$h$则是隐藏层的输出值（SG模型中，$h=v</em>{wi}$；CBOW模型中，$h=\frac{1}{C}\sum_{c=1}^C v_{w_c}$），$[[x]]$则为一个特殊函数，其定义如下：</p>
+<p>$$[[x]]=\begin{cases}1\   \ ,if\ x\ is\ true\-1\ ,\ others\end{cases}$$</p>
+<ul>
 <li><p>负采样技术</p>
 <p>为解决数量过于庞大的输出向量的更新问题，于是在更新时不更新所有向量，而只更新他们的一个样本。正样本应该出现在我们的样本中，此外也需要加入几个单词作为负样本。而在采样的过程中，我们需要任意指定一个总体的概率分布，这个分布就叫做噪声分布，标记为$P_n(w)$。在$word2vec$中，作者用一个定义好的后多项分布的负采样形式取代简化的训练目标，从而产生高质量的嵌入：</p>
 </li>
 </ul>
-<script type="math/tex; mode=display">E=-log\sigma({v^`_{w_O}}^Th)-\sum_{w_j\in W_{neg}}log\sigma(-{v^`_{w_j}}^Th)</script><p>其中，$w<em>O$是正样本（即输出单词），$v^`</em>{w<em>O}$是词向量。而$h$则是隐藏层的输出值（SG模型中，$h=v</em>{wi}$；CBOW模型中，$h=\frac{1}{C}\sum<em>{c=1}^C v</em>{w<em>c}$）。$W</em>{neg}={w_j|j=1,…,K}$是从$P_n(w)$中采样得到的单词集合，即负样本。</p>
+<p>$$E=-log\sigma({v^<code>_{w_O}}^Th)-\sum_{w_j\in W_{neg}}log\sigma(-{v^</code>_{w_j}}^Th)$$</p>
+<p>其中，$w_O$是正样本（即输出单词），$v^`<em>{w_O}$是词向量。而$h$则是隐藏层的输出值（SG模型中，$h=v</em>{wi}$；CBOW模型中，$h=\frac{1}{C}\sum_{c=1}^C v_{w_c}$）。$W_{neg}={w_j|j=1,…,K}$是从$P_n(w)$中采样得到的单词集合，即负样本。</p>
 <h2 id="Glove"><a href="#Glove" class="headerlink" title="$Glove$"></a>$Glove$</h2><ul>
 <li><p>定义</p>
 <p>基于计数和直接预测的方法；</p>
@@ -555,7 +565,9 @@
 <li><p>目标函数</p>
 </li>
 </ul>
-<script type="math/tex; mode=display">J(\theta)=\frac{1}{2}\sum^W_{i,j=1}f(P_{ij})(u^T_iv_j-logP_{ij})^2</script><script type="math/tex; mode=display">X_{final}=U+V</script><p>其中，$P<em>{ij}$是单词$j$出现在单词$i$上下文中的概率，而$f(P</em>{ij})$则是为了去除噪声而设定的函数。</p>
+<p>$$J(\theta)=\frac{1}{2}\sum^W_{i,j=1}f(P_{ij})(u^T_iv_j-logP_{ij})^2$$</p>
+<p>$$X_{final}=U+V$$</p>
+<p>其中，$P_{ij}$是单词$j$出现在单词$i$上下文中的概率，而$f(P_{ij})$则是为了去除噪声而设定的函数。</p>
 <h2 id="如何评价-Embedding"><a href="#如何评价-Embedding" class="headerlink" title="如何评价$Embedding$"></a>如何评价$Embedding$</h2><ul>
 <li><p>内在方式：对特定/中间子任务的评估；</p>
 </li>
@@ -1086,7 +1098,7 @@
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

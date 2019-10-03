@@ -475,8 +475,7 @@ Release是经过优化后的版本，去掉了调试信息，代码进行了优�
 <li>指针是个量，对应一块内存区域；</li>
 <li>指针存储的是某个内存单元的地址；</li>
 <li>访问方式：<pre><code>    1、直接访问：按变量地址存取变量值，取地址符&amp;；
-    2、间接访问：通过存放变量地址的变量去访问变量，间接运算符*；
-</code></pre></li>
+    2、间接访问：通过存放变量地址的变量去访问变量，间接运算符*；</code></pre></li>
 <li>在函数中改变一个外部变量，需要变量的地址；</li>
 <li>若是数据，需要指向数据的指针存储数据的地址；</li>
 <li>若是指针，需要指向指针的指针存用户指针的地址；</li>
@@ -522,8 +521,7 @@ int main()
 
     system("pause");
     return 0;
-}
-</code></pre><ul>
+}</code></pre><ul>
 <li>结果：</li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-6aee95a3e2f42b7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
@@ -577,8 +575,7 @@ int   _file;//文件描述符
 int   _charbuf;//双字节缓冲，缓冲2个字节
 int   _bufsiz;//缓冲区大小
 char *_tmpfname;//临时文件名
-};
-</code></pre><h3 id="fopen打开模式"><a href="#fopen打开模式" class="headerlink" title="fopen打开模式"></a>fopen打开模式</h3><ul>
+};</code></pre><h3 id="fopen打开模式"><a href="#fopen打开模式" class="headerlink" title="fopen打开模式"></a>fopen打开模式</h3><ul>
 <li>只读模式”r”打开文件，该文件必须存在，否则打开失败，r+,rb,rb+,rt,rt+模式打开文件，文件不存在也会失败；</li>
 <li>只写模式”w”打开，文件存在则长度清0，不存在则建立文件，w+,wb,wb+,wt,wt+模式打开文件，文件不存在则建立文件；</li>
 <li>a以附加的方式打开只写文件，若文件不存在，则建立文件，存在则在文件尾部添加数据，a+以附加的方式打开可读写文件，不存在则建立文件，存在则写入数据到文件尾，at二进制数据的追加，不存在则创建，只能写、at+读写打开一个文本文件，允许读或在文本末追加数据，ab二进制数据的追加，不存在则创建，只能写；</li>
@@ -586,12 +583,10 @@ char *_tmpfname;//临时文件名
 <h3 id="阻塞模式和非阻塞模式"><a href="#阻塞模式和非阻塞模式" class="headerlink" title="阻塞模式和非阻塞模式"></a>阻塞模式和非阻塞模式</h3><ul>
 <li>非阻塞模式，会引起宕机，会一直执行；</li>
 </ul>
-<pre><code>system("start notepad");
-</code></pre><ul>
+<pre><code>system("start notepad");</code></pre><ul>
 <li>阻塞模式，不会引起宕机，执行一步后才能执行下一步；</li>
 </ul>
-<pre><code>system("notepad");
-</code></pre><script>
+<pre><code>system("notepad");</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1084,7 +1079,7 @@ char *_tmpfname;//临时文件名
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

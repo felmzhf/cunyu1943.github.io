@@ -11,8 +11,7 @@
 &gt;&gt;&gt; sys.setdefaultencoding(&#39;utf-8&#39;)
  NameError: name &#39;reload&#39; is not defined
 
-
-原因：Pyth">
+原因：Pytho">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -465,32 +464,29 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h1><pre class="line-numbers language-lang-python"><code class="language-lang-python">>>> import sys
->>> reload(sys)
->>> sys.setdefaultencoding('utf-8')
- NameError: name 'reload' is not defined
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> sys
+<span class="token operator">>></span><span class="token operator">></span> reload<span class="token punctuation">(</span>sys<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sys<span class="token punctuation">.</span>setdefaultencoding<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+ NameError<span class="token punctuation">:</span> name <span class="token string">'reload'</span> <span class="token keyword">is</span> <span class="token operator">not</span> defined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>原因：Python3.x中已经彻底抛弃<code>sys.setdefaultencoding('uft-8')</code>；</li>
 <li>解决办法：</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">import importlib
-importlib.reload(sys)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> importlib
+importlib<span class="token punctuation">.</span>reload<span class="token punctuation">(</span>sys<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h1 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h1><ul>
 <li><p>如何给新建的<code>python</code>脚本设置默认模版</p>
 </li>
 <li><p>进入<code>File&gt;&gt;Setting&gt;&gt;Editor&gt;&gt;Code Style&gt;&gt;File and Code Templates</code>，然后找到<code>Python Script</code>，然后在右边的框中输入你想要定义的模版，比如说我的是：</p>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : ${DATE} ${TIME}
-# @Author  : cunyu
-# @Site    : ${SITE}
-# @File    : ${NAME}.py
-# @Software: ${PRODUCT_NAME}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : ${DATE} ${TIME}</span>
+<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
+<span class="token comment" spellcheck="true"># @Site    : ${SITE}</span>
+<span class="token comment" spellcheck="true"># @File    : ${NAME}.py</span>
+<span class="token comment" spellcheck="true"># @Software: ${PRODUCT_NAME}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-8066083eb82ad526?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-abb1c72d39f46b63?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <script>
@@ -986,7 +982,7 @@ importlib.reload(sys)
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

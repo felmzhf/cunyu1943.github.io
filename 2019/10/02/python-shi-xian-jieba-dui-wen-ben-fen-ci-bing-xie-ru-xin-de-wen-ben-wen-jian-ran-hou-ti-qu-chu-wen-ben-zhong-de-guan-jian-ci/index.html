@@ -473,46 +473,45 @@
 <ul>
 <li>代码</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2019/5/19 19:10
-# @Author  : cunyu
-# @Site    : cunyu1943.github.io
-# @File    : Seg.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2019/5/19 19:10</span>
+<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
+<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
+<span class="token comment" spellcheck="true"># @File    : Seg.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-import jieba
-import jieba.analyse
+<span class="token keyword">import</span> jieba
+<span class="token keyword">import</span> jieba<span class="token punctuation">.</span>analyse
 
-# 待分词的文本路径
-sourceTxt = './source.txt'
-# 分好词后的文本路径
-targetTxt = './target.txt'
+<span class="token comment" spellcheck="true"># 待分词的文本路径</span>
+sourceTxt <span class="token operator">=</span> <span class="token string">'./source.txt'</span>
+<span class="token comment" spellcheck="true"># 分好词后的文本路径</span>
+targetTxt <span class="token operator">=</span> <span class="token string">'./target.txt'</span>
 
-# 对文本进行操作
-with open(sourceTxt, 'r', encoding = 'utf-8') as sourceFile, open(targetTxt, 'a+', encoding = 'utf-8') as targetFile:
-    for line in sourceFile:
-        seg = jieba.cut(line.strip(), cut_all = False)
-        # 分好词之后之间用空格隔断
-        output = ' '.join(seg)
-        f.write(output)
-        f.write('\n')
-    prinf('写入成功！')
+<span class="token comment" spellcheck="true"># 对文本进行操作</span>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span>sourceTxt<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> sourceFile<span class="token punctuation">,</span> open<span class="token punctuation">(</span>targetTxt<span class="token punctuation">,</span> <span class="token string">'a+'</span><span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> targetFile<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> sourceFile<span class="token punctuation">:</span>
+        seg <span class="token operator">=</span> jieba<span class="token punctuation">.</span>cut<span class="token punctuation">(</span>line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> cut_all <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 分好词之后之间用空格隔断</span>
+        output <span class="token operator">=</span> <span class="token string">' '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>seg<span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>output<span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+    prinf<span class="token punctuation">(</span><span class="token string">'写入成功！'</span><span class="token punctuation">)</span>
 
-# 提取关键词
-with open(targetTxt, 'r', encoding = 'utf-8') as file:
-    text = file.readlines()
-    """
+<span class="token comment" spellcheck="true"># 提取关键词</span>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span>targetTxt<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file<span class="token punctuation">:</span>
+    text <span class="token operator">=</span> file<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token triple-quoted-string string">"""
     几个参数解释：
         * text : 待提取的字符串类型文本
         * topK : 返回TF-IDF权重最大的关键词的个数，默认为20个
         * withWeight : 是否返回关键词的权重值，默认为False
         * allowPOS : 包含指定词性的词，默认为空
-    """
-    keywords = jieba.analyse.extract_tags(str(text), topK = 10, withWeight=True, allowPOS=())
-    print(keywords)
-    print('提取完毕！')
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    """</span>
+    keywords <span class="token operator">=</span> jieba<span class="token punctuation">.</span>analyse<span class="token punctuation">.</span>extract_tags<span class="token punctuation">(</span>str<span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">,</span> topK <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> withWeight<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> allowPOS<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>keywords<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'提取完毕！'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1006,7 +1005,7 @@ with open(targetTxt, 'r', encoding = 'utf-8') as file:
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

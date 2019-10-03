@@ -470,214 +470,203 @@ a = np.array([[1,2,4],
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><pre class="line-numbers language-lang-python"><code class="language-lang-python"># --*--coding:utf-8--*--
-import numpy as np
-"""
+                <h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># --*--coding:utf-8--*--</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token triple-quoted-string string">"""
 矩阵
-"""
-# mat(array),将二维数组转化为矩阵
-a = np.array([[1,2,4],
-              [4, 5, 6],
-              [8, 9, 10]])
-print('matrix:\n', np.mat(a))
-print(np.mat('1,2,4;5,6,9'))
+"""</span>
+<span class="token comment" spellcheck="true"># mat(array),将二维数组转化为矩阵</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'matrix:\n'</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span><span class="token string">'1,2,4;5,6,9'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# matrix.I,表示matrix的逆矩阵
-print(np.mat(a).I)
+<span class="token comment" spellcheck="true"># matrix.I,表示matrix的逆矩阵</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">.</span>I<span class="token punctuation">)</span>
 
-# 利用分块创造新矩阵
-a = np.array([[4, 8],
-              [5, 19]])
-b = np.array([[11, 89],
-              [49, 29]])
-print(np.bmat('a, b;b, a'))
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><pre class="line-numbers language-lang-python"><code class="language-lang-python"># --*--coding:utf-8--*--
-import numpy as np
-import matplotlib.pyplot as plt
+<span class="token comment" spellcheck="true"># 利用分块创造新矩阵</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">[</span><span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>bmat<span class="token punctuation">(</span><span class="token string">'a, b;b, a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># --*--coding:utf-8--*--</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 
-"""
+<span class="token triple-quoted-string string">"""
 一般函数
-"""
-# 正无穷
-print('正无穷：', np.inf)
-# 负无穷
-print('负无穷：', -np.inf)
-# 非法值
-print('非法值：', np.nan)
+"""</span>
+<span class="token comment" spellcheck="true"># 正无穷</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'正无穷：'</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>inf<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 负无穷</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'负无穷：'</span><span class="token punctuation">,</span> <span class="token operator">-</span>np<span class="token punctuation">.</span>inf<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 非法值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'非法值：'</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 向量化函数
-"""
+"""</span>
 
-# vectorize(function_name),将函数向量化，产生一个新函数
-x = np.array([3, 54, 89])
-def sinc(x):
-    if x == 0.0:
-        return 1.0
-    else:
-        y = np.pi * x
-        return np.sin(y) / y
+<span class="token comment" spellcheck="true"># vectorize(function_name),将函数向量化，产生一个新函数</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">sinc</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0.0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1.0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        y <span class="token operator">=</span> np<span class="token punctuation">.</span>pi <span class="token operator">*</span> x
+        <span class="token keyword">return</span> np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token operator">/</span> y
 
-sinc1 = np.vectorize(sinc)
-print('向量化：', sinc1(x))
+sinc1 <span class="token operator">=</span> np<span class="token punctuation">.</span>vectorize<span class="token punctuation">(</span>sinc<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'向量化：'</span><span class="token punctuation">,</span> sinc1<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-x = np.linspace(-10, 10, 50)
-plt.plot(x, sinc1(x))
-plt.show()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="二元运算"><a href="#二元运算" class="headerlink" title="二元运算"></a>二元运算</h1><h3 id="四则运算对应函数"><a href="#四则运算对应函数" class="headerlink" title="四则运算对应函数"></a>四则运算对应函数</h3><div class="table-container">
-<table>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> sinc1<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="二元运算"><a href="#二元运算" class="headerlink" title="二元运算"></a>二元运算</h1><h3 id="四则运算对应函数"><a href="#四则运算对应函数" class="headerlink" title="四则运算对应函数"></a>四则运算对应函数</h3><table>
 <thead>
 <tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">对应函数</th>
+<th align="center">运算符</th>
+<th align="center">对应函数</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">a + b</td>
-<td style="text-align:center">add(a, b)</td>
+<tbody><tr>
+<td align="center">a + b</td>
+<td align="center">add(a, b)</td>
 </tr>
 <tr>
-<td style="text-align:center">a - b</td>
-<td style="text-align:center">subtract(a, b)</td>
+<td align="center">a - b</td>
+<td align="center">subtract(a, b)</td>
 </tr>
 <tr>
-<td style="text-align:center">a * b</td>
-<td style="text-align:center">multiply(a, b)</td>
+<td align="center">a * b</td>
+<td align="center">multiply(a, b)</td>
 </tr>
 <tr>
-<td style="text-align:center">a / b</td>
-<td style="text-align:center">divide(a, b)</td>
+<td align="center">a / b</td>
+<td align="center">divide(a, b)</td>
 </tr>
 <tr>
-<td style="text-align:center">a ** b</td>
-<td style="text-align:center">power(a, b)</td>
+<td align="center">a ** b</td>
+<td align="center">power(a, b)</td>
 </tr>
 <tr>
-<td style="text-align:center">a % b</td>
-<td style="text-align:center">remainder(a,b)</td>
+<td align="center">a % b</td>
+<td align="center">remainder(a,b)</td>
 </tr>
-</tbody>
-</table>
-</div>
-<h3 id="比较与逻辑运算"><a href="#比较与逻辑运算" class="headerlink" title="比较与逻辑运算"></a>比较与逻辑运算</h3><div class="table-container">
-<table>
+</tbody></table>
+<h3 id="比较与逻辑运算"><a href="#比较与逻辑运算" class="headerlink" title="比较与逻辑运算"></a>比较与逻辑运算</h3><table>
 <thead>
 <tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">对应函数</th>
+<th align="center">运算符</th>
+<th align="center">对应函数</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">==</td>
-<td style="text-align:center">equal</td>
+<tbody><tr>
+<td align="center">==</td>
+<td align="center">equal</td>
 </tr>
 <tr>
-<td style="text-align:center">!=</td>
-<td style="text-align:center">not_equal</td>
+<td align="center">!=</td>
+<td align="center">not_equal</td>
 </tr>
 <tr>
-<td style="text-align:center">&gt;</td>
-<td style="text-align:center">greater</td>
+<td align="center">&gt;</td>
+<td align="center">greater</td>
 </tr>
 <tr>
-<td style="text-align:center">&gt;=</td>
-<td style="text-align:center">greater_equal</td>
+<td align="center">&gt;=</td>
+<td align="center">greater_equal</td>
 </tr>
 <tr>
-<td style="text-align:center">&lt;</td>
-<td style="text-align:center">less</td>
+<td align="center">&lt;</td>
+<td align="center">less</td>
 </tr>
 <tr>
-<td style="text-align:center">&lt;=</td>
-<td style="text-align:center">less_equal</td>
+<td align="center">&lt;=</td>
+<td align="center">less_equal</td>
 </tr>
 <tr>
-<td style="text-align:center">&amp;</td>
-<td style="text-align:center">bitwise_and</td>
+<td align="center">&amp;</td>
+<td align="center">bitwise_and</td>
 </tr>
 <tr>
-<td style="text-align:center">/</td>
-<td style="text-align:center">bitwise_or</td>
+<td align="center">/</td>
+<td align="center">bitwise_or</td>
 </tr>
 <tr>
-<td style="text-align:center">^</td>
-<td style="text-align:center">bitwise_xor</td>
+<td align="center">^</td>
+<td align="center">bitwise_xor</td>
 </tr>
 <tr>
-<td style="text-align:center">~</td>
-<td style="text-align:center">invert</td>
+<td align="center">~</td>
+<td align="center">invert</td>
 </tr>
 <tr>
-<td style="text-align:center">&gt;&gt;</td>
-<td style="text-align:center">right_shift</td>
+<td align="center">&gt;&gt;</td>
+<td align="center">right_shift</td>
 </tr>
 <tr>
-<td style="text-align:center">&lt;&lt;</td>
-<td style="text-align:center">left_shift</td>
+<td align="center">&lt;&lt;</td>
+<td align="center">left_shift</td>
 </tr>
-</tbody>
-</table>
-</div>
-<h1 id="ufunc对象"><a href="#ufunc对象" class="headerlink" title="ufunc对象"></a>ufunc对象</h1><pre class="line-numbers language-lang-python"><code class="language-lang-python"># --*--coding:utf-8--*--
-import numpy as np
+</tbody></table>
+<h1 id="ufunc对象"><a href="#ufunc对象" class="headerlink" title="ufunc对象"></a>ufunc对象</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># --*--coding:utf-8--*--</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
-"""
+<span class="token triple-quoted-string string">"""
 ufunc对象
-"""
-# reduce方法
-# op.reduce(a)，将op沿着某个轴应用，使得数组啊的维数降低一维
-a = np.array([3, 4, 5, 6, 9])
-print(np.add.reduce(a))
-print(np.logical_or.reduce(a))
+"""</span>
+<span class="token comment" spellcheck="true"># reduce方法</span>
+<span class="token comment" spellcheck="true"># op.reduce(a)，将op沿着某个轴应用，使得数组啊的维数降低一维</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>add<span class="token punctuation">.</span>reduce<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>logical_or<span class="token punctuation">.</span>reduce<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# accumulate方法
-# op.accumulate(a),看成保存reduce每一步的结果所形成的数组
-print(np.add.accumulate(a))
-print(np.logical_or.accumulate(a))
+<span class="token comment" spellcheck="true"># accumulate方法</span>
+<span class="token comment" spellcheck="true"># op.accumulate(a),看成保存reduce每一步的结果所形成的数组</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>add<span class="token punctuation">.</span>accumulate<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>logical_or<span class="token punctuation">.</span>accumulate<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# reduceat方法
-# op.reduceat(a, indices),将操作符运用到指定的下标上，返回一个与indices大小相同的数组
-indices = np.array([0,3])
-print(np.add.reduceat(a, indices))
+<span class="token comment" spellcheck="true"># reduceat方法</span>
+<span class="token comment" spellcheck="true"># op.reduceat(a, indices),将操作符运用到指定的下标上，返回一个与indices大小相同的数组</span>
+indices <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>add<span class="token punctuation">.</span>reduceat<span class="token punctuation">(</span>a<span class="token punctuation">,</span> indices<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# outer方法
-# op.outer(a, b)，对a中每个元素，将op运用到它与b的每一个元素上所得到的结果
-b = np.array([2, 3, 4])
-print(np.add.outer(a, b))
-print(np.logical_or.outer(a, b))
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="数组读写"><a href="#数组读写" class="headerlink" title="数组读写"></a>数组读写</h1><pre class="line-numbers language-lang-python"><code class="language-lang-python"># --*--coding:utf-8--*--
-import numpy as np
+<span class="token comment" spellcheck="true"># outer方法</span>
+<span class="token comment" spellcheck="true"># op.outer(a, b)，对a中每个元素，将op运用到它与b的每一个元素上所得到的结果</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>add<span class="token punctuation">.</span>outer<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>logical_or<span class="token punctuation">.</span>outer<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="数组读写"><a href="#数组读写" class="headerlink" title="数组读写"></a>数组读写</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># --*--coding:utf-8--*--</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
-""" 
+<span class="token triple-quoted-string string">""" 
 数组读写
-"""
-# 空格（制表符）分隔的文本
-data = []
-with open('file.txt', 'r') as file:
-    for line in file:
-        fileds = line.split()
-        row_data = [float(x) for x in fileds]
-        data.append(row_data)
+"""</span>
+<span class="token comment" spellcheck="true"># 空格（制表符）分隔的文本</span>
+data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> file<span class="token punctuation">:</span>
+        fileds <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        row_data <span class="token operator">=</span> <span class="token punctuation">[</span>float<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> fileds<span class="token punctuation">]</span>
+        data<span class="token punctuation">.</span>append<span class="token punctuation">(</span>row_data<span class="token punctuation">)</span>
 
-data = np.array(data)
-print('空格分隔：', data)
+data <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'空格分隔：'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
 
-# 逗号分隔文件
-data = np.loadtxt('file1.txt', delimiter=',')
-print('逗号分隔：', data)
+<span class="token comment" spellcheck="true"># 逗号分隔文件</span>
+data <span class="token operator">=</span> np<span class="token punctuation">.</span>loadtxt<span class="token punctuation">(</span><span class="token string">'file1.txt'</span><span class="token punctuation">,</span> delimiter<span class="token operator">=</span><span class="token string">','</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'逗号分隔：'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
 
-# 数组写入文件
-np.savetxt('out.txt', data)
-with open('out.txt') as f:
-    for line in f:
-        print(line)
+<span class="token comment" spellcheck="true"># 数组写入文件</span>
+np<span class="token punctuation">.</span>savetxt<span class="token punctuation">(</span><span class="token string">'out.txt'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'out.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> f<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 Numpy二进制格式
 保存的方法：
     1、save(file, arr) 保存单个数组，.npy 格式
@@ -685,16 +674,15 @@ Numpy二进制格式
     3、savez_compressed(file, *args, **kwds) 保存多个数组，有压缩的 .npz 格式
 读取的方法：
     load(file, mmap_mode=None) 对于 .npy，返回保存的数组，对于 .npz，返回一个｛名称-数组｝对组成的字典
-"""
+"""</span>
 
-# 单个数组的读写
-a = np.array([[1,2,4],[9,3,0]])
-np.save('file2.txt', a)
+<span class="token comment" spellcheck="true"># 单个数组的读写</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'file2.txt'</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
 
-# 保存多个数组
-b = np.array(100)
-np.savez('data.npz', a, b)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 保存多个数组</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>savez<span class="token punctuation">(</span><span class="token string">'data.npz'</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1196,7 +1184,7 @@ np.savez('data.npz', a, b)
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

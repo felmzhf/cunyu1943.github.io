@@ -444,7 +444,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        868
+                        871
                     </div>
                     
 
@@ -473,72 +473,70 @@
 <li><p><strong>使用</strong></p>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/python3
-# -*- coding:utf-8 -*-
-# @Time    : 2018-11-10 21:25
-# @Author  : Manu
-# @Site    : 
-# @File    : urllib_lib.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/python3</span>
+<span class="token comment" spellcheck="true"># -*- coding:utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2018-11-10 21:25</span>
+<span class="token comment" spellcheck="true"># @Author  : Manu</span>
+<span class="token comment" spellcheck="true"># @Site    : </span>
+<span class="token comment" spellcheck="true"># @File    : urllib_lib.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-from urllib import request
-from urllib import parse
+<span class="token keyword">from</span> urllib <span class="token keyword">import</span> request
+<span class="token keyword">from</span> urllib <span class="token keyword">import</span> parse
 
-# ulropen
-# 打开网页请求
-response = request.urlopen('http://www.baidu.com')
-text = response.read()
-print(text)
+<span class="token comment" spellcheck="true"># ulropen</span>
+<span class="token comment" spellcheck="true"># 打开网页请求</span>
+response <span class="token operator">=</span> request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span><span class="token string">'http://www.baidu.com'</span><span class="token punctuation">)</span>
+text <span class="token operator">=</span> response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span>
 
-# urlretrieve
-# 将网页文件保存到本地
-csdnhtml = request.urlretrieve('https://blog.csdn.net/github_39655029', 'csdn.html')
-print(csdnhtml)
+<span class="token comment" spellcheck="true"># urlretrieve</span>
+<span class="token comment" spellcheck="true"># 将网页文件保存到本地</span>
+csdnhtml <span class="token operator">=</span> request<span class="token punctuation">.</span>urlretrieve<span class="token punctuation">(</span><span class="token string">'https://blog.csdn.net/github_39655029'</span><span class="token punctuation">,</span> <span class="token string">'csdn.html'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>csdnhtml<span class="token punctuation">)</span>
 
-# urlencode
-# 想浏览器发送请求时，将字典数据转换为URL编码的数据
-data = {'team':'Spurs', 'Coach':'波波', 'age':'69'}
-qs = parse.urlencode(data)
-print(qs)
+<span class="token comment" spellcheck="true"># urlencode</span>
+<span class="token comment" spellcheck="true"># 想浏览器发送请求时，将字典数据转换为URL编码的数据</span>
+data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'team'</span><span class="token punctuation">:</span><span class="token string">'Spurs'</span><span class="token punctuation">,</span> <span class="token string">'Coach'</span><span class="token punctuation">:</span><span class="token string">'波波'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span><span class="token string">'69'</span><span class="token punctuation">}</span>
+qs <span class="token operator">=</span> parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>qs<span class="token punctuation">)</span>
 
-# parse_qs
-# 将编码后的url进行解析
-qs = 'age=69&team=Spurs&Coach=%E6%B3%A2%E6%B3%A2'
-print(parse.parse_qs(qs))
+<span class="token comment" spellcheck="true"># parse_qs</span>
+<span class="token comment" spellcheck="true"># 将编码后的url进行解析</span>
+qs <span class="token operator">=</span> <span class="token string">'age=69&amp;team=Spurs&amp;Coach=%E6%B3%A2%E6%B3%A2'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>parse<span class="token punctuation">.</span>parse_qs<span class="token punctuation">(</span>qs<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# urlparse&urlsplit
-# 将url中的各个部分进行分割，两者不同在于urlparse多了一个params属性
-url = 'https://blog.csdn.net/github_39655029'
-url_list = parse.urlsplit(url)
-url_list = parse.urlparse(url)
-print(url_list)
+<span class="token comment" spellcheck="true"># urlparse&amp;urlsplit</span>
+<span class="token comment" spellcheck="true"># 将url中的各个部分进行分割，两者不同在于urlparse多了一个params属性</span>
+url <span class="token operator">=</span> <span class="token string">'https://blog.csdn.net/github_39655029'</span>
+url_list <span class="token operator">=</span> parse<span class="token punctuation">.</span>urlsplit<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+url_list <span class="token operator">=</span> parse<span class="token punctuation">.</span>urlparse<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>url_list<span class="token punctuation">)</span>
 
-# request.Request类
-# 增加一些请求头
-headers = {
-    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-                 'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
-}
-req = request.Request(url, headers=headers)
-res = request.urlopen(req)
-print(res.read().decode('utf-8'))
+<span class="token comment" spellcheck="true"># request.Request类</span>
+<span class="token comment" spellcheck="true"># 增加一些请求头</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '</span>
+                 <span class="token string">'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'</span>
+<span class="token punctuation">}</span>
+req <span class="token operator">=</span> request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+res <span class="token operator">=</span> request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>req<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# ProxyHandler处理器
-# 设置代理服务器，防止网站检测时被检测出来
-# 常用代理
-# 西刺免费代理IP：http://www.xicidaili.com
-# 快代理：http://www.kuaidaili.com
-# 代理云：http://www.dailiyun.com
-# 原理：在请求目的网站前，先请求代理服务器，然后经服务器请求目的网站，代理服务器获取目的网站数据后，在再转发给我们
-handler = request.ProxyHandler({'https':'223.145.212.16:8118'})
-opener = request.build_opener(handler)
-req = request.Request('http://httpbin.org/ip')
-resq = opener.open(req)
-print(resq.read())
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># ProxyHandler处理器</span>
+<span class="token comment" spellcheck="true"># 设置代理服务器，防止网站检测时被检测出来</span>
+<span class="token comment" spellcheck="true"># 常用代理</span>
+<span class="token comment" spellcheck="true"># 西刺免费代理IP：http://www.xicidaili.com</span>
+<span class="token comment" spellcheck="true"># 快代理：http://www.kuaidaili.com</span>
+<span class="token comment" spellcheck="true"># 代理云：http://www.dailiyun.com</span>
+<span class="token comment" spellcheck="true"># 原理：在请求目的网站前，先请求代理服务器，然后经服务器请求目的网站，代理服务器获取目的网站数据后，在再转发给我们</span>
+handler <span class="token operator">=</span> request<span class="token punctuation">.</span>ProxyHandler<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'https'</span><span class="token punctuation">:</span><span class="token string">'223.145.212.16:8118'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+opener <span class="token operator">=</span> request<span class="token punctuation">.</span>build_opener<span class="token punctuation">(</span>handler<span class="token punctuation">)</span>
+req <span class="token operator">=</span> request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span><span class="token string">'http://httpbin.org/ip'</span><span class="token punctuation">)</span>
+resq <span class="token operator">=</span> opener<span class="token punctuation">.</span>open<span class="token punctuation">(</span>req<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resq<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><ul>
-<li><strong>格式</strong>：<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">Set-Cookie：NAME=VALUE：Expires/Max=DATE:Path=PATH:Domain=DOMAIN_NAME:SECURE
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li><strong>格式</strong>：<pre class="line-numbers language-shell"><code class="language-shell">Set-Cookie：NAME=VALUE：Expires/Max=DATE:Path=PATH:Domain=DOMAIN_NAME:SECURE<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>NAME：cookie的名字；</li>
 <li>VALUE：cookie的值；</li>
@@ -549,65 +547,62 @@ print(resq.read())
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">from urllib import request
-from http.cookiejar import MozillaCookieJar
-# cookie保存与加载
-cookiejar = MozillaCookieJar('cookie.txt')
-# 加载
-cookiejar.load(ignore_discard=True)
-handler = request.HTTPCookieProcessor(cookiejar)
-opener = request.build_opener(handler)
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> urllib <span class="token keyword">import</span> request
+<span class="token keyword">from</span> http<span class="token punctuation">.</span>cookiejar <span class="token keyword">import</span> MozillaCookieJar
+<span class="token comment" spellcheck="true"># cookie保存与加载</span>
+cookiejar <span class="token operator">=</span> MozillaCookieJar<span class="token punctuation">(</span><span class="token string">'cookie.txt'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 加载</span>
+cookiejar<span class="token punctuation">.</span>load<span class="token punctuation">(</span>ignore_discard<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+handler <span class="token operator">=</span> request<span class="token punctuation">.</span>HTTPCookieProcessor<span class="token punctuation">(</span>cookiejar<span class="token punctuation">)</span>
+opener <span class="token operator">=</span> request<span class="token punctuation">.</span>build_opener<span class="token punctuation">(</span>handler<span class="token punctuation">)</span>
 
-# 保存
-resp = opener.open('https://www.baidu.com')
-cookiejar.save(ignore_discard=True)
-for cookie in cookiejar:
-    print(cookie)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 保存</span>
+resp <span class="token operator">=</span> opener<span class="token punctuation">.</span>open<span class="token punctuation">(</span><span class="token string">'https://www.baidu.com'</span><span class="token punctuation">)</span>
+cookiejar<span class="token punctuation">.</span>save<span class="token punctuation">(</span>ignore_discard<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> cookie <span class="token keyword">in</span> cookiejar<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="requests库的基本使用"><a href="#requests库的基本使用" class="headerlink" title="requests库的基本使用"></a>requests库的基本使用</h2><ul>
 <li><strong>安装</strong></li>
 </ul>
 <p>在控制命令台使用pip命令安装即可，使用命令如下；</p>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">pip install requests
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">pip install requests<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li><strong>使用</strong></li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">import requests
-# 发送get请求
-kw = {'kw':'村雨'}
-headers = {
-    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-                 'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
-}
-response = requests.get('http://www.baidu.com/s', params=kw, headers=headers, verify = False)
-# 直接从网络抓取的内容，未经编码，是bytes类型
-print(response.content.decode('utf-8'))
-# 将response.content进行解码的字符串，解码需要指定编码方式
-print(response.text)
-# 返回状态码
-print(response.status_code)
-# 查看相应头部字符编码
-print(response.encoding)
-# 查看完整url地址
-print(response.url)
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token comment" spellcheck="true"># 发送get请求</span>
+kw <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'kw'</span><span class="token punctuation">:</span><span class="token string">'村雨'</span><span class="token punctuation">}</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '</span>
+                 <span class="token string">'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'</span>
+<span class="token punctuation">}</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://www.baidu.com/s'</span><span class="token punctuation">,</span> params<span class="token operator">=</span>kw<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> verify <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 直接从网络抓取的内容，未经编码，是bytes类型</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 将response.content进行解码的字符串，解码需要指定编码方式</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 返回状态码</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 查看相应头部字符编码</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>encoding<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 查看完整url地址</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
 
-with open('cunyu.html', 'w', encoding='utf-8 ') as cy:
-    cy.write(response.content.decode('utf-8'))
-# 查看cookies
-print(response.cookies)
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'cunyu.html'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8 '</span><span class="token punctuation">)</span> <span class="token keyword">as</span> cy<span class="token punctuation">:</span>
+    cy<span class="token punctuation">.</span>write<span class="token punctuation">(</span>response<span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 查看cookies</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>cookies<span class="token punctuation">)</span>
 
-# 代理使用
-# proxy = {'http':'218.25.131.121:33859'}
-# res = requests.get('http://www.baidu.com', headers=headers, proxies=proxy)
-# print(res.text)
+<span class="token comment" spellcheck="true"># 代理使用</span>
+<span class="token comment" spellcheck="true"># proxy = {'http':'218.25.131.121:33859'}</span>
+<span class="token comment" spellcheck="true"># res = requests.get('http://www.baidu.com', headers=headers, proxies=proxy)</span>
+<span class="token comment" spellcheck="true"># print(res.text)</span>
 
-# 多次请求中使用cookies，使用Session
-session = requests.Session()
-session.post('http://www.baidu.com', headers=headers, data=kw)
-res = session.get('http://www.baidu.com')
-print('demo' + res.text)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 多次请求中使用cookies，使用Session</span>
+session <span class="token operator">=</span> requests<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span>
+session<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">'http://www.baidu.com'</span><span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>kw<span class="token punctuation">)</span>
+res <span class="token operator">=</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://www.baidu.com'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'demo'</span> <span class="token operator">+</span> res<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇介绍了爬虫中有关网络请求的相关知识，通过阅读，你将了解到<code>urllib</code>和<code>requests</code>库的相关使用方法，并对<code>Cookies</code>有进一步的了解，如果你有更好的想法和建议，欢迎留言交流。</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1110,7 +1105,7 @@ print('demo' + res.text)
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

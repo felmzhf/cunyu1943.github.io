@@ -479,7 +479,7 @@ Demo/
 </li>
 <li>常见结构</li>
 </ul>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">Demo/
+<pre class="line-numbers language-shell"><code class="language-shell">Demo/
 |-- bin/    #存放项目的一些可执行文件
 |   |-- demo #可执行程序，启动demo调main.py
 |
@@ -499,8 +499,7 @@ Demo/
 |
 |-- setup.py  #安装、部署、打包的脚本
 |-- requirements.txt   #依赖关系，需要依赖的文件，用于存放软件依赖的外部Python包列表
-|-- README #项目说明文件
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+|-- README #项目说明文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><code>README</code>包含内容：<ul>
 <li>项目简介</li>
@@ -536,16 +535,15 @@ Demo/
 <h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><ul>
 <li>格式：</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">try:
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
     code
-except except1:
+<span class="token keyword">except</span> except1<span class="token punctuation">:</span>
     code
-except except2:
+<span class="token keyword">except</span> except2<span class="token punctuation">:</span>
     code
-...
-except Exception:
-    code
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+    code <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>抓错误的时候一定从小的开始抓起，先抓子集，再抓总集，一般不建议一 开始直接抓错误总集；</li>
 </ul>
@@ -1042,7 +1040,7 @@ except Exception:
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

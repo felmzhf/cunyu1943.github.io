@@ -475,24 +475,23 @@
 <li><p>代码：</p>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2018-10-3 11:10
-# @Author  : Manu
-# @Site    : 
-# @File    : group.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2018-10-3 11:10</span>
+<span class="token comment" spellcheck="true"># @Author  : Manu</span>
+<span class="token comment" spellcheck="true"># @Site    : </span>
+<span class="token comment" spellcheck="true"># @File    : group.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-count = 0
-for i in range(1, 5):
-    for j in range(1, 5):
-        for k in range(1, 5):
-            if i != j and i != k and k != j:
-                print(i, j, k)
-                count += 1
+count <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> i <span class="token operator">!=</span> j <span class="token operator">and</span> i <span class="token operator">!=</span> k <span class="token operator">and</span> k <span class="token operator">!=</span> j<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+                count <span class="token operator">+=</span> <span class="token number">1</span>
 
-print("组成的数共有：%d 个" % count)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"组成的数共有：%d 个"</span> <span class="token operator">%</span> count<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>结果：</li>
 </ul>
@@ -505,32 +504,31 @@ print("组成的数共有：%d 个" % count)
 <li><p>代码：</p>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2018-10-3 12:10
-# @Author  : Manu
-# @Site    : 
-# @File    : bonus.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2018-10-3 12:10</span>
+<span class="token comment" spellcheck="true"># @Author  : Manu</span>
+<span class="token comment" spellcheck="true"># @Site    : </span>
+<span class="token comment" spellcheck="true"># @File    : bonus.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-while True:
-    profit = int(input("Input the profit"))
-    print("利润是 %d 万元" % profit)
-    if profit <= 10:
-        bonus = profit * 0.1
-    elif profit > 10 and profit < 20:
-        bonus = 10 * 0.1 + (profit - 10) * 0.075;
-    elif profit >= 20 and profit < 40:
-        bonus = 10 * 0.1 + (20 - 10) * 0.075 + 0.05 * (profit - 20)
-    elif profit >= 40 and profit < 60:
-        bonus = 10 * 0.1 + (20 - 10) * 0.075 + 0.05 * (40 - 20) + 0.03 * (profit - 40)
-    elif profit >= 60 and profit < 100:
-        10 * 0.1 + (20 - 10) * 0.075 + 0.05 * (40 - 20) + 0.03 * (60 - 40) + (profit - 60) * 0.015
-    else:
-        bonus = 10 * 0.1 + (20 - 10) * 0.075 + 0.05 * (40 - 20) + 0.03 * (60 - 40) + (100 - 60) * 0.015 + (profit - 100) * 0.01
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    profit <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"Input the profit"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"利润是 %d 万元"</span> <span class="token operator">%</span> profit<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> profit <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        bonus <span class="token operator">=</span> profit <span class="token operator">*</span> <span class="token number">0.1</span>
+    <span class="token keyword">elif</span> profit <span class="token operator">></span> <span class="token number">10</span> <span class="token operator">and</span> profit <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">:</span>
+        bonus <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">*</span> <span class="token number">0.1</span> <span class="token operator">+</span> <span class="token punctuation">(</span>profit <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.075</span><span class="token punctuation">;</span>
+    <span class="token keyword">elif</span> profit <span class="token operator">>=</span> <span class="token number">20</span> <span class="token operator">and</span> profit <span class="token operator">&lt;</span> <span class="token number">40</span><span class="token punctuation">:</span>
+        bonus <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">*</span> <span class="token number">0.1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">20</span> <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.075</span> <span class="token operator">+</span> <span class="token number">0.05</span> <span class="token operator">*</span> <span class="token punctuation">(</span>profit <span class="token operator">-</span> <span class="token number">20</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> profit <span class="token operator">>=</span> <span class="token number">40</span> <span class="token operator">and</span> profit <span class="token operator">&lt;</span> <span class="token number">60</span><span class="token punctuation">:</span>
+        bonus <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">*</span> <span class="token number">0.1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">20</span> <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.075</span> <span class="token operator">+</span> <span class="token number">0.05</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">40</span> <span class="token operator">-</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0.03</span> <span class="token operator">*</span> <span class="token punctuation">(</span>profit <span class="token operator">-</span> <span class="token number">40</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> profit <span class="token operator">>=</span> <span class="token number">60</span> <span class="token operator">and</span> profit <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">:</span>
+        <span class="token number">10</span> <span class="token operator">*</span> <span class="token number">0.1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">20</span> <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.075</span> <span class="token operator">+</span> <span class="token number">0.05</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">40</span> <span class="token operator">-</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0.03</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">-</span> <span class="token number">40</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>profit <span class="token operator">-</span> <span class="token number">60</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.015</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        bonus <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">*</span> <span class="token number">0.1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">20</span> <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.075</span> <span class="token operator">+</span> <span class="token number">0.05</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">40</span> <span class="token operator">-</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0.03</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">-</span> <span class="token number">40</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">100</span> <span class="token operator">-</span> <span class="token number">60</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.015</span> <span class="token operator">+</span> <span class="token punctuation">(</span>profit <span class="token operator">-</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.01</span>
 
-    print("奖金是 %f 万元" %bonus)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"奖金是 %f 万元"</span> <span class="token operator">%</span>bonus<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>结果：</li>
 </ul>
@@ -538,29 +536,28 @@ while True:
 <h3 id="实例3"><a href="#实例3" class="headerlink" title="实例3"></a>实例3</h3><ul>
 <li><p>题目：一个整数，它加上100后是一个完全平方数，再加上168又是一个完全平方数，请问该数是多少？</p>
 </li>
-<li><p>分析：如果一个正整数 a 是某一个整数 b 的平方，那么这个正整数 a 叫做完全平方数;<br>假设这个数为 x：<br>1、则：x + 100 = n <strong> 2, x + 100 + 168 = m </strong> 2；<br>2、计算等式：m <strong> 2 - n </strong> 2 = (m + n)(m - n) = 168；<br>3、设置： m + n = i，m - n = j，i <em> j =168，i 和 j 至少一个是偶数；<br>4、可得： m = (i + j) / 2， n = (i - j) / 2，i 和 j 要么都是偶数，要么都是奇数；<br>5、从 3 和 4 推导可知道，i 与 j 均是大于等于 2 的偶数；<br>6、由于 i </em> j = 168， j&gt;=2，则 1 &lt; i &lt; 168 / 2 + 1；</p>
+<li><p>分析：如果一个正整数 a 是某一个整数 b 的平方，那么这个正整数 a 叫做完全平方数;<br>假设这个数为 x：<br>1、则：x + 100 = n ** 2, x + 100 + 168 = m ** 2；<br>2、计算等式：m ** 2 - n ** 2 = (m + n)(m - n) = 168；<br>3、设置： m + n = i，m - n = j，i * j =168，i 和 j 至少一个是偶数；<br>4、可得： m = (i + j) / 2， n = (i - j) / 2，i 和 j 要么都是偶数，要么都是奇数；<br>5、从 3 和 4 推导可知道，i 与 j 均是大于等于 2 的偶数；<br>6、由于 i * j = 168， j&gt;=2，则 1 &lt; i &lt; 168 / 2 + 1；</p>
 </li>
 <li><p>代码：</p>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2018-10-3 12:10
-# @Author  : Manu
-# @Site    : 
-# @File    : compSquNum.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2018-10-3 12:10</span>
+<span class="token comment" spellcheck="true"># @Author  : Manu</span>
+<span class="token comment" spellcheck="true"># @Site    : </span>
+<span class="token comment" spellcheck="true"># @File    : compSquNum.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-res = 168 // 2
-for i in range(1, res + 1):
-    if 168 % i == 0:
-        j = 168 / i;
-        if  i > j and (i + j) % 2 == 0 and (i - j) % 2 == 0 :
-            m = (i + j) / 2
-            n = (i - j) / 2
-            x = m * m - 268
-            print('这个数可能是: ', x)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+res <span class="token operator">=</span> <span class="token number">168</span> <span class="token operator">//</span> <span class="token number">2</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> res <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token number">168</span> <span class="token operator">%</span> i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        j <span class="token operator">=</span> <span class="token number">168</span> <span class="token operator">/</span> i<span class="token punctuation">;</span>
+        <span class="token keyword">if</span>  i <span class="token operator">></span> j <span class="token operator">and</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> j<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> <span class="token punctuation">(</span>i <span class="token operator">-</span> j<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">:</span>
+            m <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> j<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+            n <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">-</span> j<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+            x <span class="token operator">=</span> m <span class="token operator">*</span> m <span class="token operator">-</span> <span class="token number">268</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'这个数可能是: '</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>结果：</li>
 </ul>
@@ -573,34 +570,33 @@ for i in range(1, res + 1):
 <li><p>代码：</p>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2018-10-3 14:10
-# @Author  : Manu
-# @Site    : 
-# @File    : day.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2018-10-3 14:10</span>
+<span class="token comment" spellcheck="true"># @Author  : Manu</span>
+<span class="token comment" spellcheck="true"># @Site    : </span>
+<span class="token comment" spellcheck="true"># @File    : day.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-list1 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-list2 = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+list1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">]</span>
+list2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">]</span>
 
-while True:
-    year = int(input('输入年份'))
-    month = int(input('输入月份'))
-    day = int(input('输入日期'))
-    sum = 0
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    year <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'输入年份'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    month <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'输入月份'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    day <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'输入日期'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    sum <span class="token operator">=</span> <span class="token number">0</span>
 
-    if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
-        for i in range(month - 1):
-            sum += list2[i]
-        sum += day
-    else:
-        for i in range(month - 1):
-            sum += list1[i]
-        sum += day
+    <span class="token keyword">if</span> year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">or</span> <span class="token punctuation">(</span>year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>month <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            sum <span class="token operator">+=</span> list2<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        sum <span class="token operator">+=</span> day
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>month <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            sum <span class="token operator">+=</span> list1<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        sum <span class="token operator">+=</span> day
 
-    print('这是第 %d 天' %sum)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'这是第 %d 天'</span> <span class="token operator">%</span>sum<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>结果：</li>
 </ul>
@@ -613,23 +609,22 @@ while True:
 <li><p>代码：</p>
 </li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2018-10-3 15:10
-# @Author  : Manu
-# @Site    : 
-# @File    : sortNum.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2018-10-3 15:10</span>
+<span class="token comment" spellcheck="true"># @Author  : Manu</span>
+<span class="token comment" spellcheck="true"># @Site    : </span>
+<span class="token comment" spellcheck="true"># @File    : sortNum.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-while True:
-    print('Input x, y, z:')
-    arr = []
-    for i in range(3):
-        tmp = int(input())
-        arr.append(tmp)
-    arr.sort()
-    print('三个数从小到大排序: ',  arr)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Input x, y, z:'</span><span class="token punctuation">)</span>
+    arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tmp <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+    arr<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'三个数从小到大排序: '</span><span class="token punctuation">,</span>  arr<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>结果：</li>
 </ul>
@@ -1127,7 +1122,7 @@ while True:
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

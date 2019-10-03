@@ -479,217 +479,215 @@ Softmax回归模型
 <li>Softmax回归是一个单层神经网络，输出个数等于分类问题中的类别个数；</li>
 <li>交叉熵用于衡量两个概率分布的差异；</li>
 </ul>
-<h3 id="图像分类数据集（Fashion-MNIST）"><a href="#图像分类数据集（Fashion-MNIST）" class="headerlink" title="图像分类数据集（Fashion-MNIST）"></a>图像分类数据集（Fashion-MNIST）</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2019/4/10 15:11
-# @Author  : cunyu
-# @Site    : cunyu1943.github.io
-# @File    : fashionMinst.py
-# @Software: PyCharm
+<h3 id="图像分类数据集（Fashion-MNIST）"><a href="#图像分类数据集（Fashion-MNIST）" class="headerlink" title="图像分类数据集（Fashion-MNIST）"></a>图像分类数据集（Fashion-MNIST）</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2019/4/10 15:11</span>
+<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
+<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
+<span class="token comment" spellcheck="true"># @File    : fashionMinst.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-import d2lzh as d2l
-from mxnet.gluon import data as gdata
-import sys
-import time
+<span class="token keyword">import</span> d2lzh <span class="token keyword">as</span> d2l
+<span class="token keyword">from</span> mxnet<span class="token punctuation">.</span>gluon <span class="token keyword">import</span> data <span class="token keyword">as</span> gdata
+<span class="token keyword">import</span> sys
+<span class="token keyword">import</span> time
 
-"""
+<span class="token triple-quoted-string string">"""
 获取数据集
-"""
+"""</span>
 
-mnist_train = gdata.vision.FashionMNIST(train=True) # 训练集
-mnist_test = gdata.vision.FashionMNIST(train=False) # 测试集
+mnist_train <span class="token operator">=</span> gdata<span class="token punctuation">.</span>vision<span class="token punctuation">.</span>FashionMNIST<span class="token punctuation">(</span>train<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 训练集</span>
+mnist_test <span class="token operator">=</span> gdata<span class="token punctuation">.</span>vision<span class="token punctuation">.</span>FashionMNIST<span class="token punctuation">(</span>train<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 测试集</span>
 
-print(len(mnist_train), len(mnist_test))
+<span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>mnist_train<span class="token punctuation">)</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>mnist_test<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-feature, label = mnist_train[0]
-print(feature.shape, feature.dtype)
+feature<span class="token punctuation">,</span> label <span class="token operator">=</span> mnist_train<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>feature<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> feature<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
 
-print(label, type(label), label.dtype)
+<span class="token keyword">print</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> type<span class="token punctuation">(</span>label<span class="token punctuation">)</span><span class="token punctuation">,</span> label<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
 
-# 将数值标签转成相应的文本标签的函数
-def get_fashion_mnist_labels(labels):
-    text_labels = ['t-shirt', 'trouser', 'pullover', 'dress', 'coat', 'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot']
-    return [text_labels[int(i)] for i in labels]
+<span class="token comment" spellcheck="true"># 将数值标签转成相应的文本标签的函数</span>
+<span class="token keyword">def</span> <span class="token function">get_fashion_mnist_labels</span><span class="token punctuation">(</span>labels<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    text_labels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'t-shirt'</span><span class="token punctuation">,</span> <span class="token string">'trouser'</span><span class="token punctuation">,</span> <span class="token string">'pullover'</span><span class="token punctuation">,</span> <span class="token string">'dress'</span><span class="token punctuation">,</span> <span class="token string">'coat'</span><span class="token punctuation">,</span> <span class="token string">'sandal'</span><span class="token punctuation">,</span> <span class="token string">'shirt'</span><span class="token punctuation">,</span> <span class="token string">'sneaker'</span><span class="token punctuation">,</span> <span class="token string">'bag'</span><span class="token punctuation">,</span> <span class="token string">'ankle boot'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>text_labels<span class="token punctuation">[</span>int<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> labels<span class="token punctuation">]</span>
 
-# 从一行中画出多张图像和对应标签的函数
-def show_fashion_mnist(images, labels):
-    d2l.use_svg_display()
-    # _表示忽略（不使用）的变量
-    _, figs = d2l.plt.subplots(1, len(images), figsize=(12,12))
-    for f, img, lbl in zip(figs, images, labels):
-        f.imshow(img.reshape((28,28)).asnumpy())
-        f.set_title(lbl)
-        f.axes.get_xaxis().set_visible(False)
-        f.axes.get_yaxis().set_visible(False)
+<span class="token comment" spellcheck="true"># 从一行中画出多张图像和对应标签的函数</span>
+<span class="token keyword">def</span> <span class="token function">show_fashion_mnist</span><span class="token punctuation">(</span>images<span class="token punctuation">,</span> labels<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    d2l<span class="token punctuation">.</span>use_svg_display<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># _表示忽略（不使用）的变量</span>
+    _<span class="token punctuation">,</span> figs <span class="token operator">=</span> d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>images<span class="token punctuation">)</span><span class="token punctuation">,</span> figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> f<span class="token punctuation">,</span> img<span class="token punctuation">,</span> lbl <span class="token keyword">in</span> zip<span class="token punctuation">(</span>figs<span class="token punctuation">,</span> images<span class="token punctuation">,</span> labels<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        f<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>img<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>asnumpy<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span>lbl<span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>axes<span class="token punctuation">.</span>get_xaxis<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_visible<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>axes<span class="token punctuation">.</span>get_yaxis<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_visible<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
 
-X, y = mnist_train[0:9]
-show_fashion_mnist(X, get_fashion_mnist_labels(y))
+X<span class="token punctuation">,</span> y <span class="token operator">=</span> mnist_train<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">9</span><span class="token punctuation">]</span>
+show_fashion_mnist<span class="token punctuation">(</span>X<span class="token punctuation">,</span> get_fashion_mnist_labels<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-"""
+<span class="token triple-quoted-string string">"""
 读取小批量
-"""
-batch_size = 256
-transformer = gdata.vision.transforms.ToTensor()
-if sys.platform.startswith('win'):
-    num_workers = 0 # 表示不用额外进程来加速读取数据
-else:
-    num_workers = 4
+"""</span>
+batch_size <span class="token operator">=</span> <span class="token number">256</span>
+transformer <span class="token operator">=</span> gdata<span class="token punctuation">.</span>vision<span class="token punctuation">.</span>transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> sys<span class="token punctuation">.</span>platform<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">'win'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    num_workers <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment" spellcheck="true"># 表示不用额外进程来加速读取数据</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    num_workers <span class="token operator">=</span> <span class="token number">4</span>
 
-train_iter = gdata.DataLoader(mnist_train.transform_first(transformer), batch_size, shuffle=True, num_workers=num_workers)
-test_iter = gdata.DataLoader(mnist_test.transform_first(transformer), batch_size, shuffle=False, num_workers=num_workers)
+train_iter <span class="token operator">=</span> gdata<span class="token punctuation">.</span>DataLoader<span class="token punctuation">(</span>mnist_train<span class="token punctuation">.</span>transform_first<span class="token punctuation">(</span>transformer<span class="token punctuation">)</span><span class="token punctuation">,</span> batch_size<span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span>num_workers<span class="token punctuation">)</span>
+test_iter <span class="token operator">=</span> gdata<span class="token punctuation">.</span>DataLoader<span class="token punctuation">(</span>mnist_test<span class="token punctuation">.</span>transform_first<span class="token punctuation">(</span>transformer<span class="token punctuation">)</span><span class="token punctuation">,</span> batch_size<span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span>num_workers<span class="token punctuation">)</span>
 
-# 读取训练数据所需时间
-start = time.time()
-for X, y in train_iter:
-    continue
-print('%.2f sec' % (time.time() - start))
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 读取训练数据所需时间</span>
+start <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> X<span class="token punctuation">,</span> y <span class="token keyword">in</span> train_iter<span class="token punctuation">:</span>
+    <span class="token keyword">continue</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%.2f sec'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Softmax回归的实现"><a href="#Softmax回归的实现" class="headerlink" title="Softmax回归的实现"></a>Softmax回归的实现</h3><ul>
 <li>从零开始实现</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2019/4/10 16:12
-# @Author  : cunyu
-# @Site    : cunyu1943.github.io
-# @File    : softmax0.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2019/4/10 16:12</span>
+<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
+<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
+<span class="token comment" spellcheck="true"># @File    : softmax0.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-import d2lzh as d2l
-from mxnet import autograd, nd
+<span class="token keyword">import</span> d2lzh <span class="token keyword">as</span> d2l
+<span class="token keyword">from</span> mxnet <span class="token keyword">import</span> autograd<span class="token punctuation">,</span> nd
 
 
-# 获取与读取数据
-batch_size = 256
-train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
+<span class="token comment" spellcheck="true"># 获取与读取数据</span>
+batch_size <span class="token operator">=</span> <span class="token number">256</span>
+train_iter<span class="token punctuation">,</span> test_iter <span class="token operator">=</span> d2l<span class="token punctuation">.</span>load_data_fashion_mnist<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span>
 
-# 初始化模型参数
-num_inputs = 784
-num_outputs = 10
+<span class="token comment" spellcheck="true"># 初始化模型参数</span>
+num_inputs <span class="token operator">=</span> <span class="token number">784</span>
+num_outputs <span class="token operator">=</span> <span class="token number">10</span>
 
-w = nd.random.normal(scale=0.01, shape=(num_inputs, num_outputs))
-b = nd.zeros(num_outputs)
+w <span class="token operator">=</span> nd<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>scale<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> shape<span class="token operator">=</span><span class="token punctuation">(</span>num_inputs<span class="token punctuation">,</span> num_outputs<span class="token punctuation">)</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> nd<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>num_outputs<span class="token punctuation">)</span>
 
-w.attach_grad()
-b.attach_grad()
+w<span class="token punctuation">.</span>attach_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+b<span class="token punctuation">.</span>attach_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-# 实现Softmax运算
-X = nd.array([[1,2,3], [4,5,6]])
-# axis = 0,代表同一列
-# axis = 1,代表同一行
-# keepdims,True则保留行、列两个维度，否则不保留
-print(X.sum(axis=0, keepdims=True), X.sum(axis=1, keepdims=True))
+<span class="token comment" spellcheck="true"># 实现Softmax运算</span>
+X <span class="token operator">=</span> nd<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># axis = 0,代表同一列</span>
+<span class="token comment" spellcheck="true"># axis = 1,代表同一行</span>
+<span class="token comment" spellcheck="true"># keepdims,True则保留行、列两个维度，否则不保留</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>X<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> keepdims<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">,</span> X<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> keepdims<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-def softmax(X):
-    X_exp = X.exp()
-    partition = X_exp.sum(axis=1, keepdims=True)
-    return X_exp / partition # 应用广播机制
+<span class="token keyword">def</span> <span class="token function">softmax</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    X_exp <span class="token operator">=</span> X<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    partition <span class="token operator">=</span> X_exp<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> keepdims<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> X_exp <span class="token operator">/</span> partition <span class="token comment" spellcheck="true"># 应用广播机制</span>
 
-X = nd.random.normal(shape=(2,5))
-X_prob = softmax(X)
-print(X_prob, X_prob.sum(axis=1))
+X <span class="token operator">=</span> nd<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+X_prob <span class="token operator">=</span> softmax<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>X_prob<span class="token punctuation">,</span> X_prob<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 定义模型
-def net(X):
-    return softmax(nd.dot(X.reshape((-1, num_inputs)), w) + b)
+<span class="token comment" spellcheck="true"># 定义模型</span>
+<span class="token keyword">def</span> <span class="token function">net</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> softmax<span class="token punctuation">(</span>nd<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>X<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> num_inputs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> w<span class="token punctuation">)</span> <span class="token operator">+</span> b<span class="token punctuation">)</span>
 
-# 定义损失函数
-y_hat = nd.array([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
-y = nd.array([0, 2], dtype='int32')
-print(nd.pick(y_hat, y))
+<span class="token comment" spellcheck="true"># 定义损失函数</span>
+y_hat <span class="token operator">=</span> nd<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span> nd<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token string">'int32'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nd<span class="token punctuation">.</span>pick<span class="token punctuation">(</span>y_hat<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 交叉熵损失函数
-def cross_entropy(y_hat, y):
-    return - nd.pick(y_hat, y).log()
+<span class="token comment" spellcheck="true"># 交叉熵损失函数</span>
+<span class="token keyword">def</span> <span class="token function">cross_entropy</span><span class="token punctuation">(</span>y_hat<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span> nd<span class="token punctuation">.</span>pick<span class="token punctuation">(</span>y_hat<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-# 计算分类准确率
-def accuracy(y_hat, y):
-    return (y_hat.argmax(axis=1) == y.astype('float32')).mean().asscalar()
+<span class="token comment" spellcheck="true"># 计算分类准确率</span>
+<span class="token keyword">def</span> <span class="token function">accuracy</span><span class="token punctuation">(</span>y_hat<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>y_hat<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> y<span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">'float32'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>asscalar<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-print(accuracy(y_hat, y))
+<span class="token keyword">print</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">(</span>y_hat<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 评价模型net在数据集data_iter上的准确率
-def evaluate_accuracy(data_iter, net):
-    acc_sum, n = 0.0, 0
-    for X, y in data_iter:
-        y = y.astype("float32")
-        acc_sum += (net(X).argmax(axis=1) == y).sum().asscalar()
-        n += y.size
-    return acc_sum / n
+<span class="token comment" spellcheck="true"># 评价模型net在数据集data_iter上的准确率</span>
+<span class="token keyword">def</span> <span class="token function">evaluate_accuracy</span><span class="token punctuation">(</span>data_iter<span class="token punctuation">,</span> net<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    acc_sum<span class="token punctuation">,</span> n <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> X<span class="token punctuation">,</span> y <span class="token keyword">in</span> data_iter<span class="token punctuation">:</span>
+        y <span class="token operator">=</span> y<span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">"float32"</span><span class="token punctuation">)</span>
+        acc_sum <span class="token operator">+=</span> <span class="token punctuation">(</span>net<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> y<span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>asscalar<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        n <span class="token operator">+=</span> y<span class="token punctuation">.</span>size
+    <span class="token keyword">return</span> acc_sum <span class="token operator">/</span> n
 
-print(evaluate_accuracy(test_iter, net))
+<span class="token keyword">print</span><span class="token punctuation">(</span>evaluate_accuracy<span class="token punctuation">(</span>test_iter<span class="token punctuation">,</span> net<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 训练模型
-num_epochs, lr = 5, 0.1
+<span class="token comment" spellcheck="true"># 训练模型</span>
+num_epochs<span class="token punctuation">,</span> lr <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0.1</span>
 
-def train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, params=None, lr=None, trainer=None):
-    for epoch in range(num_epochs):
-        train_l_sum, train_acc_sum, n = 0.0, 0.0, 0
-        for X, y in train_iter:
-            with autograd.record():
-                y_hat = net(X)
-                l = loss(y_hat, y).sum()
-            l.backward()
-            if trainer is None:
-                d2l.sgd(params, lr, batch_size)
-            else:
-                trainer.step(batch_size)
-            y = y.astype('float32')
-            train_l_sum += l.asscalar()
-            train_acc_sum += (y_hat.argmax(axis=1) == y).sum().asscalar()
-            n += y.size
-        test_acc = evaluate_accuracy(test_iter, net)
-        print('epoch %d, loss %.4f, train acc %.3f, test acc %.3f'
-              % (epoch + 1, train_l_sum / n, train_acc_sum / n, test_acc))
+<span class="token keyword">def</span> <span class="token function">train_ch3</span><span class="token punctuation">(</span>net<span class="token punctuation">,</span> train_iter<span class="token punctuation">,</span> test_iter<span class="token punctuation">,</span> loss<span class="token punctuation">,</span> num_epochs<span class="token punctuation">,</span> batch_size<span class="token punctuation">,</span> params<span class="token operator">=</span>None<span class="token punctuation">,</span> lr<span class="token operator">=</span>None<span class="token punctuation">,</span> trainer<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> epoch <span class="token keyword">in</span> range<span class="token punctuation">(</span>num_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        train_l_sum<span class="token punctuation">,</span> train_acc_sum<span class="token punctuation">,</span> n <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> X<span class="token punctuation">,</span> y <span class="token keyword">in</span> train_iter<span class="token punctuation">:</span>
+            <span class="token keyword">with</span> autograd<span class="token punctuation">.</span>record<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                y_hat <span class="token operator">=</span> net<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+                l <span class="token operator">=</span> loss<span class="token punctuation">(</span>y_hat<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            l<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> trainer <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+                d2l<span class="token punctuation">.</span>sgd<span class="token punctuation">(</span>params<span class="token punctuation">,</span> lr<span class="token punctuation">,</span> batch_size<span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                trainer<span class="token punctuation">.</span>step<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span>
+            y <span class="token operator">=</span> y<span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">'float32'</span><span class="token punctuation">)</span>
+            train_l_sum <span class="token operator">+=</span> l<span class="token punctuation">.</span>asscalar<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            train_acc_sum <span class="token operator">+=</span> <span class="token punctuation">(</span>y_hat<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> y<span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>asscalar<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            n <span class="token operator">+=</span> y<span class="token punctuation">.</span>size
+        test_acc <span class="token operator">=</span> evaluate_accuracy<span class="token punctuation">(</span>test_iter<span class="token punctuation">,</span> net<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'epoch %d, loss %.4f, train acc %.3f, test acc %.3f'</span>
+              <span class="token operator">%</span> <span class="token punctuation">(</span>epoch <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> train_l_sum <span class="token operator">/</span> n<span class="token punctuation">,</span> train_acc_sum <span class="token operator">/</span> n<span class="token punctuation">,</span> test_acc<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, batch_size,
-              [w, b], lr)
+train_ch3<span class="token punctuation">(</span>net<span class="token punctuation">,</span> train_iter<span class="token punctuation">,</span> test_iter<span class="token punctuation">,</span> cross_entropy<span class="token punctuation">,</span> num_epochs<span class="token punctuation">,</span> batch_size<span class="token punctuation">,</span>
+              <span class="token punctuation">[</span>w<span class="token punctuation">,</span> b<span class="token punctuation">]</span><span class="token punctuation">,</span> lr<span class="token punctuation">)</span>
 
-# 预测
-for X, y in test_iter:
-    break
+<span class="token comment" spellcheck="true"># 预测</span>
+<span class="token keyword">for</span> X<span class="token punctuation">,</span> y <span class="token keyword">in</span> test_iter<span class="token punctuation">:</span>
+    <span class="token keyword">break</span>
 
-true_labels = d2l.get_fashion_mnist_labels(y.asnumpy())
-pred_labels = d2l.get_fashion_mnist_labels(net(X).argmax(axis=1).asnumpy())
-titles = [true + '\n' + pred for true, pred in zip(true_labels, pred_labels)]
+true_labels <span class="token operator">=</span> d2l<span class="token punctuation">.</span>get_fashion_mnist_labels<span class="token punctuation">(</span>y<span class="token punctuation">.</span>asnumpy<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+pred_labels <span class="token operator">=</span> d2l<span class="token punctuation">.</span>get_fashion_mnist_labels<span class="token punctuation">(</span>net<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>asnumpy<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+titles <span class="token operator">=</span> <span class="token punctuation">[</span>true <span class="token operator">+</span> <span class="token string">'\n'</span> <span class="token operator">+</span> pred <span class="token keyword">for</span> true<span class="token punctuation">,</span> pred <span class="token keyword">in</span> zip<span class="token punctuation">(</span>true_labels<span class="token punctuation">,</span> pred_labels<span class="token punctuation">)</span><span class="token punctuation">]</span>
 
-d2l.show_fashion_mnist(X[0:9], titles[0:9])
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+d2l<span class="token punctuation">.</span>show_fashion_mnist<span class="token punctuation">(</span>X<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span> titles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>简洁实现</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2019/4/12 13:37
-# @Author  : cunyu
-# @Site    : cunyu1943.github.io
-# @File    : softmaxSimple.py
-# @Software: PyCharm
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
+<span class="token comment" spellcheck="true"># @Time    : 2019/4/12 13:37</span>
+<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
+<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
+<span class="token comment" spellcheck="true"># @File    : softmaxSimple.py</span>
+<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
 
-import d2lzh as d2l
-from mxnet import gluon, init
-from mxnet.gluon import loss as gloss, nn
+<span class="token keyword">import</span> d2lzh <span class="token keyword">as</span> d2l
+<span class="token keyword">from</span> mxnet <span class="token keyword">import</span> gluon<span class="token punctuation">,</span> init
+<span class="token keyword">from</span> mxnet<span class="token punctuation">.</span>gluon <span class="token keyword">import</span> loss <span class="token keyword">as</span> gloss<span class="token punctuation">,</span> nn
 
-# 获取和读取数据
+<span class="token comment" spellcheck="true"># 获取和读取数据</span>
 
-batch_size = 256
-train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
+batch_size <span class="token operator">=</span> <span class="token number">256</span>
+train_iter<span class="token punctuation">,</span> test_iter <span class="token operator">=</span> d2l<span class="token punctuation">.</span>load_data_fashion_mnist<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span>
 
-# 定义和初始化模型
-net = nn.Sequential()
-net.add(nn.Dense(10))
-net.initialize(init.Normal(sigma=0.01))
+<span class="token comment" spellcheck="true"># 定义和初始化模型</span>
+net <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">)</span>
+net<span class="token punctuation">.</span>add<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+net<span class="token punctuation">.</span>initialize<span class="token punctuation">(</span>init<span class="token punctuation">.</span>Normal<span class="token punctuation">(</span>sigma<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# softmax和交叉熵损失函数
-loss = gloss.SoftmaxCrossEntropyLoss()
+<span class="token comment" spellcheck="true"># softmax和交叉熵损失函数</span>
+loss <span class="token operator">=</span> gloss<span class="token punctuation">.</span>SoftmaxCrossEntropyLoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-# 定义优化算法
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate' : 0.1})
+<span class="token comment" spellcheck="true"># 定义优化算法</span>
+trainer <span class="token operator">=</span> gluon<span class="token punctuation">.</span>Trainer<span class="token punctuation">(</span>net<span class="token punctuation">.</span>collect_params<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'sgd'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'learning_rate'</span> <span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-# 训练模型
-num_epochs = 5
+<span class="token comment" spellcheck="true"># 训练模型</span>
+num_epochs <span class="token operator">=</span> <span class="token number">5</span>
 
-d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, trainer)
+d2l<span class="token punctuation">.</span>train_ch3<span class="token punctuation">(</span>net<span class="token punctuation">,</span> train_iter<span class="token punctuation">,</span> test_iter<span class="token punctuation">,</span> loss<span class="token punctuation">,</span> num_epochs<span class="token punctuation">,</span> batch_size<span class="token punctuation">,</span> None<span class="token punctuation">,</span> None<span class="token punctuation">,</span> trainer<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1184,7 +1182,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, No
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             

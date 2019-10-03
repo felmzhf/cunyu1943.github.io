@@ -494,169 +494,166 @@ pensize(">
 </ul>
 </li>
 </ul>
-<h2 id="Turtle库的使用"><a href="#Turtle库的使用" class="headerlink" title="Turtle库的使用"></a>Turtle库的使用</h2><pre class="line-numbers language-lang-python"><code class="language-lang-python">#coding=utf-8
-#绘制蟒蛇
-import turtle
-turtle.penup()
-turtle.pencolor("red")
-turtle.forward(-250)
-turtle.pendown()
-turtle.pensize(10)
-turtle.right(45)
-for i in range(4):
-    turtle.circle(40, 80)
-    turtle.circle(-40, 80)
-turtle.circle(40, 80 / 2)
-turtle.fd(40)
-turtle.circle(16, 180)
-turtle.fd(40 * 2 / 3)
-turtle.done()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Turtle库的使用"><a href="#Turtle库的使用" class="headerlink" title="Turtle库的使用"></a>Turtle库的使用</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#coding=utf-8</span>
+<span class="token comment" spellcheck="true">#绘制蟒蛇</span>
+<span class="token keyword">import</span> turtle
+turtle<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"red"</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>forward<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">250</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>pendown<span class="token punctuation">(</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    turtle<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span>
+    turtle<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">80</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">180</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">40</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>done<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img src="https://upload-images.jianshu.io/upload_images/9747350-b12e4fbef1a7a0ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/800" alt=""></p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#coding=utf-8
-# 绘制五角星
-import turtle
-turtle.pensize(5)
-turtle.pencolor("red")
-turtle.forward(200)
-for i in range(4):
-    turtle.right(144)
-    turtle.fd(200)
-turtle.done()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#coding=utf-8</span>
+<span class="token comment" spellcheck="true"># 绘制五角星</span>
+<span class="token keyword">import</span> turtle
+turtle<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"red"</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>forward<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    turtle<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">144</span><span class="token punctuation">)</span>
+    turtle<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>done<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h2><p><img src="https://upload-images.jianshu.io/upload_images/9747350-e1f3eac743de34d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">#绘制时钟
-# coding=utf-8
-import turtle as tt
-from datetime import *
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#绘制时钟</span>
+<span class="token comment" spellcheck="true"># coding=utf-8</span>
+<span class="token keyword">import</span> turtle <span class="token keyword">as</span> tt
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> <span class="token operator">*</span>
 
-# 当前日期属于一周的第几天
-def Week(t):
-    week = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
-    return week[t.weekday()]
+<span class="token comment" spellcheck="true"># 当前日期属于一周的第几天</span>
+<span class="token keyword">def</span> <span class="token function">Week</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    week <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"星期一"</span><span class="token punctuation">,</span> <span class="token string">"星期二"</span><span class="token punctuation">,</span> <span class="token string">"星期三"</span><span class="token punctuation">,</span> <span class="token string">"星期四"</span><span class="token punctuation">,</span> <span class="token string">"星期五"</span><span class="token punctuation">,</span> <span class="token string">"星期六"</span><span class="token punctuation">,</span> <span class="token string">"星期日"</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> week<span class="token punctuation">[</span>t<span class="token punctuation">.</span>weekday<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
 
-# 获取当前时间
-def Date(t):
-    y = t.year
-    m = t.month
-    d = t.day
-    cur_hour = t.hour;
-    cur_min = t.minute;
-    cur_sec = t.second;
-    return "%s-%d-%d %d:%02d:%02d" % (y, m, d, cur_hour, cur_min, cur_sec)
+<span class="token comment" spellcheck="true"># 获取当前时间</span>
+<span class="token keyword">def</span> <span class="token function">Date</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    y <span class="token operator">=</span> t<span class="token punctuation">.</span>year
+    m <span class="token operator">=</span> t<span class="token punctuation">.</span>month
+    d <span class="token operator">=</span> t<span class="token punctuation">.</span>day
+    cur_hour <span class="token operator">=</span> t<span class="token punctuation">.</span>hour<span class="token punctuation">;</span>
+    cur_min <span class="token operator">=</span> t<span class="token punctuation">.</span>minute<span class="token punctuation">;</span>
+    cur_sec <span class="token operator">=</span> t<span class="token punctuation">.</span>second<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token string">"%s-%d-%d %d:%02d:%02d"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>y<span class="token punctuation">,</span> m<span class="token punctuation">,</span> d<span class="token punctuation">,</span> cur_hour<span class="token punctuation">,</span> cur_min<span class="token punctuation">,</span> cur_sec<span class="token punctuation">)</span>
 
-# 移动画笔,距离为distance
-def movePen(distance):
-    tt.penup()
-    tt.pensize(5)
-    tt.pencolor("blue")
-    tt.fd(distance)
-    tt.pendown()
+<span class="token comment" spellcheck="true"># 移动画笔,距离为distance</span>
+<span class="token keyword">def</span> <span class="token function">movePen</span><span class="token punctuation">(</span>distance<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tt<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    tt<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    tt<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"blue"</span><span class="token punctuation">)</span>
+    tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span>distance<span class="token punctuation">)</span>
+    tt<span class="token punctuation">.</span>pendown<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-# 绘制表针
-def makeHands(name, length):
-    # 清空窗口，重置turtule状态为初始状态
-    tt.reset()
-    movePen(-length * 0.1)
-    # 开始记录多边形的顶点
-    tt.begin_poly()
-    tt.fd(length * 1.1)
-    # 停止记录多边形的顶点
-    tt.end_poly()
-    # 返回记录的多边形
-    handForm = tt.get_poly()
-    tt.register_shape(name, handForm)
+<span class="token comment" spellcheck="true"># 绘制表针</span>
+<span class="token keyword">def</span> <span class="token function">makeHands</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 清空窗口，重置turtule状态为初始状态</span>
+    tt<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    movePen<span class="token punctuation">(</span><span class="token operator">-</span>length <span class="token operator">*</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 开始记录多边形的顶点</span>
+    tt<span class="token punctuation">.</span>begin_poly<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span>length <span class="token operator">*</span> <span class="token number">1.1</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 停止记录多边形的顶点</span>
+    tt<span class="token punctuation">.</span>end_poly<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 返回记录的多边形</span>
+    handForm <span class="token operator">=</span> tt<span class="token punctuation">.</span>get_poly<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    tt<span class="token punctuation">.</span>register_shape<span class="token punctuation">(</span>name<span class="token punctuation">,</span> handForm<span class="token punctuation">)</span>
 
-# 初始化
-def initial():
-    global secHand, minHand, hurHand, printer
-    # 重置方向向北(上)，正角度为顺时针
-    tt.mode("logo")
-    # 建立并初始化表针
-    makeHands("secHand", 180)
-    makeHands("minHand", 150)
-    makeHands("hurHand", 110)
-    secHand = tt.Turtle()
-    secHand.shape("secHand")
-    minHand = tt.Turtle()
-    minHand.shape("minHand")
-    hurHand = tt.Turtle()
-    hurHand.shape("hurHand")
+<span class="token comment" spellcheck="true"># 初始化</span>
+<span class="token keyword">def</span> <span class="token function">initial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> secHand<span class="token punctuation">,</span> minHand<span class="token punctuation">,</span> hurHand<span class="token punctuation">,</span> printer
+    <span class="token comment" spellcheck="true"># 重置方向向北(上)，正角度为顺时针</span>
+    tt<span class="token punctuation">.</span>mode<span class="token punctuation">(</span><span class="token string">"logo"</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 建立并初始化表针</span>
+    makeHands<span class="token punctuation">(</span><span class="token string">"secHand"</span><span class="token punctuation">,</span> <span class="token number">180</span><span class="token punctuation">)</span>
+    makeHands<span class="token punctuation">(</span><span class="token string">"minHand"</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">)</span>
+    makeHands<span class="token punctuation">(</span><span class="token string">"hurHand"</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">)</span>
+    secHand <span class="token operator">=</span> tt<span class="token punctuation">.</span>Turtle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    secHand<span class="token punctuation">.</span>shape<span class="token punctuation">(</span><span class="token string">"secHand"</span><span class="token punctuation">)</span>
+    minHand <span class="token operator">=</span> tt<span class="token punctuation">.</span>Turtle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    minHand<span class="token punctuation">.</span>shape<span class="token punctuation">(</span><span class="token string">"minHand"</span><span class="token punctuation">)</span>
+    hurHand <span class="token operator">=</span> tt<span class="token punctuation">.</span>Turtle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    hurHand<span class="token punctuation">.</span>shape<span class="token punctuation">(</span><span class="token string">"hurHand"</span><span class="token punctuation">)</span>
 
-    for hand in secHand, minHand, hurHand:
-        hand.shapesize(1, 1, 4)
-        hand.speed(0)
+    <span class="token keyword">for</span> hand <span class="token keyword">in</span> secHand<span class="token punctuation">,</span> minHand<span class="token punctuation">,</span> hurHand<span class="token punctuation">:</span>
+        hand<span class="token punctuation">.</span>shapesize<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+        hand<span class="token punctuation">.</span>speed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
 
-    # 输出文字
-    printer = tt.Turtle()
-    # 隐藏画笔
-    printer.hideturtle()
-    printer.penup()
+    <span class="token comment" spellcheck="true"># 输出文字</span>
+    printer <span class="token operator">=</span> tt<span class="token punctuation">.</span>Turtle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 隐藏画笔</span>
+    printer<span class="token punctuation">.</span>hideturtle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    printer<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-# 绘制表盘外框
-def drawClock(R):
-    # 清空窗口，重置turtule状态为初始状态
-    tt.reset()
-    # 画笔尺寸
-    tt.pensize(5)
-    for i in range(60):
-        movePen(R)
-        if i % 5 == 0:
-            tt.fd(20)
-            movePen(-R - 20)
+<span class="token comment" spellcheck="true"># 绘制表盘外框</span>
+<span class="token keyword">def</span> <span class="token function">drawClock</span><span class="token punctuation">(</span>R<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 清空窗口，重置turtule状态为初始状态</span>
+    tt<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 画笔尺寸</span>
+    tt<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        movePen<span class="token punctuation">(</span>R<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> i <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+            movePen<span class="token punctuation">(</span><span class="token operator">-</span>R <span class="token operator">-</span> <span class="token number">20</span><span class="token punctuation">)</span>
 
-            movePen(R + 20)
-            if i == 0:
-                # 写文本
-                tt.write(int(12), align="center", font=("Consolas", 14, "bold"))
-            elif i == 30:
-                movePen(25)
-                tt.write(int(i / 5), align="center", font=("Consolas", 14, "bold"))
-                movePen(-25)
-            elif (i == 25 or i == 35):
-                movePen(20)
-                tt.write(int(i / 5), align="center", font=("Consolas", 14, "bold"))
-                movePen(-20)
-            else:
-                tt.write(int(i / 5), align="center", font=("Consolas", 14, "bold"))
-            movePen(-R - 20)
-        else:
-            # 绘制指定半径和颜色的点
-            tt.dot(5, "red")
-            movePen(-R)
-        tt.right(6)
+            movePen<span class="token punctuation">(</span>R <span class="token operator">+</span> <span class="token number">20</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># 写文本</span>
+                tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span>int<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">,</span> align<span class="token operator">=</span><span class="token string">"center"</span><span class="token punctuation">,</span> font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"Consolas"</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token string">"bold"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token number">30</span><span class="token punctuation">:</span>
+                movePen<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>
+                tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span>int<span class="token punctuation">(</span>i <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> align<span class="token operator">=</span><span class="token string">"center"</span><span class="token punctuation">,</span> font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"Consolas"</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token string">"bold"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                movePen<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">25</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">25</span> <span class="token operator">or</span> i <span class="token operator">==</span> <span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                movePen<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+                tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span>int<span class="token punctuation">(</span>i <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> align<span class="token operator">=</span><span class="token string">"center"</span><span class="token punctuation">,</span> font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"Consolas"</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token string">"bold"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                movePen<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span>int<span class="token punctuation">(</span>i <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> align<span class="token operator">=</span><span class="token string">"center"</span><span class="token punctuation">,</span> font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"Consolas"</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token string">"bold"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            movePen<span class="token punctuation">(</span><span class="token operator">-</span>R <span class="token operator">-</span> <span class="token number">20</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 绘制指定半径和颜色的点</span>
+            tt<span class="token punctuation">.</span>dot<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">"red"</span><span class="token punctuation">)</span>
+            movePen<span class="token punctuation">(</span><span class="token operator">-</span>R<span class="token punctuation">)</span>
+        tt<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
 
-# 表针的动态显示
-def handsMove():
-    t = datetime.today()
-    second = t.second + t.microsecond * 0.000001
-    minute = t.minute + second / 60.0
-    hour = t.hour + minute / 60.0
-    secHand.seth(6 * second)
-    minHand.seth(6 * minute)
-    hurHand.seth(30 * hour)
+<span class="token comment" spellcheck="true"># 表针的动态显示</span>
+<span class="token keyword">def</span> <span class="token function">handsMove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    t <span class="token operator">=</span> datetime<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    second <span class="token operator">=</span> t<span class="token punctuation">.</span>second <span class="token operator">+</span> t<span class="token punctuation">.</span>microsecond <span class="token operator">*</span> <span class="token number">0.000001</span>
+    minute <span class="token operator">=</span> t<span class="token punctuation">.</span>minute <span class="token operator">+</span> second <span class="token operator">/</span> <span class="token number">60.0</span>
+    hour <span class="token operator">=</span> t<span class="token punctuation">.</span>hour <span class="token operator">+</span> minute <span class="token operator">/</span> <span class="token number">60.0</span>
+    secHand<span class="token punctuation">.</span>seth<span class="token punctuation">(</span><span class="token number">6</span> <span class="token operator">*</span> second<span class="token punctuation">)</span>
+    minHand<span class="token punctuation">.</span>seth<span class="token punctuation">(</span><span class="token number">6</span> <span class="token operator">*</span> minute<span class="token punctuation">)</span>
+    hurHand<span class="token punctuation">.</span>seth<span class="token punctuation">(</span><span class="token number">30</span> <span class="token operator">*</span> hour<span class="token punctuation">)</span>
 
-    tt.tracer(False)
-    printer.fd(65)
-    tt.pencolor("green")
-    printer.write(Week(t), align="center", font = ("黑体", 14))
-    printer.back(130)
-    printer.write(Date(t), align="center", font = ("Consolas", 14))
-    # 设置当前画笔位置为原点，方向朝东
-    printer.home()
-    tt.tracer(True)
+    tt<span class="token punctuation">.</span>tracer<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    printer<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">65</span><span class="token punctuation">)</span>
+    tt<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"green"</span><span class="token punctuation">)</span>
+    printer<span class="token punctuation">.</span>write<span class="token punctuation">(</span>Week<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">,</span> align<span class="token operator">=</span><span class="token string">"center"</span><span class="token punctuation">,</span> font <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"黑体"</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    printer<span class="token punctuation">.</span>back<span class="token punctuation">(</span><span class="token number">130</span><span class="token punctuation">)</span>
+    printer<span class="token punctuation">.</span>write<span class="token punctuation">(</span>Date<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">,</span> align<span class="token operator">=</span><span class="token string">"center"</span><span class="token punctuation">,</span> font <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"Consolas"</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 设置当前画笔位置为原点，方向朝东</span>
+    printer<span class="token punctuation">.</span>home<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    tt<span class="token punctuation">.</span>tracer<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 
-    # 经过100ms后继续调用handsMove函数
-    tt.ontimer(handsMove, 100)
+    <span class="token comment" spellcheck="true"># 经过100ms后继续调用handsMove函数</span>
+    tt<span class="token punctuation">.</span>ontimer<span class="token punctuation">(</span>handsMove<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
 
-# 调用定义的函数，打开和关闭动画，为更新图纸设置延迟；
-tt.tracer(False)
-initial()
-drawClock(200)
-tt.tracer(True)
-handsMove()
-tt.mainloop()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 调用定义的函数，打开和关闭动画，为更新图纸设置延迟；</span>
+tt<span class="token punctuation">.</span>tracer<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+initial<span class="token punctuation">(</span><span class="token punctuation">)</span>
+drawClock<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
+tt<span class="token punctuation">.</span>tracer<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+handsMove<span class="token punctuation">(</span><span class="token punctuation">)</span>
+tt<span class="token punctuation">.</span>mainloop<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="结果-2"><a href="#结果-2" class="headerlink" title="结果"></a>结果</h2><p><img src="https://upload-images.jianshu.io/upload_images/9747350-ded4ea1f60fe089a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1151,7 +1148,7 @@ tt.mainloop()
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.3k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             
