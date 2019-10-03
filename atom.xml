@@ -112,7 +112,7 @@
         
         
           &lt;p&gt;作为深度学习的基础，我们常会频繁对数据进行操作，以下则是介绍如何对内存中的数据进行常用操作的相关代码；&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span
+&lt;pre class=&quot;line-numbers language-lang-python&quot;&gt;&lt;code
         
       
     
@@ -468,7 +468,7 @@
       
         
         
-          &lt;h1 id=&quot;问题1&quot;&gt;&lt;a href=&quot;#问题1&quot; class=&quot;headerlink&quot; title=&quot;问题1&quot;&gt;&lt;/a&gt;问题1&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code
+          &lt;h1 id=&quot;问题1&quot;&gt;&lt;a href=&quot;#问题1&quot; class=&quot;headerlink&quot; title=&quot;问题1&quot;&gt;&lt;/a&gt;问题1&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-lang-python&quot;&gt;&lt;code
         
       
     

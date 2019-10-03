@@ -470,136 +470,137 @@
 <p>虽然神经网络引入了隐藏层，但依然等价于一个单层神经网络，这是因为全连接层只是对数据做仿射变换（affine transformation），而多个仿射变换的叠加仍然是一个仿射变换；</p>
 <h3 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h3><p>为解决添加多个隐藏层也只能与仅含输出层的单层神经网络等价问题，故引入非线性变换，如对隐藏变量使用按元素运算的非线性函数进行变换，然后再作为下一个全连接层的输入，这个非线性函数叫做激活函数（activation function）；以下介绍几种激活函数：</p>
 <ul>
-<li><p>ReLU函数<br>ReLU(rectfied linear unit)提供了一种简单的非线性变换，给定元素x，则函数定义为：ReL(x) = max(x, 0)，它将负数元素清零，只保留整数元素；</p>
-</li>
-<li><p>Sigmoid函数<br>Sigmoid函数可以将元素和值变换到0和1之间，<code>sigmoid(x)=1/(1 + exp(-x))</code>；</p>
-</li>
+<li>ReLU函数<br>ReLU(rectfied linear unit)提供了一种简单的非线性变换，给定元素x，则函数定义为：ReL(x) = max(x, 0)，它将负数元素清零，只保留整数元素；</li>
+<li>Sigmoid函数<br>Sigmoid函数可以将元素和值变换到0和1之间，<code>sigmoid(x)=1/(1 + exp(-x))</code>；</li>
 <li><p>tanh函数<br>tanh（双曲正切）函数将元素的值变换到-1和1之间，<code>tanh(x)=(1-exp(-2x))/(1+exp(-2x))</code>，当输入接近0时，tanh函数接近线性变换；</p>
 </li>
 <li><p>相关代码</p>
 </li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
-<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
-<span class="token comment" spellcheck="true"># @Time    : 2019/4/20 10:40</span>
-<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
-<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
-<span class="token comment" spellcheck="true"># @File    : MultiLayer.py</span>
-<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2019/4/20 10:40
+# @Author  : cunyu
+# @Site    : cunyu1943.github.io
+# @File    : MultiLayer.py
+# @Software: PyCharm
 
-<span class="token comment" spellcheck="true"># ReLU</span>
-<span class="token keyword">import</span> d2lzh <span class="token keyword">as</span> d2l
-<span class="token keyword">from</span> mxnet <span class="token keyword">import</span> autograd<span class="token punctuation">,</span> nd
+# ReLU
+import d2lzh as d2l
+from mxnet import autograd, nd
 
-<span class="token comment" spellcheck="true"># 绘图函数</span>
-<span class="token keyword">def</span> <span class="token function">xyplot</span><span class="token punctuation">(</span>x_vals<span class="token punctuation">,</span> y_vals<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    d2l<span class="token punctuation">.</span>set_figsize<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_vals<span class="token punctuation">.</span>asnumpy<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> y_vals<span class="token punctuation">.</span>asnumpy<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span>
-    d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">'(x)'</span><span class="token punctuation">)</span>
+# 绘图函数
+def xyplot(x_vals, y_vals, name):
+    d2l.set_figsize(figsize=(5, 2.5))
+    d2l.plt.plot(x_vals.asnumpy(), y_vals.asnumpy())
+    d2l.plt.xlabel('x')
+    d2l.plt.ylabel(name + '(x)')
 
-x <span class="token operator">=</span> nd<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">,</span> <span class="token number">8.0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
-x<span class="token punctuation">.</span>attach_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">with</span> autograd<span class="token punctuation">.</span>record<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    y <span class="token operator">=</span> x<span class="token punctuation">.</span>relu<span class="token punctuation">(</span><span class="token punctuation">)</span>
-xyplot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'relu'</span><span class="token punctuation">)</span>
-y<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
-xyplot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> x<span class="token punctuation">.</span>grad<span class="token punctuation">,</span> <span class="token string">'grad of relu'</span><span class="token punctuation">)</span>
-d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+x = nd.arange(-8.0, 8.0, 0.1)
+x.attach_grad()
+with autograd.record():
+    y = x.relu()
+xyplot(x, y, 'relu')
+y.backward()
+xyplot(x, x.grad, 'grad of relu')
+d2l.plt.show()
 
-<span class="token comment" spellcheck="true"># sigmoid函数</span>
-<span class="token keyword">with</span> autograd<span class="token punctuation">.</span>record<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    y <span class="token operator">=</span> x<span class="token punctuation">.</span>sigmoid<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    xyplot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'sigmoid'</span><span class="token punctuation">)</span>
-d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+# sigmoid函数
+with autograd.record():
+    y = x.sigmoid()
+    xyplot(x, y, 'sigmoid')
+d2l.plt.show()
 
-y<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
-xyplot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> x<span class="token punctuation">.</span>grad<span class="token punctuation">,</span> <span class="token string">'grad of sigmoid'</span><span class="token punctuation">)</span>
-d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+y.backward()
+xyplot(x, x.grad, 'grad of sigmoid')
+d2l.plt.show()
 
-<span class="token comment" spellcheck="true"># tanh函数</span>
-<span class="token keyword">with</span> autograd<span class="token punctuation">.</span>record<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    y <span class="token operator">=</span> x<span class="token punctuation">.</span>tanh<span class="token punctuation">(</span><span class="token punctuation">)</span>
-xyplot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'tanh'</span><span class="token punctuation">)</span>
-d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+# tanh函数
+with autograd.record():
+    y = x.tanh()
+xyplot(x, y, 'tanh')
+d2l.plt.show()
 
-y<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
-xyplot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> x<span class="token punctuation">.</span>grad<span class="token punctuation">,</span> <span class="token string">'grad of tanh'</span><span class="token punctuation">)</span>
-d2l<span class="token punctuation">.</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+y.backward()
+xyplot(x, x.grad, 'grad of tanh')
+d2l.plt.show()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="多层感知机的实现"><a href="#多层感知机的实现" class="headerlink" title="多层感知机的实现"></a>多层感知机的实现</h3><ul>
 <li>从零开始实现多层感知机， 代码如下：</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
-<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
-<span class="token comment" spellcheck="true"># @Time    : 2019/4/20 11:45</span>
-<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
-<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
-<span class="token comment" spellcheck="true"># @File    : MultiLayer0.py</span>
-<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2019/4/20 11:45
+# @Author  : cunyu
+# @Site    : cunyu1943.github.io
+# @File    : MultiLayer0.py
+# @Software: PyCharm
 
-<span class="token keyword">import</span> d2lzh <span class="token keyword">as</span> d2l
-<span class="token keyword">from</span> mxnet <span class="token keyword">import</span> nd
-<span class="token keyword">from</span> mxnet<span class="token punctuation">.</span>gluon <span class="token keyword">import</span> loss <span class="token keyword">as</span> gloss
+import d2lzh as d2l
+from mxnet import nd
+from mxnet.gluon import loss as gloss
 
-<span class="token comment" spellcheck="true"># 获取和读取数据</span>
-batch_size <span class="token operator">=</span> <span class="token number">256</span>
-train_iter<span class="token punctuation">,</span> test_iter <span class="token operator">=</span> d2l<span class="token punctuation">.</span>load_data_fashion_mnist<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span>
+# 获取和读取数据
+batch_size = 256
+train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 
-<span class="token comment" spellcheck="true"># 定义模型参数</span>
-num_inputs<span class="token punctuation">,</span> num_outputs<span class="token punctuation">,</span> num_hiddens <span class="token operator">=</span> <span class="token number">784</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">256</span>
-w1 <span class="token operator">=</span> nd<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>scale<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> shape<span class="token operator">=</span><span class="token punctuation">(</span>num_inputs<span class="token punctuation">,</span> num_hiddens<span class="token punctuation">)</span><span class="token punctuation">)</span>
-b1 <span class="token operator">=</span> nd<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>num_hiddens<span class="token punctuation">)</span>
-w2 <span class="token operator">=</span> nd<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>scale<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> shape<span class="token operator">=</span><span class="token punctuation">(</span>num_hiddens<span class="token punctuation">,</span> num_outputs<span class="token punctuation">)</span><span class="token punctuation">)</span>
-b2 <span class="token operator">=</span> nd<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>num_outputs<span class="token punctuation">)</span>
-params <span class="token operator">=</span> <span class="token punctuation">[</span>w1<span class="token punctuation">,</span> b1<span class="token punctuation">,</span> w2<span class="token punctuation">,</span> b2<span class="token punctuation">]</span>
+# 定义模型参数
+num_inputs, num_outputs, num_hiddens = 784, 10, 256
+w1 = nd.random.normal(scale=0.01, shape=(num_inputs, num_hiddens))
+b1 = nd.zeros(num_hiddens)
+w2 = nd.random.normal(scale=0.01, shape=(num_hiddens, num_outputs))
+b2 = nd.zeros(num_outputs)
+params = [w1, b1, w2, b2]
 
-<span class="token keyword">for</span> param <span class="token keyword">in</span> params<span class="token punctuation">:</span>
-    param<span class="token punctuation">.</span>attach_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+for param in params:
+    param.attach_grad()
 
-<span class="token comment" spellcheck="true"># 定义激活函数</span>
-<span class="token keyword">def</span> <span class="token function">relu</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> nd<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span>X<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+# 定义激活函数
+def relu(X):
+    return nd.maximum(X, 0)
 
-<span class="token comment" spellcheck="true"># 定义模型</span>
-<span class="token keyword">def</span> <span class="token function">net</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    X <span class="token operator">=</span> X<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> num_inputs<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    H <span class="token operator">=</span> relu<span class="token punctuation">(</span>nd<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>X<span class="token punctuation">,</span> w1<span class="token punctuation">)</span> <span class="token operator">+</span> b1<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> nd<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>H<span class="token punctuation">,</span> w2<span class="token punctuation">)</span> <span class="token operator">+</span> b2
+# 定义模型
+def net(X):
+    X = X.reshape((-1, num_inputs))
+    H = relu(nd.dot(X, w1) + b1)
+    return nd.dot(H, w2) + b2
 
-<span class="token comment" spellcheck="true"># 定义损失函数</span>
-loss <span class="token operator">=</span> gloss<span class="token punctuation">.</span>SoftmaxCrossEntropyLoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
+# 定义损失函数
+loss = gloss.SoftmaxCrossEntropyLoss()
 
-<span class="token comment" spellcheck="true"># 训练模型</span>
-num_epochs<span class="token punctuation">,</span> lr <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0.5</span>
-d2l<span class="token punctuation">.</span>train_ch3<span class="token punctuation">(</span>net<span class="token punctuation">,</span> train_iter<span class="token punctuation">,</span> test_iter<span class="token punctuation">,</span> loss<span class="token punctuation">,</span> num_epochs<span class="token punctuation">,</span> batch_size<span class="token punctuation">,</span> params<span class="token punctuation">,</span> lr<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 训练模型
+num_epochs, lr = 5, 0.5
+d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, params, lr)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>简洁实现多层感知机，代码如下：</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
-<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
-<span class="token comment" spellcheck="true"># @Time    : 2019/4/20 13:43</span>
-<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
-<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
-<span class="token comment" spellcheck="true"># @File    : MultiLayerSimple.py</span>
-<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2019/4/20 13:43
+# @Author  : cunyu
+# @Site    : cunyu1943.github.io
+# @File    : MultiLayerSimple.py
+# @Software: PyCharm
 
-<span class="token keyword">import</span> d2lzh <span class="token keyword">as</span> d2l
-<span class="token keyword">from</span> mxnet <span class="token keyword">import</span> gluon<span class="token punctuation">,</span> init
-<span class="token keyword">from</span> mxnet<span class="token punctuation">.</span>gluon <span class="token keyword">import</span> loss <span class="token keyword">as</span> gloss<span class="token punctuation">,</span> nn
+import d2lzh as d2l
+from mxnet import gluon, init
+from mxnet.gluon import loss as gloss, nn
 
-<span class="token comment" spellcheck="true"># 定义模型</span>
-net <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">)</span>
-net<span class="token punctuation">.</span>add<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">,</span>activation<span class="token operator">=</span><span class="token string">'relu'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-net<span class="token punctuation">.</span>initialize<span class="token punctuation">(</span>init<span class="token punctuation">.</span>Normal<span class="token punctuation">(</span>sigma<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+# 定义模型
+net = nn.Sequential()
+net.add(nn.Dense(256,activation='relu'), nn.Dense(10))
+net.initialize(init.Normal(sigma=0.01))
 
-<span class="token comment" spellcheck="true"># 读取数据并训练模型</span>
-batch_size <span class="token operator">=</span> <span class="token number">256</span>
-train_iter<span class="token punctuation">,</span> test_iter <span class="token operator">=</span> d2l<span class="token punctuation">.</span>load_data_fashion_mnist<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span>
+# 读取数据并训练模型
+batch_size = 256
+train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 
-loss <span class="token operator">=</span> gloss<span class="token punctuation">.</span>SoftmaxCrossEntropyLoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
-trainer <span class="token operator">=</span> gluon<span class="token punctuation">.</span>Trainer<span class="token punctuation">(</span>net<span class="token punctuation">.</span>collect_params<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'sgd'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'learning_rate'</span><span class="token punctuation">:</span><span class="token number">0.5</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-num_epochs <span class="token operator">=</span> <span class="token number">5</span>
-d2l<span class="token punctuation">.</span>train_ch3<span class="token punctuation">(</span>net<span class="token punctuation">,</span> train_iter<span class="token punctuation">,</span> test_iter<span class="token punctuation">,</span> loss<span class="token punctuation">,</span> num_epochs<span class="token punctuation">,</span> batch_size<span class="token punctuation">,</span> None<span class="token punctuation">,</span> None<span class="token punctuation">,</span> trainer<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+loss = gloss.SoftmaxCrossEntropyLoss()
+trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate':0.5})
+num_epochs = 5
+d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, trainer)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -945,6 +946,43 @@ d2l<span class="token punctuation">.</span>train_ch3<span class="token punctuati
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1044,6 +1082,13 @@ d2l<span class="token punctuation">.</span>train_ch3<span class="token punctuati
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1053,7 +1098,7 @@ d2l<span class="token punctuation">.</span>train_ch3<span class="token punctuati
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

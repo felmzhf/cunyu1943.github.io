@@ -11,14 +11,16 @@
 
 pip install jupyter
 
+
 使用Anaconda安装
 
 conda install jupyter notebook
+
 使用
 获取Jupyter Notebook使用帮助
 
 # 两者选其一
-jupter ">
+jupte">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -474,26 +476,30 @@ jupter ">
                 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
 <li>使用pip安装</li>
 </ul>
-<pre class="line-numbers language-shell"><code class="language-shell">pip install jupyter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">pip install jupyter
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>使用Anaconda安装</li>
 </ul>
-<pre class="line-numbers language-shell"><code class="language-shell">conda install jupyter notebook<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">conda install jupyter notebook
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
 <li>获取Jupyter Notebook使用帮助</li>
 </ul>
-<pre class="line-numbers language-shell"><code class="language-shell"># 两者选其一
+<pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># 两者选其一
 jupter notebook --help
-jupter notebook -h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+jupter notebook -h
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>启动</li>
 </ul>
-<pre class="line-numbers language-shell"><code class="language-shell"># 默认端口启动
+<pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># 默认端口启动
 jupyter notebook
 # 指定端口启动
 jupyter notebook --port <port_number>
 # 启动服务器但不打开浏览器
-jupyter notebook --no-browser<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+jupyter notebook --no-browser
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-e68e177e1ac6e0ef?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Jupyter Notebook主页面"></p>
 <ul>
 <li>文件重命名</li>
@@ -510,6 +516,7 @@ jupyter notebook --no-browser<span aria-hidden="true" class="line-numbers-rows">
 <ul>
 <li>命令模式下快捷键</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -517,7 +524,8 @@ jupyter notebook --no-browser<span aria-hidden="true" class="line-numbers-rows">
 <th>用途</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>F</td>
 <td>查找和替换</td>
 </tr>
@@ -585,7 +593,9 @@ jupyter notebook --no-browser<span aria-hidden="true" class="line-numbers-rows">
 <td>H</td>
 <td>显示快捷键帮助</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -931,6 +941,43 @@ jupyter notebook --no-browser<span aria-hidden="true" class="line-numbers-rows">
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1030,6 +1077,13 @@ jupyter notebook --no-browser<span aria-hidden="true" class="line-numbers-rows">
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1039,7 +1093,7 @@ jupyter notebook --no-browser<span aria-hidden="true" class="line-numbers-rows">
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

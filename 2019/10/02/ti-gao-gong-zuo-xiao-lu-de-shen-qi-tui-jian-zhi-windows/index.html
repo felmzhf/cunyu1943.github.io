@@ -8,13 +8,12 @@
     <meta name="keywords" content="提高工作效率的神器推荐之Windows, 村雨的博客">
     <meta name="description" content="Everything
 下载地址：http://www.voidtools.com/
-
 功能：硬盘文件搜索，比起电脑自带的文件搜索，效率提高不是一丁半点。而且Everything还支持正则表达式，小巧而快速；
 
 
 
 Clover
-下载地址：h">
+下载地址：ht">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -468,8 +467,7 @@ Clover
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Everything"><a href="#Everything" class="headerlink" title="Everything"></a>Everything</h2><ul>
-<li><p>下载地址：<a href="http://www.voidtools.com/" target="_blank" rel="noopener">http://www.voidtools.com/</a></p>
-</li>
+<li>下载地址：<a href="http://www.voidtools.com/" target="_blank" rel="noopener">http://www.voidtools.com/</a></li>
 <li><p>功能：硬盘文件搜索，比起电脑自带的文件搜索，效率提高不是一丁半点。而且Everything还支持正则表达式，小巧而快速；</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-aef338a949cb09fc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 </li>
@@ -831,6 +829,43 @@ Clover
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -930,6 +965,13 @@ Clover
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -939,7 +981,7 @@ Clover
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

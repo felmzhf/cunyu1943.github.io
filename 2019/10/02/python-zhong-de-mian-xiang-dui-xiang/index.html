@@ -488,33 +488,37 @@
 <li>在创建类之后，对象可以在外部直接使用<code>.属性名</code> 给对象增加属性，但是这种方式不推荐使用，因为它并没有将属性封装到类的内部中，只是对象临时的属性；</li>
 <li>在初始化方法内部定义属性之后，在使用该类创建新对象时，所创建的新对象都会拥有该属性，使用方法：<code>self.属性名 = 属性初始值</code>；</li>
 </ul>
-<h2 id="对象及内置方法生命周期"><a href="#对象及内置方法生命周期" class="headerlink" title="对象及内置方法生命周期"></a>对象及内置方法生命周期</h2><table>
+<h2 id="对象及内置方法生命周期"><a href="#对象及内置方法生命周期" class="headerlink" title="对象及内置方法生命周期"></a>对象及内置方法生命周期</h2><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">方法</th>
-<th align="center">功能</th>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><code>__init_</code></td>
-<td align="center">初始化对象并设置属性</td>
+<tbody>
+<tr>
+<td style="text-align:center"><code>__init_</code></td>
+<td style="text-align:center">初始化对象并设置属性</td>
 </tr>
 <tr>
-<td align="center"><code>__del_</code></td>
-<td align="center">销毁对象</td>
+<td style="text-align:center"><code>__del_</code></td>
+<td style="text-align:center">销毁对象</td>
 </tr>
 <tr>
-<td align="center"><code>__str_</code></td>
-<td align="center">必须返回一个字符串，定制变量的输出信息</td>
+<td style="text-align:center"><code>__str_</code></td>
+<td style="text-align:center">必须返回一个字符串，定制变量的输出信息</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>对象从调用<code>类名()</code>创建时生命周期即开始；</li>
 <li>对象生命周期内，既可以访问对象属性，也可以调用对象方法；</li>
 <li>对象的<code>__del__</code>方法一旦调用，对象的生命周期即结束；</li>
 </ul>
 <h2 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h2><ul>
-<li>功能：用于比较两个对象内存地址是否一致–即判断是否是对同一对象的引用；</li>
+<li>功能：用于比较两个对象内存地址是否一致—即判断是否是对同一对象的引用；</li>
 <li><code>is</code>和<code>==</code>的区别<ul>
 <li><code>is</code>用于判断两个变量引用对象是否为同一个；</li>
 <li><code>==</code>用于判断引用变量的值是否相等；</li>
@@ -537,8 +541,9 @@
 <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
 <li>语法</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class A(B):
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>子类继承于父类，拥有父类所封装的属性与方法，无需二次开发；</li>
 <li>子类只需要封装属于自己特有的，有别于父类的属性与方法即可；</li>
@@ -552,8 +557,9 @@
 <h2 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h2><ul>
 <li>语法</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> 子类名<span class="token punctuation">(</span>父类名<span class="token number">1</span><span class="token punctuation">,</span> 父类名<span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class 子类名(父类名1, 父类名2,...):
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>注意事项<ul>
 <li>父类名应该避免重复；</li>
@@ -564,13 +570,15 @@
 <h2 id="新式类与经典类"><a href="#新式类与经典类" class="headerlink" title="新式类与经典类"></a>新式类与经典类</h2><ul>
 <li>新式类</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class A(object):
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>经典类</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class A:
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h2><ul>
 <li>每个对象实例化是都有自己独立的内存空间，用于保存各自不同的属性；</li>
 <li>而多个对象的方法在内存中只有一份，在调用方法时需要吧对象的引用传递到方法内部；  </li>
@@ -578,9 +586,10 @@
 <h2 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h2><ul>
 <li>语法</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python">@classmethod
-<span class="token keyword">def</span> 类方法名<span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">@classmethod
+def 类方法名(cls):
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>在类方法内部<ul>
 <li>通过<code>cls.</code>访问类的属性；</li>
@@ -596,9 +605,10 @@
 </li>
 <li>语法</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python">@staticmethod
-<span class="token keyword">def</span> 静态方法名<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">@staticmethod
+def 静态方法名():
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="实例方法、类方法、静态方法之间的区别"><a href="#实例方法、类方法、静态方法之间的区别" class="headerlink" title="实例方法、类方法、静态方法之间的区别"></a>实例方法、类方法、静态方法之间的区别</h2><ul>
 <li>实例方法：方法内部需要访问实例属性，实例方法内部需使用<code>类名.</code>访问类属性；</li>
 <li>类方法：方法内部只需要访问<code>类属性</code>；</li>
@@ -945,6 +955,43 @@
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1044,6 +1091,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1053,7 +1107,7 @@
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

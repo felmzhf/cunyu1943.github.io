@@ -467,8 +467,7 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-dcd9a2c58cbfeabf?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <p>这就搞得我们一头雾水了。当初我们安装系统的时候只是设置好了一个用户名和用户的密码，并没有设置root用户密码啊，该怎么输入呢？你可能会抱着试一试的心态，输入自己创建的用户的密码，结果当然是密码错误了！！！</p>
 <ul>
-<li><p>原因：未设置之前，Ubuntu中默认的root密码是随机的，即每次开机都会有一个新的root密码，所以此时的root用户密码并不确定；</p>
-</li>
+<li>原因：未设置之前，Ubuntu中默认的root密码是随机的，即每次开机都会有一个新的root密码，所以此时的root用户密码并不确定；</li>
 <li><p>解决方法：Ubuntu中打开终端(ctrl + alt + t)，输入<code>sudo passwd</code>，如下图，然后重复两次你要设置的root密码，然后就会提示密码已更新了；</p>
 <p> <img src="http://upload-images.jianshu.io/upload_images/9747350-970dc994741994dd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 </li>
@@ -829,6 +828,43 @@
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -928,6 +964,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -937,7 +980,7 @@
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

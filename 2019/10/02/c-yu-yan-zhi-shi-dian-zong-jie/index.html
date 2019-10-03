@@ -475,7 +475,8 @@ Release是经过优化后的版本，去掉了调试信息，代码进行了优�
 <li>指针是个量，对应一块内存区域；</li>
 <li>指针存储的是某个内存单元的地址；</li>
 <li>访问方式：<pre><code>    1、直接访问：按变量地址存取变量值，取地址符&amp;；
-    2、间接访问：通过存放变量地址的变量去访问变量，间接运算符*；</code></pre></li>
+    2、间接访问：通过存放变量地址的变量去访问变量，间接运算符*；
+</code></pre></li>
 <li>在函数中改变一个外部变量，需要变量的地址；</li>
 <li>若是数据，需要指向数据的指针存储数据的地址；</li>
 <li>若是指针，需要指向指针的指针存用户指针的地址；</li>
@@ -521,7 +522,8 @@ int main()
 
     system("pause");
     return 0;
-}</code></pre><ul>
+}
+</code></pre><ul>
 <li>结果：</li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-6aee95a3e2f42b7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
@@ -575,7 +577,8 @@ int   _file;//文件描述符
 int   _charbuf;//双字节缓冲，缓冲2个字节
 int   _bufsiz;//缓冲区大小
 char *_tmpfname;//临时文件名
-};</code></pre><h3 id="fopen打开模式"><a href="#fopen打开模式" class="headerlink" title="fopen打开模式"></a>fopen打开模式</h3><ul>
+};
+</code></pre><h3 id="fopen打开模式"><a href="#fopen打开模式" class="headerlink" title="fopen打开模式"></a>fopen打开模式</h3><ul>
 <li>只读模式”r”打开文件，该文件必须存在，否则打开失败，r+,rb,rb+,rt,rt+模式打开文件，文件不存在也会失败；</li>
 <li>只写模式”w”打开，文件存在则长度清0，不存在则建立文件，w+,wb,wb+,wt,wt+模式打开文件，文件不存在则建立文件；</li>
 <li>a以附加的方式打开只写文件，若文件不存在，则建立文件，存在则在文件尾部添加数据，a+以附加的方式打开可读写文件，不存在则建立文件，存在则写入数据到文件尾，at二进制数据的追加，不存在则创建，只能写、at+读写打开一个文本文件，允许读或在文本末追加数据，ab二进制数据的追加，不存在则创建，只能写；</li>
@@ -583,10 +586,12 @@ char *_tmpfname;//临时文件名
 <h3 id="阻塞模式和非阻塞模式"><a href="#阻塞模式和非阻塞模式" class="headerlink" title="阻塞模式和非阻塞模式"></a>阻塞模式和非阻塞模式</h3><ul>
 <li>非阻塞模式，会引起宕机，会一直执行；</li>
 </ul>
-<pre><code>system("start notepad");</code></pre><ul>
+<pre><code>system("start notepad");
+</code></pre><ul>
 <li>阻塞模式，不会引起宕机，执行一步后才能执行下一步；</li>
 </ul>
-<pre><code>system("notepad");</code></pre><script>
+<pre><code>system("notepad");
+</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -927,6 +932,43 @@ char *_tmpfname;//临时文件名
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1026,6 +1068,13 @@ char *_tmpfname;//临时文件名
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1035,7 +1084,7 @@ char *_tmpfname;//临时文件名
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

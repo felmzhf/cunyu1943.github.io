@@ -479,21 +479,22 @@
 <li>异常捕获的目的：增强程序稳定性和健壮性；</li>
 <li>捕获异常的语法</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true">#尝试执行的代码</span>
-    <span class="token keyword">pass</span>
-<span class="token keyword">except</span> exception1：
-    <span class="token comment" spellcheck="true"># TODO出现错误1后处理的代码</span>
-    <span class="token keyword">pass</span>
-<span class="token keyword">except</span> exception2<span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># TODO出现错误2后处理的代码</span>
-    <span class="token keyword">pass</span>
-<span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># TODO处理未知错误的代码</span>
-    <span class="token keyword">pass</span>
-<span class="token keyword">finally</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># TODO无论是否有异常，都将执行的代码</span>
-    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">try:
+    #尝试执行的代码
+    pass
+except exception1：
+    # TODO出现错误1后处理的代码
+    pass
+except exception2:
+    # TODO出现错误2后处理的代码
+    pass
+except Exception:
+    # TODO处理未知错误的代码
+    pass
+finally:
+    # TODO无论是否有异常，都将执行的代码
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>异常的传递</li>
 </ul>
@@ -509,11 +510,12 @@
 <h2 id="模块与包"><a href="#模块与包" class="headerlink" title="模块与包"></a>模块与包</h2><ul>
 <li>导入语法</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 全部导入</span>
-<span class="token keyword">import</span> 模块名
-<span class="token comment" spellcheck="true"># import 模块名 as 模块别名</span>
-<span class="token comment" spellcheck="true"># 局部导入</span>
-<span class="token keyword">from</span> 模块名 <span class="token keyword">import</span> 工具名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># 全部导入
+import 模块名
+# import 模块名 as 模块别名
+# 局部导入
+from 模块名 import 工具名
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>注意：导入的不同模块中存在相同函数名时，后导入的会覆盖先导入的模块中的函数；</p>
 </li>
@@ -524,16 +526,17 @@
 <li><p>如何制作发布压缩包，安装以及卸载</p>
 <ul>
 <li><p>1、创建<code>setup.py</code>文件</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> distutils<span class="token punctuation">.</span>core <span class="token keyword">import</span> setup
-setup<span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">'包名'</span><span class="token punctuation">,</span>
-    version <span class="token operator">=</span> <span class="token string">'版本'</span><span class="token punctuation">,</span>
-    description <span class="token operator">=</span> <span class="token string">'描述信息'</span><span class="token punctuation">,</span>
-    long_description <span class="token operator">=</span> <span class="token string">'完整描述信息'</span><span class="token punctuation">,</span>
-    author <span class="token operator">=</span> <span class="token string">'作者'</span><span class="token punctuation">,</span>
-    email <span class="token operator">=</span> <span class="token string">'邮箱'</span><span class="token punctuation">,</span>
-    url <span class="token operator">=</span> <span class="token string">'个人主页'</span><span class="token punctuation">,</span>
-    py_modules <span class="token operator">=</span> <span class="token punctuation">[</span>包所包含的模块列表<span class="token punctuation">]</span>
-<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">from distutils.core import setup
+setup(name = '包名',
+    version = '版本',
+    description = '描述信息',
+    long_description = '完整描述信息',
+    author = '作者',
+    email = '邮箱',
+    url = '个人主页',
+    py_modules = [包所包含的模块列表]
+)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>2、构建模块</p>
 <p><code>python setup.py build</code></p>
@@ -563,81 +566,89 @@ setup<span class="token punctuation">(</span>name <span class="token operator">=
 <li><p>文件访问模式</p>
 </li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="right">访问模式</th>
-<th align="left">功能</th>
+<th style="text-align:right">访问模式</th>
+<th style="text-align:left">功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="right"><code>r</code></td>
-<td align="left">只读，文件指针位于文件开头，文件不存在则抛出异常</td>
+<tbody>
+<tr>
+<td style="text-align:right"><code>r</code></td>
+<td style="text-align:left">只读，文件指针位于文件开头，文件不存在则抛出异常</td>
 </tr>
 <tr>
-<td align="right"><code>w</code></td>
-<td align="left">只写，文件存在则覆盖，不存在则创建</td>
+<td style="text-align:right"><code>w</code></td>
+<td style="text-align:left">只写，文件存在则覆盖，不存在则创建</td>
 </tr>
 <tr>
-<td align="right"><code>a</code></td>
-<td align="left">追加，文件存在则在文件末尾追加，不存在则创建后写入</td>
+<td style="text-align:right"><code>a</code></td>
+<td style="text-align:left">追加，文件存在则在文件末尾追加，不存在则创建后写入</td>
 </tr>
 <tr>
-<td align="right"><code>r+</code></td>
-<td align="left">读写，文件指针位于文件开头，文件不存在则抛出异常</td>
+<td style="text-align:right"><code>r+</code></td>
+<td style="text-align:left">读写，文件指针位于文件开头，文件不存在则抛出异常</td>
 </tr>
 <tr>
-<td align="right"><code>w+</code></td>
-<td align="left">读写，文件存在则覆盖，不存在则创建</td>
+<td style="text-align:right"><code>w+</code></td>
+<td style="text-align:left">读写，文件存在则覆盖，不存在则创建</td>
 </tr>
 <tr>
-<td align="right"><code>a+</code></td>
-<td align="left">读写，文件指针置于文件末尾，不存在则创建后写入</td>
+<td style="text-align:right"><code>a+</code></td>
+<td style="text-align:left">读写，文件指针置于文件末尾，不存在则创建后写入</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>文件及目录操作</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="right">方法名</th>
-<th align="left">说明</th>
+<th style="text-align:right">方法名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="right"><code>rename</code></td>
-<td align="left">重命名文件，<code>os.rename('源文件'， '目标文件')</code></td>
+<tbody>
+<tr>
+<td style="text-align:right"><code>rename</code></td>
+<td style="text-align:left">重命名文件，<code>os.rename('源文件'， '目标文件')</code></td>
 </tr>
 <tr>
-<td align="right"><code>remove</code></td>
-<td align="left">删除文件， <code>os.remove('文件名')</code></td>
+<td style="text-align:right"><code>remove</code></td>
+<td style="text-align:left">删除文件， <code>os.remove('文件名')</code></td>
 </tr>
 <tr>
-<td align="right"><code>listdir</code></td>
-<td align="left">目录列表，<code>os.listdir('目录名')</code></td>
+<td style="text-align:right"><code>listdir</code></td>
+<td style="text-align:left">目录列表，<code>os.listdir('目录名')</code></td>
 </tr>
 <tr>
-<td align="right"><code>mkdir</code></td>
-<td align="left">创建目录，<code>os.mkdir('目录名')</code></td>
+<td style="text-align:right"><code>mkdir</code></td>
+<td style="text-align:left">创建目录，<code>os.mkdir('目录名')</code></td>
 </tr>
 <tr>
-<td align="right"><code>rmdir</code></td>
-<td align="left">删除目录，<code>os.rmdir('目录名')</code></td>
+<td style="text-align:right"><code>rmdir</code></td>
+<td style="text-align:left">删除目录，<code>os.rmdir('目录名')</code></td>
 </tr>
 <tr>
-<td align="right"><code>getcwd</code></td>
-<td align="left">获取当前目录，<code>os.getcwd()</code></td>
+<td style="text-align:right"><code>getcwd</code></td>
+<td style="text-align:left">获取当前目录，<code>os.getcwd()</code></td>
 </tr>
 <tr>
-<td align="right"><code>chdir</code></td>
-<td align="left">修改工作目录，<code>os.chdir('目标目录')</code></td>
+<td style="text-align:right"><code>chdir</code></td>
+<td style="text-align:left">修改工作目录，<code>os.chdir('目标目录')</code></td>
 </tr>
 <tr>
-<td align="right"><code>path.isdir</code></td>
-<td align="left">判断是否为文件，<code>os.path.isdir('文件路径')</code></td>
+<td style="text-align:right"><code>path.isdir</code></td>
+<td style="text-align:left">判断是否为文件，<code>os.path.isdir('文件路径')</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="文本编码"><a href="#文本编码" class="headerlink" title="文本编码"></a>文本编码</h2><ul>
 <li><code>Python2.x</code>中默认使用<code>ASCII</code>编码，<code>Python3.x</code>默认使用<code>utf-8</code>编码；</li>
 <li><code>python2.x</code>中在字符串前边加上<code>u</code>用于告知解释器这是一个<code>utf-8</code>编码格式的字符串；</li>
@@ -990,6 +1001,43 @@ setup<span class="token punctuation">(</span>name <span class="token operator">=
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1089,6 +1137,13 @@ setup<span class="token punctuation">(</span>name <span class="token operator">=
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1098,7 +1153,7 @@ setup<span class="token punctuation">(</span>name <span class="token operator">=
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

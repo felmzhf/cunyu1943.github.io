@@ -491,12 +491,14 @@
 <li><code>[显示的文本](链接地址)；</code><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy85NzQ3MzUwLTFkNzM3YzUwMTAzNmQzYTIucG5n" alt=""></li>
 <li><code>[外链图片转存失败(img-XrVu45Zv-1563331849244)(图片链接地址)]；</code><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy85NzQ3MzUwLWEzZWZjM2M2M2YxNTVkYzYucG5n" alt=""></li>
 </ul>
-<h4 id="上下角标"><a href="#上下角标" class="headerlink" title="上下角标"></a>上下角标</h4><h5 id="上角标"><a href="#上角标" class="headerlink" title="上角标"></a>上角标</h5><pre class="line-numbers language-text"><code class="language-text">1. <sup>内容</sup>
-2. ^<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h5 id="下角标"><a href="#下角标" class="headerlink" title="下角标"></a>下角标</h5><pre class="line-numbers language-text"><code class="language-text">1. <sub>内容</sub>
-2. _<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="上下角标"><a href="#上下角标" class="headerlink" title="上下角标"></a>上下角标</h4><h5 id="上角标"><a href="#上角标" class="headerlink" title="上角标"></a>上角标</h5><pre class="line-numbers language-lang-text"><code class="language-lang-text">1. <sup>内容</sup>
+2. ^
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="下角标"><a href="#下角标" class="headerlink" title="下角标"></a>下角标</h5><pre class="line-numbers language-lang-text"><code class="language-lang-text">1. <sub>内容</sub>
+2. _
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h4><ul>
-<li><p>起始和结尾标志<br>数学公式以<code>$</code>开头和结尾，若公式要独占一行，则以<code>$$</code>开头和结尾；</p>
+<li><p>起始和结尾标志<br>数学公式以$$<code>开头和结尾，若公式要独占一行，则以</code>$$$开头和结尾；</p>
 </li>
 <li><p>符号上下标<br>上标：<code>^</code>，如$a^2$；<br>下标：<code>_</code>，如$a_2$；</p>
 </li>
@@ -507,7 +509,7 @@
 <li>小括号：<code>()</code>；</li>
 <li>中括号：<code>[]</code>；</li>
 <li>尖括号：<code>\langle，\rangle</code>；</li>
-<li>大括号：使用<code>\left</code>或<code>\right</code>让符号大小与邻近的公式相适应，如<code>(\frac{x}{y})和\left(\frac{x}{y}\right)</code>的区别<br>$$(\frac{x}{y})$$<br>$$\left(\frac{x}{y}\right)$$</li>
+<li>大括号：使用<code>\left</code>或<code>\right</code>让符号大小与邻近的公式相适应，如<code>(\frac{x}{y})和\left(\frac{x}{y}\right)</code>的区别<script type="math/tex; mode=display">(\frac{x}{y})</script><script type="math/tex; mode=display">\left(\frac{x}{y}\right)</script></li>
 </ul>
 </li>
 <li><p>求和、极限和积分</p>
@@ -904,6 +906,43 @@
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1003,6 +1042,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1012,7 +1058,7 @@
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

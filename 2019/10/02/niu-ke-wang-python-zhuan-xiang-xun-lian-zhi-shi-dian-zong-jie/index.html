@@ -492,8 +492,7 @@ Python2中除法默认向下取整，如1 / 2=0，Python3中除法为正常除�
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-da9e87bfd019f376?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <ul>
-<li><p>线程由操作系统控制，协程由程序自身控制；</p>
-</li>
+<li>线程由操作系统控制，协程由程序自身控制；</li>
 <li><p>四种命名方式：</p>
 <ul>
 <li><code>object</code>：# 公用方式；</li>
@@ -504,8 +503,7 @@ Python2中除法默认向下取整，如1 / 2=0，Python3中除法为正常除�
 </li>
 <li><p>对于一个Python命令运行脚本，<code>sys.argv</code>是传递给Python脚本的命令行参数[字符串列表]，<code>argv[0]</code>为脚本自身路径，其他均为命令行参数；</p>
 </li>
-<li><p>Python逻辑运算符</p>
-</li>
+<li>Python逻辑运算符</li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-97f723832a87b24b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <script>
@@ -857,6 +855,43 @@ Python2中除法默认向下取整，如1 / 2=0，Python3中除法为正常除�
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -956,6 +991,13 @@ Python2中除法默认向下取整，如1 / 2=0，Python3中除法为正常除�
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -965,7 +1007,7 @@ Python2中除法默认向下取整，如1 / 2=0，Python3中除法为正常除�
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

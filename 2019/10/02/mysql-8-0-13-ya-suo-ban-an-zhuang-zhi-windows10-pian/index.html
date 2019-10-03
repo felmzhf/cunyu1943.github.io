@@ -473,7 +473,7 @@
 </ul>
 <h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><h4 id="1-加载安装包到你的安装目录"><a href="#1-加载安装包到你的安装目录" class="headerlink" title="1. 加载安装包到你的安装目录"></a>1. 加载安装包到你的安装目录</h4><p>将下载的MySQL压缩包解压并移到你所要安装的路径，下面以我的安装路径<code>D:\Program Files\mysql-8.0.13-winx64</code>为例；</p>
 <h4 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.  配置文件"></a>2.  配置文件</h4><p>在上述目录下新建<code>my.ini</code>文件，然后在文件中加入以下配置：在上述目录下新建<code>my.ini</code>文件，然后在文件中加入以下配置：</p>
-<pre class="line-numbers language-shell"><code class="language-shell">[mysqld]
+<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">[mysqld]
 # 设置3306端口
 port=3306
 # 设置mysql的安装目录
@@ -505,7 +505,8 @@ default-character-set=utf8
 # 设置mysql客户端连接服务端时默认使用的端口
 port=3306
 # 设置mysql客户端默认字符集
-default-character-set=utf8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+default-character-set=utf8
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3. 配置环境变量"></a>3. 配置环境变量</h4><ul>
 <li><p>打开控制面板-&gt;系统与安全-&gt;系统，进入高级系统设置，如下图所示；<br><img src="http://upload-images.jianshu.io/upload_images/9747350-e5eb79a0ed36843b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 </li>
@@ -514,25 +515,30 @@ default-character-set=utf8<span aria-hidden="true" class="line-numbers-rows"><sp
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-7e1751a1f568266b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br><img src="http://upload-images.jianshu.io/upload_images/9747350-c1cc60337028b17d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br><img src="http://upload-images.jianshu.io/upload_images/9747350-7225cdc7ee9ef783?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h4 id="4-初始化"><a href="#4-初始化" class="headerlink" title="4. 初始化"></a>4. 初始化</h4><p>控制台进入MySQL解压后的路径，然后以管理员身份执行如下命令；</p>
-<pre class="line-numbers language-shell"><code class="language-shell">mysqld --initialize --console<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">mysqld --initialize --console
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>注意</strong>：执行成功后会打印出初始的root用户密码，一定要记住！！！方便后边修改密码；<br><img src="http://upload-images.jianshu.io/upload_images/9747350-033f2e6de448ef2c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h4 id="5-安装数据库服务"><a href="#5-安装数据库服务" class="headerlink" title="5. 安装数据库服务"></a>5. 安装数据库服务</h4><p>接上一步初始化数据库后，继续执行如下命令；</p>
-<pre class="line-numbers language-shell"><code class="language-shell">mysqld --install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">mysqld --install
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>因为博主已经安装过了，所以会提示服务已存在，若是第一次安装，则不会提示已安装；<br><img src="http://upload-images.jianshu.io/upload_images/9747350-6bfbcb57c014d944?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h4 id="6-启动与关闭MySQL数据库服务"><a href="#6-启动与关闭MySQL数据库服务" class="headerlink" title="6. 启动与关闭MySQL数据库服务"></a>6. 启动与关闭MySQL数据库服务</h4><pre class="line-numbers language-shell"><code class="language-shell"># 开启
+<h4 id="6-启动与关闭MySQL数据库服务"><a href="#6-启动与关闭MySQL数据库服务" class="headerlink" title="6. 启动与关闭MySQL数据库服务"></a>6. 启动与关闭MySQL数据库服务</h4><pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># 开启
 net start mysql
 # 关闭
-net stop mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+net stop mysql
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="7-修改初始root用户密码"><a href="#7-修改初始root用户密码" class="headerlink" title="7. 修改初始root用户密码"></a>7. 修改初始root用户密码</h4><p>先用刚才记住的初始root用户密码登陆，然后进行密码更改，命令如下；</p>
-<pre class="line-numbers language-shell"><code class="language-shell"># 登陆
+<pre class="line-numbers language-lang-shell"><code class="language-lang-shell"># 登陆
 mysql -u root -p 
 # 然后提示你输入密码，输入上边初始化时默认给的初始化密码，进行登陆
 # 密码修改
 alter user 'root'@'localhost' identified by '新密码';
-# 修改密码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 修改密码
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-b3fbdeddb8aa4329?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h5 id="8-创建普通用户并设置密码"><a href="#8-创建普通用户并设置密码" class="headerlink" title="8. 创建普通用户并设置密码"></a>8. 创建普通用户并设置密码</h5><p>登入root用户后，创建新的用户并指定密码密码如下；</p>
-<pre class="line-numbers language-shell"><code class="language-shell">CREATE USER 'userName'@'localhost' IDENTIFIED BY 'password';<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">CREATE USER 'userName'@'localhost' IDENTIFIED BY 'password';
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后退出root用户登陆，尝试用你所创建的新用户进行登陆，登陆成功的提示如下；<br><img src="http://upload-images.jianshu.io/upload_images/9747350-eca60838194ccc4e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好了，通过上面的流程，是不是知道了如何在Windows 10系统下安装最新的压缩包版MySQL-8.0.13呢，而且文中也对如何修改root用户的默认密码以及如何创建新用户给出了解决方案，是不是简单，那就亲自动手试试吧；</p>
 <script>
@@ -876,6 +882,43 @@ alter user 'root'@'localhost' identified by '新密码';
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -975,6 +1018,13 @@ alter user 'root'@'localhost' identified by '新密码';
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -984,7 +1034,7 @@ alter user 'root'@'localhost' identified by '新密码';
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

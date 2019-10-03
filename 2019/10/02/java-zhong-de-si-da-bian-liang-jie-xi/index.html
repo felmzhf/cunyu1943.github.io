@@ -465,59 +465,60 @@ public class Demo {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><p>学习Java的过程中，一开始很容易被这些各种变量绕晕，这篇博客主要介绍了这几种变量之间的关系和区别。</p>
-<h2 id="例程"><a href="#例程" class="headerlink" title="例程"></a>例程</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>cunyu<span class="token punctuation">.</span>demo
+<h2 id="例程"><a href="#例程" class="headerlink" title="例程"></a>例程</h2><pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.cunyu.demo
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+public class Demo {
 
-    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//成员变量、实例变量</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//成员变量、实例变量</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> ID<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//成员变量、实例变量</span>
+    private String name;  //成员变量、实例变量
+    private int age;  //成员变量、实例变量
+    private int ID;  //成员变量、实例变量
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String school <span class="token operator">=</span> <span class="token string">"卡塞尔学院"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//成员变量、静态变量(类变量)</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> String level <span class="token operator">=</span> <span class="token string">"SSS"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//成员变量、静态变量(类变量)</span>
+    public static final String school = "卡塞尔学院";  //成员变量、静态变量(类变量)
+    public static String level = "SSS";    //成员变量、静态变量(类变量)
 
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> age<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public int getAge() {
+        return age;
+    }
 
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> ID<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public int getId() {
+        return ID;
+    }
 
-    <span class="token keyword">public</span> String <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public String getName() {
+        return name;
+    }
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span><span class="token keyword">int</span> ID<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>ID <span class="token operator">=</span> ID<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public void setId(int ID) {
+        this.ID = ID;
+    }
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">study</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            String subject1 <span class="token operator">=</span> <span class="token string">"屠龙"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//局部变量</span>
-            String subject2 <span class="token operator">=</span> <span class="token string">"炼金术"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//局部变量</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"学习科目： "</span> <span class="token operator">+</span> subject1 <span class="token operator">+</span> <span class="token string">"、"</span> <span class="token operator">+</span> subject2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+    public void study(){
+            String subject1 = "屠龙";  //局部变量
+            String subject2 = "炼金术"; //局部变量
+            System.out.println("学习科目： " + subject1 + "、" + subject2);
+        }
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Demo demo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        demo<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        demo<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">14000001</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        demo<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"楚子航"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ID: "</span> <span class="token operator">+</span> demo<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"Age: "</span> <span class="token operator">+</span> demo<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"Name: "</span> <span class="token operator">+</span> demo<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"主修科目： "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        demo<span class="token punctuation">.</span><span class="token function">study</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"学院："</span> <span class="token operator">+</span> Demo<span class="token punctuation">.</span>school<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"等级："</span> <span class="token operator">+</span> Demo<span class="token punctuation">.</span>level<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    public static void main(String[] args) {
+        Demo demo = new Demo();
+        demo.setAge(23);
+        demo.setId(14000001);
+        demo.setName("楚子航");
+        System.out.println("ID: " + demo.getId() + "Age: " + demo.getAge() + "Name: " + demo.getName());
+        System.out.print("主修科目： ");
+        demo.study();
+        System.out.println("学院：" + Demo.school);
+        System.out.println("等级：" + Demo.level);
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="各变量联系与区别"><a href="#各变量联系与区别" class="headerlink" title="各变量联系与区别"></a>各变量联系与区别</h2><ul>
 <li><p>成员变量：作用范围是整个类，相当于C中的全局变量，定义在方法体和语句块之外，一般定义在类的声明之下；成员变量包括实例变量和静态变量(类变量)；</p>
 </li>
@@ -881,6 +882,43 @@ public class Demo {
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -980,6 +1018,13 @@ public class Demo {
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -989,7 +1034,7 @@ public class Demo {
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

@@ -7,15 +7,15 @@
     <meta name="baidu-site-verification" content="XV6P9kp0bg">
     <meta name="keywords" content="自然语言处理NLP(三), 村雨的博客">
     <meta name="description" content="样本点中的关键度量指标：距离
-欧氏距离，euclidean–通常意义下的距离；
+欧氏距离，euclidean—通常意义下的距离；
 
 
 
-马氏距离，manhattan–考虑到变量间的相关性，且与变量单位无关；
+马氏距离，manhattan—考虑到变量间的相关性，且与变量单位无关；
 
 
 
-余弦距离，cosine–衡量变量相似性；
+余弦距离，cosine—衡量变量相似性；
 
 
 TF-IDF矩阵
@@ -473,15 +473,15 @@ TF-IDF矩阵
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="样本点中的关键度量指标：距离"><a href="#样本点中的关键度量指标：距离" class="headerlink" title="样本点中的关键度量指标：距离"></a>样本点中的关键度量指标：距离</h1><ul>
-<li>欧氏距离，euclidean–通常意义下的距离；</li>
+<li>欧氏距离，euclidean—通常意义下的距离；</li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-12dd6ddeb6bed2f5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <ul>
-<li>马氏距离，manhattan–考虑到变量间的相关性，且与变量单位无关；</li>
+<li>马氏距离，manhattan—考虑到变量间的相关性，且与变量单位无关；</li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-54220f1a482a905c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <ul>
-<li>余弦距离，cosine–衡量变量相似性；</li>
+<li>余弦距离，cosine—衡量变量相似性；</li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-9df8d007023cbdad?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h1 id="TF-IDF矩阵"><a href="#TF-IDF矩阵" class="headerlink" title="TF-IDF矩阵"></a>TF-IDF矩阵</h1><ul>
@@ -511,11 +511,11 @@ TF-IDF矩阵
 <li>算法基本思想：<br>1、指定合适的r和M；<br>2、计算所有样本点，若点p的r邻域中有超过M个点，则创建一个以p为核心点的新簇；<br>3、反复查找这些核心点直接密度可达(之后为密度可达)的点，将其加入到相应的簇，对于核心点发生“密度相连”状况的簇，进行合并；<br>4、当无新的点可以被添加到任何簇时，算法完成；</li>
 </ul>
 <h1 id="类相互之间的距离的计算方法"><a href="#类相互之间的距离的计算方法" class="headerlink" title="类相互之间的距离的计算方法"></a>类相互之间的距离的计算方法</h1><ul>
-<li><p>离差平方和法–ward<br>计算两个类别之间的离差平方和，找出最小的离差平方和，然后将这两个类别聚为一类；</p>
+<li><p>离差平方和法—ward<br>计算两个类别之间的离差平方和，找出最小的离差平方和，然后将这两个类别聚为一类；</p>
 </li>
-<li><p>类平均法–average<br>通过计算两个类别之间的所有点的相互距离，求其均值，然后作为这两个类之间距离均值，找出最小的距离均值，然后将这两个类聚为一类；</p>
+<li><p>类平均法—average<br>通过计算两个类别之间的所有点的相互距离，求其均值，然后作为这两个类之间距离均值，找出最小的距离均值，然后将这两个类聚为一类；</p>
 </li>
-<li><p>最大距离法–complete<br>让两个类之间相距最远的点作为两个类之间的距离，然后找出最大距离中最小的两个类，将他们聚为一类；</p>
+<li><p>最大距离法—complete<br>让两个类之间相距最远的点作为两个类之间的距离，然后找出最大距离中最小的两个类，将他们聚为一类；</p>
 </li>
 </ul>
 <script>
@@ -859,6 +859,43 @@ TF-IDF矩阵
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -958,6 +995,13 @@ TF-IDF矩阵
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -967,7 +1011,7 @@ TF-IDF矩阵
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

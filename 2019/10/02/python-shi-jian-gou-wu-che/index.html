@@ -449,7 +449,7 @@ productList = [(&#39;Iphone 8&#39;, 10000),
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        291
+                        286
                     </div>
                     
 
@@ -479,58 +479,59 @@ productList = [(&#39;Iphone 8&#39;, 10000),
 <ul>
 <li>代码</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># --*--coding:utf-8--*--</span>
-<span class="token comment" spellcheck="true"># Author: 村雨</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># --*--coding:utf-8--*--
+# Author: 村雨
 
-<span class="token keyword">import</span> pprint
+import pprint
 
-productList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'Iphone 8'</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-               <span class="token punctuation">(</span><span class="token string">'GTX2080'</span><span class="token punctuation">,</span> <span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-               <span class="token punctuation">(</span><span class="token string">'Z7KP7-GT'</span><span class="token punctuation">,</span> <span class="token number">6000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-               <span class="token punctuation">(</span><span class="token string">'Mac pro'</span><span class="token punctuation">,</span> <span class="token number">15000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-               <span class="token punctuation">(</span><span class="token string">'Honor 10'</span><span class="token punctuation">,</span> <span class="token number">2800</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-               <span class="token punctuation">(</span><span class="token string">'Iphone XR'</span><span class="token punctuation">,</span> <span class="token number">12000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-               <span class="token punctuation">(</span><span class="token string">'Mi 8'</span><span class="token punctuation">,</span> <span class="token number">2999</span><span class="token punctuation">)</span>
-               <span class="token punctuation">]</span>
+productList = [('Iphone 8', 10000),
+               ('GTX2080', 8000),
+               ('Z7KP7-GT', 6000),
+               ('Mac pro', 15000),
+               ('Honor 10', 2800),
+               ('Iphone XR', 12000),
+               ('Mi 8', 2999)
+               ]
 
-shoppingList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+shoppingList = []
 
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'输入你的工资:'</span><span class="token punctuation">)</span>
-salary <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token operator">not</span> salary<span class="token punctuation">.</span>isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'请输入整数'</span><span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-    salary <span class="token operator">=</span> int<span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
-    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> index<span class="token punctuation">,</span> item <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>productList<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> item<span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'输入你要买的商品的序号：'</span><span class="token punctuation">)</span>
-        userWant <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> userWant<span class="token punctuation">.</span>isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            userWant <span class="token operator">=</span> int<span class="token punctuation">(</span>userWant<span class="token punctuation">)</span>
-            <span class="token keyword">if</span> userWant <span class="token operator">&lt;=</span> len<span class="token punctuation">(</span>productList<span class="token punctuation">)</span> <span class="token operator">and</span> userWant <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
-                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你要购买的是：'</span><span class="token punctuation">,</span> productList<span class="token punctuation">[</span>userWant <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                <span class="token keyword">if</span> salary <span class="token operator">>=</span> productList<span class="token punctuation">[</span>userWant <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    shoppingList<span class="token punctuation">.</span>append<span class="token punctuation">(</span>productList<span class="token punctuation">[</span>userWant <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                    salary <span class="token operator">-=</span> productList<span class="token punctuation">[</span>userWant <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你已经购买了'</span> <span class="token operator">+</span> productList<span class="token punctuation">[</span>userWant <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">', 你的余额为 '</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>salary<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'对不起，你的余额不足！请努力工作吧！'</span><span class="token punctuation">)</span>
-                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你当前所购买的商品为：'</span><span class="token punctuation">)</span>
-                    <span class="token keyword">for</span> brought <span class="token keyword">in</span> shoppingList<span class="token punctuation">:</span>
-                        pprint<span class="token punctuation">.</span>pprint<span class="token punctuation">(</span>brought<span class="token punctuation">)</span>
-                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你当前余额为：'</span><span class="token punctuation">,</span> salary<span class="token punctuation">)</span>
-                    exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你输入的商品序号有错，请重新输入'</span><span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> userWant <span class="token operator">==</span> <span class="token string">'q'</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'-----------Shopping List----------'</span><span class="token punctuation">)</span>
-            <span class="token keyword">for</span> brought <span class="token keyword">in</span> shoppingList<span class="token punctuation">:</span>
-                pprint<span class="token punctuation">.</span>pprint<span class="token punctuation">(</span>brought<span class="token punctuation">)</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你的余额为 '</span><span class="token punctuation">,</span> salary<span class="token punctuation">)</span>
-            exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Invalid input！！！'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+print('输入你的工资:')
+salary = input()
+if not salary.isdigit():
+    print('请输入整数')
+else:
+    salary = int(salary)
+    while True:
+        for index, item in enumerate(productList):
+            print(index + 1, item)
+        print('输入你要买的商品的序号：')
+        userWant = input()
+        if userWant.isdigit():
+            userWant = int(userWant)
+            if userWant <= len(productList) and userWant > 0:
+                print('你要购买的是：', productList[userWant - 1][0])
+                if salary >= productList[userWant - 1][1]:
+                    shoppingList.append(productList[userWant - 1][0])
+                    salary -= productList[userWant - 1][1]
+                    print('你已经购买了' + productList[userWant - 1][0] + ', 你的余额为 ' + str(salary))
+                else:
+                    print('对不起，你的余额不足！请努力工作吧！')
+                    print('你当前所购买的商品为：')
+                    for brought in shoppingList:
+                        pprint.pprint(brought)
+                    print('你当前余额为：', salary)
+                    exit()
+            else:
+                print('你输入的商品序号有错，请重新输入')
+        elif userWant == 'q':
+            print('-----------Shopping List----------')
+            for brought in shoppingList:
+                pprint.pprint(brought)
+            print('你的余额为 ', salary)
+            exit()
+        else:
+            print('Invalid input！！！')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>结果</li>
 </ul>
@@ -878,6 +879,43 @@ salary <span class="token operator">=</span> input<span class="token punctuation
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -977,6 +1015,13 @@ salary <span class="token operator">=</span> input<span class="token punctuation
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -986,7 +1031,7 @@ salary <span class="token operator">=</span> input<span class="token punctuation
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

@@ -499,69 +499,77 @@
 <li><code>command --hlep</code>：显示命令帮助信息；</li>
 <li><code>man command</code>：查阅命令使用手册；</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">操作键</th>
-<th align="center">功能</th>
+<th style="text-align:center">操作键</th>
+<th style="text-align:center">功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">空格</td>
-<td align="center">显示下一屏</td>
+<tbody>
+<tr>
+<td style="text-align:center">空格</td>
+<td style="text-align:center">显示下一屏</td>
 </tr>
 <tr>
-<td align="center">回车</td>
-<td align="center">一次滚动一行</td>
+<td style="text-align:center">回车</td>
+<td style="text-align:center">一次滚动一行</td>
 </tr>
 <tr>
-<td align="center">b</td>
-<td align="center">回滚一屏</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">回滚一屏</td>
 </tr>
 <tr>
-<td align="center">f</td>
-<td align="center">前滚一屏</td>
+<td style="text-align:center">f</td>
+<td style="text-align:center">前滚一屏</td>
 </tr>
 <tr>
-<td align="center">/keyword</td>
-<td align="center">搜索关键词</td>
+<td style="text-align:center">/keyword</td>
+<td style="text-align:center">搜索关键词</td>
 </tr>
 <tr>
-<td align="center">q</td>
-<td align="center">退出</td>
+<td style="text-align:center">q</td>
+<td style="text-align:center">退出</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>通配符</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">通配符</th>
-<th align="center">含义</th>
+<th style="text-align:center">通配符</th>
+<th style="text-align:center">含义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">*</td>
-<td align="center">代表任意个字符</td>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">代表任意个字符</td>
 </tr>
 <tr>
-<td align="center">？</td>
-<td align="center">代表任一个字符</td>
+<td style="text-align:center">？</td>
+<td style="text-align:center">代表任一个字符</td>
 </tr>
 <tr>
-<td align="center">[]</td>
-<td align="center">表示可以匹配字符组中任意一个</td>
+<td style="text-align:center">[]</td>
+<td style="text-align:center">表示可以匹配字符组中任意一个</td>
 </tr>
 <tr>
-<td align="center">[mn]</td>
-<td align="center">匹配m、n中任意一个</td>
+<td style="text-align:center">[mn]</td>
+<td style="text-align:center">匹配m、n中任意一个</td>
 </tr>
 <tr>
-<td align="center">[a-z]</td>
-<td align="center">匹配从a-z范围内任意一个字符</td>
+<td style="text-align:center">[a-z]</td>
+<td style="text-align:center">匹配从a-z范围内任意一个字符</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>重定向：<code>&gt;</code>、<code>&gt;&gt;</code><ul>
 <li><code>&gt;</code>：表示输出，会覆盖原有内容；</li>
@@ -580,30 +588,34 @@
 <ul>
 <li>常见端口号</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">服务</th>
-<th align="center">端口号</th>
+<th style="text-align:center">服务</th>
+<th style="text-align:center">端口号</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">SSH</td>
-<td align="center">22</td>
+<tbody>
+<tr>
+<td style="text-align:center">SSH</td>
+<td style="text-align:center">22</td>
 </tr>
 <tr>
-<td align="center">Web</td>
-<td align="center">80</td>
+<td style="text-align:center">Web</td>
+<td style="text-align:center">80</td>
 </tr>
 <tr>
-<td align="center">HTTPS</td>
-<td align="center">443</td>
+<td style="text-align:center">HTTPS</td>
+<td style="text-align:center">443</td>
 </tr>
 <tr>
-<td align="center">FTP</td>
-<td align="center">21</td>
+<td style="text-align:center">FTP</td>
+<td style="text-align:center">21</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>scp</li>
 </ul>
@@ -999,6 +1011,43 @@
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1098,6 +1147,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1107,7 +1163,7 @@
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

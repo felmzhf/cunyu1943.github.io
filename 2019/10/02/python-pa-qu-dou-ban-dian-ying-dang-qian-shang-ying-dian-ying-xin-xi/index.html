@@ -462,71 +462,72 @@ Code#!/usr/bin/python3
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>爬取当前时间段豆瓣电影中正在上映的电影的相关信息，如电影名、导演、演员表、上映时间、制作方等信息，然后再通过字典的方式，将其保存在本地文件当中，以便我们查询；</p>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/python3</span>
-<span class="token comment" spellcheck="true"># -*- coding:utf-8 -*-</span>
-<span class="token comment" spellcheck="true"># @Time    : 2018-11-15 8:24</span>
-<span class="token comment" spellcheck="true"># @Author  : Manu</span>
-<span class="token comment" spellcheck="true"># @Site    : </span>
-<span class="token comment" spellcheck="true"># @File    : doubanMovie.py</span>
-<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/python3
+# -*- coding:utf-8 -*-
+# @Time    : 2018-11-15 8:24
+# @Author  : Manu
+# @Site    : 
+# @File    : doubanMovie.py
+# @Software: PyCharm
 
-<span class="token keyword">import</span> pprint
-<span class="token keyword">import</span> requests
-<span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
+import pprint
+import requests
+from lxml import etree
 
 
-<span class="token triple-quoted-string string">'''
+'''
 爬取豆瓣电影上当前正在上映的电影信息，并保存到文件中
-'''</span>
+'''
 
-HEADERS <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '</span>
-                 <span class="token string">'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36'</span><span class="token punctuation">,</span>
-    <span class="token string">'Refer'</span><span class="token punctuation">:</span><span class="token string">'https://movie.douban.com/'</span>
-<span class="token punctuation">}</span>
+HEADERS = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+                 'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+    'Refer':'https://movie.douban.com/'
+}
 
-url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/cinema/nowplaying/'</span>
-response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>HEADERS<span class="token punctuation">)</span>
+url = 'https://movie.douban.com/cinema/nowplaying/'
+response = requests.get(url, headers=HEADERS)
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
-text <span class="token operator">=</span> response<span class="token punctuation">.</span>text
+print(response.text)
+text = response.text
 
-html <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
-ul <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">"//ul[@class='lists']"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-lis <span class="token operator">=</span> ul<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'./li'</span><span class="token punctuation">)</span>
-movies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span> li <span class="token keyword">in</span> lis<span class="token punctuation">:</span>
-    title <span class="token operator">=</span> li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'@data-title'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    score <span class="token operator">=</span> li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'@data-score'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    release <span class="token operator">=</span> li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'@data-release'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    duration <span class="token operator">=</span> li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'@data-duration'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    region <span class="token operator">=</span> li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'@data-region'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    director <span class="token operator">=</span> li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'@data-director'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    actors <span class="token operator">=</span> li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'@data-actors'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    thumbnail <span class="token operator">=</span> li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'.//img/@src'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    movie <span class="token operator">=</span> <span class="token punctuation">{</span>
-        <span class="token string">'电影名'</span><span class="token punctuation">:</span>title<span class="token punctuation">,</span>
-        <span class="token string">'评分'</span><span class="token punctuation">:</span>score<span class="token punctuation">,</span>
-        <span class="token string">"上映时间"</span><span class="token punctuation">:</span>release<span class="token punctuation">,</span>
-        <span class="token string">'片长'</span><span class="token punctuation">:</span>duration<span class="token punctuation">,</span>
-        <span class="token string">'制片国家'</span><span class="token punctuation">:</span>region<span class="token punctuation">,</span>
-        <span class="token string">'导演'</span><span class="token punctuation">:</span>director<span class="token punctuation">,</span>
-        <span class="token string">'演员表'</span><span class="token punctuation">:</span>actors<span class="token punctuation">,</span>
-        <span class="token string">'海报'</span><span class="token punctuation">:</span>thumbnail
-    <span class="token punctuation">}</span>
-    movies<span class="token punctuation">.</span>append<span class="token punctuation">(</span>movie<span class="token punctuation">)</span>
-pprint<span class="token punctuation">.</span>pprint<span class="token punctuation">(</span>movies<span class="token punctuation">)</span>
-<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'豆瓣正在上映.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> movie_file<span class="token punctuation">:</span>
-    <span class="token keyword">for</span> movie <span class="token keyword">in</span> movies<span class="token punctuation">:</span>
-        movie_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'电影名：'</span> <span class="token operator">+</span> movie<span class="token punctuation">[</span><span class="token string">'电影名'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
-        movie_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'评分：'</span> <span class="token operator">+</span> movie<span class="token punctuation">[</span><span class="token string">'评分'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
-        movie_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'上映时间：'</span> <span class="token operator">+</span> movie<span class="token punctuation">[</span><span class="token string">'上映时间'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
-        movie_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'片长：'</span> <span class="token operator">+</span> movie<span class="token punctuation">[</span><span class="token string">'片长'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
-        movie_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'制片国家：'</span> <span class="token operator">+</span> movie<span class="token punctuation">[</span><span class="token string">'制片国家'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
-        movie_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'导演：'</span> <span class="token operator">+</span> movie<span class="token punctuation">[</span><span class="token string">'导演'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
-        movie_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'演员表：'</span> <span class="token operator">+</span> movie<span class="token punctuation">[</span><span class="token string">'演员表'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
-        movie_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'海报：'</span> <span class="token operator">+</span> movie<span class="token punctuation">[</span><span class="token string">'海报'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
-        movie_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+html = etree.HTML(text)
+ul = html.xpath("//ul[@class='lists']")[0]
+lis = ul.xpath('./li')
+movies = []
+for li in lis:
+    title = li.xpath('@data-title')[0]
+    score = li.xpath('@data-score')[0]
+    release = li.xpath('@data-release')[0]
+    duration = li.xpath('@data-duration')[0]
+    region = li.xpath('@data-region')[0]
+    director = li.xpath('@data-director')[0]
+    actors = li.xpath('@data-actors')[0]
+    thumbnail = li.xpath('.//img/@src')[0]
+    movie = {
+        '电影名':title,
+        '评分':score,
+        "上映时间":release,
+        '片长':duration,
+        '制片国家':region,
+        '导演':director,
+        '演员表':actors,
+        '海报':thumbnail
+    }
+    movies.append(movie)
+pprint.pprint(movies)
+with open('豆瓣正在上映.txt', 'w', encoding='utf-8') as movie_file:
+    for movie in movies:
+        movie_file.write('电影名：' + movie['电影名'] + '\n')
+        movie_file.write('评分：' + movie['评分'] + '\n')
+        movie_file.write('上映时间：' + movie['上映时间'] + '\n')
+        movie_file.write('片长：' + movie['片长'] + '\n')
+        movie_file.write('制片国家：' + movie['制片国家'] + '\n')
+        movie_file.write('导演：' + movie['导演'] + '\n')
+        movie_file.write('演员表：' + movie['演员表'] + '\n')
+        movie_file.write('海报：' + movie['海报'] + '\n')
+        movie_file.write('\n')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="https://upload-images.jianshu.io/upload_images/9747350-ca4cca3e5dafb5c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -881,6 +882,43 @@ pprint<span class="token punctuation">.</span>pprint<span class="token punctuati
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -980,6 +1018,13 @@ pprint<span class="token punctuation">.</span>pprint<span class="token punctuati
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -989,7 +1034,7 @@ pprint<span class="token punctuation">.</span>pprint<span class="token punctuati
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

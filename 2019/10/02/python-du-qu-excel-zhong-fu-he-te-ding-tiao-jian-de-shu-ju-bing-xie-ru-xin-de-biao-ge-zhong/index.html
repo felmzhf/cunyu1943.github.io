@@ -465,44 +465,45 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="原始表格"><a href="#原始表格" class="headerlink" title="原始表格"></a>原始表格</h1><p><img src="https://upload-images.jianshu.io/upload_images/9747350-6d59c5fe15e06e8c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python</span>
-<span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
-<span class="token comment" spellcheck="true"># @Time    : 2019/3/20 21:24</span>
-<span class="token comment" spellcheck="true"># @Author  : cunyu</span>
-<span class="token comment" spellcheck="true"># @Site    : cunyu1943.github.io</span>
-<span class="token comment" spellcheck="true"># @File    : LimitedInfo.py</span>
-<span class="token comment" spellcheck="true"># @Software: PyCharm</span>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre class="line-numbers language-lang-python"><code class="language-lang-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2019/3/20 21:24
+# @Author  : cunyu
+# @Site    : cunyu1943.github.io
+# @File    : LimitedInfo.py
+# @Software: PyCharm
 
-<span class="token keyword">import</span> xlrd
-<span class="token keyword">import</span> xlwt
+import xlrd
+import xlwt
 
-file <span class="token operator">=</span> <span class="token string">'网易新闻.xls'</span>
-data <span class="token operator">=</span> xlrd<span class="token punctuation">.</span>open_workbook<span class="token punctuation">(</span>file<span class="token punctuation">)</span>
-table <span class="token operator">=</span> data<span class="token punctuation">.</span>sheets<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-nrows <span class="token operator">=</span> table<span class="token punctuation">.</span>nrows
-ncols <span class="token operator">=</span> table<span class="token punctuation">.</span>ncols
+file = '网易新闻.xls'
+data = xlrd.open_workbook(file)
+table = data.sheets()[0]
+nrows = table.nrows
+ncols = table.ncols
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>nrows<span class="token punctuation">,</span> ncols<span class="token punctuation">)</span>
+print(nrows, ncols)
 
-workbook <span class="token operator">=</span> xlwt<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-news_sheet <span class="token operator">=</span> workbook<span class="token punctuation">.</span>add_sheet<span class="token punctuation">(</span><span class="token string">'news'</span><span class="token punctuation">)</span>
-news_sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'Title'</span><span class="token punctuation">)</span>
-news_sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'Content'</span><span class="token punctuation">)</span>
-data <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'Input the Date,format(2019-03-19:)\n'</span><span class="token punctuation">)</span>
+workbook = xlwt.Workbook(encoding='utf-8')
+news_sheet = workbook.add_sheet('news')
+news_sheet.write(0, 0, 'Title')
+news_sheet.write(0, 1, 'Content')
+data = input('Input the Date,format(2019-03-19:)\n')
 
-rank_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> nrows<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> table<span class="token punctuation">.</span>row_values<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> data<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span>row_values<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-        rank_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>rank_list<span class="token punctuation">)</span>
+rank_list = []
+for i in range(1, nrows):
+    if table.row_values(i)[-1] == data:
+        print(table.row_values(i)[-1])
+        print(i)
+        rank_list.append(i)
+print(rank_list)
 
-<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>rank_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    news_sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> table<span class="token punctuation">.</span>row_values<span class="token punctuation">(</span>int<span class="token punctuation">(</span>rank_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    news_sheet<span class="token punctuation">.</span>write<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> table<span class="token punctuation">.</span>row_values<span class="token punctuation">(</span>int<span class="token punctuation">(</span>rank_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+for i in range(len(rank_list)):
+    news_sheet.write(i+1, 0, table.row_values(int(rank_list[i]))[0])
+    news_sheet.write(i+1, 1, table.row_values(int(rank_list[i]))[1])
 
-workbook<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'%s-网易新闻.xls'</span> <span class="token operator">%</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+workbook.save('%s-网易新闻.xls' %(data))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="写入符合条件数据后新的表格"><a href="#写入符合条件数据后新的表格" class="headerlink" title="写入符合条件数据后新的表格"></a>写入符合条件数据后新的表格</h1><p><img src="https://upload-images.jianshu.io/upload_images/9747350-52857adfbb5fdc27?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -849,6 +850,43 @@ workbook<span class="token punctuation">.</span>save<span class="token punctuati
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -948,6 +986,13 @@ workbook<span class="token punctuation">.</span>save<span class="token punctuati
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -957,7 +1002,7 @@ workbook<span class="token punctuation">.</span>save<span class="token punctuati
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

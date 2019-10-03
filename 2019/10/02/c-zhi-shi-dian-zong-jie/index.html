@@ -8,7 +8,7 @@
     <meta name="keywords" content="C++知识点总结, 村雨的博客">
     <meta name="description" content="const在不同位置时的不同意义
 指针类型前：声明一个指向常量的指针，程序中不能通过指针来改变它所指向的值，但指针本身的值可以改变，即指针可以指向其他数据；
-&#34;*”号和指针名之间，声明一个指针常量(常指针)，指针本身的值不可改变，即不能指向">
+\”*”号和指针名之间，声明一个指针常量(常指针)，指针本身的值不可改变，即不能指">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -463,7 +463,7 @@
             <div id="articleContent">
                 <h2 id="const在不同位置时的不同意义"><a href="#const在不同位置时的不同意义" class="headerlink" title="const在不同位置时的不同意义"></a>const在不同位置时的不同意义</h2><ul>
 <li>指针类型前：声明一个指向常量的指针，程序中不能通过指针来改变它所指向的值，但指针本身的值可以改变，即指针可以指向其他数据；</li>
-<li>"*”号和指针名之间，声明一个指针常量(常指针)，指针本身的值不可改变，即不能指向其他数据，但指向的数据的值可以改变；</li>
+<li>\”*”号和指针名之间，声明一个指针常量(常指针)，指针本身的值不可改变，即不能指向其他数据，但指向的数据的值可以改变；</li>
 <li>两个地方都加，声明指向常量的指针常量，指针本身的值不可改变，指向的数据也不能通过指针改变；</li>
 </ul>
 <h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h2><ul>
@@ -482,12 +482,14 @@
 </ul>
 <pre><code>&lt;类名&gt;::&lt;默认构造函数名&gt;()
 {
-}</code></pre><h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><ul>
+}
+</code></pre><h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><ul>
 <li>析构函数作用：清除对象、释放内存；</li>
 <li>析构函数工作：执行析构函数中的代码、将对象占据的存储空间归还系统、做公共及用户要求的善后工作；</li>
 <li>析构函数无参数和返回值，一个类中只能定义一个析构函数，故不能重载，格式为：</li>
 </ul>
-<pre><code>~&lt;类名&gt;();</code></pre><h2 id="内存布局"><a href="#内存布局" class="headerlink" title="内存布局"></a>内存布局</h2><ul>
+<pre><code>~&lt;类名&gt;();
+</code></pre><h2 id="内存布局"><a href="#内存布局" class="headerlink" title="内存布局"></a>内存布局</h2><ul>
 <li>全局数据区：存放全局变量、静态数据、常量；</li>
 <li>代码区：存放类成员函数、其他函数代码；</li>
 <li>栈区：存放局部变量、函数参数、返回数据、返回地址；</li>
@@ -499,13 +501,15 @@
 <pre><code>&lt;函数类型&gt; operator &lt;运算符&gt; (&lt;形参列表&gt;)
 {
 &lt;函数体&gt;;
-}</code></pre><ul>
+}
+</code></pre><ul>
 <li>重载为类的友元函数，参数个数与原运算数个数一样多；</li>
 </ul>
 <pre><code>friend &lt;函数类型&gt; operator &lt;运算符&gt; (&lt;形参列表&gt;)
 {
 &lt;函数体&gt;;
-}</code></pre><ul>
+}
+</code></pre><ul>
 <li>函数重载：返回值类型可以相同可以不同，但形参列表一定不同；</li>
 </ul>
 <h2 id="静态数据成员"><a href="#静态数据成员" class="headerlink" title="静态数据成员"></a>静态数据成员</h2><ul>
@@ -535,7 +539,8 @@ void swap( T&amp; v1, T&amp; v2)
     temp = v1;
     v1 = v2;
     v2 = temp;
-}</code></pre><h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><ul>
+}
+</code></pre><h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><ul>
 <li>虚函数必须是类的成员函数，不能是友元，但可以是另一个类的友元，不能为全局函数，也不能为静态函数，析构函数可以为虚函数，但构造函数不能为虚函数；</li>
 </ul>
 <h2 id="变量初始化"><a href="#变量初始化" class="headerlink" title="变量初始化"></a>变量初始化</h2><ul>
@@ -894,6 +899,43 @@ void swap( T&amp; v1, T&amp; v2)
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -993,6 +1035,13 @@ void swap( T&amp; v1, T&amp; v2)
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1002,7 +1051,7 @@ void swap( T&amp; v1, T&amp; v2)
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

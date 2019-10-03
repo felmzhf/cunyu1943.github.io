@@ -465,114 +465,114 @@ def drawGap()">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="利用Python中的turtle图形库绘制七段数码管，显示当前时间"><a href="#利用Python中的turtle图形库绘制七段数码管，显示当前时间" class="headerlink" title="利用Python中的turtle图形库绘制七段数码管，显示当前时间"></a>利用Python中的turtle图形库绘制七段数码管，显示当前时间</h2><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf-8</span>
-<span class="token comment" spellcheck="true"># 绘制七段数码管，显示当前时间</span>
-<span class="token keyword">import</span> time
-<span class="token keyword">import</span> turtle <span class="token keyword">as</span> tt
+                <h2 id="利用Python中的turtle图形库绘制七段数码管，显示当前时间"><a href="#利用Python中的turtle图形库绘制七段数码管，显示当前时间" class="headerlink" title="利用Python中的turtle图形库绘制七段数码管，显示当前时间"></a>利用Python中的turtle图形库绘制七段数码管，显示当前时间</h2><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-lang-python"><code class="language-lang-python"># coding:utf-8
+# 绘制七段数码管，显示当前时间
+import time
+import turtle as tt
 
-<span class="token comment" spellcheck="true"># 绘制间隔</span>
-<span class="token keyword">def</span> <span class="token function">drawGap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    tt<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+# 绘制间隔
+def drawGap():
+    tt.penup()
+    tt.fd(5)
 
-<span class="token comment" spellcheck="true"># 绘制单段数码管</span>
-<span class="token keyword">def</span> <span class="token function">drawLine</span><span class="token punctuation">(</span>draw<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    drawGap<span class="token punctuation">(</span><span class="token punctuation">)</span>
+# 绘制单段数码管
+def drawLine(draw):
+    drawGap()
 
-    <span class="token keyword">if</span><span class="token punctuation">(</span>draw<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        tt<span class="token punctuation">.</span>pendown<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        tt<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    if(draw):
+        tt.pendown()
+    else:
+        tt.penup()
 
-    tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
-    drawGap<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    tt<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">)</span>
+    tt.fd(50)
+    drawGap()
+    tt.right(90)
 
-<span class="token comment" spellcheck="true"># 绘制当前时间</span>
-<span class="token keyword">def</span> <span class="token function">drawDate</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    tt<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"red"</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> date<span class="token punctuation">:</span>
-        <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token string">'+'</span><span class="token punctuation">:</span>
-            tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"年"</span><span class="token punctuation">,</span> font <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"黑体"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">"normal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"green"</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token string">'-'</span><span class="token punctuation">:</span>
-            tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"月"</span><span class="token punctuation">,</span> font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"黑体"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">"normal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"blue"</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">:</span>
-            tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"日"</span><span class="token punctuation">,</span> font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"黑体"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">"normal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"purple"</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token string">'='</span><span class="token punctuation">:</span>
-            tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"时"</span><span class="token punctuation">,</span> font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"黑体"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">"normal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"yellow"</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token string">'#'</span><span class="token punctuation">:</span>
-            tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"分"</span><span class="token punctuation">,</span> font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"黑体"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">"normal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"black"</span><span class="token punctuation">)</span>
-            tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token string">'$'</span><span class="token punctuation">:</span>
-            tt<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"秒"</span><span class="token punctuation">,</span> font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"黑体"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">"normal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+# 绘制当前时间
+def drawDate(date):
+    tt.pencolor("red")
+    for i in date:
+        if i == '+':
+            tt.write("年", font = ("黑体", 25, "normal"))
+            tt.pencolor("green")
+            tt.fd(50)
+        elif i == '-':
+            tt.write("月", font=("黑体", 25, "normal"))
+            tt.pencolor("blue")
+            tt.fd(50)
+        elif i == '*':
+            tt.write("日", font=("黑体", 25, "normal"))
+            tt.pencolor("purple")
+            tt.fd(50)
+        elif i == '=':
+            tt.write("时", font=("黑体", 25, "normal"))
+            tt.pencolor("yellow")
+            tt.fd(50)
+        elif i == '#':
+            tt.write("分", font=("黑体", 25, "normal"))
+            tt.pencolor("black")
+            tt.fd(50)
+        elif i == '$':
+            tt.write("秒", font=("黑体", 25, "normal"))
 
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            drawDigit<span class="token punctuation">(</span>eval<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        else:
+            drawDigit(eval(i))
 
-<span class="token comment" spellcheck="true"># 绘制数码管</span>
-<span class="token keyword">def</span> <span class="token function">drawDigit</span><span class="token punctuation">(</span>cur_time<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> cur_time <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+# 绘制数码管
+def drawDigit(cur_time):
+    if cur_time in [2, 3, 4, 5, 6, 8, 9]:
+        drawLine(True)
+    else:
+        drawLine(False)
 
-    <span class="token keyword">if</span> cur_time <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    if cur_time in [0, 1, 3, 4, 5, 6, 7, 8, 9]:
+        drawLine(True)
+    else:
+        drawLine(False)
 
-    <span class="token keyword">if</span> cur_time <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    if cur_time in [0, 2, 3, 5, 6, 8, 9]:
+        drawLine(True)
+    else:
+        drawLine(False)
 
-    <span class="token keyword">if</span> cur_time <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    if cur_time in [0, 2, 6, 8]:
+        drawLine(True)
+    else:
+        drawLine(False)
 
-    tt<span class="token punctuation">.</span>left<span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">)</span>
+    tt.left(90)
 
-    <span class="token keyword">if</span> cur_time <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    if cur_time in [0, 4, 5, 6, 8, 9]:
+        drawLine(True)
+    else:
+        drawLine(False)
 
-    <span class="token keyword">if</span> cur_time <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    if cur_time in [0, 2, 3, 5, 6, 7, 8, 9]:
+        drawLine(True)
+    else:
+        drawLine(False)
 
-    <span class="token keyword">if</span> cur_time <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        drawLine<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    if cur_time in [0, 1, 2, 3, 4, 7, 8, 9]:
+        drawLine(True)
+    else:
+        drawLine(False)
 
-    tt<span class="token punctuation">.</span>left<span class="token punctuation">(</span><span class="token number">180</span><span class="token punctuation">)</span>
-    tt<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+    tt.left(180)
+    tt.penup()
+    tt.fd(20)
 
-<span class="token comment" spellcheck="true"># 主函数</span>
-<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    tt<span class="token punctuation">.</span>setup<span class="token punctuation">(</span><span class="token number">1600</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span>
-    tt<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    tt<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">730</span><span class="token punctuation">)</span>
-    tt<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
-    drawDate<span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%Y+%m-%d*%H=%M#%S$'</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    tt<span class="token punctuation">.</span>hideturtle<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    tt<span class="token punctuation">.</span>done<span class="token punctuation">(</span><span class="token punctuation">)</span>
+# 主函数
+def main():
+    tt.setup(1600, 300, 200, 200)
+    tt.penup()
+    tt.fd(-730)
+    tt.pensize(5)
+    drawDate(time.strftime('%Y+%m-%d*%H=%M#%S$', time.localtime()))
+    tt.hideturtle()
+    tt.done()
 
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
-    main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+if __name__ == "__main__":
+    main()
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p><img src="http://upload-images.jianshu.io/upload_images/9747350-df2cfdae2ade6111?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
@@ -922,6 +922,43 @@ def drawGap()">
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1021,6 +1058,13 @@ def drawGap()">
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1030,7 +1074,7 @@ def drawGap()">
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

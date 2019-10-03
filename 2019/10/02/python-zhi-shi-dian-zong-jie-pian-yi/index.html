@@ -504,25 +504,20 @@
 <li>元祖<code>tuple</code>；</li>
 </ul>
 </li>
-<li><p>可变类型：内存中数据可修改；</p>
-<ul>
+<li>可变类型：内存中数据可修改；<ul>
 <li>列表<code>list</code>；</li>
 <li>字典<code>dict</code>；</li>
 </ul>
 </li>
-<li><p>变量命名规则：</p>
-<ul>
+<li>变量命名规则：<ul>
 <li>只能是一个词；</li>
 <li>只能包含字母、数字和下划线；</li>
 <li>不能以数字开头；<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3></li>
 </ul>
 </li>
-<li><p><code>**</code>：代表指数，eg：<code>2 ** 3 = 8</code>;</p>
-</li>
-<li><p><code>/</code>：代表除法，eg：<code>22 / 8 = 2.75</code>；</p>
-</li>
-<li><p><code>//</code>：代表整除/商数取整，eg：<code>22 / 8 = 2</code>；</p>
-</li>
+<li><code>**</code>：代表指数，eg：<code>2 ** 3 = 8</code>;</li>
+<li><code>/</code>：代表除法，eg：<code>22 / 8 = 2.75</code>；</li>
+<li><code>//</code>：代表整除/商数取整，eg：<code>22 / 8 = 2</code>；</li>
 <li><p><code>*</code>：用于两个整形或浮点型值时，表示乘法，但用于字符串值和一个整形值时，它则变成了’字符串复制’操作符；</p>
 </li>
 <li><p>交互式环境窗口与文件编辑器窗口区别：</p>
@@ -531,25 +526,28 @@
 <li>文件编辑器窗口没有<code>&gt;&gt;&gt;</code>提示符；</li>
 </ul>
 </li>
-<li><p>注释：</p>
-<ul>
+<li>注释：<ul>
 <li>单行注释：<code>#这是单行注释；</code></li>
 <li>多行注释：用三个单引号<code>'''</code>或者三个双引号 <code>"""</code>将注释括起来;</li>
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">'''这是
-多行注释；'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""这是多行
-注释;"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">'''这是
+多行注释；'''
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">"""这是多行
+注释;"""
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>虽然数字的字符串值被认为与整形值和浮点型值完全不同，但整形值可以与浮点值相等，eg：</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span><span class="token number">42</span> <span class="token operator">==</span> <span class="token number">42.0</span>
-<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">>>>42 == 42.0
+True
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li><p><code>#!</code>：常用于Unix系统脚本中的第一行开头使用，用于知名执行这个脚本文件的解释程序；</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#! /usr/bin/python3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#! /usr/bin/python3
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>运算符优先级</p>
 </li>
@@ -566,16 +564,15 @@
 <ul>
 <li>正负无穷</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python">float<span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#正无穷</span>
-float<span class="token punctuation">(</span><span class="token string">'-inf'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#负无穷</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">float('inf') #正无穷
+float('-inf') #负无穷
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>利用<code>inf</code>乘以<code>0</code>得到一个<code>not-a-number(NaN)</code>，<code>NaN</code>与<code>inf</code>的区别：<code>inf</code>数的<code>significant</code>部分为<code>0</code>，而<code>NaN</code>数的<code>significant</code>部分部位<code>0</code>；</li>
 </ul>
 <h1 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h1><ul>
-<li><p>布尔值：<code>Boolean</code>，只有<code>True</code>和<code>False</code>；</p>
-</li>
-<li><p>与<code>and</code>、或<code>or</code>、非<code>not</code>；</p>
-</li>
+<li>布尔值：<code>Boolean</code>，只有<code>True</code>和<code>False</code>；</li>
+<li>与<code>and</code>、或<code>or</code>、非<code>not</code>；</li>
 <li><p>控制流的元素：</p>
 <ul>
 <li>条件；</li>
@@ -598,20 +595,19 @@ float<span class="token punctuation">(</span><span class="token string">'-inf'</
 <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
 <li>None值，表示没有值，是NoneType数据类型的唯一值，print()的返回值即为None，</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> spam <span class="token operator">=</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">>>> spam = print('hello')
 hello
-<span class="token operator">>></span><span class="token operator">></span> None <span class="token operator">==</span> spam
-<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+>>> None == spam
+True
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li><p>函数三大优点</p>
-<ul>
+<li>函数三大优点<ul>
 <li>代码重用；</li>
 <li>保持一致性；</li>
 <li>可扩展性；</li>
 </ul>
 </li>
-<li><p>过程：过程就是简单特殊无返回值的函数；</p>
-</li>
+<li>过程：过程就是简单特殊无返回值的函数；</li>
 <li><p>函数返回值：</p>
 <ul>
 <li>返回值数 = 0：返回<code>None</code>；</li>
@@ -626,18 +622,20 @@ hello
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#传递多个参数，返回的参数组是一个元组</span>
-<span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#传递多个参数，返回的参数组是一个元组
+def test(*args):
+    print(args)
 
-<span class="token operator">>></span><span class="token operator">></span> test<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
-<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 参数组返回的是字典</span>
-<span class="token keyword">def</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>kwargs<span class="token punctuation">)</span>
+>>> test(1, 3, 4)
+(1, 3, 4)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># 参数组返回的是字典
+def test2(**kwargs):
+    print(kwargs)
 
-<span class="token operator">>></span><span class="token operator">></span> test2<span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">'k'</span><span class="token punctuation">,</span> age <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> sex <span class="token operator">=</span> <span class="token string">'M'</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span><span class="token string">'k'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token punctuation">:</span><span class="token string">'M'</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+>>> test2(name = 'k', age = 4, sex = 'M')
+{'name':'k', 'age':4, 'sex':'M'}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>调用函数时，实质上传递的是实参保存数据的引用，而不是实参保存的数据；</p>
 </li>
@@ -682,15 +680,16 @@ hello
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python">eggs <span class="token operator">=</span> <span class="token string">'global'</span>
-<span class="token keyword">def</span> <span class="token function">spam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">global</span> eggs
-    eggs <span class="token operator">=</span> <span class="token string">'spam'</span>
-spam<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>eggs<span class="token punctuation">)</span>    
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">eggs = 'global'
+def spam():
+    global eggs
+    eggs = 'spam'
+spam()
+print(eggs)    
+-----------
 spam
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+-----------
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>除了字符串和整数不能在函数中改变它的值之外，其他的数据类型如列表、字典、集合等都能够通过函数改变它们的值；</li>
 <li>区分一个变量是处于局部作用域还是全局作用域的4条法则：<ul>
@@ -702,57 +701,60 @@ spam
 </li>
 <li>异常处理：错误可由<code>try</code>和<code>except</code>语句处理；</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">spam</span><span class="token punctuation">(</span>divideBy<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token number">43</span> <span class="token operator">/</span> divideBy
-    <span class="token keyword">except</span> ZeroDivisionError<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Error:Invalid argument.'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def spam(divideBy):
+    try:
+        return 43 / divideBy
+    except ZeroDivisionError:
+        print('Error:Invalid argument.')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>小程序：猜数字</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#小程序：猜数字,不断循环，直到你猜出这个数</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#小程序：猜数字,不断循环，直到你猜出这个数
 
-guessNumber <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I'm thinking a number between 1 and 100."</span><span class="token punctuation">)</span>
+guessNumber = random.randint(1,100)
+print("I'm thinking a number between 1 and 100.")
 
-<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Take a guess.'</span><span class="token punctuation">)</span>
+while True:
+    print('Take a guess.')
 
-    guess <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    guess = int(input())
 
-    <span class="token keyword">if</span> guess <span class="token operator">></span> guessNumber<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"It's too high"</span><span class="token punctuation">)</span>
-    <span class="token keyword">elif</span> guess <span class="token operator">&lt;</span> guessNumber<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"It's to low"</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Congratulations, you win."</span><span class="token punctuation">)</span>
-        <span class="token keyword">break</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    if guess > guessNumber:
+        print("It's too high")
+    elif guess < guessNumber:
+        print("It's to low")
+    else:
+        print("Congratulations, you win.")
+        break
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-af98aecc1fad44d5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <ul>
 <li>Collatz序列</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#Collatz序列</span>
-<span class="token keyword">def</span> <span class="token function">collatz</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> number <span class="token operator">/</span> <span class="token number">2</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> number <span class="token operator">*</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">1</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">#Collatz序列
+def collatz(number):
+    if (number % 2 == 0):
+        return number / 2
+    else:
+        return number * 3 + 1
 
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Input a number.'</span><span class="token punctuation">)</span>
+print('Input a number.')
 
 
-<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-    <span class="token keyword">global</span> number1
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        number1 <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Please input a number'</span><span class="token punctuation">)</span>
-        <span class="token keyword">continue</span>
-    <span class="token keyword">if</span> collatz<span class="token punctuation">(</span>number1<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>int<span class="token punctuation">(</span>collatz<span class="token punctuation">(</span>number1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>int<span class="token punctuation">(</span>collatz<span class="token punctuation">(</span>number1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token keyword">break</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+while True:
+    global number1
+    try:
+        number1 = int(input())
+    except ValueError:
+        print('Please input a number')
+        continue
+    if collatz(number1) != 1:
+        print(int(collatz(number1)))
+    else:
+        print(int(collatz(number1)))
+        break
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://upload-images.jianshu.io/upload_images/9747350-e71512c269ebf129?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1095,6 +1097,43 @@ guessNumber <span class="token operator">=</span> random<span class="token punct
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1194,6 +1233,13 @@ guessNumber <span class="token operator">=</span> random<span class="token punct
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1203,7 +1249,7 @@ guessNumber <span class="token operator">=</span> random<span class="token punct
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             

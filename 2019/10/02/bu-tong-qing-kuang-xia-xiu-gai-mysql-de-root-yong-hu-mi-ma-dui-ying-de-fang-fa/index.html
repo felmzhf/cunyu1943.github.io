@@ -463,19 +463,24 @@ mysql&amp;g">
             <div id="articleContent">
                 <h2 id="在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。"><a href="#在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。" class="headerlink" title="在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。"></a>在我们使用MySQL时，常常会因为不同的原因需要对root用户密码进行修改，这篇博客主要介绍了以下三种情况下修改root用户密码的方式。</h2><h3 id="未设置root密码之前："><a href="#未设置root密码之前：" class="headerlink" title="未设置root密码之前："></a>未设置root密码之前：</h3><ul>
 <li>SET PASSWORD命令的方式：<pre><code>mysql -u root
-mysql&gt;SET PASSWORD FOR 'root'@'localhost' = PASSWORD('你要设置的密码');</code></pre></li>
-<li>mysqladmin命令的方式：<pre><code>mysqladmin -u root password "你要设置的密码"</code></pre></li>
+mysql&gt;SET PASSWORD FOR 'root'@'localhost' = PASSWORD('你要设置的密码');
+</code></pre></li>
+<li>mysqladmin命令的方式：<pre><code>mysqladmin -u root password "你要设置的密码"
+</code></pre></li>
 <li>UPDATE的方式直接编辑user表：<pre><code>mysql -u root
 mysql&gt; USE mysql;
 mysql&gt; UPDATE user SET Password = PASSWORD('你要设置的密码') WHERE user = 'root';
-mysql&gt; FLUSH PRIVILEGES;</code></pre></li>
+mysql&gt; FLUSH PRIVILEGES;
+</code></pre></li>
 </ul>
 <h3 id="设置过root之后："><a href="#设置过root之后：" class="headerlink" title="设置过root之后："></a>设置过root之后：</h3><ul>
-<li>mysqladmin的方式：<pre><code>mysqladmin -u root password oldpass "你要设置的新密码"</code></pre></li>
+<li>mysqladmin的方式：<pre><code>mysqladmin -u root password oldpass "你要设置的新密码"
+</code></pre></li>
 </ul>
 <h3 id="设置过root密码，但是忘记了："><a href="#设置过root密码，但是忘记了：" class="headerlink" title="设置过root密码，但是忘记了："></a>设置过root密码，但是忘记了：</h3><pre><code>mysqld_safe --skip-grant-tables&amp;mysql -u root mysql
 mysql&gt; UPDATE user SET password = PASSWORD("你要设置的新密码") WHERE user = 'root' ;
-mysql&gt; FLUSH PRIVILEGES;</code></pre><script>
+mysql&gt; FLUSH PRIVILEGES;
+</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -820,6 +825,43 @@ mysql&gt; FLUSH PRIVILEGES;</code></pre><script>
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 村雨的博客<br />'
+            + '作者: 村雨<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -919,6 +961,13 @@ mysql&gt; FLUSH PRIVILEGES;</code></pre><script>
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -928,7 +977,7 @@ mysql&gt; FLUSH PRIVILEGES;</code></pre><script>
             <br> -->
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.6k</span>&nbsp;字
+                class="white-color">65.3k</span>&nbsp;字
             
             
             
